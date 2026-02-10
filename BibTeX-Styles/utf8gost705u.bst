@@ -5,9 +5,9 @@
 %% Package version - 1.2
 %%
 %%version history
-%%1.0 базовая версия
-%%1.1 поправлена ошибка с полем page (при ненулевом numpages) из одной цифры (c. 319). Теперь - C. 319
-%%1.2 поправлен баг, решена проблема с bibentry. В конце каждой записи ставится пустая группа: {}. Строки 145--149 кода
+%%1.0 bazovaya versiya
+%%1.1 popravlena oshibka s polem page (pri nenulevom numpages) iz odnoy tsifry (c. 319). Teper - C. 319
+%%1.2 popravlen bag, reshena problema s bibentry. V kontse kazhdoy zapisi stavitsya pustaya gruppa: {}. Stroki 145--149 koda
 %%
 %% For the Ukrainian|English bibliographic entries
 %% you need to create field
@@ -83,7 +83,7 @@ FUNCTION {change.language}
   if$
 }
 
-%% Разделители
+%% Razdeliteli
 FUNCTION {output.nonnull}
 %%%{ 's :=
 { swap$
@@ -130,7 +130,7 @@ FUNCTION {output}
   if$
 }
 
-%% Проверка наличия содержания
+%% Proverka nalichiya soderzhaniya
 FUNCTION {output.check}
 { 't :=
   duplicate$ empty$
@@ -142,15 +142,15 @@ FUNCTION {output.check}
 FUNCTION {fin.entry}
 { add.period$
   write$
-%% вставляем пустую группу в конце. вер.1.2 %%%%%%%%%%%%%%%%%%%%%%
+%% vstavlyaem pustuyu gruppu v kontse. ver.1.2 %%%%%%%%%%%%%%%%%%%%%%
   after.sentence 'output.state :=
   "{}"
   write$
-%% конец вставки %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% konets vstavki %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   newline$
 }
 
-%% Смена состояний
+%% Smena sostoyaniy
 
 FUNCTION {new.block}
 { output.state before.all =
@@ -203,7 +203,7 @@ FUNCTION {add.blank}
 { " " * before.all 'output.state :=
 }
 
-%% Логические операции
+%% Logicheskie operatsii
 
 FUNCTION {not}
 {   { #0 }
@@ -271,7 +271,7 @@ FUNCTION {field.or.null}
   if$
 }
 
-%% Выделение \emph
+%% Vydelenie \emph
 FUNCTION {emphasize}
 { duplicate$ empty$
     { pop$ "" }
@@ -282,15 +282,15 @@ FUNCTION {emphasize}
 FUNCTION {space.word}
 { " " swap$ * " " * }
 
-%% Сокращения для разных языков
-%% Русские версии поправлены (не все). Убраны заглавные буквы
+%% Sokrashcheniya dlya raznykh yazykov
+%% Russkie versii popravleny (ne vse). Ubrany zaglavnye bukvy
 FUNCTION {bbl.edby}    %  { "\bbledby{}" }
 {  curlanguage "english" =
     {"Ed. by "}
     { curlanguage "ukrainian" =
-        {"{Під ред. }"}
+        {"{Pid red. }"}
         { curlanguage "russian" =
-           {"{под ред. }"} %%%%%%%%%%%%%%%% правлено
+           {"{pod red. }"} %%%%%%%%%%%%%%%% pravleno
            {"language is not defined: " language  "edited by" * * warning$ "edited by"}
          if$}
       if$}
@@ -301,9 +301,9 @@ FUNCTION {bbl.cmplr}
 {  curlanguage "english" =
     {"Compiler "}
     { curlanguage "ukrainian" =
-        {"{Укл. }"}
+        {"{Ukl. }"}
         { curlanguage "russian" =
-           {"{сост. }"} %%%%%%%%%%%%%%%% правлено
+           {"{sost. }"} %%%%%%%%%%%%%%%% pravleno
            {"language is not defined: " language  "compiler" * * warning$ "compiler"}
          if$}
       if$}
@@ -314,9 +314,9 @@ FUNCTION {bbl.edition} %  { "\bbledition{}" }
 {  curlanguage "english" =
     {"edition"}
     { curlanguage "ukrainian" =
-        {"{вид.}"}
+        {"{vid.}"}
         { curlanguage "russian" =
-           {"{изд.}"}
+           {"{izd.}"}
            {"language is not defined: " language  "edition" * * warning$ "edition"}
          if$}
       if$}
@@ -327,7 +327,7 @@ FUNCTION {bbl.vvolume} %  { "\bblVolume{}" }
 {  curlanguage "english" =
     {"Volume"}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-        {"Том"}
+        {"Tom"}
         {"language is not defined: " language  "Volume" * * warning$ "Volume"}
       if$}
   if$
@@ -337,7 +337,7 @@ FUNCTION {bbl.vvol}    %  { "\bblVol{}" }
 {  curlanguage "english" =
     {"Vol."}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"Т."}
+           {"T."}
            {"language is not defined: " language  "Vol." * * warning$ "Vol."}
       if$}
   if$
@@ -347,9 +347,9 @@ FUNCTION {bbl.iissue}  %  { "\bblIssue{}" }
 {  curlanguage "english" =
     {"Issue"}
     { curlanguage "ukrainian" =
-        {"Випуск"}
+        {"Vipusk"}
         { curlanguage "russian" =
-           {"Выпуск"}
+           {"Vypusk"}
            {"language is not defined: " language * warning$ "Issue"}
          if$}
       if$}
@@ -360,9 +360,9 @@ FUNCTION {bbl.iiss}  %  { "\bblIss{}" }
 {  curlanguage "english" =
     {"Iss."}
     { curlanguage "ukrainian" =
-        {"Вип."}
+        {"Vip."}
         { curlanguage "russian" =
-           {"Вып."}
+           {"Vyp."}
            {"language is not defined: " language * warning$ "Issue"}
          if$}
       if$}
@@ -373,9 +373,9 @@ FUNCTION {bbl.of}      %  { "\bblof{}" }
 {  curlanguage "english" =
     {"of"}
     { curlanguage "ukrainian" =
-        {"{із}"}
+        {"{iz}"}
         { curlanguage "russian" =
-           {"{из}"}
+           {"{iz}"}
            {"language is not defined: " language "of" *  * warning$ "of"}
          if$}
       if$}
@@ -386,9 +386,9 @@ FUNCTION {bbl.etal}      %  { "\bblof{}" }
 {  curlanguage "english" =
     {"et~al."}
     { curlanguage "ukrainian" =
-        {"{та~ін.}"}
+        {"{ta~in.}"}
         { curlanguage "russian" =
-           {"{[и~др.]}"}
+           {"{[i~dr.]}"}
            {"language is not defined: " language  "at al" * * warning$ "at al."}
          if$}
       if$}
@@ -399,7 +399,7 @@ FUNCTION {bbl.nnumber} %  { "\bblNumber{}" }
 {  curlanguage "english" =
     {"Number"}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"Номер"}
+           {"Nomer"}
            {"language is not defined: " language  "Number" * * warning$ "Number"}
       if$}
   if$
@@ -409,7 +409,7 @@ FUNCTION {bbl.number}  %  { "\bblnumber{}" }
 {  curlanguage "english" =
     {"number"}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"{номер}"}
+           {"{nomer}"}
            {"language is not defined: " language  "number" * * warning$ "number"}
       if$}
   if$
@@ -439,7 +439,7 @@ FUNCTION {bbl.in}    %    { "\bblin{}" }
 {  curlanguage "english" =
     {"in"}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"{в}"}
+           {"{v}"}
            {"language is not defined: " language  "in" * * warning$ "in"}
       if$}
   if$
@@ -449,17 +449,17 @@ FUNCTION {bbl.iin}  %     { "\bblIn{}" }
 {  curlanguage "english" =
     {"In"}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"В"}
+           {"V"}
            {"language is not defined: " language  "In" * * warning$ "In"}
       if$}
   if$
 }
-%% Поле page - номер страницы или диапазон, поле numpage - количество страниц
+%% Pole page - nomer stranitsy ili diapazon, pole numpage - kolichestvo stranits
 FUNCTION {bbl.pages}    % { "\bblpp." }
 {  curlanguage "english" =
     {"pp."}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"{C.}"} %%правлено
+           {"{C.}"} %%pravleno
            {"language is not defined: " language  "pp." * * warning$ "pp."}
       if$}
   if$
@@ -469,7 +469,7 @@ FUNCTION {bbl.page}   %   { "\bblp."  %
 {  curlanguage "english" =
     {"p."}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"{с.}"}
+           {"{s.}"}
            {"language is not defined: " language  "p." * * warning$ "p."}
       if$}
   if$
@@ -479,7 +479,7 @@ FUNCTION {bbl.ppages}%    { "\bblPp." }
 {  curlanguage "english" =
     {"pp."}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"{С.}"}
+           {"{S.}"}
            {"language is not defined: " language  "pp." * * warning$ "pp."}
       if$}
   if$
@@ -489,7 +489,7 @@ FUNCTION {bbl.ppage}  %   { "\bblP." }
 {  curlanguage "english" =
     {"P."}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"{С.}"}
+           {"{S.}"}
            {"language is not defined: " language  "P." * * warning$ "P."}
       if$}
   if$
@@ -505,8 +505,8 @@ FUNCTION {bbl.phdthesis} { "Ph.D. thesis" }
 
 INTEGERS { nameptr namesleft numnames }
 
-%% Запись имен в прямом порядке: Фамилия И.О.
-%% У английских имен сокращает Имя до И. (у остальный вствляет как есть)
+%% Zapis imen v pryamom poryadke: Familiya I.O.
+%% U angliyskikh imen sokrashchaet Imya do I. (u ostalnyy vstvlyaet kak est)
 FUNCTION {format.names}
 { 's :=
   #1 'nameptr :=
@@ -549,8 +549,8 @@ FUNCTION {format.names}
   while$
 }
 
-%% Запись имен в обратном порядке И.О. Фамилия
-%% У английских имен сокращает Имя до И. (у остальный вствляет как есть)
+%% Zapis imen v obratnom poryadke I.O. Familiya
+%% U angliyskikh imen sokrashchaet Imya do I. (u ostalnyy vstvlyaet kak est)
 FUNCTION {format.names.rev}
 { 's :=
   #1 'nameptr :=
@@ -657,7 +657,7 @@ FUNCTION {format.date}
     }
     { month empty$
         'year
-        { year ". " " " month * * * } %%%%%%%%правлено
+        { year ". " " " month * * * } %%%%%%%%pravleno
       if$
     }
   if$
@@ -679,7 +679,7 @@ FUNCTION {output.address.publisher.date}
         format.date output
 }
 
-%% Начало bibitem'а
+%% Nachalo bibitem'a
 FUNCTION {output.bibitem}
 { newline$
   "\bibitem{" write$
@@ -687,7 +687,7 @@ FUNCTION {output.bibitem}
   "}" write$
   newline$
   language empty$
-    {"russian" 'curlanguage :=}%%%%%%%% правлено
+    {"russian" 'curlanguage :=}%%%%%%%% pravleno
     {language  'curlanguage :=}
   if$
   "\selectlanguageifdefined{" write$
@@ -730,8 +730,8 @@ FUNCTION {format.btitle}
 { title
 }
 
-%% Вставка липкого пробела у коротких слов
-%% Один или два символа - ставит неразрывный пробел, три и больше - пробел
+%% Vstavka lipkogo probela u korotkikh slov
+%% Odin ili dva simvola - stavit nerazryvnyy probel, tri i bolshe - probel
 FUNCTION {tie.or.space.connect}
 { duplicate$ text.length$ #3 <
     { "~" }
@@ -849,19 +849,19 @@ FUNCTION {multi.page.check}
   multiresult
 }
 
-FUNCTION {format.pages}%%%%Поправлено (P вместо pp и p вместо pp)
+FUNCTION {format.pages}%%%%Popravleno (P vmesto pp i p vmesto pp)
 { pages empty$
     { "" }
     { pages multi.page.check
         { bbl.ppage pages n.dashify tie.connect }
-%        { bbl.page pages tie.connect }   % поправлено 16.3.2012
-        { bbl.ppage pages tie.connect }   % поправлено 16.3.2012
+%        { bbl.page pages tie.connect }   % popravleno 16.3.2012
+        { bbl.ppage pages tie.connect }   % popravleno 16.3.2012
       if$
     }
   if$
 }
 
-FUNCTION {format.pages.page}%%%%Поправлено (P вместо pp и p вместо pp)
+FUNCTION {format.pages.page}%%%%Popravleno (P vmesto pp i p vmesto pp)
 { pages empty$
     { numpages empty$
       { "" }
@@ -903,7 +903,7 @@ FUNCTION {format.volume}
 FUNCTION {format.number}
 { number empty$
     { "" }
-    { bbl.nr number tie.connect } %%%% правлено
+    { bbl.nr number tie.connect } %%%% pravleno
   if$
 }
 
@@ -927,7 +927,7 @@ FUNCTION {format.thesis.type}
   if$
 }
 
-FUNCTION {format.tr.number}% выводим TYPE и NUMBER
+FUNCTION {format.tr.number}% vyvodim TYPE i NUMBER
 { type empty$
     { bbl.techrep }
     'type
@@ -938,14 +938,14 @@ FUNCTION {format.tr.number}% выводим TYPE и NUMBER
     if$
 }
 
-FUNCTION {format.tr.number1}% выводим только TYPE. Добавлено
+FUNCTION {format.tr.number1}% vyvodim tolko TYPE. Dobavleno
 { type empty$
     { bbl.techrep }
     'type
   if$
 }
 
-FUNCTION {format.tr.number2}% выводим только NUMBER. Добавлено
+FUNCTION {format.tr.number2}% vyvodim tolko NUMBER. Dobavleno
 {  number empty$
     { "" }
     { number }
@@ -1041,7 +1041,7 @@ FUNCTION {format.annote}
   if$
 }
 
-FUNCTION {format.annoteurl}       %%%%%%%% правлено
+FUNCTION {format.annoteurl}       %%%%%%%% pravleno
 { annote empty$ url empty$ or
     { "" }
 { after.sentence 'output.state :=
@@ -1057,10 +1057,10 @@ FUNCTION {article}
   new.slash
   author.after
   new.dblslash
-%%journal emphasize "journal" output.check%% правлено
+%%journal emphasize "journal" output.check%% pravleno
   journal "journal" output.check
   new.block
-  address output %%%%%%%% добавлено
+  address output %%%%%%%% dobavleno
   format.date output
   new.block
   format.volume output
@@ -1107,10 +1107,10 @@ FUNCTION {booklet}
   new.slash
   author.after
   editor.organization.after
-  %%%%new.block%%%%%%%%%%убрано
-  new.column%%%%%%%%%%%%%добавлено
+  %%%%new.block%%%%%%%%%%ubrano
+  new.column%%%%%%%%%%%%%dobavleno
   howpublished output
-  new.block%%%%%%%%%%%%%%добавлено
+  new.block%%%%%%%%%%%%%%dobavleno
   address output
   format.date output
   new.block
@@ -1163,12 +1163,12 @@ FUNCTION {incollection}
   new.slash
   editor.organization.after
   new.block
-  format.number.series output%%%%%%%%%%%%%%%%%добавлено
-  new.block%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%добавлено
+  format.number.series output%%%%%%%%%%%%%%%%%dobavleno
+  new.block%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%dobavleno
   output.address.publisher.date
   new.block
   format.bvolume output
-  %format.number.series output%%%%%%%%%%%%%%%%%переставлено
+  %format.number.series output%%%%%%%%%%%%%%%%%perestavleno
   new.block
   format.pages.page output
   new.block
@@ -1230,7 +1230,7 @@ FUNCTION {manual}
   if$
   new.block
   format.btitle "title" output.check
-  new.block %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%вставлено
+  new.block %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%vstavleno
   author empty$
     { organization empty$
     {
@@ -1247,7 +1247,7 @@ FUNCTION {manual}
     }
   if$
   format.edition output
-  new.block%%%%%%%%%%%%%%%%%%%%%%%%%%вставлено
+  new.block%%%%%%%%%%%%%%%%%%%%%%%%%%vstavleno
   format.date output
   new.block
   note output
@@ -1262,12 +1262,12 @@ FUNCTION {mastersthesis}
   format.authors "author" output.check
   new.block
   format.btitle "title" output.check
-  %new.block%%%%%%%%%закомментировано
-  new.column%%%%%%%%%добавлено
+  %new.block%%%%%%%%%zakommentirovano
+  new.column%%%%%%%%%dobavleno
   bbl.mthesis format.thesis.type output.nonnull
-  new.column%%%%%%%%%%%%%%%добавлено
+  new.column%%%%%%%%%%%%%%%dobavleno
   school "school" output.check
-  new.block%%%%%%%%добавлено
+  new.block%%%%%%%%dobavleno
   address output
   format.date "year" output.check
   new.block
@@ -1290,7 +1290,7 @@ FUNCTION {electronic}
   new.block
   note output
   new.sentence
-  format.annoteurl output                   %%%%%%% правлено
+  format.annoteurl output                   %%%%%%% pravleno
   fin.entry
 }
 
@@ -1319,8 +1319,8 @@ FUNCTION {phdthesis}
   %new.column
   new.sentence
   bbl.phdthesis format.thesis.type output.nonnull
-  %new.slash%%%%%%%%%%%%%%%%%%закомментировано
-  new.column%%%%%%%%%%%%%%%%добавлено
+  %new.slash%%%%%%%%%%%%%%%%%%zakommentirovano
+  new.column%%%%%%%%%%%%%%%%dobavleno
   school "school" output.check
   new.block
   output.address.publisher.date
@@ -1346,10 +1346,10 @@ FUNCTION {proceedings}
       format.date "year" output.check
     }
     { address output.nonnull
-      %format.date "year" output.check%%%%%%%%%%%%%%было
+      %format.date "year" output.check%%%%%%%%%%%%%%bylo
       %new.sentence
       %publisher output
-      new.column%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%стало
+      new.column%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%stalo
       publisher output
       format.date "year" output.check
     }
@@ -1367,12 +1367,12 @@ FUNCTION {techreport}
   author.before
   new.sentence
   format.title "title" output.check
-  new.column     %%%%раскомментарено
-  %new.sentence  %%%%закомментарено
-  %format.tr.number output.nonnull%%% заменено на отдельный вывод типа и номера
+  new.column     %%%%raskommentareno
+  %new.sentence  %%%%zakommentareno
+  %format.tr.number output.nonnull%%% zameneno na otdelnyy vyvod tipa i nomera
   format.tr.number1 output.nonnull
   new.column
-  format.tr.number2 output.nonnull%%% конец вставки
+  format.tr.number2 output.nonnull%%% konets vstavki
   new.slash
   author.after
   editor.organization.after

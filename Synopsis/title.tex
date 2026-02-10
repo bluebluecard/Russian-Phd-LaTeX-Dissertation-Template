@@ -2,7 +2,7 @@
 
 \noindent%
 \begin{tabularx}{\textwidth}{@{}lXr@{}}%
-    & & \large{На правах рукописи}\\
+    & & \large{Na pravakh rukopisi}\\
     \IfFileExists{images/logo.pdf}{\includegraphics[height=2.5cm]{logo}}{\rule[0pt]{0pt}{2.5cm}}  & &
     \ifnumequal{\value{showperssign}}{0}{%
         \rule[0pt]{0pt}{1.5cm}
@@ -11,41 +11,41 @@
     }\\
 \end{tabularx}
 
-\vspace{0pt plus1fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+\vspace{0pt plus1fill} %chislo pered fill = kratnost otnositelno nekotorogo rasstoyaniya fill, kuskami kotorogo zapolneny pustye mesta
 \begin{center}
 \textbf {\large \thesisAuthor}
 \end{center}
 
-\vspace{0pt plus3fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+\vspace{0pt plus3fill} %chislo pered fill = kratnost otnositelno nekotorogo rasstoyaniya fill, kuskami kotorogo zapolneny pustye mesta
 \begin{center}
 \textbf {\Large %\MakeUppercase
 \thesisTitle}
 
-\vspace{0pt plus3fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
-{\large Специальность \thesisSpecialtyNumber\ "---\par <<\thesisSpecialtyTitle>>}
+\vspace{0pt plus3fill} %chislo pered fill = kratnost otnositelno nekotorogo rasstoyaniya fill, kuskami kotorogo zapolneny pustye mesta
+{\large Spetsialnost \thesisSpecialtyNumber\ "---\par <<\thesisSpecialtyTitle>>}
 
 \ifdefined\thesisSpecialtyTwoNumber
-{\large Специальность \thesisSpecialtyTwoNumber\ "---\par <<\thesisSpecialtyTwoTitle>>}
+{\large Spetsialnost \thesisSpecialtyTwoNumber\ "---\par <<\thesisSpecialtyTwoTitle>>}
 \fi
 
-\vspace{0pt plus1.5fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
-\Large{Автореферат}\par
-\large{диссертации на соискание учёной степени\par \thesisDegree}
+\vspace{0pt plus1.5fill} %chislo pered fill = kratnost otnositelno nekotorogo rasstoyaniya fill, kuskami kotorogo zapolneny pustye mesta
+\Large{Avtoreferat}\par
+\large{dissertatsii na soiskanie uchenoy stepeni\par \thesisDegree}
 \end{center}
 
-\vspace{0pt plus4fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+\vspace{0pt plus4fill} %chislo pered fill = kratnost otnositelno nekotorogo rasstoyaniya fill, kuskami kotorogo zapolneny pustye mesta
 {\centering\thesisCity~--- \thesisYear\par}
 
 \newpage
-% оборотная сторона обложки
+% oborotnaya storona oblozhki
 \thispagestyle{empty}
-\noindent Работа выполнена в {\thesisInOrganization}.
+\noindent Rabota vypolnena v {\thesisInOrganization}.
 
 \vspace{0.008\paperheight plus1fill}
 \noindent%
 \begin{tabularx}{\textwidth}{@{}lX@{}}
     \ifdefined\supervisorTwoFio
-    Научные руководители:   & \supervisorRegalia\par
+    Nauchnye rukovoditeli:   & \supervisorRegalia\par
                               \ifdefined\supervisorDead
                               \framebox{\textbf{\supervisorFio}}
                               \else
@@ -61,7 +61,7 @@
                               \fi
                               \vspace{0.013\paperheight}\\
     \else
-    Научный руководитель:   & \supervisorRegalia\par
+    Nauchnyy rukovoditel:   & \supervisorRegalia\par
                               \ifdefined\supervisorDead
                               \framebox{\textbf{\supervisorFio}}
                               \else
@@ -69,7 +69,7 @@
                               \fi
                               \vspace{0.013\paperheight}\\
     \fi
-    Официальные оппоненты:  &
+    Ofitsialnye opponenty:  &
     \ifnumequal{\value{showopplead}}{0}{\vspace{13\onelineskip plus1fill}}{%
         \textbf{\opponentOneFio,}\par
         \opponentOneRegalia,\par
@@ -91,7 +91,7 @@
     }%
     \vspace{0.013\paperheight} \\
     \ifdefined\leadingOrganizationTitle
-    Ведущая организация:    &
+    Vedushchaya organizatsiya:    &
     \ifnumequal{\value{showopplead}}{0}{\vspace{6\onelineskip plus1fill}}{%
         \leadingOrganizationTitle
     }%
@@ -99,18 +99,18 @@
 \end{tabularx}
 \vspace{0.008\paperheight plus1fill}
 
-\noindent Защита состоится \defenseDate~на~заседании диссертационного совета \defenseCouncilNumber~при \defenseCouncilTitle~по адресу: \defenseCouncilAddress.
+\noindent Zashchita sostoitsya \defenseDate~na~zasedanii dissertatsionnogo soveta \defenseCouncilNumber~pri \defenseCouncilTitle~po adresu: \defenseCouncilAddress.
 
 \vspace{0.008\paperheight plus1fill}
-\noindent С диссертацией можно ознакомиться в библиотеке \synopsisLibrary.
+\noindent S dissertatsiey mozhno oznakomitsya v biblioteke \synopsisLibrary.
 
 \vspace{0.008\paperheight plus1fill}
-\noindent Отзывы на автореферат в двух экземплярах, заверенные печатью учреждения, просьба направлять по адресу: \defenseCouncilAddress, ученому секретарю диссертационного совета~\defenseCouncilNumber.
+\noindent Otzyvy na avtoreferat v dvukh ekzemplyarakh, zaverennye pechatyu uchrezhdeniya, prosba napravlyat po adresu: \defenseCouncilAddress, uchenomu sekretaryu dissertatsionnogo soveta~\defenseCouncilNumber.
 
 \vspace{0.008\paperheight plus1fill}
-\noindent{Автореферат разослан \synopsisDate.}
+\noindent{Avtoreferat razoslan \synopsisDate.}
 
-\noindent Телефон для справок: \defenseCouncilPhone.
+\noindent Telefon dlya spravok: \defenseCouncilPhone.
 
 \vspace{0.008\paperheight plus1fill}
 \noindent%
@@ -119,8 +119,8 @@
 >{\centering\arraybackslash}X
 r
 @{}}
-    Ученый секретарь\par
-    диссертационного совета\par
+    Uchenyy sekretar\par
+    dissertatsionnogo soveta\par
     \defenseCouncilNumber,\par
     \defenseSecretaryRegalia
     &

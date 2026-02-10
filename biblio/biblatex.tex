@@ -1,31 +1,31 @@
-%%% Реализация библиографии пакетами biblatex и biblatex-gost с использованием движка biber %%%
+%%% Realizatsiya bibliografii paketami biblatex i biblatex-gost s ispolzovaniem dvizhka biber %%%
 
-\usepackage{csquotes} % biblatex рекомендует его подключать. Пакет для оформления сложных блоков цитирования.
-%%% Загрузка пакета с основными настройками %%%
+\usepackage{csquotes} % biblatex rekomenduet ego podklyuchat. Paket dlya oformleniya slozhnykh blokov tsitirovaniya.
+%%% Zagruzka paketa s osnovnymi nastroykami %%%
 \makeatletter
-\ifnumequal{\value{draft}}{0}{% Чистовик
+\ifnumequal{\value{draft}}{0}{% Chistovik
 \usepackage[%
-backend=biber,% движок
-bibencoding=utf8,% кодировка bib файла
-sorting=none,% настройка сортировки списка литературы
-style=gost-numeric,% стиль цитирования и библиографии (по ГОСТ)
-language=autobib,% получение языка из babel/polyglossia, default: autobib % если ставить autocite или auto, то цитаты в тексте с указанием страницы, получат указание страницы на языке оригинала
-autolang=other,% многоязычная библиография
-clearlang=true,% внутренний сброс поля language, если он совпадает с языком из babel/polyglossia
-defernumbers=true,% нумерация проставляется после двух компиляций, зато позволяет выцеплять библиографию по ключевым словам и нумеровать не из большего списка
-sortcites=true,% сортировать номера затекстовых ссылок при цитировании (если в квадратных скобках несколько ссылок, то отображаться будут отсортированно, а не абы как)
-doi=false,% Показывать или нет ссылки на DOI
-isbn=false,% Показывать или нет ISBN, ISSN, ISRN
+backend=biber,% dvizhok
+bibencoding=utf8,% kodirovka bib fayla
+sorting=none,% nastroyka sortirovki spiska literatury
+style=gost-numeric,% stil tsitirovaniya i bibliografii (po GOST)
+language=autobib,% poluchenie yazyka iz babel/polyglossia, default: autobib % esli stavit autocite ili auto, to tsitaty v tekste s ukazaniem stranitsy, poluchat ukazanie stranitsy na yazyke originala
+autolang=other,% mnogoyazychnaya bibliografiya
+clearlang=true,% vnutrenniy sbros polya language, esli on sovpadaet s yazykom iz babel/polyglossia
+defernumbers=true,% numeratsiya prostavlyaetsya posle dvukh kompilyatsiy, zato pozvolyaet vytseplyat bibliografiyu po klyuchevym slovam i numerovat ne iz bolshego spiska
+sortcites=true,% sortirovat nomera zatekstovykh ssylok pri tsitirovanii (esli v kvadratnykh skobkakh neskolko ssylok, to otobrazhatsya budut otsortirovanno, a ne aby kak)
+doi=false,% Pokazyvat ili net ssylki na DOI
+isbn=false,% Pokazyvat ili net ISBN, ISSN, ISRN
 ]{biblatex}[2016/09/17]
 \ltx@iffilelater{biblatex-gost.def}{2017/05/03}%
 {\toggletrue{bbx:gostbibliography}%
 \renewcommand*{\revsdnamepunct}{\addcomma}}{}
-}{%Черновик
+}{%Chernovik
 \usepackage[%
-backend=biber,% движок
-bibencoding=utf8,% кодировка bib файла
-sorting=none,% настройка сортировки списка литературы
-% defernumbers=true, % откомментируйте, если требуется правильная нумерация ссылок на литературу в режиме черновика. Замедляет сборку
+backend=biber,% dvizhok
+bibencoding=utf8,% kodirovka bib fayla
+sorting=none,% nastroyka sortirovki spiska literatury
+% defernumbers=true, % otkommentiruyte, esli trebuetsya pravilnaya numeratsiya ssylok na literaturu v rezhime chernovika. Zamedlyaet sborku
 ]{biblatex}[2016/09/17]%
 }
 \makeatother
@@ -34,10 +34,10 @@ sorting=none,% настройка сортировки списка литера
 \boolfalse{blxmc} % setting our new boolean flag to default false
 \ifxetexorluatex
 \else
-% Исправление случая неподдержки знака номера в pdflatex
+% Ispravlenie sluchaya nepodderzhki znaka nomera v pdflatex
     \DefineBibliographyStrings{russian}{number={\textnumero}}
 
-% Исправление случая отсутствия прописных букв в некоторых случаях
+% Ispravlenie sluchaya otsutstviya propisnykh bukv v nekotorykh sluchayakh
 % https://github.com/plk/biblatex/issues/960#issuecomment-596658282
     \ifdefmacro{\ExplSyntaxOn}{}{\usepackage{expl3}}
     \makeatletter
@@ -126,7 +126,7 @@ sorting=none,% настройка сортировки списка литера
 }{}
 \fi
 
-%%% Подключение файлов bib %%%
+%%% Podklyuchenie faylov bib %%%
 \addbibresource[label=bl-external]{biblio/external.bib}
 \addbibresource[label=bl-author]{biblio/author.bib}
 \addbibresource[label=bl-registered]{biblio/registered.bib}
@@ -134,107 +134,107 @@ sorting=none,% настройка сортировки списка литера
 %http://tex.stackexchange.com/a/141831/79756
 %There is a way to automatically map the language field to the langid field. The following lines in the preamble should be enough to do that.
 %This command will copy the language field into the langid field and will then delete the contents of the language field. The language field will only be deleted if it was successfully copied into the langid field.
-\DeclareSourcemap{ %модификация bib файла перед тем, как им займётся biblatex
+\DeclareSourcemap{ %modifikatsiya bib fayla pered tem, kak im zaymetsya biblatex
     \maps{
-        \map{% перекидываем значения полей language в поля langid, которыми пользуется biblatex
+        \map{% perekidyvaem znacheniya poley language v polya langid, kotorymi polzuetsya biblatex
             \step[fieldsource=language, fieldset=langid, origfieldval, final]
             \step[fieldset=language, null]
         }
-        \map{% перекидываем значения полей numpages в поля pagetotal, которыми пользуется biblatex
+        \map{% perekidyvaem znacheniya poley numpages v polya pagetotal, kotorymi polzuetsya biblatex
             \step[fieldsource=numpages, fieldset=pagetotal, origfieldval, final]
             \step[fieldset=numpages, null]
         }
-        \map{% перекидываем значения полей pagestotal в поля pagetotal, которыми пользуется biblatex
+        \map{% perekidyvaem znacheniya poley pagestotal v polya pagetotal, kotorymi polzuetsya biblatex
             \step[fieldsource=pagestotal, fieldset=pagetotal, origfieldval, final]
             \step[fieldset=pagestotal, null]
         }
-        \map[overwrite]{% перекидываем значения полей shortjournal, если они есть, в поля journal, которыми пользуется biblatex
+        \map[overwrite]{% perekidyvaem znacheniya poley shortjournal, esli oni est, v polya journal, kotorymi polzuetsya biblatex
             \step[fieldsource=shortjournal, final]
             \step[fieldset=journal, origfieldval]
             \step[fieldset=shortjournal, null]
         }
-        \map[overwrite]{% перекидываем значения полей shortbooktitle, если они есть, в поля booktitle, которыми пользуется biblatex
+        \map[overwrite]{% perekidyvaem znacheniya poley shortbooktitle, esli oni est, v polya booktitle, kotorymi polzuetsya biblatex
             \step[fieldsource=shortbooktitle, final]
             \step[fieldset=booktitle, origfieldval]
             \step[fieldset=shortbooktitle, null]
         }
-        \map{% если в поле medium написано "Электронный ресурс", то устанавливаем поле media, которым пользуется biblatex, в значение eresource.
+        \map{% esli v pole medium napisano "Elektronnyy resurs", to ustanavlivaem pole media, kotorym polzuetsya biblatex, v znachenie eresource.
             \step[fieldsource=medium,
-            match=\regexp{Электронный\s+ресурс},
+            match=\regexp{Elektronnyy\s+resurs},
             final]
             \step[fieldset=media, fieldvalue=eresource]
             \step[fieldset=medium, null]
         }
-        \map[overwrite]{% стираем значения всех полей issn
+        \map[overwrite]{% stiraem znacheniya vsekh poley issn
             \step[fieldset=issn, null]
         }
-        \map[overwrite]{% стираем значения всех полей abstract, поскольку ими не пользуемся, а там бывают "неприятные" латеху символы
+        \map[overwrite]{% stiraem znacheniya vsekh poley abstract, poskolku imi ne polzuemsya, a tam byvayut "nepriyatnye" latekhu simvoly
             \step[fieldsource=abstract]
             \step[fieldset=abstract,null]
         }
-        \map[overwrite]{ % переделка формата записи даты
+        \map[overwrite]{ % peredelka formata zapisi daty
             \step[fieldsource=urldate,
             match=\regexp{([0-9]{2})\.([0-9]{2})\.([0-9]{4})},
-            replace={$3-$2-$1$4}, % $4 вставлен исключительно ради нормальной работы программ подсветки синтаксиса, которые некорректно обрабатывают $ в таких конструкциях
+            replace={$3-$2-$1$4}, % $4 vstavlen isklyuchitelno radi normalnoy raboty programm podsvetki sintaksisa, kotorye nekorrektno obrabatyvayut $ v takikh konstruktsiyakh
             final]
         }
-        \map[overwrite]{ % стираем ключевые слова
+        \map[overwrite]{ % stiraem klyuchevye slova
             \step[fieldsource=keywords]
             \step[fieldset=keywords,null]
         }
-        % реализация foreach различается для biblatex v3.12 и v3.13.
-        % Для версии v3.13 эта конструкция заменяет последующие 7 структур map
-        % \map[overwrite,foreach={authorvak,authorscopus,authorwos,authorconf,authorother,authorparent,authorprogram}]{ % записываем информацию о типе публикации в ключевые слова
+        % realizatsiya foreach razlichaetsya dlya biblatex v3.12 i v3.13.
+        % Dlya versii v3.13 eta konstruktsiya zamenyaet posleduyushchie 7 struktur map
+        % \map[overwrite,foreach={authorvak,authorscopus,authorwos,authorconf,authorother,authorparent,authorprogram}]{ % zapisyvaem informatsiyu o tipe publikatsii v klyuchevye slova
         %     \step[fieldsource=$MAPLOOP,final=true]
         %     \step[fieldset=keywords,fieldvalue={,biblio$MAPLOOP},append=true]
         % }
-        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+        \map[overwrite]{ % zapisyvaem informatsiyu o tipe publikatsii v klyuchevye slova
             \step[fieldsource=authorvak,final=true]
             \step[fieldset=keywords,fieldvalue={,biblioauthorvak},append=true]
         }
-        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+        \map[overwrite]{ % zapisyvaem informatsiyu o tipe publikatsii v klyuchevye slova
             \step[fieldsource=authorscopus,final=true]
             \step[fieldset=keywords,fieldvalue={,biblioauthorscopus},append=true]
         }
-        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+        \map[overwrite]{ % zapisyvaem informatsiyu o tipe publikatsii v klyuchevye slova
             \step[fieldsource=authorwos,final=true]
             \step[fieldset=keywords,fieldvalue={,biblioauthorwos},append=true]
         }
-        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+        \map[overwrite]{ % zapisyvaem informatsiyu o tipe publikatsii v klyuchevye slova
             \step[fieldsource=authorconf,final=true]
             \step[fieldset=keywords,fieldvalue={,biblioauthorconf},append=true]
         }
-        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+        \map[overwrite]{ % zapisyvaem informatsiyu o tipe publikatsii v klyuchevye slova
             \step[fieldsource=authorother,final=true]
             \step[fieldset=keywords,fieldvalue={,biblioauthorother},append=true]
         }
-        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+        \map[overwrite]{ % zapisyvaem informatsiyu o tipe publikatsii v klyuchevye slova
             \step[fieldsource=authorpatent,final=true]
             \step[fieldset=keywords,fieldvalue={,biblioauthorpatent},append=true]
         }
-        \map[overwrite]{ % записываем информацию о типе публикации в ключевые слова
+        \map[overwrite]{ % zapisyvaem informatsiyu o tipe publikatsii v klyuchevye slova
             \step[fieldsource=authorprogram,final=true]
             \step[fieldset=keywords,fieldvalue={,biblioauthorprogram},append=true]
         }
-        \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
+        \map[overwrite]{ % dobavlyaem klyuchevye slova, chtoby razlichat istochniki
             \perdatasource{biblio/external.bib}
             \step[fieldset=keywords, fieldvalue={,biblioexternal},append=true]
         }
-        \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
+        \map[overwrite]{ % dobavlyaem klyuchevye slova, chtoby razlichat istochniki
             \perdatasource{biblio/author.bib}
             \step[fieldset=keywords, fieldvalue={,biblioauthor},append=true]
         }
-        \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
+        \map[overwrite]{ % dobavlyaem klyuchevye slova, chtoby razlichat istochniki
             \perdatasource{biblio/registered.bib}
             \step[fieldset=keywords, fieldvalue={,biblioregistered},append=true]
         }
-        \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
+        \map[overwrite]{ % dobavlyaem klyuchevye slova, chtoby razlichat istochniki
             \step[fieldset=keywords, fieldvalue={,bibliofull},append=true]
         }
-%        \map[overwrite]{% стираем значения всех полей series
+%        \map[overwrite]{% stiraem znacheniya vsekh poley series
 %            \step[fieldset=series, null]
 %        }
-        \map[overwrite]{% перекидываем значения полей howpublished в поля organization для типа online
+        \map[overwrite]{% perekidyvaem znacheniya poley howpublished v polya organization dlya tipa online
             \step[typesource=online, typetarget=online, final]
             \step[fieldsource=howpublished, fieldset=organization, origfieldval]
             \step[fieldset=howpublished, null]
@@ -245,7 +245,7 @@ sorting=none,% настройка сортировки списка литера
 \ifnumequal{\value{mediadisplay}}{1}{
     \DeclareSourcemap{
         \maps{%
-            \map{% использование media=text по умолчанию
+            \map{% ispolzovanie media=text po umolchaniyu
                 \step[fieldset=media, fieldvalue=text]
             }
         }
@@ -254,7 +254,7 @@ sorting=none,% настройка сортировки списка литера
 \ifnumequal{\value{mediadisplay}}{2}{
     \DeclareSourcemap{
         \maps{%
-            \map[overwrite]{% удаление всех записей media
+            \map[overwrite]{% udalenie vsekh zapisey media
                 \step[fieldset=media, null]
             }
         }
@@ -263,7 +263,7 @@ sorting=none,% настройка сортировки списка литера
 \ifnumequal{\value{mediadisplay}}{3}{
     \DeclareSourcemap{
         \maps{
-            \map[overwrite]{% стираем значения всех полей media=text
+            \map[overwrite]{% stiraem znacheniya vsekh poley media=text
                 \step[fieldsource=media,match={text},final]
                 \step[fieldset=media, null]
             }
@@ -273,7 +273,7 @@ sorting=none,% настройка сортировки списка литера
 \ifnumequal{\value{mediadisplay}}{4}{
     \DeclareSourcemap{
         \maps{
-            \map[overwrite]{% стираем значения всех полей media=eresource
+            \map[overwrite]{% stiraem znacheniya vsekh poley media=eresource
                 \step[fieldsource=media,match={eresource},final]
                 \step[fieldset=media, null]
             }
@@ -283,23 +283,23 @@ sorting=none,% настройка сортировки списка литера
 
 \ifsynopsis
 \else
-\DeclareSourcemap{ %модификация bib файла перед тем, как им займётся biblatex
+\DeclareSourcemap{ %modifikatsiya bib fayla pered tem, kak im zaymetsya biblatex
     \maps{
-        \map[overwrite]{% стираем значения всех полей addendum
+        \map[overwrite]{% stiraem znacheniya vsekh poley addendum
             \perdatasource{biblio/author.bib}
-            \step[fieldset=addendum, null] %чтобы избавиться от информации об объёме авторских статей, в отличие от автореферата
+            \step[fieldset=addendum, null] %chtoby izbavitsya ot informatsii ob obeme avtorskikh statey, v otlichie ot avtoreferata
         }
     }
 }
 \fi
 
 \ifpresentation
-% удаляем лишние поля в списке литературы презентации
-% их названия можно узнать в файле presentation.bbl
+% udalyaem lishnie polya v spiske literatury prezentatsii
+% ikh nazvaniya mozhno uznat v fayle presentation.bbl
 \DeclareSourcemap{
     \maps{
     \map[overwrite,foreach={%
-        % {{{ Список лишних полей в презентации
+        % {{{ Spisok lishnikh poley v prezentatsii
         address,%
         chapter,%
         edition,%
@@ -322,7 +322,7 @@ sorting=none,% настройка сортировки списка литера
         doi,%
         location,%
         volume,%
-        % Список лишних полей в презентации }}}
+        % Spisok lishnikh poley v prezentatsii }}}
     }]{
         \perdatasource{biblio/author.bib}
         \step[fieldset=$MAPLOOP,null]
@@ -343,9 +343,9 @@ sorting=none,% настройка сортировки списка литера
     keyword=biblioauthor or keyword=biblioregistered
 }
 
-%%% Убираем неразрывные пробелы перед двоеточием и точкой с запятой %%%
+%%% Ubiraem nerazryvnye probely pered dvoetochiem i tochkoy s zapyatoy %%%
 %\makeatletter
-%\ifnumequal{\value{draft}}{0}{% Чистовик
+%\ifnumequal{\value{draft}}{0}{% Chistovik
 %    \renewcommand*{\addcolondelim}{%
 %      \begingroup%
 %      \def\abx@colon{%
@@ -364,8 +364,8 @@ sorting=none,% настройка сортировки списка литера
 %}{}
 %\makeatother
 
-%%% Правка записей типа thesis, чтобы дважды не писался автор
-%\ifnumequal{\value{draft}}{0}{% Чистовик
+%%% Pravka zapisey tipa thesis, chtoby dvazhdy ne pisalsya avtor
+%\ifnumequal{\value{draft}}{0}{% Chistovik
 %\DeclareBibliographyDriver{thesis}{%
 %  \usebibmacro{bibindex}%
 %  \usebibmacro{begentry}%
@@ -375,7 +375,7 @@ sorting=none,% настройка сортировки списка литера
 %  \setunit*{\labelnamepunct}%
 %  \usebibmacro{thesistitle}%
 %  \setunit{\respdelim}%
-%  %\printnames[last-first:full]{author}%Вот эту строчку нужно убрать, чтобы автор диссертации не дублировался
+%  %\printnames[last-first:full]{author}%Vot etu strochku nuzhno ubrat, chtoby avtor dissertatsii ne dublirovalsya
 %  \newunit\newblock
 %  \printlist[semicolondelim]{specdata}%
 %  \newunit
@@ -396,51 +396,51 @@ sorting=none,% настройка сортировки списка литера
 %  \usebibmacro{finentry}}
 %}{}
 
-%\newbibmacro{string+doi}[1]{% новая макрокоманда на простановку ссылки на doi
+%\newbibmacro{string+doi}[1]{% novaya makrokomanda na prostanovku ssylki na doi
 %    \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
 
-%\ifnumequal{\value{draft}}{0}{% Чистовик
-%\renewcommand*{\mkgostheading}[1]{\usebibmacro{string+doi}{#1}} % ссылка на doi с авторов. стоящих впереди записи
-%\renewcommand*{\mkgostheading}[1]{#1} % только лишь убираем курсив с авторов
+%\ifnumequal{\value{draft}}{0}{% Chistovik
+%\renewcommand*{\mkgostheading}[1]{\usebibmacro{string+doi}{#1}} % ssylka na doi s avtorov. stoyashchikh vperedi zapisi
+%\renewcommand*{\mkgostheading}[1]{#1} % tolko lish ubiraem kursiv s avtorov
 %}{}
-%\DeclareFieldFormat{title}{\usebibmacro{string+doi}{#1}} % ссылка на doi с названия работы
-%\DeclareFieldFormat{journaltitle}{\usebibmacro{string+doi}{#1}} % ссылка на doi с названия журнала
-%%% Тире как разделитель в библиографии традиционной руской длины:
+%\DeclareFieldFormat{title}{\usebibmacro{string+doi}{#1}} % ssylka na doi s nazvaniya raboty
+%\DeclareFieldFormat{journaltitle}{\usebibmacro{string+doi}{#1}} % ssylka na doi s nazvaniya zhurnala
+%%% Tire kak razdelitel v bibliografii traditsionnoy ruskoy dliny:
 \renewcommand*{\newblockpunct}{\addperiod\addnbspace\cyrdash\space\bibsentence}
-%%% Убрать тире из разделителей элементов в библиографии:
+%%% Ubrat tire iz razdeliteley elementov v bibliografii:
 %\renewcommand*{\newblockpunct}{%
 %    \addperiod\space\bibsentence}%block punct.,\bibsentence is for vol,etc.
-%%% Изменение точки с запятой на запятую в перечислении библиографических
-%%% ссылок:
+%%% Izmenenie tochki s zapyatoy na zapyatuyu v perechislenii bibliograficheskikh
+%%% ssylok:
 %\renewcommand*{\multicitedelim}{\addcomma\space}
 
-%%% Возвращаем запись «Режим доступа» %%%
+%%% Vozvrashchaem zapis «Rezhim dostupa» %%%
 %\DefineBibliographyStrings{english}{%
 %    urlfrom = {Mode of access}
 %}
 %\DeclareFieldFormat{url}{\bibstring{urlfrom}\addcolon\space\url{#1}}
 
-%%% В списке литературы обозначение одной буквой диапазона страниц англоязычного источника %%%
+%%% V spiske literatury oboznachenie odnoy bukvoy diapazona stranits angloyazychnogo istochnika %%%
 \DefineBibliographyStrings{english}{%
-    pages = {p\adddot} %заглавность буквы затем по месту определяется работой самого biblatex
+    pages = {p\adddot} %zaglavnost bukvy zatem po mestu opredelyaetsya rabotoy samogo biblatex
 }
 
-%%% В ссылке на источник в основном тексте с указанием конкретной страницы обозначение одной большой буквой %%%
+%%% V ssylke na istochnik v osnovnom tekste s ukazaniem konkretnoy stranitsy oboznachenie odnoy bolshoy bukvoy %%%
 %\DefineBibliographyStrings{russian}{%
 %    page = {C\adddot}
 %}
 
-%%% Исправление длины тире в диапазонах %%%
-% \cyrdash --- тире «русской» длины, \textendash --- en-dash
+%%% Ispravlenie dliny tire v diapazonakh %%%
+% \cyrdash --- tire «russkoy» dliny, \textendash --- en-dash
 \DefineBibliographyExtras{russian}{%
   \protected\def\bibrangedash{%
     \cyrdash\penalty\value{abbrvpenalty}}% almost unbreakable dash
-  \protected\def\bibdaterangesep{\bibrangedash}%тире для дат
+  \protected\def\bibdaterangesep{\bibrangedash}%tire dlya dat
 }
 \DefineBibliographyExtras{english}{%
   \protected\def\bibrangedash{%
     \cyrdash\penalty\value{abbrvpenalty}}% almost unbreakable dash
-  \protected\def\bibdaterangesep{\bibrangedash}%тире для дат
+  \protected\def\bibdaterangesep{\bibrangedash}%tire dlya dat
 }
 
 %Set higher penalty for breaking in number, dates and pages ranges
@@ -451,11 +451,11 @@ sorting=none,% настройка сортировки списка литера
 \setcounter{lownamepenalty}{10000}
 
 %%% Set low penalties for breaks at uppercase letters and lowercase letters
-%\setcounter{biburllcpenalty}{500} %управляет разрывами ссылок после маленьких букв RTFM biburllcpenalty
-%\setcounter{biburlucpenalty}{3000} %управляет разрывами ссылок после больших букв, RTFM biburlucpenalty
+%\setcounter{biburllcpenalty}{500} %upravlyaet razryvami ssylok posle malenkikh bukv RTFM biburllcpenalty
+%\setcounter{biburlucpenalty}{3000} %upravlyaet razryvami ssylok posle bolshikh bukv, RTFM biburlucpenalty
 
-%%% Список литературы с красной строки (без висячего отступа) %%%
-%\defbibenvironment{bibliography} % переопределяем окружение библиографии из gost-numeric.bbx пакета biblatex-gost
+%%% Spisok literatury s krasnoy stroki (bez visyachego otstupa) %%%
+%\defbibenvironment{bibliography} % pereopredelyaem okruzhenie bibliografii iz gost-numeric.bbx paketa biblatex-gost
 %  {\list
 %     {\printtext[labelnumberwidth]{%
 %       \printfield{prefixnumber}%
@@ -463,11 +463,11 @@ sorting=none,% настройка сортировки списка литера
 %     {%
 %      \setlength{\labelwidth}{\labelnumberwidth}%
 %      \setlength{\leftmargin}{0pt}% default is \labelwidth
-%      \setlength{\labelsep}{\widthof{\ }}% Управляет длиной отступа после точки % default is \biblabelsep
-%      \setlength{\itemsep}{\bibitemsep}% Управление дополнительным вертикальным разрывом между записями. \bibitemsep по умолчанию соответствует \itemsep списков в документе.
-%      \setlength{\itemindent}{\bibhang}% Пользуемся тем, что \bibhang по умолчанию принимает значение \parindent (абзацного отступа), который переназначен в styles.tex
-%      \addtolength{\itemindent}{\labelwidth}% Сдвигаем правее на величину номера с точкой
-%      \addtolength{\itemindent}{\labelsep}% Сдвигаем ещё правее на отступ после точки
+%      \setlength{\labelsep}{\widthof{\ }}% Upravlyaet dlinoy otstupa posle tochki % default is \biblabelsep
+%      \setlength{\itemsep}{\bibitemsep}% Upravlenie dopolnitelnym vertikalnym razryvom mezhdu zapisyami. \bibitemsep po umolchaniyu sootvetstvuet \itemsep spiskov v dokumente.
+%      \setlength{\itemindent}{\bibhang}% Polzuemsya tem, chto \bibhang po umolchaniyu prinimaet znachenie \parindent (abzatsnogo otstupa), kotoryy perenaznachen v styles.tex
+%      \addtolength{\itemindent}{\labelwidth}% Sdvigaem pravee na velichinu nomera s tochkoy
+%      \addtolength{\itemindent}{\labelsep}% Sdvigaem eshche pravee na otstup posle tochki
 %      \setlength{\parsep}{\bibparsep}%
 %     }%
 %      \renewcommand*{\makelabel}[1]{\hss##1}%
@@ -475,16 +475,16 @@ sorting=none,% настройка сортировки списка литера
 %  {\endlist}
 %  {\item}
 
-%%% Макросы автоматического подсчёта количества авторских публикаций.
-% Печатают невидимую (пустую) библиографию, считая количество источников.
+%%% Makrosy avtomaticheskogo podscheta kolichestva avtorskikh publikatsiy.
+% Pechatayut nevidimuyu (pustuyu) bibliografiyu, schitaya kolichestvo istochnikov.
 % http://tex.stackexchange.com/a/66851/79756
 %
 \makeatletter
     \newtotcounter{citenum}
     \defbibenvironment{counter}
-        {\setcounter{citenum}{0}\renewcommand{\blx@driver}[1]{}} % begin code: убирает весь выводимый текст
+        {\setcounter{citenum}{0}\renewcommand{\blx@driver}[1]{}} % begin code: ubiraet ves vyvodimyy tekst
         {} % end code
-        {\stepcounter{citenum}} % item code: cчитает "печатаемые в библиографию" источники
+        {\stepcounter{citenum}} % item code: cchitaet "pechataemye v bibliografiyu" istochniki
 
     \newtotcounter{citeauthorvak}
     \defbibenvironment{countauthorvak}
@@ -559,12 +559,12 @@ sorting=none,% настройка сортировки списка литера
         {\stepcounter{citeexternal}}
 \makeatother
 
-\defbibheading{nobibheading}{} % пустой заголовок, для подсчёта публикаций с помощью невидимой библиографии
-\defbibheading{pubgroup}{\section*{#1}} % обычный стиль, заголовок-секция
-\defbibheading{pubsubgroup}{\noindent\textbf{#1}} % для подразделов "по типу источника"
+\defbibheading{nobibheading}{} % pustoy zagolovok, dlya podscheta publikatsiy s pomoshchyu nevidimoy bibliografii
+\defbibheading{pubgroup}{\section*{#1}} % obychnyy stil, zagolovok-sektsiya
+\defbibheading{pubsubgroup}{\noindent\textbf{#1}} % dlya podrazdelov "po tipu istochnika"
 
-%%%Сортировка списка литературы Русский-Английский (предварительно удалить dissertation.bbl) (начало)
-%%%Источник: https://github.com/odomanov/biblatex-gost/wiki/%D0%9A%D0%B0%D0%BA-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C,-%D1%87%D1%82%D0%BE%D0%B1%D1%8B-%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D1%8B%D0%B5-%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8-%D0%BF%D1%80%D0%B5%D0%B4%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%BE%D0%B2%D0%B0%D0%BB%D0%B8-%D0%BE%D1%81%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC
+%%%Sortirovka spiska literatury Russkiy-Angliyskiy (predvaritelno udalit dissertation.bbl) (nachalo)
+%%%Istochnik: https://github.com/odomanov/biblatex-gost/wiki/%D0%9A%D0%B0%D0%BA-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C,-%D1%87%D1%82%D0%BE%D0%B1%D1%8B-%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%BE%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D1%8B%D0%B5-%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8-%D0%BF%D1%80%D0%B5%D0%B4%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%BE%D0%B2%D0%B0%D0%BB%D0%B8-%D0%BE%D1%81%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC
 %\DeclareSourcemap{
 %    \maps[datatype=bibtex]{
 %        \map{
@@ -596,9 +596,9 @@ sorting=none,% настройка сортировки списка литера
 %        }
 %    }
 %}
-%Сортировка списка литературы (конец)
+%Sortirovka spiska literatury (konets)
 
-%%% Создание команд для вывода списка литературы %%%
+%%% Sozdanie komand dlya vyvoda spiska literatury %%%
 \newcommand*{\insertbibliofull}{
     \printbibliography[keyword=bibliofull,section=0,title=\bibtitlefull]
     \ifnumequal{\value{draft}}{0}{
@@ -612,21 +612,21 @@ sorting=none,% настройка сортировки списка литера
     \printbibliography[heading=pubgroup, section=2, filter=papersregistered, title=\bibtitleauthorimportant]
 }
 
-% Вариант вывода печатных работ автора, с группировкой по типу источника.
-% Порядок команд `\printbibliography` должен соответствовать порядку в файле common/characteristic.tex
+% Variant vyvoda pechatnykh rabot avtora, s gruppirovkoy po tipu istochnika.
+% Poryadok komand `\printbibliography` dolzhen sootvetstvovat poryadku v fayle common/characteristic.tex
 \newcommand*{\insertbiblioauthorgrouped}{
     \section*{\bibtitleauthor}
     \ifsynopsis
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=true] % Работы автора из списка ВАК (сброс нумерации)
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=true] % Raboty avtora iz spiska VAK (sbros numeratsii)
     \else
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=false] % Работы автора из списка ВАК (сквозная нумерация)
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=false] % Raboty avtora iz spiska VAK (skvoznaya numeratsiya)
     \fi
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorwos,    title=\bibtitleauthorwos,resetnumbers=false]% Работы автора, индексируемые Web of Science
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorscopus, title=\bibtitleauthorscopus,resetnumbers=false]% Работы автора, индексируемые Scopus
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorpatent, title=\bibtitleauthorpatent,resetnumbers=false]% Патенты
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorprogram,title=\bibtitleauthorprogram,resetnumbers=false]% Программы для ЭВМ
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorconf,   title=\bibtitleauthorconf,resetnumbers=false]% Тезисы конференций
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorother,  title=\bibtitleauthorother,resetnumbers=false]% Прочие работы автора
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorwos,    title=\bibtitleauthorwos,resetnumbers=false]% Raboty avtora, indeksiruemye Web of Science
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorscopus, title=\bibtitleauthorscopus,resetnumbers=false]% Raboty avtora, indeksiruemye Scopus
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorpatent, title=\bibtitleauthorpatent,resetnumbers=false]% Patenty
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorprogram,title=\bibtitleauthorprogram,resetnumbers=false]% Programmy dlya EVM
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorconf,   title=\bibtitleauthorconf,resetnumbers=false]% Tezisy konferentsiy
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorother,  title=\bibtitleauthorother,resetnumbers=false]% Prochie raboty avtora
 }
 
 \newcommand*{\insertbiblioexternal}{

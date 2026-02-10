@@ -1,17 +1,17 @@
-%%% Реализация библиографии встроенными средствами посредством движка bibtex8 %%%
+%%% Bibliography implementation with built-in BibTeX8 backend %%%
 
-%%% Пакеты %%%
-\usepackage{cite}                                   % Красивые ссылки на литературу
+%%% Packages %%%
+\usepackage{cite}                                   % Better-looking bibliography citations
 
 
-%%% Стили %%%
-\bibliographystyle{BibTeX-Styles/utf8gost71u}    % Оформляем библиографию по ГОСТ 7.1 (ГОСТ Р 7.0.11-2011, 5.6.7)
+%%% Styles %%%
+\bibliographystyle{BibTeX-Styles/utf8gost71u}    % Format bibliography according to GOST 7.1 (GOST R 7.0.11-2011, 5.6.7)
 
 \makeatletter
-\renewcommand{\@biblabel}[1]{#1.}   % Заменяем библиографию с квадратных скобок на точку
+\renewcommand{\@biblabel}[1]{#1.}   % Replace square-bracket bibliography labels with a trailing dot
 \makeatother
-%% Управление отступами между записями
-%% требует etoolbox
+%% Control spacing between entries
+%% requires etoolbox
 %% http://tex.stackexchange.com/a/105642
 %\patchcmd\thebibliography
 % {\labelsep}
@@ -19,39 +19,39 @@
 % {}
 % {\typeout{Couldn't patch the command}}
 
-%%% Список литературы с красной строки (без висячего отступа) %%%
-%\patchcmd{\thebibliography} %может потребовать включения пакета etoolbox
+%%% Bibliography list with first-line indent (no hanging indent) %%%
+%\patchcmd{\thebibliography} % may require enabling the etoolbox package
 %  {\advance\leftmargin\labelsep}
 %  {\leftmargin=0pt%
-%   \setlength{\labelsep}{\widthof{\ }}% Управляет длиной отступа после точки
+%   \setlength{\labelsep}{\widthof{\ }}% Controls spacing after the dot
 %   \itemindent=\parindent%
-%   \addtolength{\itemindent}{\labelwidth}% Сдвигаем правее на величину номера с точкой
+%   \addtolength{\itemindent}{\labelwidth}% Shift right by label width including dot
 %   \advance\itemindent\labelsep%
 %  }
 %  {}{}
 
-%%% Цитирование %%%
+%%% Citations %%%
 \renewcommand\citepunct{;\penalty\citepunctpenalty%
-    \hskip.13emplus.1emminus.1em\relax}                % Разделение ; при перечислении ссылок (ГОСТ Р 7.0.5-2008)
+    \hskip.13emplus.1emminus.1em\relax}                % Use ; as separator in citation lists (GOST R 7.0.5-2008)
 
-\newcommand*{\autocite}[1]{}  % Чтобы примеры цитирования, рассчитанные на biblatex, не вызывали ошибок при компиляции в bibtex
+\newcommand*{\autocite}[1]{}  % Prevent biblatex-oriented citation examples from failing in bibtex mode
 
-%%% Создание команд для вывода списка литературы %%%
+%%% Commands for bibliography output %%%
 \newcommand*{\insertbibliofull}{
-\bibliography{biblio/external,biblio/author}         % Подключаем BibTeX-базы % После запятых не должно быть лишних пробелов — он "думает", что это тоже имя пути
+\bibliography{biblio/external,biblio/author}         % Connect BibTeX databases. Do not add spaces after commas: BibTeX treats them as part of the path.
 }
 
 \newcommand*{\insertbiblioauthor}{
-\bibliography{biblio/author}         % Подключаем BibTeX-базы % После запятых не должно быть лишних пробелов — он "думает", что это тоже имя пути
+\bibliography{biblio/author}         % Connect BibTeX databases. Do not add spaces after commas: BibTeX treats them as part of the path.
 }
 
 \newcommand*{\insertbiblioexternal}{
-\bibliography{biblio/external}         % Подключаем BibTeX-базы
+\bibliography{biblio/external}         % Connect BibTeX databases
 }
 
 
-%% Счётчик использованных ссылок на литературу, обрабатывающий с учётом неоднократных ссылок
-%% Требуется дважды компилировать, поскольку ему нужно считать актуальный внешний файл со списком литературы
+%% Counter for used bibliography entries that handles repeated citations
+%% Requires two compilations to read the up-to-date external bibliography list file
 \newtotcounter{citenum}
 \def\oldcite{}
 \let\oldcite=\bibcite

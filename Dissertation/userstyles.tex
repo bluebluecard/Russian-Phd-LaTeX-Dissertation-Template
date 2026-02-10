@@ -1,6 +1,6 @@
-% для вертикального центрирования ячеек в tabulary
+% dlya vertikalnogo tsentrirovaniya yacheek v tabulary
 \def\zz{\ifx\[$\else\aftergroup\zzz\fi}
-%$ \] % <-- чиним подсветку синтаксиса в некоторых редакторах
+%$ \] % <-- chinim podsvetku sintaksisa v nekotorykh redaktorakh
 \def\zzz{\setbox0\lastbox
 \dimen0\dimexpr\extrarowheight + \ht0-\dp0\relax
 \setbox0\hbox{\raise-.5\dimen0\box0}%
@@ -90,7 +90,7 @@
     morestring=[d]'% 2001 Robert Denham
 }%
 
-%решаем проблему с кириллицей в комментариях (в pdflatex) https://tex.stackexchange.com/a/103712
+%reshaem problemu s kirillitsey v kommentariyakh (v pdflatex) https://tex.stackexchange.com/a/103712
 \lstset{extendedchars=true,keepspaces=true,literate={Ö}{{\"O}}1
     {Ä}{{\"A}}1
     {Ü}{{\"U}}1
@@ -99,93 +99,93 @@
     {ä}{{\"a}}1
     {ö}{{\"o}}1
     {~}{{\textasciitilde}}1
-    {а}{{\selectfont\char224}}1
-    {б}{{\selectfont\char225}}1
-    {в}{{\selectfont\char226}}1
-    {г}{{\selectfont\char227}}1
-    {д}{{\selectfont\char228}}1
-    {е}{{\selectfont\char229}}1
-    {ё}{{\"e}}1
-    {ж}{{\selectfont\char230}}1
-    {з}{{\selectfont\char231}}1
-    {и}{{\selectfont\char232}}1
-    {й}{{\selectfont\char233}}1
-    {к}{{\selectfont\char234}}1
-    {л}{{\selectfont\char235}}1
-    {м}{{\selectfont\char236}}1
-    {н}{{\selectfont\char237}}1
-    {о}{{\selectfont\char238}}1
-    {п}{{\selectfont\char239}}1
-    {р}{{\selectfont\char240}}1
-    {с}{{\selectfont\char241}}1
-    {т}{{\selectfont\char242}}1
-    {у}{{\selectfont\char243}}1
-    {ф}{{\selectfont\char244}}1
-    {х}{{\selectfont\char245}}1
-    {ц}{{\selectfont\char246}}1
-    {ч}{{\selectfont\char247}}1
-    {ш}{{\selectfont\char248}}1
-    {щ}{{\selectfont\char249}}1
-    {ъ}{{\selectfont\char250}}1
-    {ы}{{\selectfont\char251}}1
-    {ь}{{\selectfont\char252}}1
-    {э}{{\selectfont\char253}}1
-    {ю}{{\selectfont\char254}}1
-    {я}{{\selectfont\char255}}1
-    {А}{{\selectfont\char192}}1
-    {Б}{{\selectfont\char193}}1
-    {В}{{\selectfont\char194}}1
-    {Г}{{\selectfont\char195}}1
-    {Д}{{\selectfont\char196}}1
-    {Е}{{\selectfont\char197}}1
-    {Ё}{{\"E}}1
-    {Ж}{{\selectfont\char198}}1
-    {З}{{\selectfont\char199}}1
-    {И}{{\selectfont\char200}}1
-    {Й}{{\selectfont\char201}}1
-    {К}{{\selectfont\char202}}1
-    {Л}{{\selectfont\char203}}1
-    {М}{{\selectfont\char204}}1
-    {Н}{{\selectfont\char205}}1
-    {О}{{\selectfont\char206}}1
-    {П}{{\selectfont\char207}}1
-    {Р}{{\selectfont\char208}}1
-    {С}{{\selectfont\char209}}1
-    {Т}{{\selectfont\char210}}1
-    {У}{{\selectfont\char211}}1
-    {Ф}{{\selectfont\char212}}1
-    {Х}{{\selectfont\char213}}1
-    {Ц}{{\selectfont\char214}}1
-    {Ч}{{\selectfont\char215}}1
-    {Ш}{{\selectfont\char216}}1
-    {Щ}{{\selectfont\char217}}1
-    {Ъ}{{\selectfont\char218}}1
-    {Ы}{{\selectfont\char219}}1
-    {Ь}{{\selectfont\char220}}1
-    {Э}{{\selectfont\char221}}1
-    {Ю}{{\selectfont\char222}}1
-    {Я}{{\selectfont\char223}}1
-    {і}{{\selectfont\char105}}1
-    {ї}{{\selectfont\char168}}1
-    {є}{{\selectfont\char185}}1
-    {ґ}{{\selectfont\char160}}1
-    {І}{{\selectfont\char73}}1
-    {Ї}{{\selectfont\char136}}1
-    {Є}{{\selectfont\char153}}1
-    {Ґ}{{\selectfont\char128}}1
+    {a}{{\selectfont\char224}}1
+    {b}{{\selectfont\char225}}1
+    {v}{{\selectfont\char226}}1
+    {g}{{\selectfont\char227}}1
+    {d}{{\selectfont\char228}}1
+    {e}{{\selectfont\char229}}1
+    {e}{{\"e}}1
+    {zh}{{\selectfont\char230}}1
+    {z}{{\selectfont\char231}}1
+    {i}{{\selectfont\char232}}1
+    {y}{{\selectfont\char233}}1
+    {k}{{\selectfont\char234}}1
+    {l}{{\selectfont\char235}}1
+    {m}{{\selectfont\char236}}1
+    {n}{{\selectfont\char237}}1
+    {o}{{\selectfont\char238}}1
+    {p}{{\selectfont\char239}}1
+    {r}{{\selectfont\char240}}1
+    {s}{{\selectfont\char241}}1
+    {t}{{\selectfont\char242}}1
+    {u}{{\selectfont\char243}}1
+    {f}{{\selectfont\char244}}1
+    {kh}{{\selectfont\char245}}1
+    {ts}{{\selectfont\char246}}1
+    {ch}{{\selectfont\char247}}1
+    {sh}{{\selectfont\char248}}1
+    {shch}{{\selectfont\char249}}1
+    {}{{\selectfont\char250}}1
+    {y}{{\selectfont\char251}}1
+    {}{{\selectfont\char252}}1
+    {e}{{\selectfont\char253}}1
+    {yu}{{\selectfont\char254}}1
+    {ya}{{\selectfont\char255}}1
+    {A}{{\selectfont\char192}}1
+    {B}{{\selectfont\char193}}1
+    {V}{{\selectfont\char194}}1
+    {G}{{\selectfont\char195}}1
+    {D}{{\selectfont\char196}}1
+    {E}{{\selectfont\char197}}1
+    {E}{{\"E}}1
+    {Zh}{{\selectfont\char198}}1
+    {Z}{{\selectfont\char199}}1
+    {I}{{\selectfont\char200}}1
+    {Y}{{\selectfont\char201}}1
+    {K}{{\selectfont\char202}}1
+    {L}{{\selectfont\char203}}1
+    {M}{{\selectfont\char204}}1
+    {N}{{\selectfont\char205}}1
+    {O}{{\selectfont\char206}}1
+    {P}{{\selectfont\char207}}1
+    {R}{{\selectfont\char208}}1
+    {S}{{\selectfont\char209}}1
+    {T}{{\selectfont\char210}}1
+    {U}{{\selectfont\char211}}1
+    {F}{{\selectfont\char212}}1
+    {Kh}{{\selectfont\char213}}1
+    {Ts}{{\selectfont\char214}}1
+    {Ch}{{\selectfont\char215}}1
+    {Sh}{{\selectfont\char216}}1
+    {Shch}{{\selectfont\char217}}1
+    {}{{\selectfont\char218}}1
+    {Y}{{\selectfont\char219}}1
+    {}{{\selectfont\char220}}1
+    {E}{{\selectfont\char221}}1
+    {Yu}{{\selectfont\char222}}1
+    {Ya}{{\selectfont\char223}}1
+    {i}{{\selectfont\char105}}1
+    {yi}{{\selectfont\char168}}1
+    {ie}{{\selectfont\char185}}1
+    {g}{{\selectfont\char160}}1
+    {I}{{\selectfont\char73}}1
+    {Yi}{{\selectfont\char136}}1
+    {Ye}{{\selectfont\char153}}1
+    {G}{{\selectfont\char128}}1
 }
 
-% Ширина текста минус ширина надписи 999
+% Shirina teksta minus shirina nadpisi 999
 \newlength{\twless}
 \newlength{\lmarg}
-\setlength{\lmarg}{\widthof{999}}   % ширина надписи 999
+\setlength{\lmarg}{\widthof{999}}   % shirina nadpisi 999
 \setlength{\twless}{\textwidth-\lmarg}
 
 \lstset{ %
-%    language=R,                     %  Язык указать здесь, если во всех листингах преимущественно один язык, в результате часть настроек может пойти только для этого языка
+%    language=R,                     %  Yazyk ukazat zdes, esli vo vsekh listingakh preimushchestvenno odin yazyk, v rezultate chast nastroek mozhet poyti tolko dlya etogo yazyka
     numbers=left,                   % where to put the line-numbers
     numberstyle=\fontsize{12pt}{14pt}\selectfont\color{Gray},  % the style that is used for the line-numbers
-    firstnumber=1,                  % в этой и следующей строках задаётся поведение нумерации 5, 10, 15...
+    firstnumber=1,                  % v etoy i sleduyushchey strokakh zadaetsya povedenie numeratsii 5, 10, 15...
     stepnumber=5,                   % the step between two line-numbers. If it's 1, each line will be numbered
     numbersep=5pt,                  % how far the line-numbers are from the code
     backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
@@ -206,12 +206,12 @@
     stringstyle=\color{Mahogany},   % string literal style
     escapeinside={\%*}{*)},         % if you want to add a comment within your code
     morekeywords={*,...},           % if you want to add more keywords to the set
-    inputencoding=utf8,             % кодировка кода
-    xleftmargin={\lmarg},           % Чтобы весь код и полоска с номерами строк была смещена влево, так чтобы цифры не вылезали за пределы текста слева
+    inputencoding=utf8,             % kodirovka koda
+    xleftmargin={\lmarg},           % Chtoby ves kod i poloska s nomerami strok byla smeshchena vlevo, tak chtoby tsifry ne vylezali za predely teksta sleva
 }
 
 %http://tex.stackexchange.com/questions/26872/smaller-frame-with-listings
-% Окружение, чтобы листинг был компактнее обведен рамкой, если она задается, а не на всю ширину текста
+% Okruzhenie, chtoby listing byl kompaktnee obveden ramkoy, esli ona zadaetsya, a ne na vsyu shirinu teksta
 \makeatletter
 \newenvironment{SmallListing}[1][]
 {\lstset{#1}\VerbatimEnvironment\begin{VerbatimOut}{VerbEnv.tmp}}
@@ -220,33 +220,33 @@
     \minipage{\@tempdima}\lstinputlisting{VerbEnv.tmp}\endminipage}
 \makeatother
 
-\DefineVerbatimEnvironment% с шрифтом 12 пт
+\DefineVerbatimEnvironment% s shriftom 12 pt
 {Verb}{Verbatim}
 {fontsize=\fontsize{12pt}{14pt}\selectfont}
 
-\newfloat[chapter]{ListingEnv}{lol}{Листинг}
+\newfloat[chapter]{ListingEnv}{lol}{Listing}
 
-\renewcommand{\lstlistingname}{Листинг}
+\renewcommand{\lstlistingname}{Listing}
 
-%Общие счётчики окружений листингов
+%Obshchie schetchiki okruzheniy listingov
 %http://tex.stackexchange.com/questions/145546/how-to-make-figure-and-listing-share-their-counter
-% Если смешивать плавающие и не плавающие окружения, то могут быть проблемы с нумерацией
+% Esli smeshivat plavayushchie i ne plavayushchie okruzheniya, to mogut byt problemy s numeratsiey
 \makeatletter
 \AfterEndPreamble{% https://tex.stackexchange.com/a/252682
     \let\c@ListingEnv\relax % drop existing counter "ListingEnv"
-    \newaliascnt{ListingEnv}{lstlisting} % команда требует пакет aliascnt
+    \newaliascnt{ListingEnv}{lstlisting} % komanda trebuet paket aliascnt
     \let\ftype@lstlisting\ftype@ListingEnv % give the floats the same precedence
 }
 \makeatother
 
-% значок С++ — используйте команду \cpp
+% znachok S++ — ispolzuyte komandu \cpp
 \newcommand{\cpp}{%
     C\nolinebreak\hspace{-.05em}%
     \raisebox{.2ex}{+}\nolinebreak\hspace{-.10em}%
     \raisebox{.2ex}{+}%
 }
 
-%%% Ради примера во второй главе
+%%% Radi primera vo vtoroy glave
 \let\originalepsilon\epsilon
 \let\originalphi\phi
 \let\originalkappa\kappa
@@ -259,20 +259,20 @@
 \let\originalcot\cot
 \let\originalcsc\csc
 
-%%% Русская традиция начертания математических знаков
+%%% Russkaya traditsiya nachertaniya matematicheskikh znakov
 \renewcommand{\le}{\ensuremath{\leqslant}}
 \renewcommand{\leq}{\ensuremath{\leqslant}}
 \renewcommand{\ge}{\ensuremath{\geqslant}}
 \renewcommand{\geq}{\ensuremath{\geqslant}}
 \renewcommand{\emptyset}{\varnothing}
 
-%%% Русская традиция начертания математических функций (на случай копирования из зарубежных источников)
+%%% Russkaya traditsiya nachertaniya matematicheskikh funktsiy (na sluchay kopirovaniya iz zarubezhnykh istochnikov)
 \renewcommand{\tan}{\operatorname{tg}}
 \renewcommand{\cot}{\operatorname{ctg}}
 \renewcommand{\csc}{\operatorname{cosec}}
 
-%%% Русская традиция начертания греческих букв (греческие буквы вертикальные, через пакет upgreek)
-\renewcommand{\epsilon}{\ensuremath{\upvarepsilon}}   %  русская традиция записи
+%%% Russkaya traditsiya nachertaniya grecheskikh bukv (grecheskie bukvy vertikalnye, cherez paket upgreek)
+\renewcommand{\epsilon}{\ensuremath{\upvarepsilon}}   %  russkaya traditsiya zapisi
 \renewcommand{\phi}{\ensuremath{\upvarphi}}
 %\renewcommand{\kappa}{\ensuremath{\varkappa}}
 \renewcommand{\alpha}{\upalpha}

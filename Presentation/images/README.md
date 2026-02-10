@@ -1,1 +1,1 @@
-Пустая (на данный момент) папка, в которую можно добавлять изображения, нужные только в данном шаблоне, а не общие для всех шаблонов.
+Pustaya (na dannyy moment) papka, v kotoruyu mozhno dobavlyat izobrazheniya, nuzhnye tolko v dannom shablone, a ne obshchie dlya vsekh shablonov.

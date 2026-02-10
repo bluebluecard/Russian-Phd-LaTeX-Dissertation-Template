@@ -1,20 +1,20 @@
 ---
 name: Feature request
-about: Предложить идею для шаблона
+about: Predlozhit ideyu dlya shablona
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-**Ваш запрос функции связан с проблемой? Пожалуйста, опишите**
+**Vash zapros funktsii svyazan s problemoy? Pozhaluysta, opishite**
 
-Четкое и краткое описание проблемы. Например, у нашей комиссии есть дополнительное требование к оформлению '....'
+Chetkoe i kratkoe opisanie problemy. Naprimer, u nashey komissii est dopolnitelnoe trebovanie k oformleniyu '....'
 
-**Опишите решение, как Вы его себе представляете**
+**Opishite reshenie, kak Vy ego sebe predstavlyaete**
 
-Четкое и краткое описание работы новой функции.
+Chetkoe i kratkoe opisanie raboty novoy funktsii.
 
-**Дополнительные материалы**
+**Dopolnitelnye materialy**
 
-Дополнительные материалы, скриншоты и т.п.
+Dopolnitelnye materialy, skrinshoty i t.p.

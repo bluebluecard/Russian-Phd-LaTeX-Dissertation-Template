@@ -1,6 +1,6 @@
-\chapter{Длинное название главы, в которой мы смотрим на~примеры того, как будут верстаться изображения и~списки}\label{ch:ch2}
+\chapter{Dlinnoe nazvanie glavy, v kotoroy my smotrim na~primery togo, kak budut verstatsya izobrazheniya i~spiski}\label{ch:ch2}
 
-\section{Одиночное изображение}\label{sec:ch2/sec1}
+\section{Odinochnoe izobrazhenie}\label{sec:ch2/sec1}
 
 \begin{figure}[ht]
     \centerfloat{
@@ -9,82 +9,82 @@
     \caption{TeX.}\label{fig:latex}
 \end{figure}
 
-Для выравнивания изображения по-центру используется команда \verb+\centerfloat+, которая является во
-многом улучшенной версией встроенной команды \verb+\centering+.
+Dlya vyravnivaniya izobrazheniya po-tsentru ispolzuetsya komanda \verb+\centerfloat+, kotoraya yavlyaetsya vo
+mnogom uluchshennoy versiey vstroennoy komandy \verb+\centering+.
 
-\section{Длинное название параграфа, в котором мы узнаём как сделать две картинки с~общим номером и названием}\label{sec:ch2/sect2}
+\section{Dlinnoe nazvanie paragrafa, v kotorom my uznaem kak sdelat dve kartinki s~obshchim nomerom i nazvaniem}\label{sec:ch2/sect2}
 
-А это две картинки под общим номером и названием:
+A eto dve kartinki pod obshchim nomerom i nazvaniem:
 \begin{figure}[ht]
     \begin{minipage}[b][][b]{0.49\linewidth}\centering
-        \includegraphics[width=0.5\linewidth]{knuth1} \\ а)
+        \includegraphics[width=0.5\linewidth]{knuth1} \\ a)
     \end{minipage}
     \hfill
     \begin{minipage}[b][][b]{0.49\linewidth}\centering
-        \includegraphics[width=0.5\linewidth]{knuth2} \\ б)
+        \includegraphics[width=0.5\linewidth]{knuth2} \\ b)
     \end{minipage}
-    \caption{Очень длинная подпись к изображению,
-        на котором представлены две фотографии Дональда Кнута}
+    \caption{Ochen dlinnaya podpis k izobrazheniyu,
+        na kotorom predstavleny dve fotografii Donalda Knuta}
     \label{fig:knuth}
 \end{figure}
 
-Те~же~две картинки под~общим номером и~названием,
-но с автоматизированной нумерацией подрисунков:
+Te~zhe~dve kartinki pod~obshchim nomerom i~nazvaniem,
+no s avtomatizirovannoy numeratsiey podrisunkov:
 \begin{figure}[ht]
     \centerfloat{
         \hfill
-        \subcaptionbox[List-of-Figures entry]{Первый подрисунок\label{fig:knuth_2-1}}{%
+        \subcaptionbox[List-of-Figures entry]{Pervyy podrisunok\label{fig:knuth_2-1}}{%
             \includegraphics[width=0.25\linewidth]{knuth1}}
         \hfill
         \subcaptionbox{\label{fig:knuth_2-2}}{%
             \includegraphics[width=0.25\linewidth]{knuth2}}
         \hfill
-        \subcaptionbox{Третий подрисунок, подпись к которому
-            не~помещается на~одной строке}{%
+        \subcaptionbox{Tretiy podrisunok, podpis k kotoromu
+            ne~pomeshchaetsya na~odnoy stroke}{%
             \includegraphics[width=0.3\linewidth]{example-image-c}}
         \hfill
     }
-    \legend{Подрисуночный текст, описывающий обозначения, например. Согласно
-        ГОСТ 2.105, пункт 4.3.1, располагается перед наименованием рисунка.}
-    \caption[Этот текст попадает в названия рисунков в списке рисунков]{Очень
-        длинная подпись к второму изображению, на~котором представлены две
-        фотографии Дональда Кнута}\label{fig:knuth_2}
+    \legend{Podrisunochnyy tekst, opisyvayushchiy oboznacheniya, naprimer. Soglasno
+        GOST 2.105, punkt 4.3.1, raspolagaetsya pered naimenovaniem risunka.}
+    \caption[Etot tekst popadaet v nazvaniya risunkov v spiske risunkov]{Ochen
+        dlinnaya podpis k vtoromu izobrazheniyu, na~kotorom predstavleny dve
+        fotografii Donalda Knuta}\label{fig:knuth_2}
 \end{figure}
 
-На рисунке~\cref{fig:knuth_2-1} показан Дональд Кнут без головного убора.
-На рисунке~\cref{fig:knuth_2}\subcaptionref*{fig:knuth_2-2}
-показан Дональд Кнут в головном уборе.
+Na risunke~\cref{fig:knuth_2-1} pokazan Donald Knut bez golovnogo ubora.
+Na risunke~\cref{fig:knuth_2}\subcaptionref*{fig:knuth_2-2}
+pokazan Donald Knut v golovnom ubore.
 
-\section{Векторная графика}\label{sec:ch2/vector}
+\section{Vektornaya grafika}\label{sec:ch2/vector}
 
-Возможно вставлять векторные картинки, рассчитываемые \LaTeX\ <<на~лету>>
-с~их~предварительной компиляцией. Надписи в таких рисунках будут выполнены
-тем же~шрифтом, который указан для документа в целом.
-На~рисунке~\cref{fig:tikz_example} на~странице~\pageref{fig:tikz_example}
-представлен пример схемы, рассчитываемой пакетом \verb|tikz| <<на~лету>>.
-Для ускорения компиляции, подобные рисунки могут быть <<кешированы>>, что
-определяется настройками в~\verb|common/setup.tex|.
-Причём имя предкомпилированного
-файла и~папка расположения таких файлов могут быть отдельно заданы,
-что удобно, если не~для подготовки диссертации,
-то~для подготовки научных публикаций.
+Vozmozhno vstavlyat vektornye kartinki, rasschityvaemye \LaTeX\ <<na~letu>>
+s~ikh~predvaritelnoy kompilyatsiey. Nadpisi v takikh risunkakh budut vypolneny
+tem zhe~shriftom, kotoryy ukazan dlya dokumenta v tselom.
+Na~risunke~\cref{fig:tikz_example} na~stranitse~\pageref{fig:tikz_example}
+predstavlen primer skhemy, rasschityvaemoy paketom \verb|tikz| <<na~letu>>.
+Dlya uskoreniya kompilyatsii, podobnye risunki mogut byt <<keshirovany>>, chto
+opredelyaetsya nastroykami v~\verb|common/setup.tex|.
+Prichem imya predkompilirovannogo
+fayla i~papka raspolozheniya takikh faylov mogut byt otdelno zadany,
+chto udobno, esli ne~dlya podgotovki dissertatsii,
+to~dlya podgotovki nauchnykh publikatsiy.
 \begin{figure}[ht]
     \centerfloat{
-        \ifdefmacro{\tikzsetnextfilename}{\tikzsetnextfilename{tikz_example_compiled}}{}% присваиваемое предкомпилированному pdf имя файла (не обязательно)
+        \ifdefmacro{\tikzsetnextfilename}{\tikzsetnextfilename{tikz_example_compiled}}{}% prisvaivaemoe predkompilirovannomu pdf imya fayla (ne obyazatelno)
         \input{Dissertation/images/tikz_scheme.tikz}
 
     }
     \legend{}
-    \caption[Пример \texttt{tikz} схемы]{Пример рисунка, рассчитываемого
-        \texttt{tikz}, который может быть предкомпилирован}\label{fig:tikz_example}
+    \caption[Primer \texttt{tikz} skhemy]{Primer risunka, rasschityvaemogo
+        \texttt{tikz}, kotoryy mozhet byt predkompilirovan}\label{fig:tikz_example}
 \end{figure}
 
-Множество программ имеют либо встроенную возможность экспортировать векторную
-графику кодом \verb|tikz|, либо соответствующий пакет расширения.
-Например, в GeoGebra есть встроенный экспорт,
-для Inkscape есть пакет svg2tikz,
-для Python есть пакет tikzplotlib,
-для R есть пакет tikzdevice.
+Mnozhestvo programm imeyut libo vstroennuyu vozmozhnost eksportirovat vektornuyu
+grafiku kodom \verb|tikz|, libo sootvetstvuyushchiy paket rasshireniya.
+Naprimer, v GeoGebra est vstroennyy eksport,
+dlya Inkscape est paket svg2tikz,
+dlya Python est paket tikzplotlib,
+dlya R est paket tikzdevice.
 
 \begin{figure}[htbp]
     \centerfloat{
@@ -92,131 +92,131 @@
         \input{Dissertation/images/scheme.tikz}
     }
     \legend{%
-        \textbf{1} "--- кружок с загогулиной;
-        \textbf{2} "--- камертоны;
-        \textbf{3} "--- кресты;
-        \textbf{4} "--- волны;
-        \textbf{5} "--- прямоугольники;
-        \textbf{5} "--- пронзённый стрелой прямоугольник.%
+        \textbf{1} "--- kruzhok s zagogulinoy;
+        \textbf{2} "--- kamertony;
+        \textbf{3} "--- kresty;
+        \textbf{4} "--- volny;
+        \textbf{5} "--- pryamougolniki;
+        \textbf{5} "--- pronzennyy streloy pryamougolnik.%
     }
-    \caption{Составная схема \textit{tikz}}\label{fig:scheme-tikz}
+    \caption{Sostavnaya skhema \textit{tikz}}\label{fig:scheme-tikz}
 \end{figure}
 
-На рисунке~\cref{fig:scheme-tikz} представлена составная схема \textit{tikz}.
-Каждый её элемент нарисован в отдельном файле в единичном масштабе.
-Расстановка элементов на~рисунке производится при помощи аргументов \texttt{xshift},
-\texttt{yshift}, \texttt{rotate} и~\texttt{scale} окружения \texttt{scope}.
+Na risunke~\cref{fig:scheme-tikz} predstavlena sostavnaya skhema \textit{tikz}.
+Kazhdyy ee element narisovan v otdelnom fayle v edinichnom masshtabe.
+Rasstanovka elementov na~risunke proizvoditsya pri pomoshchi argumentov \texttt{xshift},
+\texttt{yshift}, \texttt{rotate} i~\texttt{scale} okruzheniya \texttt{scope}.
 
-Пример использования библиотеки \textit{circuitikz} изображён на рисунке~\cref{fig:circuitikz}.
+Primer ispolzovaniya biblioteki \textit{circuitikz} izobrazhen na risunke~\cref{fig:circuitikz}.
 
 \begin{figure}[htbp]
     \centerfloat{
         \input{Dissertation/images/circuit.tikz}
     }
-    \caption{Схема \textit{circuitikz}}\label{fig:circuitikz}
+    \caption{Skhema \textit{circuitikz}}\label{fig:circuitikz}
 \end{figure}
 
-Красивые графики также можно добавлять при помощи пакета \textit{pgfplot}~(рисунок~\cref{fig:pgfplot}).
-Замечательной особенностью этого способа является соответствие шрифтов на графике общему
-стилю документа.
+Krasivye grafiki takzhe mozhno dobavlyat pri pomoshchi paketa \textit{pgfplot}~(risunok~\cref{fig:pgfplot}).
+Zamechatelnoy osobennostyu etogo sposoba yavlyaetsya sootvetstvie shriftov na grafike obshchemu
+stilyu dokumenta.
 
 \begin{figure}[htbp]
     \centerfloat{
         \input{Dissertation/images/plot_csv.tikz}
     }
-    \caption{График \textit{pgfplot} на основе данных из \texttt{csv} файла}\label{fig:pgfplot}
+    \caption{Grafik \textit{pgfplot} na osnove dannykh iz \texttt{csv} fayla}\label{fig:pgfplot}
 \end{figure}
 
 
-\section{Пример вёрстки списков}\label{sec:ch2/sec3}
+\section{Primer verstki spiskov}\label{sec:ch2/sec3}
 
-\noindent Нумерованный список:
+\noindent Numerovannyy spisok:
 \begin{enumerate}
-    \item Первый пункт.
-    \item Второй пункт.
-    \item Третий пункт.
+    \item Pervyy punkt.
+    \item Vtoroy punkt.
+    \item Tretiy punkt.
 \end{enumerate}
 
-\noindent Маркированный список:
+\noindent Markirovannyy spisok:
 \begin{itemize}
-    \item Первый пункт.
-    \item Второй пункт.
-    \item Третий пункт.
+    \item Pervyy punkt.
+    \item Vtoroy punkt.
+    \item Tretiy punkt.
 \end{itemize}
 
-\noindent Вложенные списки:
+\noindent Vlozhennye spiski:
 \begin{itemize}
-    \item Имеется маркированный список.
+    \item Imeetsya markirovannyy spisok.
           \begin{enumerate}
-              \item В нём лежит нумерованный список,
-              \item в котором
+              \item V nem lezhit numerovannyy spisok,
+              \item v kotorom
                     \begin{itemize}
-                        \item лежит ещё один маркированный список.
+                        \item lezhit eshche odin markirovannyy spisok.
                     \end{itemize}
           \end{enumerate}
 \end{itemize}
 
-\noindent Нумерованные вложенные списки:
+\noindent Numerovannye vlozhennye spiski:
 \begin{enumerate}
-    \item Первый пункт.
-    \item Второй пункт.
-    \item Вообще, по ГОСТ 2.105 первый уровень нумерации
-          (при необходимости ссылки в тексте документа на одно из перечислений)
-          идёт буквами русского или латинского алфавитов,
-          а второй "--- цифрами со~скобками.
-          Здесь отходим от ГОСТ.
+    \item Pervyy punkt.
+    \item Vtoroy punkt.
+    \item Voobshche, po GOST 2.105 pervyy uroven numeratsii
+          (pri neobkhodimosti ssylki v tekste dokumenta na odno iz perechisleniy)
+          idet bukvami russkogo ili latinskogo alfavitov,
+          a vtoroy "--- tsiframi so~skobkami.
+          Zdes otkhodim ot GOST.
           \begin{enumerate}
-              \item в нём лежит нумерованный список,
-              \item в котором
+              \item v nem lezhit numerovannyy spisok,
+              \item v kotorom
                     \begin{enumerate}
-                        \item ещё один нумерованный список,
-                        \item третий уровень нумерации не нормирован ГОСТ 2.105;
-                        \item обращаем внимание на строчность букв,
-                        \item в этом списке
+                        \item eshche odin numerovannyy spisok,
+                        \item tretiy uroven numeratsii ne normirovan GOST 2.105;
+                        \item obrashchaem vnimanie na strochnost bukv,
+                        \item v etom spiske
                               \begin{itemize}
-                                  \item лежит ещё один маркированный список.
+                                  \item lezhit eshche odin markirovannyy spisok.
                               \end{itemize}
                     \end{enumerate}
 
           \end{enumerate}
 
-    \item Четвёртый пункт.
+    \item Chetvertyy punkt.
 \end{enumerate}
 
-\section{Традиции русского набора}
+\section{Traditsii russkogo nabora}
 
-Много полезных советов приведено в материале
-<<\href{https://kostyrka.ru/main/ru/typesetting-and-typography-crash-course-by-kostyrka/}{Краткий курс благородного набора}>>
-(автор А.\:В.~Костырка).
-Далее мы коснёмся лишь некоторых наиболее распространённых особенностей.
+Mnogo poleznykh sovetov privedeno v materiale
+<<\href{https://kostyrka.ru/main/ru/typesetting-and-typography-crash-course-by-kostyrka/}{Kratkiy kurs blagorodnogo nabora}>>
+(avtor A.\:V.~Kostyrka).
+Dalee my kosnemsya lish nekotorykh naibolee rasprostranennykh osobennostey.
 
-\subsection{Пробелы}
+\subsection{Probely}
 
-В~русском наборе принято:
+V~russkom nabore prinyato:
 \begin{itemize}
-    \item единицы измерения, знак процента отделять пробелами от~числа:
-          10~кВт, 15~\% (согласно ГОСТ 8.417, раздел 8);
-    \item \(\tg 20\text{\textdegree}\), но: 20~{\textdegree}C
-          (согласно ГОСТ 8.417, раздел 8);
-    \item знак номера, параграфа отделять от~числа: №~5, \S~8;
-    \item стандартные сокращения: т.\:е., и~т.\:д., и~т.\:п.;
-    \item неразрывные пробелы в~предложениях.
+    \item edinitsy izmereniya, znak protsenta otdelyat probelami ot~chisla:
+          10~kVt, 15~\% (soglasno GOST 8.417, razdel 8);
+    \item \(\tg 20\text{\textdegree}\), no: 20~{\textdegree}C
+          (soglasno GOST 8.417, razdel 8);
+    \item znak nomera, paragrafa otdelyat ot~chisla: №~5, \S~8;
+    \item standartnye sokrashcheniya: t.\:e., i~t.\:d., i~t.\:p.;
+    \item nerazryvnye probely v~predlozheniyakh.
 \end{itemize}
 
-\subsection{Математические знаки и символы}
+\subsection{Matematicheskie znaki i simvoly}
 
-Русская традиция начертания греческих букв и некоторых математических
-функций отличается от~западной. Это исправляется серией
+Russkaya traditsiya nachertaniya grecheskikh bukv i nekotorykh matematicheskikh
+funktsiy otlichaetsya ot~zapadnoy. Eto ispravlyaetsya seriey
 \verb|\renewcommand|.
 \begin{itemize}
-    %Все \original... команды заранее, ради этого примера, определены в Dissertation\userstyles.tex
-    \item[До:] \( \originalepsilon \originalge \originalphi\),
+    %Vse \original... komandy zaranee, radi etogo primera, opredeleny v Dissertation\userstyles.tex
+    \item[Do:] \( \originalepsilon \originalge \originalphi\),
           \(\originalphi \originalleq \originalepsilon\),
           \(\originalkappa \in \originalemptyset\),
           \(\originaltan\),
           \(\originalcot\),
           \(\originalcsc\).
-    \item[После:] \( \epsilon \ge \phi\),
+    \item[Posle:] \( \epsilon \ge \phi\),
           \(\phi \leq \epsilon\),
           \(\kappa \in \emptyset\),
           \(\tan\),
@@ -224,107 +224,107 @@
           \(\csc\).
 \end{itemize}
 
-Кроме того, принято набирать греческие буквы вертикальными, что
-решается подключением пакета \verb|upgreek| (см. закомментированный
-блок в~\verb|userpackages.tex|) и~аналогичным переопределением в
-преамбуле (см.~закомментированный блок в~\verb|userstyles.tex|). В
-этом шаблоне такие переопределения уже включены.
+Krome togo, prinyato nabirat grecheskie bukvy vertikalnymi, chto
+reshaetsya podklyucheniem paketa \verb|upgreek| (sm. zakommentirovannyy
+blok v~\verb|userpackages.tex|) i~analogichnym pereopredeleniem v
+preambule (sm.~zakommentirovannyy blok v~\verb|userstyles.tex|). V
+etom shablone takie pereopredeleniya uzhe vklyucheny.
 
-Знаки математических операций принято переносить. Пример переноса
-в~формуле~\eqref{eq:equation3}.
+Znaki matematicheskikh operatsiy prinyato perenosit. Primer perenosa
+v~formule~\eqref{eq:equation3}.
 
-\subsection{Кавычки}
-В английском языке приняты одинарные и двойные кавычки в~виде ‘...’ и~“...”.
-В~России приняты французские («...») и~немецкие („...“) кавычки (они называются
-«ёлочки» и~«лапки», соответственно). ,,Лапки`` обычно используются внутри
-<<ёлочек>>, например, <<... наш гордый ,,Варяг``...>>.
+\subsection{Kavychki}
+V angliyskom yazyke prinyaty odinarnye i dvoynye kavychki v~vide ‘...’ i~“...”.
+V~Rossii prinyaty frantsuzskie («...») i~nemetskie („...“) kavychki (oni nazyvayutsya
+«elochki» i~«lapki», sootvetstvenno). ,,Lapki`` obychno ispolzuyutsya vnutri
+<<elochek>>, naprimer, <<... nash gordyy ,,Varyag``...>>.
 
-Французкие левые и правые кавычки набираются
-как лигатуры \verb|<<| и~\verb|>>|, а~немецкие левые
-и правые кавычки набираются как лигатуры \verb|,,| и~\verb|‘‘| (\verb|``|).
+Frantsuzkie levye i pravye kavychki nabirayutsya
+kak ligatury \verb|<<| i~\verb|>>|, a~nemetskie levye
+i pravye kavychki nabirayutsya kak ligatury \verb|,,| i~\verb|‘‘| (\verb|``|).
 
-Вместо лигатур или команд с~активным символом "\ можно использовать команды
-\verb|\glqq| и \verb|\grqq| для набора немецких кавычек и команды \verb|\flqq|
-и~\verb|\frqq| для набора французских кавычек. Они определены в пакете
+Vmesto ligatur ili komand s~aktivnym simvolom "\ mozhno ispolzovat komandy
+\verb|\glqq| i \verb|\grqq| dlya nabora nemetskikh kavychek i komandy \verb|\flqq|
+i~\verb|\frqq| dlya nabora frantsuzskikh kavychek. Oni opredeleny v pakete
 \verb|babel|.
 
-\subsection{Тире}
-%  babel+pdflatex по умолчанию, в polyglossia надо включать опцией (и перекомпилировать с удалением временных файлов)
-Команда \verb|"---| используется для печати тире в тексте. Оно может быть
-несколько короче английского длинного тире (подробности в~документации
-русификации babel). Кроме того, команда задаёт небольшую жёсткую отбивку
-от~слова, стоящего перед тире. При этом, само тире не~отрывается от~слова.
-После тире следует такая же отбивка от текста, как и~перед тире. При наборе
-текста между словом и командой, за которым она следует, должен стоять пробел.
+\subsection{Tire}
+%  babel+pdflatex po umolchaniyu, v polyglossia nado vklyuchat optsiey (i perekompilirovat s udaleniem vremennykh faylov)
+Komanda \verb|"---| ispolzuetsya dlya pechati tire v tekste. Ono mozhet byt
+neskolko koroche angliyskogo dlinnogo tire (podrobnosti v~dokumentatsii
+rusifikatsii babel). Krome togo, komanda zadaet nebolshuyu zhestkuyu otbivku
+ot~slova, stoyashchego pered tire. Pri etom, samo tire ne~otryvaetsya ot~slova.
+Posle tire sleduet takaya zhe otbivka ot teksta, kak i~pered tire. Pri nabore
+teksta mezhdu slovom i komandoy, za kotorym ona sleduet, dolzhen stoyat probel.
 
-В составных словах, таких, как <<Закон Менделеева"--~Клапейрона>>, для печати
-тире надо использовать команду \verb|"--~|. Она ставит более короткое,
-по~сравнению с~английским, тире и позволяет делать переносы во втором слове.
-При~наборе текста команда \verb|"--~| не отделяется пробелом от слова,
-за~которым она следует (\verb|Менделеева"--~|). Следующее за командой слово
-может быть  отделено от~неё пробелом или перенесено на другую строку.
+V sostavnykh slovakh, takikh, kak <<Zakon Mendeleeva"--~Klapeyrona>>, dlya pechati
+tire nado ispolzovat komandu \verb|"--~|. Ona stavit bolee korotkoe,
+po~sravneniyu s~angliyskim, tire i pozvolyaet delat perenosy vo vtorom slove.
+Pri~nabore teksta komanda \verb|"--~| ne otdelyaetsya probelom ot slova,
+za~kotorym ona sleduet (\verb|Mendeleeva"--~|). Sleduyushchee za komandoy slovo
+mozhet byt  otdeleno ot~nee probelom ili pereneseno na druguyu stroku.
 
-Если прямая речь начинается с~абзаца, то перед началом её печатается тире
-командой \verb|"--*|. Она печатает русское тире и жёсткую отбивку нужной
-величины перед текстом.
+Esli pryamaya rech nachinaetsya s~abzatsa, to pered nachalom ee pechataetsya tire
+komandoy \verb|"--*|. Ona pechataet russkoe tire i zhestkuyu otbivku nuzhnoy
+velichiny pered tekstom.
 
-\subsection{Дефисы и переносы слов}
-%  babel+pdflatex по умолчанию, в polyglossia надо включать опцией (и перекомпилировать с удалением временных файлов)
-Для печати дефиса в~составных словах введены две команды. Команда~\verb|"~|
-печатает дефис и~запрещает делать переносы в~самих словах, а~команда \verb|"=|
-печатает дефис, оставляя \TeX ’у право делать переносы в~самих словах.
+\subsection{Defisy i perenosy slov}
+%  babel+pdflatex po umolchaniyu, v polyglossia nado vklyuchat optsiey (i perekompilirovat s udaleniem vremennykh faylov)
+Dlya pechati defisa v~sostavnykh slovakh vvedeny dve komandy. Komanda~\verb|"~|
+pechataet defis i~zapreshchaet delat perenosy v~samikh slovakh, a~komanda \verb|"=|
+pechataet defis, ostavlyaya \TeX ’u pravo delat perenosy v~samikh slovakh.
 
-В отличие от команды \verb|\-|, команда \verb|"-| задаёт место в~слове, где
-можно делать перенос, не~запрещая переносы и~в~других местах слова.
+V otlichie ot komandy \verb|\-|, komanda \verb|"-| zadaet mesto v~slove, gde
+mozhno delat perenos, ne~zapreshchaya perenosy i~v~drugikh mestakh slova.
 
-Команда \verb|""| задаёт место в~слове, где можно делать перенос, причём дефис
-при~переносе в~этом месте не~ставится.
+Komanda \verb|""| zadaet mesto v~slove, gde mozhno delat perenos, prichem defis
+pri~perenose v~etom meste ne~stavitsya.
 
-Команда \verb|",| вставляет небольшой пробел после инициалов с~правом переноса
-в~фамилии.
+Komanda \verb|",| vstavlyaet nebolshoy probel posle initsialov s~pravom perenosa
+v~familii.
 
-\section{Текст из панграмм и формул}
+\section{Tekst iz pangramm i formul}
 
-Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч. Шеф взъярён тчк щипцы
-с~эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц в~шкаф. Экс-граф?
-Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) "---
-вдрызг! Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч. Шеф взъярён тчк
-щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц в~шкаф.
-Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп
-(юфть) "--- вдрызг! Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч. Шеф
-взъярён тчк щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц
-в~шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен
-шляп (юфть) "--- вдрызг! Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч.
-Шеф взъярён тчк щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц
-в~шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен
-шляп (юфть) "--- вдрызг! Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч.
-Шеф взъярён тчк щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц
-в~шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен
-шляп (юфть) "--- вдрызг! Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч.
-Шеф взъярён тчк щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц
-в~шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен
-шляп (юфть) "--- вдрызг! Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч.
-Шеф взъярён тчк щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц
-в~шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен
-шляп (юфть) "--- вдрызг! Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч.
-Шеф взъярён тчк щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц
-в~шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен
-шляп (юфть) "--- вдрызг! Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч.
-Шеф взъярён тчк щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц
-в~шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен
-шляп (юфть) "--- вдрызг! Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч.
-Шеф взъярён тчк щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц
-в~шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен
-шляп (юфть) "--- вдрызг! Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч.
-Шеф взъярён тчк щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц
-в~шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен
-шляп (юфть) "--- вдрызг!Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч.
-Шеф взъярён тчк щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц
-в~шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен
+Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch. Shef vzyaren tchk shchiptsy
+s~ekhom gudbay Zhyul. Ey, zhlob! Gde tuz? Pryach yunykh semshchits v~shkaf. Eks-graf?
+Plyush izyat. Bem chuzhdyy tsen khvoshch! Ekh, chuzhak! Obshchiy sem tsen shlyap (yuft) "---
+vdryzg! Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch. Shef vzyaren tchk
+shchiptsy s~ekhom gudbay Zhyul. Ey, zhlob! Gde tuz? Pryach yunykh semshchits v~shkaf.
+Eks-graf? Plyush izyat. Bem chuzhdyy tsen khvoshch! Ekh, chuzhak! Obshchiy sem tsen shlyap
+(yuft) "--- vdryzg! Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch. Shef
+vzyaren tchk shchiptsy s~ekhom gudbay Zhyul. Ey, zhlob! Gde tuz? Pryach yunykh semshchits
+v~shkaf. Eks-graf? Plyush izyat. Bem chuzhdyy tsen khvoshch! Ekh, chuzhak! Obshchiy sem tsen
+shlyap (yuft) "--- vdryzg! Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch.
+Shef vzyaren tchk shchiptsy s~ekhom gudbay Zhyul. Ey, zhlob! Gde tuz? Pryach yunykh semshchits
+v~shkaf. Eks-graf? Plyush izyat. Bem chuzhdyy tsen khvoshch! Ekh, chuzhak! Obshchiy sem tsen
+shlyap (yuft) "--- vdryzg! Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch.
+Shef vzyaren tchk shchiptsy s~ekhom gudbay Zhyul. Ey, zhlob! Gde tuz? Pryach yunykh semshchits
+v~shkaf. Eks-graf? Plyush izyat. Bem chuzhdyy tsen khvoshch! Ekh, chuzhak! Obshchiy sem tsen
+shlyap (yuft) "--- vdryzg! Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch.
+Shef vzyaren tchk shchiptsy s~ekhom gudbay Zhyul. Ey, zhlob! Gde tuz? Pryach yunykh semshchits
+v~shkaf. Eks-graf? Plyush izyat. Bem chuzhdyy tsen khvoshch! Ekh, chuzhak! Obshchiy sem tsen
+shlyap (yuft) "--- vdryzg! Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch.
+Shef vzyaren tchk shchiptsy s~ekhom gudbay Zhyul. Ey, zhlob! Gde tuz? Pryach yunykh semshchits
+v~shkaf. Eks-graf? Plyush izyat. Bem chuzhdyy tsen khvoshch! Ekh, chuzhak! Obshchiy sem tsen
+shlyap (yuft) "--- vdryzg! Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch.
+Shef vzyaren tchk shchiptsy s~ekhom gudbay Zhyul. Ey, zhlob! Gde tuz? Pryach yunykh semshchits
+v~shkaf. Eks-graf? Plyush izyat. Bem chuzhdyy tsen khvoshch! Ekh, chuzhak! Obshchiy sem tsen
+shlyap (yuft) "--- vdryzg! Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch.
+Shef vzyaren tchk shchiptsy s~ekhom gudbay Zhyul. Ey, zhlob! Gde tuz? Pryach yunykh semshchits
+v~shkaf. Eks-graf? Plyush izyat. Bem chuzhdyy tsen khvoshch! Ekh, chuzhak! Obshchiy sem tsen
+shlyap (yuft) "--- vdryzg! Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch.
+Shef vzyaren tchk shchiptsy s~ekhom gudbay Zhyul. Ey, zhlob! Gde tuz? Pryach yunykh semshchits
+v~shkaf. Eks-graf? Plyush izyat. Bem chuzhdyy tsen khvoshch! Ekh, chuzhak! Obshchiy sem tsen
+shlyap (yuft) "--- vdryzg! Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch.
+Shef vzyaren tchk shchiptsy s~ekhom gudbay Zhyul. Ey, zhlob! Gde tuz? Pryach yunykh semshchits
+v~shkaf. Eks-graf? Plyush izyat. Bem chuzhdyy tsen khvoshch! Ekh, chuzhak! Obshchiy sem tsen
+shlyap (yuft) "--- vdryzg!Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch.
+Shef vzyaren tchk shchiptsy s~ekhom gudbay Zhyul. Ey, zhlob! Gde tuz? Pryach yunykh semshchits
+v~shkaf. Eks-graf? Plyush izyat. Bem chuzhdyy tsen khvoshch! Ekh, chuzhak! Obshchiy sem tsen
 
-Ку кхоро адолэжкэнс волуптариа хаж, вим граэко ыкчпэтында ты. Граэкы жэмпэр
-льюкяльиюч квуй ку, аэквюы продыжщэт хаж нэ. Вим ку магна пырикульа, но квюандо
-пожйдонёюм про. Квуй ат рыквюы ёнэрмйщ. Выро аккузата вим нэ.
+Ku kkhoro adolezhkens voluptaria khazh, vim graeko ykchpetynda ty. Graeky zhemper
+lyukyaliyuch kvuy ku, aekvyuy prodyzhshchet khazh ne. Vim ku magna pyrikula, no kvyuando
+pozhydoneyum pro. Kvuy at rykvyuy enermyshch. Vyro akkuzata vim ne.
 \begin{multline*}
     \mathsf{Pr}(\digamma(\tau))\propto\sum_{i=4}^{12}\left( \prod_{j=1}^i\left(
             \int_0^5\digamma(\tau)e^{-\digamma(\tau)t_j}dt_j
@@ -335,12 +335,12 @@
         e^{-1/2}\right)^{12-i}C_{12}^i \approx 0.7605,\quad
     \forall\tau\neq\overline{\tau}
 \end{multline*}
-Квуй ыёюз омниюм йн. Экз алёквюам кончюлату квуй, ты альяквюам ёнвидюнт пэр.
-Зыд нэ коммодо пробатуж. Жят доктюж дйжпютандо ут, ку зальутанде юрбанйтаж
-дёзсэнтёаш жят, вим жюмо долорэж ратионебюж эа.
+Kvuy yeyuz omniyum yn. Ekz alekvyuam konchyulatu kvuy, ty alyakvyuam envidyunt per.
+Zyd ne kommodo probatuzh. Zhyat doktyuzh dyzhpyutando ut, ku zalutande yurbanytazh
+dezsenteash zhyat, vim zhyumo dolorezh rationebyuzh ea.
 
-Ад ентэгры корпора жплэндидэ хаж. Эжт ат факэтэ дычэрунт пэржыкюти. Нэ нам
-доминг пэрчёус. Ку квюо ёужто эррэм зючкёпит. Про хабэо альбюкиюс нэ.
+Ad entegry korpora zhplendide khazh. Ezht at fakete dycherunt perzhykyuti. Ne nam
+doming percheus. Ku kvyuo euzhto errem zyuchkepit. Pro khabeo albyukiyus ne.
 \[
     \begin{pmatrix}
         a_{11} & a_{12} & a_{13} \\
@@ -361,15 +361,15 @@
         a_{21} & a_{22} & a_{23}
     \end{bmatrix}
 \]
-Про эа граэки квюаыквуэ дйжпютандо. Ыт вэл тебиквюэ дэфянятйоныс, нам жолюм
-квюандо мандамюч эа. Эож пауло лаудым инкедыринт нэ, пэрпэтюа форынчйбюж пэр
-эю. Модыратиюз дытыррюизщэт дуо ад, вирйз фэугяат дытракжйт нык ед, дуо алиё
-каючаэ лыгэндоч но. Эа мольлиз юрбанйтаж зигнёфэрумквюы эжт.
+Pro ea graeki kvyuaykvue dyzhpyutando. Yt vel tebikvyue defyanyatyonys, nam zholyum
+kvyuando mandamyuch ea. Eozh paulo laudym inkedyrint ne, perpetyua forynchybyuzh per
+eyu. Modyratiyuz dytyrryuizshchet duo ad, viryz feugyaat dytrakzhyt nyk ed, duo alie
+kayuchae lygendoch no. Ea molliz yurbanytazh zigneferumkvyuy ezht.
 
-Про мандамюч кончэтытюр ед. Трётанё прёнкипыз зигнёфэрумквюы вяш ан. Ат хёз
-эквюедым щуавятатэ. Алёэнюм зэнтынтиаэ ад про, эа ючю мюнырэ граэки дэмокритум,
-ку про чент волуптариа. Ыльит дыкоры аляквюид еюж ыт. Ку рыбюм мюндй ютенам
-дуо.
+Pro mandamyuch konchetytyur ed. Tretane prenkipyz zigneferumkvyuy vyash an. At khez
+ekvyuedym shchuavyatate. Aleenyum zentyntiae ad pro, ea yuchyu myunyre graeki demokritum,
+ku pro chent voluptaria. Ylit dykory alyakvyuid eyuzh yt. Ku rybyum myundy yutenam
+duo.
 \begin{align*}
     2\times 2       & = 4      & 6\times 8 & = 48 \\
     3\times 3       & = 9      & a+b       & = c  \\
@@ -384,18 +384,18 @@
     \end{aligned}
 \end{equation}
 
-Пэр йн тальэ пожтэа, мыа ед попюльо дэбетиз жкрибэнтур. Йн квуй аппэтырэ
-мэнандря, зыд аляквюид хабымуч корпора йн. Омниюм пэркёпитюр шэа эю, шэа
-аппэтырэ аккузата рэформйданч ыт, ты ыррор вёртюты нюмквуам \(10 \times 65464 =
-654640\quad  3/2=1,5\) мэя. Ипзум эуежмод \(a+b = c\) мальюизчыт ад дуо. Ад
-фэюгаят пытынтёюм адвыржаряюм вяш. Модо эрепюят дэтракто ты нык, еюж мэнтётюм
-пырикульа аппэльлььантюр эа.
+Per yn tale pozhtea, mya ed popyulo debetiz zhkribentur. Yn kvuy appetyre
+menandrya, zyd alyakvyuid khabymuch korpora yn. Omniyum perkepityur shea eyu, shea
+appetyre akkuzata reformydanch yt, ty yrror vertyuty nyumkvuam \(10 \times 65464 =
+654640\quad  3/2=1,5\) meya. Ipzum euezhmod \(a+b = c\) malyuizchyt ad duo. Ad
+feyugayat pytynteyum advyrzharyayum vyash. Modo erepyuyat detrakto ty nyk, eyuzh mentetyum
+pyrikula appellantyur ea.
 
-Мэль ты дэлььынётё такематыш. Зэнтынтиаэ конклььюжионэмквуэ ан мэя. Вёжи лебыр
-квюаыквуэ квуй нэ, дуо зймюл дэлььиката ку. Ыам ку алиё путынт.
+Mel ty delynete takematysh. Zentyntiae konklyuzhionemkvue an meya. Vezhi lebyr
+kvyuaykvue kvuy ne, duo zymyul delikata ku. Yam ku alie putynt.
 
-%Большая фигурная скобка только справа
-\[\left. %ВАЖНО: точка после слова left делает скобку неотображаемой
+%Bolshaya figurnaya skobka tolko sprava
+\[\left. %VAZhNO: tochka posle slova left delaet skobku neotobrazhaemoy
     \begin{aligned}
         2 \times x      & = 4 \\
         3 \times y      & = 9 \\
@@ -404,27 +404,27 @@
 \]
 
 
-Конвынёры витюпырата но нам, тебиквюэ мэнтётюм позтюлант ед про. Дуо эа лаудым
-копиожаы, нык мовэт вэниам льебэравичсы эю, нам эпикюре дэтракто рыкючабо ыт.
-Вэрйтюж аккюжамюз ты шэа, дэбетиз форынчйбюж жкряпшэрит ыт прё. Ан еюж тымпор
-рыфэррэнтур, ючю дольор котёдиэквюэ йн. Зыд ипзум дытракжйт ныглэгэнтур нэ,
-партым ыкжплььикари дёжжэнтиюнт ад пэр. Мэль ты кытэрож молыжтйаы, нам но ыррор
-жкрипта аппарэат.
+Konvynery vityupyrata no nam, tebikvyue mentetyum poztyulant ed pro. Duo ea laudym
+kopiozhay, nyk movet veniam leberavichsy eyu, nam epikyure detrakto rykyuchabo yt.
+Verytyuzh akkyuzhamyuz ty shea, debetiz forynchybyuzh zhkryapsherit yt pre. An eyuzh tympor
+ryferrentur, yuchyu dolor kotediekvyue yn. Zyd ipzum dytrakzhyt nyglegentur ne,
+partym ykzhplikari dezhzhentiyunt ad per. Mel ty kyterozh molyzhtyay, nam no yrror
+zhkripta appareat.
 
 \[ \frac{m_{t\vphantom{y}}^2}{L_t^2} = \frac{m_{x\vphantom{y}}^2}{L_x^2} +
     \frac{m_y^2}{L_y^2} + \frac{m_{z\vphantom{y}}^2}{L_z^2} \]
 
-Вэре льаборэж тебиквюэ хаж ут. Ан пауло торквюатоз хаж, нэ пробо фэугяат
-такематыш шэа. Мэльёуз пэртинакёа юлламкорпэр прё ад, но мыа рыквюы конкыптам.
-Хёз квюот пэртинакёа эи, ельлюд трактатоз пэр ад. Зыд ед анёмал льаборэж
-номинави, жят ад конгуы льабятюр. Льаборэ тамквюам векж йн, пэр нэ дёко диам
-шапэрэт, экз вяш тебиквюэ элььэефэнд мэдиокретатым.
+Vere laborezh tebikvyue khazh ut. An paulo torkvyuatoz khazh, ne probo feugyaat
+takematysh shea. Meleuz pertinakea yullamkorper pre ad, no mya rykvyuy konkyptam.
+Khez kvyuot pertinakea ei, ellyud traktatoz per ad. Zyd ed anemal laborezh
+nominavi, zhyat ad konguy labyatyur. Labore tamkvyuam vekzh yn, per ne deko diam
+shaperet, ekz vyash tebikvyue eleefend mediokretatym.
 
-Нэ про натюм фюйзчыт квюальизквюэ, аэквюы жкаывола мэль ку. Ад граэкйж
-плььатонэм адвыржаряюм квуй, вим емпыдит коммюны ат, ат шэа одео квюаырэндум.
-Вёртюты ажжынтиор эффикеэнди эож нэ, доминг лаборамюз эи ыам. Чэнзэрет
-мныжаркхюм экз эож, ыльит тамквюам факильизиж нык эи. Квуй ан элыктрам
-тинкидюнт ентырпрытаряш. Йн янвыняры трактатоз зэнтынтиаэ зыд. Дюиж зальютатуж
-ыам но, про ыт анёмал мныжаркхюм, эи ыюм пондэрюм майыжтатйж.
+Ne pro natyum fyuyzchyt kvyualizkvyue, aekvyuy zhkayvola mel ku. Ad graekyzh
+platonem advyrzharyayum kvuy, vim empydit kommyuny at, at shea odeo kvyuayrendum.
+Vertyuty azhzhyntior effikeendi eozh ne, doming laboramyuz ei yam. Chenzeret
+mnyzharkkhyum ekz eozh, ylit tamkvyuam fakilizizh nyk ei. Kvuy an elyktram
+tinkidyunt entyrprytaryash. Yn yanvynyary traktatoz zentyntiae zyd. Dyuizh zalyutatuzh
+yam no, pro yt anemal mnyzharkkhyum, ei yyum ponderyum mayyzhtatyzh.
 
 \FloatBarrier

@@ -1,54 +1,54 @@
 %&preformat-synopsis
-\RequirePackage[l2tabu,orthodox]{nag} % Раскомментировав, можно в логе получать рекомендации относительно правильного использования пакетов и предупреждения об устаревших и нерекомендуемых пакетах
+\RequirePackage[l2tabu,orthodox]{nag} % Raskommentirovav, mozhno v loge poluchat rekomendatsii otnositelno pravilnogo ispolzovaniya paketov i preduprezhdeniya ob ustarevshikh i nerekomenduemykh paketakh
 
-% Откомментируйте, чтобы отключить генерацию закладок в pdf
+% Otkommentiruyte, chtoby otklyuchit generatsiyu zakladok v pdf
 % \PassOptionsToPackage{bookmarks=false}{hyperref}
 \documentclass[a5paper,10pt,twoside,openany,article]{memoir} %,draft
 
-\input{common/setup}          % общие настройки шаблона
-\input{common/packages}       % Пакеты общие для диссертации и автореферата
-\synopsistrue                 % Этот документ --- автореферат
-\input{Synopsis/synpackages}  % Пакеты для автореферата
-\input{Synopsis/userpackages} % Пакеты для специфических пользовательских задач
+\input{common/setup}          % obshchie nastroyki shablona
+\input{common/packages}       % Pakety obshchie dlya dissertatsii i avtoreferata
+\synopsistrue                 % Etot dokument --- avtoreferat
+\input{Synopsis/synpackages}  % Pakety dlya avtoreferata
+\input{Synopsis/userpackages} % Pakety dlya spetsificheskikh polzovatelskikh zadach
 
-\input{common/newnames}       % Новые переменные, которые могут использоваться во всём проекте
-\input{Synopsis/setup}        % Упрощённые настройки шаблона
+\input{common/newnames}       % Novye peremennye, kotorye mogut ispolzovatsya vo vsem proekte
+\input{Synopsis/setup}        % Uproshchennye nastroyki shablona
 
-\input{common/data}           % Основные сведения
-\input{common/fonts}          % Определение шрифтов (частичное)
-\input{common/styles}         % Стили общие для диссертации и автореферата
-\input{Synopsis/synstyles}    % Стили для автореферата
-\input{Synopsis/userstyles}   % Стили для специфических пользовательских задач
+\input{common/data}           % Osnovnye svedeniya
+\input{common/fonts}          % Opredelenie shriftov (chastichnoe)
+\input{common/styles}         % Stili obshchie dlya dissertatsii i avtoreferata
+\input{Synopsis/synstyles}    % Stili dlya avtoreferata
+\input{Synopsis/userstyles}   % Stili dlya spetsificheskikh polzovatelskikh zadach
 
-%%% Библиография. Выбор движка для реализации %%%
+%%% Bibliografiya. Vybor dvizhka dlya realizatsii %%%
 \ifnumequal{\value{bibliosel}}{0}{%
-    \input{biblio/predefined} % Встроенная реализация с загрузкой файла через движок bibtex8
+    \input{biblio/predefined} % Vstroennaya realizatsiya s zagruzkoy fayla cherez dvizhok bibtex8
 }{
-    \input{biblio/biblatex}   % Реализация пакетом biblatex через движок biber
+    \input{biblio/biblatex}   % Realizatsiya paketom biblatex cherez dvizhok biber
 }
 
-% Вывести информацию о выбранных опциях в лог сборки
+% Vyvesti informatsiyu o vybrannykh optsiyakh v log sborki
 \typeout{Selected options:}
 \typeout{Draft mode: \arabic{draft}}
 \typeout{Font: \arabic{fontfamily}}
 \typeout{AltFont: \arabic{usealtfont}}
 \typeout{Bibliography backend: \arabic{bibliosel}}
 \typeout{Precompile images: \arabic{imgprecompile}}
-% Вывести информацию о версиях используемых библиотек в лог сборки
+% Vyvesti informatsiyu o versiyakh ispolzuemykh bibliotek v log sborki
 \listfiles
 
 \begin{document}
-%%% Переопределение именований типовых разделов
+%%% Pereopredelenie imenovaniy tipovykh razdelov
 % https://tex.stackexchange.com/a/156050
 \gappto\captionsrussian{\input{common/renames}} % for polyglossia and babel
 \input{common/renames}
 
-\input{Synopsis/title}        % Титульный лист
-%\mainmatter                   % В том числе начинает нумерацию страниц арабскими цифрами с единицы
-\mainmatter*                  % Нумерация страниц не изменится, но начнётся с новой страницы
-\input{Synopsis/content}      % Содержание автореферата
+\input{Synopsis/title}        % Titulnyy list
+%\mainmatter                   % V tom chisle nachinaet numeratsiyu stranits arabskimi tsiframi s edinitsy
+\mainmatter*                  % Numeratsiya stranits ne izmenitsya, no nachnetsya s novoy stranitsy
+\input{Synopsis/content}      % Soderzhanie avtoreferata
 
-%%% Выходные сведения типографии
+%%% Vykhodnye svedeniya tipografii
 \newpage\thispagestyle{empty}
 
 \vspace*{0pt plus1fill}
@@ -61,16 +61,16 @@
     \thesisTitle
     \par\medskip
 
-    Автореф. дис. на соискание ученой степени \thesisDegreeShort
+    Avtoref. dis. na soiskanie uchenoy stepeni \thesisDegreeShort
     \par\bigskip
 
-    Подписано в печать \blank[\widthof{999}].\blank[\widthof{999}].\blank[\widthof{99999}].
-    Заказ № \blank[\widthof{999999999999}]
+    Podpisano v pechat \blank[\widthof{999}].\blank[\widthof{999}].\blank[\widthof{99999}].
+    Zakaz № \blank[\widthof{999999999999}]
 
-    Формат 60\(\times\)90/16. Усл. печ. л. 1. Тираж 100 экз.
-    %Это не совсем формат А5, но наиболее близкий, подробнее: http://ru.wikipedia.org/w/index.php?oldid=78976454
+    Format 60\(\times\)90/16. Usl. pech. l. 1. Tirazh 100 ekz.
+    %Eto ne sovsem format A5, no naibolee blizkiy, podrobnee: http://ru.wikipedia.org/w/index.php?oldid=78976454
 
-    Типография \blank[0.5\linewidth]
+    Tipografiya \blank[0.5\linewidth]
 \end{center}
 \cleardoublepage
 

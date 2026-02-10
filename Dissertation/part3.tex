@@ -1,234 +1,234 @@
-\chapter{Вёрстка таблиц}\label{ch:ch3}
+\chapter{Verstka tablits}\label{ch:ch3}
 
-\section{Таблица обыкновенная}\label{sec:ch3/sect1}
+\section{Tablitsa obyknovennaya}\label{sec:ch3/sect1}
 
-Так размещается таблица:
+Tak razmeshchaetsya tablitsa:
 
 \begin{table} [htbp]
     \centering
-    \begin{threeparttable}% выравнивание подписи по границам таблицы
-        \caption{Название таблицы}\label{tab:Ts0Sib}%
+    \begin{threeparttable}% vyravnivanie podpisi po granitsam tablitsy
+        \caption{Nazvanie tablitsy}\label{tab:Ts0Sib}%
         \begin{tabular}{| p{3cm} || p{3cm} | p{3cm} | p{4cm}l |}
             \hline
             \hline
-            Месяц   & \centering \(T_{min}\), К & \centering \(T_{max}\), К & \centering  \((T_{max} - T_{min})\), К & \\
+            Mesyats   & \centering \(T_{min}\), K & \centering \(T_{max}\), K & \centering  \((T_{max} - T_{min})\), K & \\
             \hline
-            Декабрь & \centering  253.575       & \centering  257.778       & \centering      4.203                  & \\
-            Январь  & \centering  262.431       & \centering  263.214       & \centering      0.783                  & \\
-            Февраль & \centering  261.184       & \centering  260.381       & \centering     \(-\)0.803              & \\
+            Dekabr & \centering  253.575       & \centering  257.778       & \centering      4.203                  & \\
+            Yanvar  & \centering  262.431       & \centering  263.214       & \centering      0.783                  & \\
+            Fevral & \centering  261.184       & \centering  260.381       & \centering     \(-\)0.803              & \\
             \hline
             \hline
         \end{tabular}
     \end{threeparttable}
 \end{table}
 
-\begin{table} [htbp]% Пример записи таблицы с номером, но без отображаемого наименования
+\begin{table} [htbp]% Primer zapisi tablitsy s nomerom, no bez otobrazhaemogo naimenovaniya
     \centering
-    \begin{threeparttable}% выравнивание подписи по границам таблицы
+    \begin{threeparttable}% vyravnivanie podpisi po granitsam tablitsy
         \caption{}%
         \label{tab:test1}%
         \begin{SingleSpace}
             \begin{tabular}{| c | c | c | c |}
                 \hline
-                Оконная функция & \({2N}\) & \({4N}\) & \({8N}\) \\ \hline
-                Прямоугольное   & 8.72     & 8.77     & 8.77     \\ \hline
-                Ханна           & 7.96     & 7.93     & 7.93     \\ \hline
-                Хэмминга        & 8.72     & 8.77     & 8.77     \\ \hline
-                Блэкмана        & 8.72     & 8.77     & 8.77     \\ \hline
+                Okonnaya funktsiya & \({2N}\) & \({4N}\) & \({8N}\) \\ \hline
+                Pryamougolnoe   & 8.72     & 8.77     & 8.77     \\ \hline
+                Khanna           & 7.96     & 7.93     & 7.93     \\ \hline
+                Khemminga        & 8.72     & 8.77     & 8.77     \\ \hline
+                Blekmana        & 8.72     & 8.77     & 8.77     \\ \hline
             \end{tabular}%
         \end{SingleSpace}
     \end{threeparttable}
 \end{table}
 
-Таблица~\cref{tab:test2} "--- пример таблицы, оформленной в~классическом книжном
-варианте или~очень близко к~нему. \mbox{ГОСТу} по~сути не~противоречит. Можно
-ещё~улучшить представление, с~помощью пакета \verb|siunitx| или~подобного.
+Tablitsa~\cref{tab:test2} "--- primer tablitsy, oformlennoy v~klassicheskom knizhnom
+variante ili~ochen blizko k~nemu. \mbox{GOSTu} po~suti ne~protivorechit. Mozhno
+eshche~uluchshit predstavlenie, s~pomoshchyu paketa \verb|siunitx| ili~podobnogo.
 
 \begin{table} [htbp]%
     \centering
-    \caption{Наименование таблицы, очень длинное наименование таблицы, чтобы посмотреть как оно будет располагаться на~нескольких строках и~переноситься}%
-    \label{tab:test2}% label всегда желательно идти после caption
-    \renewcommand{\arraystretch}{1.5}%% Увеличение расстояния между рядами, для улучшения восприятия.
+    \caption{Naimenovanie tablitsy, ochen dlinnoe naimenovanie tablitsy, chtoby posmotret kak ono budet raspolagatsya na~neskolkikh strokakh i~perenositsya}%
+    \label{tab:test2}% label vsegda zhelatelno idti posle caption
+    \renewcommand{\arraystretch}{1.5}%% Uvelichenie rasstoyaniya mezhdu ryadami, dlya uluchsheniya vospriyatiya.
     \begin{SingleSpace}
-        \begin{tabular}{@{}@{\extracolsep{20pt}}llll@{}} %Вертикальные полосы не используются принципиально, как и лишние горизонтальные (допускается по ГОСТ 2.105 пункт 4.4.5) % @{} позволяет прижиматься к краям
-            \toprule     %%% верхняя линейка
-            Оконная функция & \({2N}\) & \({4N}\) & \({8N}\) \\
-            \midrule %%% тонкий разделитель. Отделяет названия столбцов. Обязателен по ГОСТ 2.105 пункт 4.4.5
-            Прямоугольное   & 8.72     & 8.77     & 8.77     \\
-            Ханна           & 7.96     & 7.93     & 7.93     \\
-            Хэмминга        & 8.72     & 8.77     & 8.77     \\
-            Блэкмана        & 8.72     & 8.77     & 8.77     \\
-            \bottomrule %%% нижняя линейка
+        \begin{tabular}{@{}@{\extracolsep{20pt}}llll@{}} %Vertikalnye polosy ne ispolzuyutsya printsipialno, kak i lishnie gorizontalnye (dopuskaetsya po GOST 2.105 punkt 4.4.5) % @{} pozvolyaet prizhimatsya k krayam
+            \toprule     %%% verkhnyaya lineyka
+            Okonnaya funktsiya & \({2N}\) & \({4N}\) & \({8N}\) \\
+            \midrule %%% tonkiy razdelitel. Otdelyaet nazvaniya stolbtsov. Obyazatelen po GOST 2.105 punkt 4.4.5
+            Pryamougolnoe   & 8.72     & 8.77     & 8.77     \\
+            Khanna           & 7.96     & 7.93     & 7.93     \\
+            Khemminga        & 8.72     & 8.77     & 8.77     \\
+            Blekmana        & 8.72     & 8.77     & 8.77     \\
+            \bottomrule %%% nizhnyaya lineyka
         \end{tabular}%
     \end{SingleSpace}
 \end{table}
 
-\section{Таблица с многострочными ячейками и примечанием}
+\section{Tablitsa s mnogostrochnymi yacheykami i primechaniem}
 
-В таблице \cref{tab:makecell} приведён пример использования команды
-\verb+\multicolumn+ для объединения горизонтальных ячеек таблицы,
-и команд пакета \textit{makecell} для добавления разрыва строки внутри ячеек.
-При форматировании таблицы \cref{tab:makecell} использован стиль подписей \verb+split+.
-Глобально этот стиль может быть включён в файле \verb+Dissertation/setup.tex+ для диссертации и в
-файле \verb+Synopsis/setup.tex+ для автореферата.
-Однако такое оформление не~соответствует ГОСТ.
+V tablitse \cref{tab:makecell} priveden primer ispolzovaniya komandy
+\verb+\multicolumn+ dlya obedineniya gorizontalnykh yacheek tablitsy,
+i komand paketa \textit{makecell} dlya dobavleniya razryva stroki vnutri yacheek.
+Pri formatirovanii tablitsy \cref{tab:makecell} ispolzovan stil podpisey \verb+split+.
+Globalno etot stil mozhet byt vklyuchen v fayle \verb+Dissertation/setup.tex+ dlya dissertatsii i v
+fayle \verb+Synopsis/setup.tex+ dlya avtoreferata.
+Odnako takoe oformlenie ne~sootvetstvuet GOST.
 
 \begin{table} [htbp]
     \captionsetup[table]{format=split}
     \centering
-    \begin{threeparttable}% выравнивание подписи по границам таблицы
-        \caption{Пример использования функций пакета \textit{makecell}}%
+    \begin{threeparttable}% vyravnivanie podpisi po granitsam tablitsy
+        \caption{Primer ispolzovaniya funktsiy paketa \textit{makecell}}%
         \label{tab:makecell}%
         \begin{tabular}{| c | c | c | c |}
             \hline
-            Колонка 1                      & Колонка 2 &
-            \thead{Название колонки 3,                                                 \\
-            не помещающееся в одну строку} & Колонка 4                                 \\
+            Kolonka 1                      & Kolonka 2 &
+            \thead{Nazvanie kolonki 3,                                                 \\
+            ne pomeshchayushcheesya v odnu stroku} & Kolonka 4                                 \\
             \hline
-            \multicolumn{4}{|c|}{Выравнивание по центру}                               \\
+            \multicolumn{4}{|c|}{Vyravnivanie po tsentru}                               \\
             \hline
-            \multicolumn{2}{|r|}{\makecell{Выравнивание                                \\ к~правому краю}} &
-            \multicolumn{2}{l|}{Выравнивание к левому краю}                            \\
+            \multicolumn{2}{|r|}{\makecell{Vyravnivanie                                \\ k~pravomu krayu}} &
+            \multicolumn{2}{l|}{Vyravnivanie k levomu krayu}                            \\
             \hline
-            \makecell{В этой ячейке                                                    \\
-            много информации}              & 8.72      & 8.55                   & 8.44 \\
+            \makecell{V etoy yacheyke                                                    \\
+            mnogo informatsii}              & 8.72      & 8.55                   & 8.44 \\
             \cline{3-4}
-            А в этой мало                  & 8.22      & \multicolumn{2}{c|}{5}        \\
+            A v etoy malo                  & 8.22      & \multicolumn{2}{c|}{5}        \\
             \hline
         \end{tabular}%
     \end{threeparttable}
 \end{table}
 
-Таблицы~\cref{tab:test3,tab:test4} "--- пример реализации расположения
-примечания в~соответствии с ГОСТ 2.105. Каждый вариант со своими достоинствами
-и~недостатками. Вариант через \verb|tabulary| хорошо подбирает ширину столбцов,
-но~сложно управлять вертикальным выравниванием, \verb|tabularx| "--- наоборот.
+Tablitsy~\cref{tab:test3,tab:test4} "--- primer realizatsii raspolozheniya
+primechaniya v~sootvetstvii s GOST 2.105. Kazhdyy variant so svoimi dostoinstvami
+i~nedostatkami. Variant cherez \verb|tabulary| khorosho podbiraet shirinu stolbtsov,
+no~slozhno upravlyat vertikalnym vyravnivaniem, \verb|tabularx| "--- naoborot.
 \begin{table}[ht]%
-    \caption{Нэ про натюм фюйзчыт квюальизквюэ}\label{tab:test3}% label всегда желательно идти после caption
+    \caption{Ne pro natyum fyuyzchyt kvyualizkvyue}\label{tab:test3}% label vsegda zhelatelno idti posle caption
     \begin{SingleSpace}
-        \setlength\extrarowheight{6pt} %вот этим управляем расстоянием между рядами, \arraystretch даёт неудачный результат
-        \setlength{\tymin}{1.9cm}% минимальная ширина столбца
-        \begin{tabulary}{\textwidth}{@{}>{\zz}L >{\zz}C >{\zz}C >{\zz}C >{\zz}C@{}}% Вертикальные полосы не используются принципиально, как и лишние горизонтальные (допускается по ГОСТ 2.105 пункт 4.4.5) % @{} позволяет прижиматься к краям
-            \toprule     %%% верхняя линейка
-            доминг лаборамюз эи ыам (Общий съём цен шляп (юфть)) & Шеф взъярён &
-            адвыржаряюм &
-            тебиквюэ элььэефэнд мэдиокретатым &
-            Чэнзэрет мныжаркхюм         \\
-            \midrule %%% тонкий разделитель. Отделяет названия столбцов. Обязателен по ГОСТ 2.105 пункт 4.4.5
-            Эй, жлоб! Где туз? Прячь юных съёмщиц в~шкаф Плюш изъят. Бьём чуждый цен хвощ! &
+        \setlength\extrarowheight{6pt} %vot etim upravlyaem rasstoyaniem mezhdu ryadami, \arraystretch daet neudachnyy rezultat
+        \setlength{\tymin}{1.9cm}% minimalnaya shirina stolbtsa
+        \begin{tabulary}{\textwidth}{@{}>{\zz}L >{\zz}C >{\zz}C >{\zz}C >{\zz}C@{}}% Vertikalnye polosy ne ispolzuyutsya printsipialno, kak i lishnie gorizontalnye (dopuskaetsya po GOST 2.105 punkt 4.4.5) % @{} pozvolyaet prizhimatsya k krayam
+            \toprule     %%% verkhnyaya lineyka
+            doming laboramyuz ei yam (Obshchiy sem tsen shlyap (yuft)) & Shef vzyaren &
+            advyrzharyayum &
+            tebikvyue eleefend mediokretatym &
+            Chenzeret mnyzharkkhyum         \\
+            \midrule %%% tonkiy razdelitel. Otdelyaet nazvaniya stolbtsov. Obyazatelen po GOST 2.105 punkt 4.4.5
+            Ey, zhlob! Gde tuz? Pryach yunykh semshchits v~shkaf Plyush izyat. Bem chuzhdyy tsen khvoshch! &
             \({\approx}\) &
             \({\approx}\) &
             \({\approx}\) &
             \( + \) \\
-            Эх, чужак! Общий съём цен &
+            Ekh, chuzhak! Obshchiy sem tsen &
             \( + \) &
             \( + \) &
             \( + \) &
             \( - \) \\
-            Нэ про натюм фюйзчыт квюальизквюэ, аэквюы жкаывола мэль ку. Ад
-            граэкйж плььатонэм адвыржаряюм квуй, вим емпыдит коммюны ат, ат шэа
-            одео &
+            Ne pro natyum fyuyzchyt kvyualizkvyue, aekvyuy zhkayvola mel ku. Ad
+            graekyzh platonem advyrzharyayum kvuy, vim empydit kommyuny at, at shea
+            odeo &
             \({\approx}\) &
             \( - \) &
             \( - \) &
             \( - \) \\
-            Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч. &
+            Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch. &
             \( - \) &
             \( + \) &
             \( + \) &
             \({\approx}\) \\
-            Нэ про натюм фюйзчыт квюальизквюэ, аэквюы жкаывола мэль ку. Ад
-            граэкйж плььатонэм адвыржаряюм квуй, вим емпыдит коммюны ат, ат шэа
-            одео квюаырэндум. Вёртюты ажжынтиор эффикеэнди эож нэ. &
+            Ne pro natyum fyuyzchyt kvyualizkvyue, aekvyuy zhkayvola mel ku. Ad
+            graekyzh platonem advyrzharyayum kvuy, vim empydit kommyuny at, at shea
+            odeo kvyuayrendum. Vertyuty azhzhyntior effikeendi eozh ne. &
             \( + \) &
             \( - \) &
             \({\approx}\) &
             \( - \) \\
-            \midrule%%% тонкий разделитель
+            \midrule%%% tonkiy razdelitel
             \multicolumn{5}{@{}p{\textwidth}@{}}{%
-            \vspace*{-4ex}% этим подтягиваем повыше
-            \hspace*{2.5em}% абзацный отступ - требование ГОСТ 2.105
-            Примечание "---  Плюш изъят: <<\(+\)>> "--- адвыржаряюм квуй, вим
-            емпыдит; <<\(-\)>> "--- емпыдит коммюны ат; <<\({\approx}\)>> "---
-            Шеф взъярён тчк щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз?
-            Прячь юных съёмщиц в~шкаф. Экс-граф?
+            \vspace*{-4ex}% etim podtyagivaem povyshe
+            \hspace*{2.5em}% abzatsnyy otstup - trebovanie GOST 2.105
+            Primechanie "---  Plyush izyat: <<\(+\)>> "--- advyrzharyayum kvuy, vim
+            empydit; <<\(-\)>> "--- empydit kommyuny at; <<\({\approx}\)>> "---
+            Shef vzyaren tchk shchiptsy s~ekhom gudbay Zhyul. Ey, zhlob! Gde tuz?
+            Pryach yunykh semshchits v~shkaf. Eks-graf?
             }
             \\
-            \bottomrule %%% нижняя линейка
+            \bottomrule %%% nizhnyaya lineyka
         \end{tabulary}%
     \end{SingleSpace}
 \end{table}
 
-Если таблица~\cref{tab:test3} не помещается на той же странице, всё
-её~содержимое переносится на~следующую, ближайшую, а~этот текст идёт перед ней.
+Esli tablitsa~\cref{tab:test3} ne pomeshchaetsya na toy zhe stranitse, vse
+ee~soderzhimoe perenositsya na~sleduyushchuyu, blizhayshuyu, a~etot tekst idet pered ney.
 \begin{table}[ht]%
-    \caption{Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч}%
-    \label{tab:test4}% label всегда желательно идти после caption
-    \renewcommand{\arraystretch}{1.6}%% Увеличение расстояния между рядами, для улучшения восприятия.
+    \caption{Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch}%
+    \label{tab:test4}% label vsegda zhelatelno idti posle caption
+    \renewcommand{\arraystretch}{1.6}%% Uvelichenie rasstoyaniya mezhdu ryadami, dlya uluchsheniya vospriyatiya.
     \def\tabularxcolumn#1{m{#1}}
-    \begin{tabularx}{\textwidth}{@{}>{\raggedright}X>{\centering}m{1.9cm} >{\centering}m{1.9cm} >{\centering}m{1.9cm} >{\centering\arraybackslash}m{1.9cm}@{}}% Вертикальные полосы не используются принципиально, как и лишние горизонтальные (допускается по ГОСТ 2.105 пункт 4.4.5) % @{} позволяет прижиматься к краям
-        \toprule     %%% верхняя линейка
-        доминг лаборамюз эи ыам (Общий съём цен шляп (юфть))  & Шеф взъярён &
-        адвыр\-жаряюм                                         &
-        тебиквюэ элььэефэнд мэдиокретатым                     &
-        Чэнзэ\-рет мныжаркхюм                                                 \\
-        \midrule %%% тонкий разделитель. Отделяет названия столбцов. Обязателен по ГОСТ 2.105 пункт 4.4.5
-        Эй, жлоб! Где туз? Прячь юных съёмщиц в~шкаф Плюш изъят.
-        Бьём чуждый цен хвощ!                                 &
+    \begin{tabularx}{\textwidth}{@{}>{\raggedright}X>{\centering}m{1.9cm} >{\centering}m{1.9cm} >{\centering}m{1.9cm} >{\centering\arraybackslash}m{1.9cm}@{}}% Vertikalnye polosy ne ispolzuyutsya printsipialno, kak i lishnie gorizontalnye (dopuskaetsya po GOST 2.105 punkt 4.4.5) % @{} pozvolyaet prizhimatsya k krayam
+        \toprule     %%% verkhnyaya lineyka
+        doming laboramyuz ei yam (Obshchiy sem tsen shlyap (yuft))  & Shef vzyaren &
+        advyr\-zharyayum                                         &
+        tebikvyue eleefend mediokretatym                     &
+        Chenze\-ret mnyzharkkhyum                                                 \\
+        \midrule %%% tonkiy razdelitel. Otdelyaet nazvaniya stolbtsov. Obyazatelen po GOST 2.105 punkt 4.4.5
+        Ey, zhlob! Gde tuz? Pryach yunykh semshchits v~shkaf Plyush izyat.
+        Bem chuzhdyy tsen khvoshch!                                 &
         \({\approx}\)                                         &
         \({\approx}\)                                         &
         \({\approx}\)                                         &
         \( + \)                                                               \\
-        Эх, чужак! Общий съём цен                             &
+        Ekh, chuzhak! Obshchiy sem tsen                             &
         \( + \)                                               &
         \( + \)                                               &
         \( + \)                                               &
         \( - \)                                                               \\
-        Нэ про натюм фюйзчыт квюальизквюэ, аэквюы жкаывола мэль ку.
-        Ад граэкйж плььатонэм адвыржаряюм квуй, вим емпыдит коммюны ат,
-        ат шэа одео                                           &
+        Ne pro natyum fyuyzchyt kvyualizkvyue, aekvyuy zhkayvola mel ku.
+        Ad graekyzh platonem advyrzharyayum kvuy, vim empydit kommyuny at,
+        at shea odeo                                           &
         \({\approx}\)                                         &
         \( - \)                                               &
         \( - \)                                               &
         \( - \)                                                               \\
-        Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч. &
+        Lyubya, sesh shchiptsy, "--- vzdokhnet mer, "--- kayf zhguch. &
         \( - \)                                               &
         \( + \)                                               &
         \( + \)                                               &
         \({\approx}\)                                                         \\
-        Нэ про натюм фюйзчыт квюальизквюэ, аэквюы жкаывола мэль ку. Ад граэкйж
-        плььатонэм адвыржаряюм квуй, вим емпыдит коммюны ат, ат шэа одео
-        квюаырэндум. Вёртюты ажжынтиор эффикеэнди эож нэ.     &
+        Ne pro natyum fyuyzchyt kvyualizkvyue, aekvyuy zhkayvola mel ku. Ad graekyzh
+        platonem advyrzharyayum kvuy, vim empydit kommyuny at, at shea odeo
+        kvyuayrendum. Vertyuty azhzhyntior effikeendi eozh ne.     &
         \( + \)                                               &
         \( - \)                                               &
         \({\approx}\)                                         &
         \( - \)                                                               \\
-        \midrule%%% тонкий разделитель
+        \midrule%%% tonkiy razdelitel
         \multicolumn{5}{@{}p{\textwidth}@{}}{%
-        \vspace*{-4ex}% этим подтягиваем повыше
-        \hspace*{2.5em}% абзацный отступ - требование ГОСТ 2.105
-        Примечание "---  Плюш изъят: <<\(+\)>> "--- адвыржаряюм квуй, вим
-        емпыдит; <<\(-\)>> "--- емпыдит коммюны ат; <<\({\approx}\)>> "--- Шеф
-        взъярён тчк щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных
-        съёмщиц в~шкаф. Экс-граф?
+        \vspace*{-4ex}% etim podtyagivaem povyshe
+        \hspace*{2.5em}% abzatsnyy otstup - trebovanie GOST 2.105
+        Primechanie "---  Plyush izyat: <<\(+\)>> "--- advyrzharyayum kvuy, vim
+        empydit; <<\(-\)>> "--- empydit kommyuny at; <<\({\approx}\)>> "--- Shef
+        vzyaren tchk shchiptsy s~ekhom gudbay Zhyul. Ey, zhlob! Gde tuz? Pryach yunykh
+        semshchits v~shkaf. Eks-graf?
         }
         \\
-        \bottomrule %%% нижняя линейка
+        \bottomrule %%% nizhnyaya lineyka
     \end{tabularx}%
 \end{table}
 
-\section{Таблицы с форматированными числами}\label{sec:ch3/formatted-numbers}
+\section{Tablitsy s formatirovannymi chislami}\label{sec:ch3/formatted-numbers}
 
-В таблицах \cref{tab:S:parse,tab:S:align} представлены примеры использования опции
-форматирования чисел \texttt{S}, предоставляемой пакетом \texttt{siunitx}.
+V tablitsakh \cref{tab:S:parse,tab:S:align} predstavleny primery ispolzovaniya optsii
+formatirovaniya chisel \texttt{S}, predostavlyaemoy paketom \texttt{siunitx}.
 
 \begin{table}
     \centering
-    \begin{threeparttable}% выравнивание подписи по границам таблицы
-        \caption{Выравнивание столбцов}\label{tab:S:parse}
+    \begin{threeparttable}% vyravnivanie podpisi po granitsam tablitsy
+        \caption{Vyravnivanie stolbtsov}\label{tab:S:parse}
         \begin{tabular}{SS[table-parse-only]}
             \toprule
-            {Выравнивание по разделителю} & {Обычное выравнивание} \\
+            {Vyravnivanie po razdelitelyu} & {Obychnoe vyravnivanie} \\
             \midrule
             12.345                        & 12.345                 \\
             6,78                          & 6,78                   \\
@@ -241,8 +241,8 @@
 
 \begin{table}
     \centering
-    \begin{threeparttable}% выравнивание подписи по границам таблицы
-        \caption{Выравнивание с использованием опции \texttt{S}}\label{tab:S:align}
+    \begin{threeparttable}% vyravnivanie podpisi po granitsam tablitsy
+        \caption{Vyravnivanie s ispolzovaniem optsii \texttt{S}}\label{tab:S:align}
         \sisetup{
             table-figures-integer = 2,
             table-figures-decimal = 4
@@ -250,7 +250,7 @@
         \begin{tabular}
             {SS[table-number-alignment = center]S[table-number-alignment = left]S[table-number-alignment = right]}
             \toprule
-            {Колонка 1} & {Колонка 2} & {Колонка 3} & {Колонка 4} \\
+            {Kolonka 1} & {Kolonka 2} & {Kolonka 3} & {Kolonka 4} \\
             \midrule
             2.3456      & 2.3456      & 2.3456      & 2.3456      \\
             34.2345     & 34.2345     & 34.2345     & 34.2345     \\
@@ -261,19 +261,19 @@
     \end{threeparttable}
 \end{table}
 
-\section{Параграф \texorpdfstring{\cyrdash{}}{---} два}\label{sec:ch3/sect2}
-% Не все (xe|lua)latex совместимые шрифты умеют работать с русским тире "---
+\section{Paragraf \texorpdfstring{\cyrdash{}}{---} dva}\label{sec:ch3/sect2}
+% Ne vse (xe|lua)latex sovmestimye shrifty umeyut rabotat s russkim tire "---
 
-Некоторый текст.
+Nekotoryy tekst.
 
-\section{Параграф с подпараграфами}\label{sec:ch3/sect3}
+\section{Paragraf s podparagrafami}\label{sec:ch3/sect3}
 
-\subsection{Подпараграф \texorpdfstring{\cyrdash{}}{---} один}\label{subsec:ch3/sect3/sub1}
+\subsection{Podparagraf \texorpdfstring{\cyrdash{}}{---} odin}\label{subsec:ch3/sect3/sub1}
 
-Некоторый текст.
+Nekotoryy tekst.
 
-\subsection{Подпараграф \texorpdfstring{\cyrdash{}}{---} два}\label{subsec:ch3/sect3/sub2}
+\subsection{Podparagraf \texorpdfstring{\cyrdash{}}{---} dva}\label{subsec:ch3/sect3/sub2}
 
-Некоторый текст.
+Nekotoryy tekst.
 
 \clearpage

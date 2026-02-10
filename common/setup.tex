@@ -1,86 +1,86 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Файл упрощённых настроек шаблона, общих для диссертации и автореферата %%%%
+%%%% Fayl uproshchennykh nastroek shablona, obshchikh dlya dissertatsii i avtoreferata %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% Режим черновика %%%
+%%% Rezhim chernovika %%%
 \makeatletter
 \@ifundefined{c@draft}{
   \newcounter{draft}
-  \setcounter{draft}{0}  % 0 --- чистовик (максимальное соблюдение ГОСТ)
-                         % 1 --- черновик (отклонения от ГОСТ, но быстрая
-                         %       сборка итоговых PDF)
+  \setcounter{draft}{0}  % 0 --- chistovik (maksimalnoe soblyudenie GOST)
+                         % 1 --- chernovik (otkloneniya ot GOST, no bystraya
+                         %       sborka itogovykh PDF)
 }{}
 \makeatother
 
-%%% Пометки в тексте %%%
+%%% Pometki v tekste %%%
 \makeatletter
 \@ifundefined{c@showmarkup}{
   \newcounter{showmarkup}
-  \setcounter{showmarkup}{0}  % 0 --- скрыть пометки
-                              % 1 --- показывать пометки
+  \setcounter{showmarkup}{0}  % 0 --- skryt pometki
+                              % 1 --- pokazyvat pometki
 }{}
 \makeatother
 
-%%% Использование в pdflatex шрифтов не по-умолчанию %%%
+%%% Ispolzovanie v pdflatex shriftov ne po-umolchaniyu %%%
 \makeatletter
 \@ifundefined{c@usealtfont}{
   \newcounter{usealtfont}
-  \setcounter{usealtfont}{1}    % 0 --- шрифты на базе Computer Modern
-                                % 1 --- использовать пакет pscyr, при его
-                                %       наличии
-                                % 2 --- использовать пакет XCharter, при наличии
-                                %       подходящей версии
+  \setcounter{usealtfont}{1}    % 0 --- shrifty na baze Computer Modern
+                                % 1 --- ispolzovat paket pscyr, pri ego
+                                %       nalichii
+                                % 2 --- ispolzovat paket XCharter, pri nalichii
+                                %       podkhodyashchey versii
 }{}
 \makeatother
 
-%%% Использование в xelatex и lualatex семейств шрифтов %%%
+%%% Ispolzovanie v xelatex i lualatex semeystv shriftov %%%
 \makeatletter
 \@ifundefined{c@fontfamily}{
   \newcounter{fontfamily}
-  \setcounter{fontfamily}{1}  % 0 --- CMU семейство. Используется как fallback;
-                              % 1 --- Шрифты от MS (Times New Roman и компания)
-                              % 2 --- Семейство Liberation
+  \setcounter{fontfamily}{1}  % 0 --- CMU semeystvo. Ispolzuetsya kak fallback;
+                              % 1 --- Shrifty ot MS (Times New Roman i kompaniya)
+                              % 2 --- Semeystvo Liberation
 }{}
 \makeatother
 
-%%% Библиография %%%
+%%% Bibliografiya %%%
 \makeatletter
 \@ifundefined{c@bibliosel}{
   \newcounter{bibliosel}
-  \setcounter{bibliosel}{1}   % 0 --- встроенная реализация с загрузкой файла
-                              %       через движок bibtex8;
-                              % 1 --- реализация пакетом biblatex через движок
+  \setcounter{bibliosel}{1}   % 0 --- vstroennaya realizatsiya s zagruzkoy fayla
+                              %       cherez dvizhok bibtex8;
+                              % 1 --- realizatsiya paketom biblatex cherez dvizhok
                               %       biber
 }{}
 \makeatother
 
-%%% Вывод типов ссылок в библиографии %%%
+%%% Vyvod tipov ssylok v bibliografii %%%
 \makeatletter
 \@ifundefined{c@mediadisplay}{
   \newcounter{mediadisplay}
-  \setcounter{mediadisplay}{1}   % 0 --- не делать ничего; надписи [Текст] и
-                                 %       [Эл. ресурс] будут выводиться только в ссылках с
-                                 %       заполненным полем `media`;
-                                 % 1 --- автоматически добавлять надпись [Текст] к ссылкам с
-                                 %       незаполненным полем `media`; таким образом, у всех
-                                 %       источников будет указан тип, что соответствует
-                                 %       требованиям ГОСТ
-                                 % 2 --- автоматически удалять надписи [Текст], [Эл. Ресурс] и др.;
-                                 %       не соответствует ГОСТ
-                                 % 3 --- автоматически удалять надпись [Текст];
-                                 %       не соответствует ГОСТ
-                                 % 4 --- автоматически удалять надпись [Эл. Ресурс];
-                                 %       не соответствует ГОСТ
+  \setcounter{mediadisplay}{1}   % 0 --- ne delat nichego; nadpisi [Tekst] i
+                                 %       [El. resurs] budut vyvoditsya tolko v ssylkakh s
+                                 %       zapolnennym polem `media`;
+                                 % 1 --- avtomaticheski dobavlyat nadpis [Tekst] k ssylkam s
+                                 %       nezapolnennym polem `media`; takim obrazom, u vsekh
+                                 %       istochnikov budet ukazan tip, chto sootvetstvuet
+                                 %       trebovaniyam GOST
+                                 % 2 --- avtomaticheski udalyat nadpisi [Tekst], [El. Resurs] i dr.;
+                                 %       ne sootvetstvuet GOST
+                                 % 3 --- avtomaticheski udalyat nadpis [Tekst];
+                                 %       ne sootvetstvuet GOST
+                                 % 4 --- avtomaticheski udalyat nadpis [El. Resurs];
+                                 %       ne sootvetstvuet GOST
 }{}
 \makeatother
 
-%%% Предкомпиляция tikz рисунков для ускорения работы %%%
+%%% Predkompilyatsiya tikz risunkov dlya uskoreniya raboty %%%
 \makeatletter
 \@ifundefined{c@imgprecompile}{
   \newcounter{imgprecompile}
-  \setcounter{imgprecompile}{0}   % 0 --- без предкомпиляции;
-                                  % 1 --- пользоваться предварительно
-                                  %       скомпилированными pdf вместо генерации
-                                  %       заново из tikz
+  \setcounter{imgprecompile}{0}   % 0 --- bez predkompilyatsii;
+                                  % 1 --- polzovatsya predvaritelno
+                                  %       skompilirovannymi pdf vmesto generatsii
+                                  %       zanovo iz tikz
 }{}
 \makeatother

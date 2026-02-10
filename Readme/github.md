@@ -1,98 +1,98 @@
-## Как писать диссертацию на GitHub?
+## Kak pisat dissertatsiyu na GitHub?
 
 * [Hint](#Hint)
-* [Без обновления шаблона](#Без-обновления-шаблона)
-* [С обновлением](#С-обновлением)
-* [Если что-то пошло не так](#Если-что-то-пошло-не-так)
-* [Синхронизация с upstream (для продвинутых пользователей)](#Синхронизация-с-upstream-для-продвинутых-пользователей)
+* [Bez obnovleniya shablona](#Bez-obnovleniya-shablona)
+* [S obnovleniem](#S-obnovleniem)
+* [Esli chto-to poshlo ne tak](#Esli-chto-to-poshlo-ne-tak)
+* [Sinkhronizatsiya s upstream (dlya prodvinutykh polzovateley)](#Sinkhronizatsiya-s-upstream-dlya-prodvinutykh-polzovateley)
 
 ### Hint
 
-При использовании Git может оказаться полезным добавить нужные для пакета
-[`gitinfo2`](https://www.ctan.org/pkg/gitinfo2) файлы в локальную копию `.git/hooks`, тогда в режиме черновика на каждой странице диссертации будет указываться используемая ревизия документа (короткий хэш коммита) и дата его внесения.
+Pri ispolzovanii Git mozhet okazatsya poleznym dobavit nuzhnye dlya paketa
+[`gitinfo2`](https://www.ctan.org/pkg/gitinfo2) fayly v lokalnuyu kopiyu `.git/hooks`, togda v rezhime chernovika na kazhdoy stranitse dissertatsii budet ukazyvatsya ispolzuemaya reviziya dokumenta (korotkiy khesh kommita) i data ego vneseniya.
 
-### Без обновления шаблона
+### Bez obnovleniya shablona
 
-Описанную ниже схему можно использовать для того, чтобы писать свою
-диссертацию на GitHub используя шаблон
+Opisannuyu nizhe skhemu mozhno ispolzovat dlya togo, chtoby pisat svoyu
+dissertatsiyu na GitHub ispolzuya shablon
 *Russian-Phd-LaTeX-Dissertation-Template*
 
-0) Создаём учётную запись на GitHub.
+0) Sozdaem uchetnuyu zapis na GitHub.
 
-1) Логинимся, жмём значок Fork на главной странице шаблона. После
-этого шаблон появится в списке репозиториев уже вашей учётной
-записи.
+1) Loginimsya, zhmem znachok Fork na glavnoy stranitse shablona. Posle
+etogo shablon poyavitsya v spiske repozitoriev uzhe vashey uchetnoy
+zapisi.
 
-2) Открываем свою копию шаблона. Жмём кнопку Branch:master, в поле
-«Find or create a branch» пишем имя для ветки репозитория под свой
-диссер. У меня ([@kostyfisik](https://github.com/kostyfisik)) это «**disser-Ladutenko**». Если после нажатия на кнопку в
-поле ввода вы видите надпись «Filter branches/tags» — вы в чужой копии
-репозитория.
+2) Otkryvaem svoyu kopiyu shablona. Zhmem knopku Branch:master, v pole
+«Find or create a branch» pishem imya dlya vetki repozitoriya pod svoy
+disser. U menya ([@kostyfisik](https://github.com/kostyfisik)) eto «**disser-Ladutenko**». Esli posle nazhatiya na knopku v
+pole vvoda vy vidite nadpis «Filter branches/tags» — vy v chuzhoy kopii
+repozitoriya.
 
-3) Дальше можно клонировать шаблон к себе на компьютер. Делать это
-надо из **СВОЕЙ** копии шаблона!
+3) Dalshe mozhno klonirovat shablon k sebe na kompyuter. Delat eto
+nado iz **SVOEY** kopii shablona!
 
-4) Пишем диссер в своей ветке, радуемся возможностям системы контроля
-версии, например можно утром посмотреть, а что именно ты менял по
-тексту вчера в 3 часа ночи…
+4) Pishem disser v svoey vetke, raduemsya vozmozhnostyam sistemy kontrolya
+versii, naprimer mozhno utrom posmotret, a chto imenno ty menyal po
+tekstu vchera v 3 chasa nochi…
 
-Или научник наделал правок по всему тексту, делаем новую ветку,
-заменяем свой файл на исправленный, на сайте делаем compare,
-смотрим что поменялось.
+Ili nauchnik nadelal pravok po vsemu tekstu, delaem novuyu vetku,
+zamenyaem svoy fayl na ispravlennyy, na sayte delaem compare,
+smotrim chto pomenyalos.
 
-Продвинутый неленивый научник сделает вам pull request с
-предлагаемыми изменениями. Хорошей идей может оказаться использовать
-инструменты для code review и collaboration, существующие на GitHub. Перед тем как
-вносить изменения уже в ветку со своими изменениями — создаёте ещё одну ветку,
-а потом из неё делаете pull request в свою основную ветку дисера.
-Ссылку на изменения в PR можно послать научнику, а он может прямо на
-сайте добавлять комментарии именно по предлагаемым изменениям (т.е. он их сможет
-просматривать инкрементально, а не по всему дисеру сразу). Можно заводить
-личные issue (или их может добавлять научник), вроде «добавить картинку XXX»,
-«изменить описание эффекта YYY» и т.д. Оптимизируйте ваш рабочий процесс,
-сделайте его максимально эффективным!
+Prodvinutyy nelenivyy nauchnik sdelaet vam pull request s
+predlagaemymi izmeneniyami. Khoroshey idey mozhet okazatsya ispolzovat
+instrumenty dlya code review i collaboration, sushchestvuyushchie na GitHub. Pered tem kak
+vnosit izmeneniya uzhe v vetku so svoimi izmeneniyami — sozdaete eshche odnu vetku,
+a potom iz nee delaete pull request v svoyu osnovnuyu vetku disera.
+Ssylku na izmeneniya v PR mozhno poslat nauchniku, a on mozhet pryamo na
+sayte dobavlyat kommentarii imenno po predlagaemym izmeneniyam (t.e. on ikh smozhet
+prosmatrivat inkrementalno, a ne po vsemu diseru srazu). Mozhno zavodit
+lichnye issue (ili ikh mozhet dobavlyat nauchnik), vrode «dobavit kartinku XXX»,
+«izmenit opisanie effekta YYY» i t.d. Optimiziruyte vash rabochiy protsess,
+sdelayte ego maksimalno effektivnym!
 
-### С обновлением
+### S obnovleniem
 
-Остальные инструкции выполняются из командной строки в Linux, а для
-Windows\Mac есть программы для работы с git… в которых тоже можно
-выполнять указанные ниже команды! Нужны они для того, чтобы улучшения
-в основном шаблоне можно было наложить поверх уже начатого дисера.
+Ostalnye instruktsii vypolnyayutsya iz komandnoy stroki v Linux, a dlya
+Windows\Mac est programmy dlya raboty s git… v kotorykh tozhe mozhno
+vypolnyat ukazannye nizhe komandy! Nuzhny oni dlya togo, chtoby uluchsheniya
+v osnovnom shablone mozhno bylo nalozhit poverkh uzhe nachatogo disera.
 
-1) Указываем в своей локальной копии (на компьютере), что откуда она
-должна получать обновления. Это делается один раз для каждой локальной
-копии.
+1) Ukazyvaem v svoey lokalnoy kopii (na kompyutere), chto otkuda ona
+dolzhna poluchat obnovleniya. Eto delaetsya odin raz dlya kazhdoy lokalnoy
+kopii.
 
 `git remote add upstream https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template`
 
-2) Теперь в любой момент можно обновить свою локальную копию и свою
-копию на сайте GitHub следующим набором команд.
+2) Teper v lyuboy moment mozhno obnovit svoyu lokalnuyu kopiyu i svoyu
+kopiyu na sayte GitHub sleduyushchim naborom komand.
 
-Переключаемся в master ветку: `git checkout master`
+Pereklyuchaemsya v master vetku: `git checkout master`
 
-Синхронизируем локальную копию с своей копией на сайте: `git pull`
+Sinkhroniziruem lokalnuyu kopiyu s svoey kopiey na sayte: `git pull`
 
-Получаем актуальные обновления: `git fetch upstream`
+Poluchaem aktualnye obnovleniya: `git fetch upstream`
 
-Смотрим что поменялось: `git diff upstream/master`
+Smotrim chto pomenyalos: `git diff upstream/master`
 
-Сливаем изменения в свою локальную копию: `git merge upstream/master`
+Slivaem izmeneniya v svoyu lokalnuyu kopiyu: `git merge upstream/master`
 
-Отправляем их в свою копию на сайте: `git push`
+Otpravlyaem ikh v svoyu kopiyu na sayte: `git push`
 
-3) Не сложно подтянуть обновления уже непосредственно в свой диссер. Для этого
-(подставлено имя моей ветки диссера):
+3) Ne slozhno podtyanut obnovleniya uzhe neposredstvenno v svoy disser. Dlya etogo
+(podstavleno imya moey vetki dissera):
 
 `git checkout disser-Ladutenko`
 
-по желанию: `git diff master`
+po zhelaniyu: `git diff master`
 
 `git merge master`
 
-Если изменения были не очень конфликтующие (кто-то подправил файлы
-шаблона, которые вы и не трогали, например Readme или какие-то
-внутренние опции) всё тоже пройдёт без дополнительных вопросов, а
-состояние репозитория сразу перемотается вперёд через все новые коммиты
+Esli izmeneniya byli ne ochen konfliktuyushchie (kto-to podpravil fayly
+shablona, kotorye vy i ne trogali, naprimer Readme ili kakie-to
+vnutrennie optsii) vse tozhe proydet bez dopolnitelnykh voprosov, a
+sostoyanie repozitoriya srazu peremotaetsya vpered cherez vse novye kommity
 (fast-forward).
 
 ```bash
@@ -118,7 +118,7 @@ Fast-forward
  create mode 100644 Readme/github.md
 ```
 
-4) В противном случае может потребоваться ручное разрешение конфликтов. Например,
+4) V protivnom sluchae mozhet potrebovatsya ruchnoe razreshenie konfliktov. Naprimer,
 
 ```bash
 $ git merge master
@@ -138,48 +138,48 @@ CONFLICT (content): Merge conflict in Dissertation/appendix.tex
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-Тогда надо каждый файл с конфликтом открыть и исправить конфликт вручную.
+Togda nado kazhdyy fayl s konfliktom otkryt i ispravit konflikt vruchnuyu.
 
-Для файлов `partX.tex` это, как правило, означает, что надо удалить строчку
+Dlya faylov `partX.tex` eto, kak pravilo, oznachaet, chto nado udalit strochku
 
 ``` tex
 <<<<<<< HEAD
 ```
-в начале файла, найти строчку
+v nachale fayla, nayti strochku
 ``` tex
 =======
 ```
-и удалить от неё до строчки
+i udalit ot nee do strochki
 ``` tex
 >>>>>>> master
 ```
 
-Чаще всего хочется оставить HEAD, но могут быть варианты. Например:
+Chashche vsego khochetsya ostavit HEAD, no mogut byt varianty. Naprimer:
 
 ``` tex
 <<<<<<< HEAD
-%%% Макет страницы %%%
-% Выставляем значения полей (ГОСТ 7.0.11-2011, 5.3.7)
+%%% Maket stranitsy %%%
+% Vystavlyaem znacheniya poley (GOST 7.0.11-2011, 5.3.7)
 \geometry{a4paper,top=2cm,bottom=2cm,left=2.5cm,right=1cm}
 
 =======
 >>>>>>> master
 ```
 
-Описание к геометрии уехало в другой файл, так что его удаляем, а от master останется пустое место.
+Opisanie k geometrii uekhalo v drugoy fayl, tak chto ego udalyaem, a ot master ostanetsya pustoe mesto.
 
-Ещё пример:
+Eshche primer:
 
 ``` tex
 <<<<<<< HEAD
-%%% Интервалы %%%
-\usepackage[onehalfspacing]{setspace} % Опция запуска пакета правит не только интервалы в обычном тексте, но и формульные
+%%% Intervaly %%%
+\usepackage[onehalfspacing]{setspace} % Optsiya zapuska paketa pravit ne tolko intervaly v obychnom tekste, no i formulnye
 \usepackage{needspace}
 
-%%% Разрывы страниц %%%
-% \needspace{2\baselineskip} располагает две последующие строчки на
-% одной странице. Тут используется, чтобы слово "задачи" и "положения"
-% оказались на одной странице со списком из задач и положений
+%%% Razryvy stranits %%%
+% \needspace{2\baselineskip} raspolagaet dve posleduyushchie strochki na
+% odnoy stranitse. Tut ispolzuetsya, chtoby slovo "zadachi" i "polozheniya"
+% okazalis na odnoy stranitse so spiskom iz zadach i polozheniy
 %\usepackage{needspace}
 \makeatletter
 \newcommand\mynobreakpar{\par\nobreak\@afterheading}
@@ -189,7 +189,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 >>>>>>> master
 ```
 
-Объявления \usepackage переехали в другой файл, их тут удаляем, блок про разрыв страниц оставляем. Служебные
+Obyavleniya \usepackage pereekhali v drugoy fayl, ikh tut udalyaem, blok pro razryv stranits ostavlyaem. Sluzhebnye
 
 ``` tex
 <<<<<<< HEAD
@@ -197,28 +197,28 @@ Automatic merge failed; fix conflicts and then commit the result.
 >>>>>>> master
 ```
 
-разумеется, удаляем.
+razumeetsya, udalyaem.
 
-После того как все конфликты разрешены — не забудьте сделать финальный
-коммит, который я обычно называю merge.
+Posle togo kak vse konflikty razresheny — ne zabudte sdelat finalnyy
+kommit, kotoryy ya obychno nazyvayu merge.
 
-Собственно всё, ничего другого, чтобы поддерживать уже частично написанный диссер в соответствии с усилиями авторов шаблона достичь идеала не требуется.
+Sobstvenno vse, nichego drugogo, chtoby podderzhivat uzhe chastichno napisannyy disser v sootvetstvii s usiliyami avtorov shablona dostich ideala ne trebuetsya.
 
-### Если что-то пошло не так
+### Esli chto-to poshlo ne tak
 
-Ничего страшного, всегда есть возможность откатиться к коммиту прямо
-перед тем, как вы начали делать merge!
+Nichego strashnogo, vsegda est vozmozhnost otkatitsya k kommitu pryamo
+pered tem, kak vy nachali delat merge!
 
-### Синхронизация с upstream (для продвинутых пользователей)
+### Sinkhronizatsiya s upstream (dlya prodvinutykh polzovateley)
 
-Шаблон время от времени обновляется, и может возникнуть желание
-добавить полезные изменения к себе в работу.
-Однако делать это при помощи `merge` может быть проблематично.
-Для таких случаев удобно использовать команду  `git rebase`.
+Shablon vremya ot vremeni obnovlyaetsya, i mozhet vozniknut zhelanie
+dobavit poleznye izmeneniya k sebe v rabotu.
+Odnako delat eto pri pomoshchi `merge` mozhet byt problematichno.
+Dlya takikh sluchaev udobno ispolzovat komandu  `git rebase`.
 
-Рассмотрим ситуацию -- вы начали писать свою работу после коммита номер 3 в ветке `master`.
-После этого шаблон был обновлён в ветке `upstream`.
-Эта ситуация проиллюстрирована на рисунке ниже.
+Rassmotrim situatsiyu -- vy nachali pisat svoyu rabotu posle kommita nomer 3 v vetke `master`.
+Posle etogo shablon byl obnovlen v vetke `upstream`.
+Eta situatsiya proillyustrirovana na risunke nizhe.
 
 ```
 +--------+     +--------+     +--------+     +--------+     +--------+
@@ -231,17 +231,17 @@ Automatic merge failed; fix conflicts and then commit the result.
                                              +--------+     +--------+
 ```
 
-Для `merge` в данном случае наверняка понадобится разрешать множество конфликтов.
-`git` предоставляет более лёгкий способ синхронизации изменений -- `rebase`.
+Dlya `merge` v dannom sluchae navernyaka ponadobitsya razreshat mnozhestvo konfliktov.
+`git` predostavlyaet bolee legkiy sposob sinkhronizatsii izmeneniy -- `rebase`.
 
-Для слияния веток введите команду:
+Dlya sliyaniya vetok vvedite komandu:
 
 ```bash
 git rebase upstream
 ```
 
-После этого `git` применит Ваши изменения начиная с последнего коммита ветки `upstream`.
-Результат этой операции будет выглядеть так:
+Posle etogo `git` primenit Vashi izmeneniya nachinaya s poslednego kommita vetki `upstream`.
+Rezultat etoy operatsii budet vyglyadet tak:
 
 ```
                                                              upstream
@@ -250,19 +250,19 @@ git rebase upstream
 +--------+     +--------+     +--------+     +--------+     +--------+     +---------+     +---------+
 ```
 
-Такой подход вызовет минимальное количество конфликтов (если у веток только одно пересечение).
+Takoy podkhod vyzovet minimalnoe kolichestvo konfliktov (esli u vetok tolko odno peresechenie).
 
-Минусом данного подхода является то, что `hash` всех коммитов ветки `master` будет изменён.
-Следствием этого будет то, что ссылки на эти коммиты в issue tracker будут сломаны,
-так что данный способ лучше **не использовать при наличии ссылок на коммиты в issue tracker**.
+Minusom dannogo podkhoda yavlyaetsya to, chto `hash` vsekh kommitov vetki `master` budet izmenen.
+Sledstviem etogo budet to, chto ssylki na eti kommity v issue tracker budut slomany,
+tak chto dannyy sposob luchshe **ne ispolzovat pri nalichii ssylok na kommity v issue tracker**.
 
-Кроме того, при загрузке изменений на сервер потребуется использовать *силу*:
+Krome togo, pri zagruzke izmeneniy na server potrebuetsya ispolzovat *silu*:
 
 ```bash
 git push --force origin master
 ```
 
-А при последующей синхронизации на *другом* компьютере надо будет использовать:
+A pri posleduyushchey sinkhronizatsii na *drugom* kompyutere nado budet ispolzovat:
 
 ```bash
 git fetch origin

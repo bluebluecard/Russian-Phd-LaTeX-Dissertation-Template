@@ -1,14 +1,14 @@
-\clearpage                                  % В том числе гарантирует, что список литературы в оглавлении будет с правильным номером страницы
-%\hypersetup{ urlcolor=black }               % Ссылки делаем чёрными
-%\providecommand*{\BibDash}{}                % В стилях ugost2008 отключаем использование тире как разделителя
-\urlstyle{rm}                               % ссылки URL обычным шрифтом
-\ifdefmacro{\microtypesetup}{\microtypesetup{protrusion=false}}{} % не рекомендуется применять пакет микротипографики к автоматически генерируемому списку литературы
-\insertbibliofull                           % Подключаем Bib-базы: все статьи единым списком
-% Режим с подсписками
-%\insertbiblioexternal                      % Подключаем Bib-базы: статьи, не являющиеся статьями автора по теме диссертации
-% Для вывода выберите и расскомментируйте одно из двух
-%\insertbiblioauthor                        % Подключаем Bib-базы: работы автора единым списком 
-%\insertbiblioauthorgrouped                 % Подключаем Bib-базы: работы автора сгруппированные (ВАК, WoS, Scopus и т.д.)
+\clearpage                                  % Also ensures the bibliography has the correct page number in the table of contents
+%\hypersetup{ urlcolor=black }               % Make links black
+%\providecommand*{\BibDash}{}                % In ugost2008 styles, disable em-dash as a separator
+\urlstyle{rm}                               % Set URL links in regular font
+\ifdefmacro{\microtypesetup}{\microtypesetup{protrusion=false}}{} % It is not recommended to apply microtypography to an auto-generated bibliography
+\insertbibliofull                           % Include Bib databases: all entries in one list
+% Sublist mode
+%\insertbiblioexternal                      % Include Bib databases: papers not authored by the dissertation author
+% For output, choose and uncomment one of the two options
+%\insertbiblioauthor                        % Include Bib databases: author works in a single list
+%\insertbiblioauthorgrouped                 % Include Bib databases: author works grouped (VAK, WoS, Scopus, etc.)
 \ifdefmacro{\microtypesetup}{\microtypesetup{protrusion=true}}{}
-\urlstyle{tt}                               % возвращаем установки шрифта ссылок URL
-%\hypersetup{ urlcolor={urlcolor} }          % Восстанавливаем цвет ссылок
+\urlstyle{tt}                               % restore URL link font settings
+%\hypersetup{ urlcolor={urlcolor} }          % Restore link color

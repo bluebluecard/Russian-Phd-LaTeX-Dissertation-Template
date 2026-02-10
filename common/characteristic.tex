@@ -1,73 +1,73 @@
 
-{\actuality} Обзор, введение в тему, обозначение места данной работы в
-мировых исследованиях и~т.\:п., можно использовать ссылки на~другие
-работы~\autocite{Gosele1999161,Lermontov}
-(если их~нет, то~в~автореферате
-автоматически пропадёт раздел <<Список литературы>>). Внимание! Ссылки
-на~другие работы в~разделе общей характеристики работы можно
-использовать только при использовании \verb!biblatex! (из-за технических
-ограничений \verb!bibtex8!. Это связано с тем, что одна
-и~та~же~характеристика используются и~в~тексте диссертации, и в
-автореферате. В~последнем, согласно ГОСТ, должен присутствовать список
-работ автора по~теме диссертации, а~\verb!bibtex8! не~умеет выводить в~одном
-файле два списка литературы).
-При использовании \verb!biblatex! возможно использование исключительно
-в~автореферате подстрочных ссылок
-для других работ командой \verb!\autocite!~\autocite{Marketing}, а~также цитирование
-собственных работ командой \verb!\cite!. Для этого в~файле
-\verb!common/setup.tex! необходимо присвоить положительное значение
-счётчику \verb!\setcounter{usefootcite}{1}!.
+{\actuality} Obzor, vvedenie v temu, oboznachenie mesta dannoy raboty v
+mirovykh issledovaniyakh i~t.\:p., mozhno ispolzovat ssylki na~drugie
+raboty~\autocite{Gosele1999161,Lermontov}
+(esli ikh~net, to~v~avtoreferate
+avtomaticheski propadet razdel <<Spisok literatury>>). Vnimanie! Ssylki
+na~drugie raboty v~razdele obshchey kharakteristiki raboty mozhno
+ispolzovat tolko pri ispolzovanii \verb!biblatex! (iz-za tekhnicheskikh
+ogranicheniy \verb!bibtex8!. Eto svyazano s tem, chto odna
+i~ta~zhe~kharakteristika ispolzuyutsya i~v~tekste dissertatsii, i v
+avtoreferate. V~poslednem, soglasno GOST, dolzhen prisutstvovat spisok
+rabot avtora po~teme dissertatsii, a~\verb!bibtex8! ne~umeet vyvodit v~odnom
+fayle dva spiska literatury).
+Pri ispolzovanii \verb!biblatex! vozmozhno ispolzovanie isklyuchitelno
+v~avtoreferate podstrochnykh ssylok
+dlya drugikh rabot komandoy \verb!\autocite!~\autocite{Marketing}, a~takzhe tsitirovanie
+sobstvennykh rabot komandoy \verb!\cite!. Dlya etogo v~fayle
+\verb!common/setup.tex! neobkhodimo prisvoit polozhitelnoe znachenie
+schetchiku \verb!\setcounter{usefootcite}{1}!.
 
-Для генерации содержимого титульного листа автореферата, диссертации
-и~презентации используются данные из файла \verb!common/data.tex!. Если,
-например, вы меняете название диссертации, то оно автоматически
-появится в~итоговых файлах после очередного запуска \LaTeX. Согласно
-ГОСТ 7.0.11-2011 <<5.1.1 Титульный лист является первой страницей
-диссертации, служит источником информации, необходимой для обработки и
-поиска документа>>. Наличие логотипа организации на~титульном листе
-упрощает обработку и~поиск, для этого разметите логотип вашей
-организации в папке images в~формате PDF (лучше найти его в векторном
-варианте, чтобы он хорошо смотрелся при печати) под именем
-\verb!logo.pdf!. Настроить размер изображения с логотипом можно
-в~соответствующих местах файлов \verb!title.tex!  отдельно для
-диссертации и автореферата. Если вам логотип не~нужен, то просто
-удалите файл с~логотипом.
+Dlya generatsii soderzhimogo titulnogo lista avtoreferata, dissertatsii
+i~prezentatsii ispolzuyutsya dannye iz fayla \verb!common/data.tex!. Esli,
+naprimer, vy menyaete nazvanie dissertatsii, to ono avtomaticheski
+poyavitsya v~itogovykh faylakh posle ocherednogo zapuska \LaTeX. Soglasno
+GOST 7.0.11-2011 <<5.1.1 Titulnyy list yavlyaetsya pervoy stranitsey
+dissertatsii, sluzhit istochnikom informatsii, neobkhodimoy dlya obrabotki i
+poiska dokumenta>>. Nalichie logotipa organizatsii na~titulnom liste
+uproshchaet obrabotku i~poisk, dlya etogo razmetite logotip vashey
+organizatsii v papke images v~formate PDF (luchshe nayti ego v vektornom
+variante, chtoby on khorosho smotrelsya pri pechati) pod imenem
+\verb!logo.pdf!. Nastroit razmer izobrazheniya s logotipom mozhno
+v~sootvetstvuyushchikh mestakh faylov \verb!title.tex!  otdelno dlya
+dissertatsii i avtoreferata. Esli vam logotip ne~nuzhen, to prosto
+udalite fayl s~logotipom.
 
 \ifsynopsis
-Этот абзац появляется только в~автореферате.
-Для формирования блоков, которые будут обрабатываться только в~автореферате,
-заведена проверка условия \verb!\!\verb!ifsynopsis!.
-Значение условия задаётся в~основном файле документа (\verb!synopsis.tex! для
-автореферата).
+Etot abzats poyavlyaetsya tolko v~avtoreferate.
+Dlya formirovaniya blokov, kotorye budut obrabatyvatsya tolko v~avtoreferate,
+zavedena proverka usloviya \verb!\!\verb!ifsynopsis!.
+Znachenie usloviya zadaetsya v~osnovnom fayle dokumenta (\verb!synopsis.tex! dlya
+avtoreferata).
 \else
-Этот абзац появляется только в~диссертации.
-Через проверку условия \verb!\!\verb!ifsynopsis!, задаваемого в~основном файле
-документа (\verb!dissertation.tex! для диссертации), можно сделать новую
-команду, обеспечивающую появление цитаты в~диссертации, но~не~в~автореферате.
+Etot abzats poyavlyaetsya tolko v~dissertatsii.
+Cherez proverku usloviya \verb!\!\verb!ifsynopsis!, zadavaemogo v~osnovnom fayle
+dokumenta (\verb!dissertation.tex! dlya dissertatsii), mozhno sdelat novuyu
+komandu, obespechivayushchuyu poyavlenie tsitaty v~dissertatsii, no~ne~v~avtoreferate.
 \fi
 
 % {\progress}
-% Этот раздел должен быть отдельным структурным элементом по
-% ГОСТ, но он, как правило, включается в описание актуальности
-% темы. Нужен он отдельным структурынм элемементом или нет ---
-% смотрите другие диссертации вашего совета, скорее всего не нужен.
+% Etot razdel dolzhen byt otdelnym strukturnym elementom po
+% GOST, no on, kak pravilo, vklyuchaetsya v opisanie aktualnosti
+% temy. Nuzhen on otdelnym strukturynm elemementom ili net ---
+% smotrite drugie dissertatsii vashego soveta, skoree vsego ne nuzhen.
 
-{\aim} данной работы является \ldots
+{\aim} dannoy raboty yavlyaetsya \ldots
 
-Для~достижения поставленной цели необходимо было решить следующие {\tasks}:
+Dlya~dostizheniya postavlennoy tseli neobkhodimo bylo reshit sleduyushchie {\tasks}:
 \begin{enumerate}[beginpenalty=10000] % https://tex.stackexchange.com/a/476052/104425
-  \item Исследовать, разработать, вычислить и~т.\:д. и~т.\:п.
-  \item Исследовать, разработать, вычислить и~т.\:д. и~т.\:п.
-  \item Исследовать, разработать, вычислить и~т.\:д. и~т.\:п.
-  \item Исследовать, разработать, вычислить и~т.\:д. и~т.\:п.
+  \item Issledovat, razrabotat, vychislit i~t.\:d. i~t.\:p.
+  \item Issledovat, razrabotat, vychislit i~t.\:d. i~t.\:p.
+  \item Issledovat, razrabotat, vychislit i~t.\:d. i~t.\:p.
+  \item Issledovat, razrabotat, vychislit i~t.\:d. i~t.\:p.
 \end{enumerate}
 
 
 {\novelty}
 \begin{enumerate}[beginpenalty=10000] % https://tex.stackexchange.com/a/476052/104425
-  \item Впервые \ldots
-  \item Впервые \ldots
-  \item Было выполнено оригинальное исследование \ldots
+  \item Vpervye \ldots
+  \item Vpervye \ldots
+  \item Bylo vypolneno originalnoe issledovanie \ldots
 \end{enumerate}
 
 {\influence} \ldots
@@ -76,41 +76,41 @@
 
 {\defpositions}
 \begin{enumerate}[beginpenalty=10000] % https://tex.stackexchange.com/a/476052/104425
-  \item Первое положение
-  \item Второе положение
-  \item Третье положение
-  \item Четвертое положение
+  \item Pervoe polozhenie
+  \item Vtoroe polozhenie
+  \item Trete polozhenie
+  \item Chetvertoe polozhenie
 \end{enumerate}
-В папке Documents можно ознакомиться с решением совета из Томского~ГУ
-(в~файле \verb+Def_positions.pdf+), где обоснованно даются рекомендации
-по~формулировкам защищаемых положений.
+V papke Documents mozhno oznakomitsya s resheniem soveta iz Tomskogo~GU
+(v~fayle \verb+Def_positions.pdf+), gde obosnovanno dayutsya rekomendatsii
+po~formulirovkam zashchishchaemykh polozheniy.
 
-{\reliability} полученных результатов обеспечивается \ldots \ Результаты находятся в соответствии с результатами, полученными другими авторами.
+{\reliability} poluchennykh rezultatov obespechivaetsya \ldots \ Rezultaty nakhodyatsya v sootvetstvii s rezultatami, poluchennymi drugimi avtorami.
 
 
 {\probation}
-Основные результаты работы докладывались~на:
-перечисление основных конференций, симпозиумов и~т.\:п.
+Osnovnye rezultaty raboty dokladyvalis~na:
+perechislenie osnovnykh konferentsiy, simpoziumov i~t.\:p.
 
-{\contribution} Автор принимал активное участие \ldots
+{\contribution} Avtor prinimal aktivnoe uchastie \ldots
 
 \ifnumequal{\value{bibliosel}}{0}
-{%%% Встроенная реализация с загрузкой файла через движок bibtex8. (При желании, внутри можно использовать обычные ссылки, наподобие `\cite{vakbib1,vakbib2}`).
-    {\publications} Основные результаты по теме диссертации изложены
-    в~XX~печатных изданиях,
-    X из которых изданы в журналах, рекомендованных ВАК,
-    X "--- в тезисах докладов.
+{%%% Vstroennaya realizatsiya s zagruzkoy fayla cherez dvizhok bibtex8. (Pri zhelanii, vnutri mozhno ispolzovat obychnye ssylki, napodobie `\cite{vakbib1,vakbib2}`).
+    {\publications} Osnovnye rezultaty po teme dissertatsii izlozheny
+    v~XX~pechatnykh izdaniyakh,
+    X iz kotorykh izdany v zhurnalakh, rekomendovannykh VAK,
+    X "--- v tezisakh dokladov.
 }%
-{%%% Реализация пакетом biblatex через движок biber
+{%%% Realizatsiya paketom biblatex cherez dvizhok biber
     \begin{refsection}[bl-author, bl-registered]
-        % Это refsection=1.
-        % Процитированные здесь работы:
-        %  * подсчитываются, для автоматического составления фразы "Основные результаты ..."
-        %  * попадают в авторскую библиографию, при usefootcite==0 и стиле `\insertbiblioauthor` или `\insertbiblioauthorgrouped`
-        %  * нумеруются там в зависимости от порядка команд `\printbibliography` в этом разделе.
-        %  * при использовании `\insertbiblioauthorgrouped`, порядок команд `\printbibliography` в нём должен быть тем же (см. biblio/biblatex.tex)
+        % Eto refsection=1.
+        % Protsitirovannye zdes raboty:
+        %  * podschityvayutsya, dlya avtomaticheskogo sostavleniya frazy "Osnovnye rezultaty ..."
+        %  * popadayut v avtorskuyu bibliografiyu, pri usefootcite==0 i stile `\insertbiblioauthor` ili `\insertbiblioauthorgrouped`
+        %  * numeruyutsya tam v zavisimosti ot poryadka komand `\printbibliography` v etom razdele.
+        %  * pri ispolzovanii `\insertbiblioauthorgrouped`, poryadok komand `\printbibliography` v nem dolzhen byt tem zhe (sm. biblio/biblatex.tex)
         %
-        % Невидимый библиографический список для подсчёта количества публикаций:
+        % Nevidimyy bibliograficheskiy spisok dlya podscheta kolichestva publikatsiy:
         \phantom{\printbibliography[heading=nobibheading, section=1, env=countauthorvak,          keyword=biblioauthorvak]%
         \printbibliography[heading=nobibheading, section=1, env=countauthorwos,          keyword=biblioauthorwos]%
         \printbibliography[heading=nobibheading, section=1, env=countauthorscopus,       keyword=biblioauthorscopus]%
@@ -125,45 +125,45 @@
         %
         \nocite{*}%
         %
-        {\publications} Основные результаты по теме диссертации изложены в~\arabic{citeauthor}~печатных изданиях,
-        \arabic{citeauthorvak} из которых изданы в журналах, рекомендованных ВАК%
+        {\publications} Osnovnye rezultaty po teme dissertatsii izlozheny v~\arabic{citeauthor}~pechatnykh izdaniyakh,
+        \arabic{citeauthorvak} iz kotorykh izdany v zhurnalakh, rekomendovannykh VAK%
         \ifnum \value{citeauthorscopuswos}>0%
-            , \arabic{citeauthorscopuswos} "--- в~периодических научных журналах, индексируемых Web of~Science и Scopus%
+            , \arabic{citeauthorscopuswos} "--- v~periodicheskikh nauchnykh zhurnalakh, indeksiruemykh Web of~Science i Scopus%
         \fi%
         \ifnum \value{citeauthorconf}>0%
-            , \arabic{citeauthorconf} "--- в~тезисах докладов.
+            , \arabic{citeauthorconf} "--- v~tezisakh dokladov.
         \else%
             .
         \fi%
         \ifnum \value{citeregistered}=1%
             \ifnum \value{citeauthorpatent}=1%
-                Зарегистрирован \arabic{citeauthorpatent} патент.
+                Zaregistrirovan \arabic{citeauthorpatent} patent.
             \fi%
             \ifnum \value{citeauthorprogram}=1%
-                Зарегистрирована \arabic{citeauthorprogram} программа для ЭВМ.
+                Zaregistrirovana \arabic{citeauthorprogram} programma dlya EVM.
             \fi%
         \fi%
         \ifnum \value{citeregistered}>1%
-            Зарегистрированы\ %
+            Zaregistrirovany\ %
             \ifnum \value{citeauthorpatent}>0%
-            \formbytotal{citeauthorpatent}{патент}{}{а}{}%
-            \ifnum \value{citeauthorprogram}=0 . \else \ и~\fi%
+            \formbytotal{citeauthorpatent}{patent}{}{a}{}%
+            \ifnum \value{citeauthorprogram}=0 . \else \ i~\fi%
             \fi%
             \ifnum \value{citeauthorprogram}>0%
-            \formbytotal{citeauthorprogram}{программ}{а}{ы}{} для ЭВМ.
+            \formbytotal{citeauthorprogram}{programm}{a}{y}{} dlya EVM.
             \fi%
         \fi%
-        % К публикациям, в которых излагаются основные научные результаты диссертации на соискание учёной
-        % степени, в рецензируемых изданиях приравниваются патенты на изобретения, патенты (свидетельства) на
-        % полезную модель, патенты на промышленный образец, патенты на селекционные достижения, свидетельства
-        % на программу для электронных вычислительных машин, базу данных, топологию интегральных микросхем,
-        % зарегистрированные в установленном порядке.(в ред. Постановления Правительства РФ от 21.04.2016 N 335)
+        % K publikatsiyam, v kotorykh izlagayutsya osnovnye nauchnye rezultaty dissertatsii na soiskanie uchenoy
+        % stepeni, v retsenziruemykh izdaniyakh priravnivayutsya patenty na izobreteniya, patenty (svidetelstva) na
+        % poleznuyu model, patenty na promyshlennyy obrazets, patenty na selektsionnye dostizheniya, svidetelstva
+        % na programmu dlya elektronnykh vychislitelnykh mashin, bazu dannykh, topologiyu integralnykh mikroskhem,
+        % zaregistrirovannye v ustanovlennom poryadke.(v red. Postanovleniya Pravitelstva RF ot 21.04.2016 N 335)
     \end{refsection}%
     \begin{refsection}[bl-author, bl-registered]
-        % Это refsection=2.
-        % Процитированные здесь работы:
-        %  * попадают в авторскую библиографию, при usefootcite==0 и стиле `\insertbiblioauthorimportant`.
-        %  * ни на что не влияют в противном случае
+        % Eto refsection=2.
+        % Protsitirovannye zdes raboty:
+        %  * popadayut v avtorskuyu bibliografiyu, pri usefootcite==0 i stile `\insertbiblioauthorimportant`.
+        %  * ni na chto ne vliyayut v protivnom sluchae
         \nocite{vakbib2}%vak
         \nocite{patbib1}%patent
         \nocite{progbib1}%program
@@ -171,41 +171,41 @@
         \nocite{confbib1}%conf
     \end{refsection}%
         %
-        % Всё, что вне этих двух refsection, это refsection=0,
-        %  * для диссертации - это нормальные ссылки, попадающие в обычную библиографию
-        %  * для автореферата:
-        %     * при usefootcite==0, ссылка корректно сработает только для источника из `external.bib`. Для своих работ --- напечатает "[0]" (и даже Warning не вылезет).
-        %     * при usefootcite==1, ссылка сработает нормально. В авторской библиографии будут только процитированные в refsection=0 работы.
+        % Vse, chto vne etikh dvukh refsection, eto refsection=0,
+        %  * dlya dissertatsii - eto normalnye ssylki, popadayushchie v obychnuyu bibliografiyu
+        %  * dlya avtoreferata:
+        %     * pri usefootcite==0, ssylka korrektno srabotaet tolko dlya istochnika iz `external.bib`. Dlya svoikh rabot --- napechataet "[0]" (i dazhe Warning ne vylezet).
+        %     * pri usefootcite==1, ssylka srabotaet normalno. V avtorskoy bibliografii budut tolko protsitirovannye v refsection=0 raboty.
 }
 
-При использовании пакета \verb!biblatex! будут подсчитаны все работы, добавленные
-в файл \verb!biblio/author.bib!. Для правильного подсчёта работ в~различных
-системах цитирования требуется использовать поля:
+Pri ispolzovanii paketa \verb!biblatex! budut podschitany vse raboty, dobavlennye
+v fayl \verb!biblio/author.bib!. Dlya pravilnogo podscheta rabot v~razlichnykh
+sistemakh tsitirovaniya trebuetsya ispolzovat polya:
 \begin{itemize}
-        \item \texttt{authorvak} если публикация индексирована ВАК,
-        \item \texttt{authorscopus} если публикация индексирована Scopus,
-        \item \texttt{authorwos} если публикация индексирована Web of Science,
-        \item \texttt{authorconf} для докладов конференций,
-        \item \texttt{authorpatent} для патентов,
-        \item \texttt{authorprogram} для зарегистрированных программ для ЭВМ,
-        \item \texttt{authorother} для других публикаций.
+        \item \texttt{authorvak} esli publikatsiya indeksirovana VAK,
+        \item \texttt{authorscopus} esli publikatsiya indeksirovana Scopus,
+        \item \texttt{authorwos} esli publikatsiya indeksirovana Web of Science,
+        \item \texttt{authorconf} dlya dokladov konferentsiy,
+        \item \texttt{authorpatent} dlya patentov,
+        \item \texttt{authorprogram} dlya zaregistrirovannykh programm dlya EVM,
+        \item \texttt{authorother} dlya drugikh publikatsiy.
 \end{itemize}
-Для подсчёта используются счётчики:
+Dlya podscheta ispolzuyutsya schetchiki:
 \begin{itemize}
-        \item \texttt{citeauthorvak} для работ, индексируемых ВАК,
-        \item \texttt{citeauthorscopus} для работ, индексируемых Scopus,
-        \item \texttt{citeauthorwos} для работ, индексируемых Web of Science,
-        \item \texttt{citeauthorvakscopuswos} для работ, индексируемых одной из трёх баз,
-        \item \texttt{citeauthorscopuswos} для работ, индексируемых Scopus или Web of~Science,
-        \item \texttt{citeauthorconf} для докладов на конференциях,
-        \item \texttt{citeauthorother} для остальных работ,
-        \item \texttt{citeauthorpatent} для патентов,
-        \item \texttt{citeauthorprogram} для зарегистрированных программ для ЭВМ,
-        \item \texttt{citeauthor} для суммарного количества работ.
+        \item \texttt{citeauthorvak} dlya rabot, indeksiruemykh VAK,
+        \item \texttt{citeauthorscopus} dlya rabot, indeksiruemykh Scopus,
+        \item \texttt{citeauthorwos} dlya rabot, indeksiruemykh Web of Science,
+        \item \texttt{citeauthorvakscopuswos} dlya rabot, indeksiruemykh odnoy iz trekh baz,
+        \item \texttt{citeauthorscopuswos} dlya rabot, indeksiruemykh Scopus ili Web of~Science,
+        \item \texttt{citeauthorconf} dlya dokladov na konferentsiyakh,
+        \item \texttt{citeauthorother} dlya ostalnykh rabot,
+        \item \texttt{citeauthorpatent} dlya patentov,
+        \item \texttt{citeauthorprogram} dlya zaregistrirovannykh programm dlya EVM,
+        \item \texttt{citeauthor} dlya summarnogo kolichestva rabot.
 \end{itemize}
-% Счётчик \texttt{citeexternal} используется для подсчёта процитированных публикаций;
-% \texttt{citeregistered} "--- для подсчёта суммарного количества патентов и программ для ЭВМ.
+% Schetchik \texttt{citeexternal} ispolzuetsya dlya podscheta protsitirovannykh publikatsiy;
+% \texttt{citeregistered} "--- dlya podscheta summarnogo kolichestva patentov i programm dlya EVM.
 
-Для добавления в список публикаций автора работ, которые не были процитированы в
-автореферате, требуется их~перечислить с использованием команды \verb!\nocite! в
+Dlya dobavleniya v spisok publikatsiy avtora rabot, kotorye ne byli protsitirovany v
+avtoreferate, trebuetsya ikh~perechislit s ispolzovaniem komandy \verb!\nocite! v
 \verb!Synopsis/content.tex!.

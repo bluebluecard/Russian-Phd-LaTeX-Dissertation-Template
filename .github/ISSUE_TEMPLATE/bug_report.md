@@ -1,43 +1,43 @@
 ---
 name: Bug report
-about: Сообщение об ошибке в шаблоне
+about: Soobshchenie ob oshibke v shablone
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-**Описание ошибки**
+**Opisanie oshibki**
 
-Чёткое и краткое описание ошибки.
+Chetkoe i kratkoe opisanie oshibki.
 
-**Воспроизведение**
+**Vosproizvedenie**
 
-Описание шагов, приводящих к ошибке:
+Opisanie shagov, privodyashchikh k oshibke:
 
-1. Открыть файл '....'
-2. Заменить '....' на '....'
-3. Выполнить команду '....'
-4. Увидеть ошибку
+1. Otkryt fayl '....'
+2. Zamenit '....' na '....'
+3. Vypolnit komandu '....'
+4. Uvidet oshibku
 
-**Ожидаемое поведение**
+**Ozhidaemoe povedenie**
 
-Чёткое и краткое описание того, что должно было произойти.
+Chetkoe i kratkoe opisanie togo, chto dolzhno bylo proizoyti.
 
-**Cкриншоты**
+**Ckrinshoty**
 
-Изображения, иллюстрирующие ошибку.
+Izobrazheniya, illyustriruyushchie oshibku.
 
-**Логи**
+**Logi**
 
-Сообщения ошибок при компиляции.
+Soobshcheniya oshibok pri kompilyatsii.
 
-**Используемые версии программ**
+**Ispolzuemye versii programm**
 
- - Операционная система, версия, дистрибутив
- - Дистрибутив TeX (TeXLive / MikTeX) и его версия
- - Версии пакетов TeX, относящихся к описываемой проблеме (при удачной компиляции список выводится в конце лога сборки после строки `*File List*`)
+ - Operatsionnaya sistema, versiya, distributiv
+ - Distributiv TeX (TeXLive / MikTeX) i ego versiya
+ - Versii paketov TeX, otnosyashchikhsya k opisyvaemoy probleme (pri udachnoy kompilyatsii spisok vyvoditsya v kontse loga sborki posle stroki `*File List*`)
 
-**Дополнительные материалы**
+**Dopolnitelnye materialy**
 
-Дополнительные материалы, описывающие ошибку.
+Dopolnitelnye materialy, opisyvayushchie oshibku.

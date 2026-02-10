@@ -1,116 +1,116 @@
-\section{Списки}
+\section{Spiski}
 \begin{frame}[plain, noframenumbering]
     \begin{center}
         \Huge
-        Списки
+        Spiski
     \end{center}
 \end{frame}
 
-\subsection{Нумерованные}
+\subsection{Numerovannye}
 
 \begin{frame}
-    \frametitle{Нумерованные списки}
+    \frametitle{Numerovannye spiski}
     \begin{enumerate}
-        \item один
-        \item два
-        \item три
+        \item odin
+        \item dva
+        \item tri
     \end{enumerate}
 \end{frame}
 \note{
-    Этот текст будет виден только если его отображение включено
-    в~файле \textbf{Presentation/setup}.
-    Для раздельного вывода презентации и заметок на~разные экраны (как
-    в~impress или powerpoint) можно использовать программу
+    Etot tekst budet viden tolko esli ego otobrazhenie vklyucheno
+    v~fayle \textbf{Presentation/setup}.
+    Dlya razdelnogo vyvoda prezentatsii i zametok na~raznye ekrany (kak
+    v~impress ili powerpoint) mozhno ispolzovat programmu
     \textit{pdf-presenter-console}.
 }
 
-\subsection{Не нумерованные}
+\subsection{Ne numerovannye}
 
 
 \begin{frame}
-    \frametitle{Перечисления}
+    \frametitle{Perechisleniya}
     \begin{itemize}
-        \item Проблема 1
-        \item Проблема 2
-        \item Проблема 3
+        \item Problema 1
+        \item Problema 2
+        \item Problema 3
     \end{itemize}
 \end{frame}
 \note[itemize]{
-    \item Тезис 1
-    \item Тезис 2
-    \item Тезис 3
+    \item Tezis 1
+    \item Tezis 2
+    \item Tezis 3
 }
 
-\subsection{Комбинированные}
+\subsection{Kombinirovannye}
 
 \begin{frame}
-    \frametitle{Комбинация списков}
+    \frametitle{Kombinatsiya spiskov}
     \begin{enumerate}
-        \item \textbf{Задача 1}
+        \item \textbf{Zadacha 1}
               \begin{itemize}
-                  \item Подзадача 1-1
-                  \item Подзадача 1-2
+                  \item Podzadacha 1-1
+                  \item Podzadacha 1-2
               \end{itemize}
-        \item \textbf{Задача 2}
+        \item \textbf{Zadacha 2}
               \begin{itemize}
-                  \item Подзадача 2-1
-                  \item Подзадача 2-2
-                  \item Подзадача 2-3
+                  \item Podzadacha 2-1
+                  \item Podzadacha 2-2
+                  \item Podzadacha 2-3
               \end{itemize}
-        \item \textbf{Задача 3}
+        \item \textbf{Zadacha 3}
               \begin{itemize}
-                  \item Подзадача 3-1
-                  \item Подзадача 3-2
-                  \item Подзадача 3-3
+                  \item Podzadacha 3-1
+                  \item Podzadacha 3-2
+                  \item Podzadacha 3-3
               \end{itemize}
     \end{enumerate}
 \end{frame}
 \note[itemize]{
-    \item Задача 1
-    \item Задача 2
-    \item Задача 3
+    \item Zadacha 1
+    \item Zadacha 2
+    \item Zadacha 3
 }
 
 \begin{frame}[allowframebreaks]
-    \frametitle{Разделение слайда}
-    Поясняющий текст
+    \frametitle{Razdelenie slayda}
+    Poyasnyayushchiy tekst
     \begin{itemize}
-        \item Один
-        \item Два
-        \item Три
+        \item Odin
+        \item Dva
+        \item Tri
     \end{itemize}
     \framebreak
-    Продолжение предыдущего слайда
+    Prodolzhenie predydushchego slayda
 \end{frame}
 
-\section{Графика}
+\section{Grafika}
 \begin{frame}[plain, noframenumbering]
     \begin{center}
         \Huge
-        Графика
+        Grafika
     \end{center}
 \end{frame}
 
 
 \begin{frame}
-    \frametitle{Одиночное изображение}
+    \frametitle{Odinochnoe izobrazhenie}
     \centering
-    \includegraphics[width=0.8\linewidth]{latex} % окружение figure не требуется
+    \includegraphics[width=0.8\linewidth]{latex} % okruzhenie figure ne trebuetsya
 \end{frame}
 
 \begin{frame}
-    \frametitle{Векторная графика}
+    \frametitle{Vektornaya grafika}
     \begin{figure}
         \centering
-        \ifdefmacro{\tikzsetnextfilename}{\tikzsetnextfilename{tikz_presentation}}{}% присваиваемое предкомпилированному pdf имя файла (не обязательно)
+        \ifdefmacro{\tikzsetnextfilename}{\tikzsetnextfilename{tikz_presentation}}{}% prisvaivaemoe predkompilirovannomu pdf imya fayla (ne obyazatelno)
         \input{Presentation/images/tikz_plot.tikz}
     \end{figure}
 \end{frame}
 
-\subsection{Расположение}
+\subsection{Raspolozhenie}
 
 \begin{frame}
-    \frametitle{Изображения по-вертикали}
+    \frametitle{Izobrazheniya po-vertikali}
     \centering
     \vfill
     \includegraphics[width=0.8\linewidth,height=0.1\textheight]{latex} \\
@@ -125,51 +125,51 @@
 
 
 \begin{frame}
-    \frametitle{Изображения по-горизонтали}
+    \frametitle{Izobrazheniya po-gorizontali}
     \begin{minipage}[t]{0.47\linewidth}
-        \textbf{Составная \\ подпись 1}
+        \textbf{Sostavnaya \\ podpis 1}
         \center{\includegraphics[width=1\linewidth]{knuth1}}
     \end{minipage}
     \hfill
     \begin{minipage}[t]{0.47\linewidth}
-        \textbf{Составная \\ подпись 2}
+        \textbf{Sostavnaya \\ podpis 2}
         \center{\includegraphics[width=1\linewidth]{knuth2}}
     \end{minipage}
 \end{frame}
 
-\subsection{Линии}
+\subsection{Linii}
 
 \begin{frame}
-    \frametitle{Разделяющие линии}
+    \frametitle{Razdelyayushchie linii}
     \begin{minipage}[c]{0.47\linewidth}
         \center{\includegraphics[width=1\linewidth]{latex}}
         \bigskip
         \hrule{}
         \bigskip
-        \textbf{Составная \\ подпись 1}
+        \textbf{Sostavnaya \\ podpis 1}
     \end{minipage}
     \hfill
     \vrule{}
     \hfill
     \begin{minipage}[c]{0.47\linewidth}
         \flushright
-        \textbf{Составная \\ подпись 2}
+        \textbf{Sostavnaya \\ podpis 2}
         \center{\includegraphics[width=1\linewidth]{knuth2}}
     \end{minipage}
 \end{frame}
 
-\section{Остальное}
+\section{Ostalnoe}
 \begin{frame}[plain, noframenumbering]
     \begin{center}
         \Huge
-        Остальное
+        Ostalnoe
     \end{center}
 \end{frame}
 
-\subsection{Формулы}
+\subsection{Formuly}
 
 \begin{frame}
-    \frametitle{Формулы}
+    \frametitle{Formuly}
     \[
     \left\{
     \begin{array}{rl}
@@ -192,13 +192,13 @@
 \end{frame}
 
 \begin{frame}[allowframebreaks]
-    \frametitle{Уравнения Максвелла}
+    \frametitle{Uravneniya Maksvella}
     \centering{
         \small
         \def\arraystretch{1.8}%
         \begin{tabular}{ll}
             \toprule
-            Интегральная форма                                                                                                                                            & Дифференциальная форма                                                          \\ \midrule
+            Integralnaya forma                                                                                                                                            & Differentsialnaya forma                                                          \\ \midrule
             \(Q_e(t) = \displaystyle\oiint_S \vec D(t) \cdot d\vec{s} = \displaystyle\iiint_V \rho_v(t) dv\)                                                              & \(\nabla \cdot \vec D(t) = \rho_v(t)\)                                          \\
             \(\displaystyle\oiint_S \vec B(t) \cdot d\vec{s} = 0\)                                                                                                        & \(\nabla \cdot \vec B(t) = 0\)                                                  \\
             \(V_{emf}(t) = \displaystyle\oint_L \vec E(t) \cdot d\vec{l}\) = \(- \displaystyle\iint_S \left[\frac{\partial\vec{B}(t)}{\partial t}\right] \cdot d\vec{s}\) & \(\nabla \times \vec E(t) = - \frac{\partial\vec{B}(t)}{\partial t}\)           \\
@@ -217,7 +217,7 @@
         \def\arraystretch{1.8}%
         \begin{tabular}{ll}
             \toprule
-            Интегральная форма                                                                                                                & Дифференциальная форма                               \\ \midrule
+            Integralnaya forma                                                                                                                & Differentsialnaya forma                               \\ \midrule
             \(Q_e = \displaystyle\oiint_S \vec D \cdot d\vec{s} = \displaystyle\iiint_V \rho_v dv\)                                           & \(\nabla \cdot \vec D = \rho_v\)                     \\
             \(\displaystyle\oiint_S \vec B \cdot d\vec{s} = 0\)                                                                               & \(\nabla \cdot \vec B = 0\)                          \\
             \(V_{emf} = \displaystyle\oint_L \vec E \cdot d\vec{l}\) = \(- \displaystyle\iint_S \left[j \omega \vec B\right] \cdot d\vec{s}\) & \(\nabla \times \vec E = - j \omega \vec B\)         \\
@@ -230,72 +230,72 @@
     }
 \end{frame}
 
-\subsection{Таблицы}
+\subsection{Tablitsy}
 
 \begin{frame}
-    \frametitle{Таблица}
+    \frametitle{Tablitsa}
     \centering
     \begin{tabular}{|l|l|}
         \hline
-        \textbf{Заголовок 1} & \textbf{Заголовок 2} \\
+        \textbf{Zagolovok 1} & \textbf{Zagolovok 2} \\
         \hline
-        Сумма                & \(b+a\)              \\
+        Summa                & \(b+a\)              \\
         \hline
-        Разность             & \(a-b\)              \\
+        Raznost             & \(a-b\)              \\
         \hline
-        Произведение         & \(a*b\)              \\
+        Proizvedenie         & \(a*b\)              \\
         \hline
     \end{tabular}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Другая таблица}
+    \frametitle{Drugaya tablitsa}
     \centering
     \begin{tabular}{lc}
         \toprule
-        \multicolumn{1}{c}{\textbf{Заголовок 1}} & \textbf{Заголовок 2} \\ \midrule
-        Сумма                                    & \(b+a\)              \\
-        Разность                                 & \(a-b\)              \\
-        Произведение                             & \(a*b\)              \\
+        \multicolumn{1}{c}{\textbf{Zagolovok 1}} & \textbf{Zagolovok 2} \\ \midrule
+        Summa                                    & \(b+a\)              \\
+        Raznost                                 & \(a-b\)              \\
+        Proizvedenie                             & \(a*b\)              \\
         \bottomrule
     \end{tabular}
 \end{frame}
 
 
-\subsection{Разное}
+\subsection{Raznoe}
 
 \begin{frame}
-    \frametitle{Большой многоуровневый список}
+    \frametitle{Bolshoy mnogourovnevyy spisok}
     \begin{itemize}
-        \item \textbf{Пункт 1}
+        \item \textbf{Punkt 1}
               \begin{itemize}
-                  \itemi Подпункт 1-1
-                  \itemi Подпункт 1-2
+                  \itemi Podpunkt 1-1
+                  \itemi Podpunkt 1-2
               \end{itemize}
-        \item \textbf{Пункт 2}
+        \item \textbf{Punkt 2}
               \begin{itemize}
-                  \itemi Подпункт 2-1
+                  \itemi Podpunkt 2-1
               \end{itemize}
-        \item \textbf{Пункт 3}
+        \item \textbf{Punkt 3}
               \begin{itemize}
-                  \itemi Подпункт 3-1
-                  \itemi Подпункт 3-2
+                  \itemi Podpunkt 3-1
+                  \itemi Podpunkt 3-2
               \end{itemize}
-        \item \textbf{Пункт 4}
+        \item \textbf{Punkt 4}
               \begin{itemize}
-                  \itemi Подпункт 4-1
+                  \itemi Podpunkt 4-1
               \end{itemize}
-        \item \textbf{Пункт 5}
+        \item \textbf{Punkt 5}
               \begin{itemize}
-                  \itemi Подпункт 5-1
-                  \itemi Подпункт 5-2
-                  \itemi Подпункт 5-3
+                  \itemi Podpunkt 5-1
+                  \itemi Podpunkt 5-2
+                  \itemi Podpunkt 5-3
               \end{itemize}
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Четыре изображения}
+    \frametitle{Chetyre izobrazheniya}
     \centering
     \includegraphics[width=0.35\linewidth,angle=35]{latex}
     \includegraphics[width=0.35\linewidth,angle=135]{latex}\\

@@ -1,2 +1,2 @@
-Папка, в которую можно добавлять изображения, нужные только в данном шаблоне,
-а не общие для всех шаблонов.
+Papka, v kotoruyu mozhno dobavlyat izobrazheniya, nuzhnye tolko v dannom shablone,
+a ne obshchie dlya vsekh shablonov.

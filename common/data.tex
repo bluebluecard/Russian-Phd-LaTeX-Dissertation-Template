@@ -1,123 +1,123 @@
-%%% Основные сведения %%%
-\newcommand{\thesisAuthorLastName}{\fixme{Фамилия}}
-\newcommand{\thesisAuthorOtherNames}{\fixme{Имя Отчество}}
-\newcommand{\thesisAuthorInitials}{\fixme{И.\,О.}}
-\newcommand{\thesisAuthor}             % Диссертация, ФИО автора
+%%% Osnovnye svedeniya %%%
+\newcommand{\thesisAuthorLastName}{\fixme{Familiya}}
+\newcommand{\thesisAuthorOtherNames}{\fixme{Imya Otchestvo}}
+\newcommand{\thesisAuthorInitials}{\fixme{I.\,O.}}
+\newcommand{\thesisAuthor}             % Dissertatsiya, FIO avtora
 {%
     \texorpdfstring{% \texorpdfstring takes two arguments and uses the first for (La)TeX and the second for pdf
-        \thesisAuthorLastName~\thesisAuthorOtherNames% так будет отображаться на титульном листе или в тексте, где будет использоваться переменная
+        \thesisAuthorLastName~\thesisAuthorOtherNames% tak budet otobrazhatsya na titulnom liste ili v tekste, gde budet ispolzovatsya peremennaya
     }{%
-        \thesisAuthorLastName, \thesisAuthorOtherNames% эта запись для свойств pdf-файла. В таком виде, если pdf будет обработан программами для сбора библиографических сведений, будет правильно представлена фамилия.
+        \thesisAuthorLastName, \thesisAuthorOtherNames% eta zapis dlya svoystv pdf-fayla. V takom vide, esli pdf budet obrabotan programmami dlya sbora bibliograficheskikh svedeniy, budet pravilno predstavlena familiya.
     }
 }
-\newcommand{\thesisAuthorShort}        % Диссертация, ФИО автора инициалами
+\newcommand{\thesisAuthorShort}        % Dissertatsiya, FIO avtora initsialami
 {\thesisAuthorInitials~\thesisAuthorLastName}
-%\newcommand{\thesisUdk}                % Диссертация, УДК
+%\newcommand{\thesisUdk}                % Dissertatsiya, UDK
 %{\fixme{xxx.xxx}}
-\newcommand{\thesisTitle}              % Диссертация, название
-{\fixme{Длинное название диссертационной работы, состоящее из~достаточно большого
-количества слов, совсем длинное длинное длинное длинное название, из~которого
-простому обывателю знакомы, в~лучшем случае, лишь отдельные слова}}
-\newcommand{\thesisSpecialtyNumber}    % Диссертация, специальность, номер
+\newcommand{\thesisTitle}              % Dissertatsiya, nazvanie
+{\fixme{Dlinnoe nazvanie dissertatsionnoy raboty, sostoyashchee iz~dostatochno bolshogo
+kolichestva slov, sovsem dlinnoe dlinnoe dlinnoe dlinnoe nazvanie, iz~kotorogo
+prostomu obyvatelyu znakomy, v~luchshem sluchae, lish otdelnye slova}}
+\newcommand{\thesisSpecialtyNumber}    % Dissertatsiya, spetsialnost, nomer
 {\fixme{XX.XX.XX}}
-\newcommand{\thesisSpecialtyTitle}     % Диссертация, специальность, название (название взято с сайта ВАК для примера)
-{\fixme{Технология обработки, хранения и~переработки злаковых, бобовых культур,
-крупяных продуктов, плодоовощной продукции и~виноградарства}}
-%% \newcommand{\thesisSpecialtyTwoNumber} % Диссертация, вторая специальность, номер
+\newcommand{\thesisSpecialtyTitle}     % Dissertatsiya, spetsialnost, nazvanie (nazvanie vzyato s sayta VAK dlya primera)
+{\fixme{Tekhnologiya obrabotki, khraneniya i~pererabotki zlakovykh, bobovykh kultur,
+krupyanykh produktov, plodoovoshchnoy produktsii i~vinogradarstva}}
+%% \newcommand{\thesisSpecialtyTwoNumber} % Dissertatsiya, vtoraya spetsialnost, nomer
 %% {\fixme{XX.XX.XX}}
-%% \newcommand{\thesisSpecialtyTwoTitle}  % Диссертация, вторая специальность, название
-%% {\fixme{Теория и~методика физического воспитания, спортивной тренировки,
-%% оздоровительной и~адаптивной физической культуры}}
-\newcommand{\thesisDegree}             % Диссертация, ученая степень
-{\fixme{кандидата физико-математических наук}}
-\newcommand{\thesisDegreeShort}        % Диссертация, ученая степень, краткая запись
-{\fixme{канд. физ.-мат. наук}}
-\newcommand{\thesisCity}               % Диссертация, город написания диссертации
-{\fixme{Город}}
-\newcommand{\thesisYear}               % Диссертация, год написания диссертации
+%% \newcommand{\thesisSpecialtyTwoTitle}  % Dissertatsiya, vtoraya spetsialnost, nazvanie
+%% {\fixme{Teoriya i~metodika fizicheskogo vospitaniya, sportivnoy trenirovki,
+%% ozdorovitelnoy i~adaptivnoy fizicheskoy kultury}}
+\newcommand{\thesisDegree}             % Dissertatsiya, uchenaya stepen
+{\fixme{kandidata fiziko-matematicheskikh nauk}}
+\newcommand{\thesisDegreeShort}        % Dissertatsiya, uchenaya stepen, kratkaya zapis
+{\fixme{kand. fiz.-mat. nauk}}
+\newcommand{\thesisCity}               % Dissertatsiya, gorod napisaniya dissertatsii
+{\fixme{Gorod}}
+\newcommand{\thesisYear}               % Dissertatsiya, god napisaniya dissertatsii
 {\the\year}
-\newcommand{\thesisOrganization}       % Диссертация, организация
-{\fixme{Федеральное государственное автономное образовательное учреждение высшего
-образования <<Длинное название образовательного учреждения <<АББРЕВИАТУРА>>}}
-\newcommand{\thesisOrganizationShort}  % Диссертация, краткое название организации для доклада
-{\fixme{НазУчДисРаб}}
+\newcommand{\thesisOrganization}       % Dissertatsiya, organizatsiya
+{\fixme{Federalnoe gosudarstvennoe avtonomnoe obrazovatelnoe uchrezhdenie vysshego
+obrazovaniya <<Dlinnoe nazvanie obrazovatelnogo uchrezhdeniya <<ABBREVIATURA>>}}
+\newcommand{\thesisOrganizationShort}  % Dissertatsiya, kratkoe nazvanie organizatsii dlya doklada
+{\fixme{NazUchDisRab}}
 
-\newcommand{\thesisInOrganization}     % Диссертация, организация в предложном падеже: Работа выполнена в ...
-{\fixme{учреждении с~длинным длинным длинным длинным названием, в~котором
-выполнялась данная диссертационная работа}}
+\newcommand{\thesisInOrganization}     % Dissertatsiya, organizatsiya v predlozhnom padezhe: Rabota vypolnena v ...
+{\fixme{uchrezhdenii s~dlinnym dlinnym dlinnym dlinnym nazvaniem, v~kotorom
+vypolnyalas dannaya dissertatsionnaya rabota}}
 
-%% \newcommand{\supervisorDead}{}           % Рисовать рамку вокруг фамилии
-\newcommand{\supervisorFio}              % Научный руководитель, ФИО
-{\fixme{Фамилия Имя Отчество}}
-\newcommand{\supervisorRegalia}          % Научный руководитель, регалии
-{\fixme{уч. степень, уч. звание}}
-\newcommand{\supervisorFioShort}         % Научный руководитель, ФИО
-{\fixme{И.\,О.~Фамилия}}
-\newcommand{\supervisorRegaliaShort}     % Научный руководитель, регалии
-{\fixme{уч.~ст.,~уч.~зв.}}
+%% \newcommand{\supervisorDead}{}           % Risovat ramku vokrug familii
+\newcommand{\supervisorFio}              % Nauchnyy rukovoditel, FIO
+{\fixme{Familiya Imya Otchestvo}}
+\newcommand{\supervisorRegalia}          % Nauchnyy rukovoditel, regalii
+{\fixme{uch. stepen, uch. zvanie}}
+\newcommand{\supervisorFioShort}         % Nauchnyy rukovoditel, FIO
+{\fixme{I.\,O.~Familiya}}
+\newcommand{\supervisorRegaliaShort}     % Nauchnyy rukovoditel, regalii
+{\fixme{uch.~st.,~uch.~zv.}}
 
-%% \newcommand{\supervisorTwoDead}{}        % Рисовать рамку вокруг фамилии
-%% \newcommand{\supervisorTwoFio}           % Второй научный руководитель, ФИО
-%% {\fixme{Фамилия Имя Отчество}}
-%% \newcommand{\supervisorTwoRegalia}       % Второй научный руководитель, регалии
-%% {\fixme{уч. степень, уч. звание}}
-%% \newcommand{\supervisorTwoFioShort}      % Второй научный руководитель, ФИО
-%% {\fixme{И.\,О.~Фамилия}}
-%% \newcommand{\supervisorTwoRegaliaShort}  % Второй научный руководитель, регалии
-%% {\fixme{уч.~ст.,~уч.~зв.}}
+%% \newcommand{\supervisorTwoDead}{}        % Risovat ramku vokrug familii
+%% \newcommand{\supervisorTwoFio}           % Vtoroy nauchnyy rukovoditel, FIO
+%% {\fixme{Familiya Imya Otchestvo}}
+%% \newcommand{\supervisorTwoRegalia}       % Vtoroy nauchnyy rukovoditel, regalii
+%% {\fixme{uch. stepen, uch. zvanie}}
+%% \newcommand{\supervisorTwoFioShort}      % Vtoroy nauchnyy rukovoditel, FIO
+%% {\fixme{I.\,O.~Familiya}}
+%% \newcommand{\supervisorTwoRegaliaShort}  % Vtoroy nauchnyy rukovoditel, regalii
+%% {\fixme{uch.~st.,~uch.~zv.}}
 
-\newcommand{\opponentOneFio}           % Оппонент 1, ФИО
-{\fixme{Фамилия Имя Отчество}}
-\newcommand{\opponentOneRegalia}       % Оппонент 1, регалии
-{\fixme{доктор физико-математических наук, профессор}}
-\newcommand{\opponentOneJobPlace}      % Оппонент 1, место работы
-{\fixme{Не очень длинное название для места работы}}
-\newcommand{\opponentOneJobPost}       % Оппонент 1, должность
-{\fixme{старший научный сотрудник}}
+\newcommand{\opponentOneFio}           % Opponent 1, FIO
+{\fixme{Familiya Imya Otchestvo}}
+\newcommand{\opponentOneRegalia}       % Opponent 1, regalii
+{\fixme{doktor fiziko-matematicheskikh nauk, professor}}
+\newcommand{\opponentOneJobPlace}      % Opponent 1, mesto raboty
+{\fixme{Ne ochen dlinnoe nazvanie dlya mesta raboty}}
+\newcommand{\opponentOneJobPost}       % Opponent 1, dolzhnost
+{\fixme{starshiy nauchnyy sotrudnik}}
 
-\newcommand{\opponentTwoFio}           % Оппонент 2, ФИО
-{\fixme{Фамилия Имя Отчество}}
-\newcommand{\opponentTwoRegalia}       % Оппонент 2, регалии
-{\fixme{кандидат физико-математических наук}}
-\newcommand{\opponentTwoJobPlace}      % Оппонент 2, место работы
-{\fixme{Основное место работы c длинным длинным длинным длинным названием}}
-\newcommand{\opponentTwoJobPost}       % Оппонент 2, должность
-{\fixme{старший научный сотрудник}}
+\newcommand{\opponentTwoFio}           % Opponent 2, FIO
+{\fixme{Familiya Imya Otchestvo}}
+\newcommand{\opponentTwoRegalia}       % Opponent 2, regalii
+{\fixme{kandidat fiziko-matematicheskikh nauk}}
+\newcommand{\opponentTwoJobPlace}      % Opponent 2, mesto raboty
+{\fixme{Osnovnoe mesto raboty c dlinnym dlinnym dlinnym dlinnym nazvaniem}}
+\newcommand{\opponentTwoJobPost}       % Opponent 2, dolzhnost
+{\fixme{starshiy nauchnyy sotrudnik}}
 
-%% \newcommand{\opponentThreeFio}         % Оппонент 3, ФИО
-%% {\fixme{Фамилия Имя Отчество}}
-%% \newcommand{\opponentThreeRegalia}     % Оппонент 3, регалии
-%% {\fixme{кандидат физико-математических наук}}
-%% \newcommand{\opponentThreeJobPlace}    % Оппонент 3, место работы
-%% {\fixme{Основное место работы c длинным длинным длинным длинным названием}}
-%% \newcommand{\opponentThreeJobPost}     % Оппонент 3, должность
-%% {\fixme{старший научный сотрудник}}
+%% \newcommand{\opponentThreeFio}         % Opponent 3, FIO
+%% {\fixme{Familiya Imya Otchestvo}}
+%% \newcommand{\opponentThreeRegalia}     % Opponent 3, regalii
+%% {\fixme{kandidat fiziko-matematicheskikh nauk}}
+%% \newcommand{\opponentThreeJobPlace}    % Opponent 3, mesto raboty
+%% {\fixme{Osnovnoe mesto raboty c dlinnym dlinnym dlinnym dlinnym nazvaniem}}
+%% \newcommand{\opponentThreeJobPost}     % Opponent 3, dolzhnost
+%% {\fixme{starshiy nauchnyy sotrudnik}}
 
-\newcommand{\leadingOrganizationTitle} % Ведущая организация, дополнительные строки. Удалить, чтобы не отображать в автореферате
-{\fixme{Федеральное государственное бюджетное образовательное учреждение высшего
-профессионального образования с~длинным длинным длинным длинным названием}}
+\newcommand{\leadingOrganizationTitle} % Vedushchaya organizatsiya, dopolnitelnye stroki. Udalit, chtoby ne otobrazhat v avtoreferate
+{\fixme{Federalnoe gosudarstvennoe byudzhetnoe obrazovatelnoe uchrezhdenie vysshego
+professionalnogo obrazovaniya s~dlinnym dlinnym dlinnym dlinnym nazvaniem}}
 
-\newcommand{\defenseDate}              % Защита, дата
-{\fixme{DD mmmmmmmm YYYY~г.~в~XX часов}}
-\newcommand{\defenseCouncilNumber}     % Защита, номер диссертационного совета
-{\fixme{Д\,123.456.78}}
-\newcommand{\defenseCouncilTitle}      % Защита, учреждение диссертационного совета
-{\fixme{Название учреждения}}
-\newcommand{\defenseCouncilAddress}    % Защита, адрес учреждение диссертационного совета
-{\fixme{Адрес}}
-\newcommand{\defenseCouncilPhone}      % Телефон для справок
+\newcommand{\defenseDate}              % Zashchita, data
+{\fixme{DD mmmmmmmm YYYY~g.~v~XX chasov}}
+\newcommand{\defenseCouncilNumber}     % Zashchita, nomer dissertatsionnogo soveta
+{\fixme{D\,123.456.78}}
+\newcommand{\defenseCouncilTitle}      % Zashchita, uchrezhdenie dissertatsionnogo soveta
+{\fixme{Nazvanie uchrezhdeniya}}
+\newcommand{\defenseCouncilAddress}    % Zashchita, adres uchrezhdenie dissertatsionnogo soveta
+{\fixme{Adres}}
+\newcommand{\defenseCouncilPhone}      % Telefon dlya spravok
 {\fixme{+7~(0000)~00-00-00}}
 
-\newcommand{\defenseSecretaryFio}      % Секретарь диссертационного совета, ФИО
-{\fixme{Фамилия Имя Отчество}}
-\newcommand{\defenseSecretaryRegalia}  % Секретарь диссертационного совета, регалии
-{\fixme{д-р~физ.-мат. наук}}            % Для сокращений есть ГОСТы, например: ГОСТ Р 7.0.12-2011 + http://base.garant.ru/179724/#block_30000
+\newcommand{\defenseSecretaryFio}      % Sekretar dissertatsionnogo soveta, FIO
+{\fixme{Familiya Imya Otchestvo}}
+\newcommand{\defenseSecretaryRegalia}  % Sekretar dissertatsionnogo soveta, regalii
+{\fixme{d-r~fiz.-mat. nauk}}            % Dlya sokrashcheniy est GOSTy, naprimer: GOST R 7.0.12-2011 + http://base.garant.ru/179724/#block_30000
 
-\newcommand{\synopsisLibrary}          % Автореферат, название библиотеки
-{\fixme{Название библиотеки}}
-\newcommand{\synopsisDate}             % Автореферат, дата рассылки
-{\fixme{DD mmmmmmmm}\the\year~года}
+\newcommand{\synopsisLibrary}          % Avtoreferat, nazvanie biblioteki
+{\fixme{Nazvanie biblioteki}}
+\newcommand{\synopsisDate}             % Avtoreferat, data rassylki
+{\fixme{DD mmmmmmmm}\the\year~goda}
 
 % To avoid conflict with beamer class use \providecommand
-\providecommand{\keywords}%            % Ключевые слова для метаданных PDF диссертации и автореферата
+\providecommand{\keywords}%            % Klyuchevye slova dlya metadannykh PDF dissertatsii i avtoreferata
 {}

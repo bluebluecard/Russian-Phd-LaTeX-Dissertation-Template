@@ -1,125 +1,106 @@
-LaTeX-шаблон для русской кандидатской диссертации и её автореферата.
+LaTeX template for a Russian PhD dissertation and its synopsis (author’s abstract).
 
-## Особенности
-* Кодировка: UTF-8.
-* Стандарт: ГОСТ Р 7.0.11-2011.
-* Поддерживаемые движки: pdfTeX, XeTeX, LuaTeX.
-* Поддерживаемые реализации библиографии: встроенная на движке BibTeX, BibLaTeX
-на движке Biber.
+## Features
+* Encoding: UTF-8.
+* Standard: GOST R 7.0.11-2011.
+* Supported engines: pdfTeX, XeTeX, LuaTeX.
+* Supported bibliography backends: built-in BibTeX-based workflow and BibLaTeX
+  with Biber.
 
-[**Примеры компиляции шаблона**](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/releases/latest).
+[**Template compilation examples**](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/releases/latest).
 
-[**Установка программного обеспечения и сборка диссертации в файлы PDF**](Readme/Installation.md).
+[**Software installation and dissertation PDF build instructions**](Readme/Installation.md).
 
-[**Как писать диссертацию на GitHub?**](Readme/github.md)
+[**How to write a dissertation on GitHub**](Readme/github.md)
 
-## Обсуждение
-Общие вопросы лучше всего писать в gitter-канал:
+## Discussion
+General questions are best posted in the Gitter channel:
 [![Join the chat at https://gitter.im/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Для отчётов об ошибках и для конкретных пожеланий/предложений лучше всего использовать раздел [Issues](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues).
+For bug reports and concrete proposals, please use the [Issues](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues) section.
 
-## Структура
-* [dissertation.tex](dissertation.tex): главный файл диссертации.
-* **[папка Dissertation](Dissertation/):** Структурированная система файлов с
-шаблоном диссертации.
-  * **папка images:** Папка для размещения файлов изображений, относящихся только
-  к диссертации.
-  * [setup.tex](Dissertation/setup.tex): Файл упрощённой настройки оформления
-  диссертации.
-* [synopsis.tex](synopsis.tex): главный файл автореферата диссертации.
-* **[папка Synopsis](Synopsis/):** Структурированная система файлов с шаблоном
-автореферата.
-  * **папка images:** Папка для размещения файлов изображений, относящихся
-  только к автореферату диссертации.
-  * [setup.tex](Synopsis/setup.tex): Файл упрощённой настройки оформления
-  автореферата.
-* [presentation.tex](presentation.tex): главный файл презентации.
-* **[папка Presentation](Presentation/):** Структурированная система файлов с
-шаблоном презентации.
-  * **папка images:** Папка для размещения файлов изображений, относящихся
-  только к презентации.
-  * [setup.tex](Presentation/setup.tex): Файл упрощённой настройки оформления
-  презентации.
-* **[папка Documents](Documents/):** Полезные документы (ГОСТ-ы и постановления).
-* **[папка PSCyr](PSCyr/):** Пакет PSCyr + инструкции по установке.
-* **[папка BibTeX-Styles](BibTeX-Styles/):** Подборка русских стилевых пакетов
-BibTeX под UTF-8.
-* **[папка common](common/):** Общие файлы настроек и управления содержанием шаблонов.
-  * [characteristic.tex](common/characteristic.tex): Часть общей характеристики
-  работы, повторяющаяся в диссертации и автореферате.
-  * [concl.tex](common/concl.tex): Заключение. Является общим для автореферата
-  и диссертации (согласно [ГОСТ Р 7.0.11-2011](Documents/GOST%20R%207.0.11-2011.pdf),
-  пункты 5.3.3 и 9.2.3).
-  * [data.tex](common/data.tex): Общие данные (название работы, руководитель,
-  оппоненты, ключевые слова и т. п.).
-  * [packages.tex](common/packages.tex) и [styles.tex](common/styles.tex): Общие
-  пакеты и стили оформления автореферата и диссертации.
-  * [setup.tex](common/setup.tex): Общие настройки автореферата и диссертации.
-  В нём же настраивается выбор реализации библиографии.
-* **[папка biblio](biblio/):** Файлы с библиографией.
-  * [author.bib](biblio/author.bib): Публикации автора по теме диссертации.
-  * [registered.bib](biblio/registered.bib): Зарегистрированные патенты и программы для ЭВМ.
-  * [external.bib](biblio/external.bib): Работы которые ссылается автор.
-* **папка images:** Общие файлы изображений шаблонов.
-  * **папка cache:** Папка прекомпелированных рисунков.
-	* [placeholder.txt](images/cache/placeholder.txt): Файл, необходимый для прекомпиляции
-      рисунков в [overleaf](https://www.overleaf.com/).
-* **папка listings:** Общие файлы листингов.
-* **папка letters:** Файлы генерации конвертов для рассылки автореферата.
+## Structure
+* [dissertation.tex](dissertation.tex): main dissertation file.
+* **[Dissertation folder](Dissertation/):** Structured file system for the dissertation template.
+  * **images folder:** Place images used only in the dissertation here.
+  * [setup.tex](Dissertation/setup.tex): Simplified dissertation formatting configuration.
+* [synopsis.tex](synopsis.tex): main synopsis file.
+* **[Synopsis folder](Synopsis/):** Structured file system for the synopsis template.
+  * **images folder:** Place images used only in the synopsis here.
+  * [setup.tex](Synopsis/setup.tex): Simplified synopsis formatting configuration.
+* [presentation.tex](presentation.tex): main presentation file.
+* **[Presentation folder](Presentation/):** Structured file system for the presentation template.
+  * **images folder:** Place images used only in the presentation here.
+  * [setup.tex](Presentation/setup.tex): Simplified presentation formatting configuration.
+* **[Documents folder](Documents/):** Useful documents (GOST standards and regulations).
+* **[PSCyr folder](PSCyr/):** PSCyr package + installation instructions.
+* **[BibTeX-Styles folder](BibTeX-Styles/):** Collection of Russian BibTeX styles for UTF-8.
+* **[common folder](common/):** Shared settings and content management files.
+  * [characteristic.tex](common/characteristic.tex): Shared research summary used in dissertation and synopsis.
+  * [concl.tex](common/concl.tex): Conclusion shared by synopsis and dissertation (according to [GOST R 7.0.11-2011](Documents/GOST%20R%207.0.11-2011.pdf), sections 5.3.3 and 9.2.3).
+  * [data.tex](common/data.tex): Shared data (title, advisor, opponents, keywords, etc.).
+  * [packages.tex](common/packages.tex) and [styles.tex](common/styles.tex): Shared package and style settings.
+  * [setup.tex](common/setup.tex): Shared dissertation/synopsis configuration, including bibliography backend selection.
+* **[biblio folder](biblio/):** Bibliography files.
+  * [author.bib](biblio/author.bib): Author publications on the dissertation topic.
+  * [registered.bib](biblio/registered.bib): Registered patents and software certificates.
+  * [external.bib](biblio/external.bib): External references cited by the author.
+* **images folder:** Shared image files.
+  * **cache folder:** Folder for precompiled figures.
+    * [placeholder.txt](images/cache/placeholder.txt): File needed to precompile figures on [Overleaf](https://www.overleaf.com/).
+* **listings folder:** Shared listing files.
+* **letters folder:** Files for generating mailing envelopes for the synopsis distribution.
 
-Дополнительные файлы:
+Additional files:
 
 * [Makefile](Makefile), [compress.mk](compress.mk), [unix.mk](unix.mk),
-  [windows.mk](windows.mk), [examples.mk](examples.mk), [latexmkrc](latexmkrc): Файлы системы сборки шаблона.
-* [usercfg.mk](usercfg.mk): Пользовательские настройки системы сборки шаблона.
-* [indent.yaml](indent.yaml): Файл настройки форматирования исходного кода для
+  [windows.mk](windows.mk), [examples.mk](examples.mk), [latexmkrc](latexmkrc): Template build system files.
+* [usercfg.mk](usercfg.mk): User build-system settings.
+* [indent.yaml](indent.yaml): Source code formatting configuration for
   [latexindent](https://www.ctan.org/pkg/latexindent).
-* [.editorconfig](.editorconfig): Файл настройки текстовых редакторов, поддерживающих стандарт
-  [editorconfig](https://editorconfig.org/).
-* [Dockerfile](Dockerfile), [install-dockertex.sh](install-dockertex.sh): Файлы генерации
-  [Docker](https://www.docker.com/) образа для сборки шаблона.
-* [siunitx.cfg](siunitx.cfg): Определения величин SI для библиотеки
+* [.editorconfig](.editorconfig): Editor configuration file for tools that support
+  [EditorConfig](https://editorconfig.org/).
+* [Dockerfile](Dockerfile), [install-dockertex.sh](install-dockertex.sh): Files for building a
+  [Docker](https://www.docker.com/) image for template compilation.
+* [siunitx.cfg](siunitx.cfg): SI unit definitions for
   [siunitx](https://ctan.org/pkg/siunitx).
 * [synopsis_booklet.tex](synopsis_booklet.tex),
- [presentation_booklet.tex](presentation_booklet.tex): Файлы генерации печатных версий
- автореферата и презентации.
-* [presentation_handout.tex](presentation_handout.tex): Файл генерации раздаточных материалов из
-  презентации с добавлением подписей под слайдами.
-* [tikz.tex](tikz.tex): Файл изолированной сборки векторной графики [tikz](https://www.ctan.org/pkg/pgf).
+  [presentation_booklet.tex](presentation_booklet.tex): Files for generating printable versions
+  of the synopsis and presentation.
+* [presentation_handout.tex](presentation_handout.tex): File for generating handouts from the
+  presentation with notes under slides.
+* [tikz.tex](tikz.tex): Standalone build file for [tikz](https://www.ctan.org/pkg/pgf) vector graphics.
 
-## Дополнительная полезная информация
+## Additional useful information
 
-* [Оформление библиографии](Readme/Bibliography.md)
-* [Как вносить правки в проект](CONTRIBUTING.md)
-* [Полезные ссылки](Readme/Links.md)
-* [Шаблон в галерее шаблонов ShareLaTeX](https://www.sharelatex.com/templates/thesis/russian-phd-latex-dissertation-template) (очень старая версия).
+* [Bibliography formatting](Readme/Bibliography.md)
+* [How to contribute changes](CONTRIBUTING.md)
+* [Useful links](Readme/Links.md)
+* [Template in the ShareLaTeX gallery](https://www.sharelatex.com/templates/thesis/russian-phd-latex-dissertation-template) (very old version).
 
-## Благодарности
-* Большое спасибо Юлии Мартыновой за [оригинальный вариант шаблона](http://alessia-lano.livejournal.com/4267.html).
-* Большое спасибо [dustalov](https://github.com/dustalov),
-[Lenchik](https://github.com/Lenchik), [tonkonogov](https://github.com/tonkonogov)
-за значительный вклад и обсуждения.
-* Спасибо [storkvist](https://github.com/storkvist), [kshmirko](https://github.com/kshmirko),
-[ZoomRmc](https://github.com/ZoomRmc), [tonytonov](https://github.com/tonytonov),
-[Thibak](https://github.com/Thibak), [eximius8](https://github.com/eximius8),
-[Nizky](https://github.com/Nizky) за полезные правки и замечания.
+## Acknowledgements
+* Many thanks to Yulia Martynova for the [original version of the template](http://alessia-lano.livejournal.com/4267.html).
+* Many thanks to [dustalov](https://github.com/dustalov),
+  [Lenchik](https://github.com/Lenchik), [tonkonogov](https://github.com/tonkonogov)
+  for significant contributions and discussions.
+* Thanks to [storkvist](https://github.com/storkvist), [kshmirko](https://github.com/kshmirko),
+  [ZoomRmc](https://github.com/ZoomRmc), [tonytonov](https://github.com/tonytonov),
+  [Thibak](https://github.com/Thibak), [eximius8](https://github.com/eximius8),
+  [Nizky](https://github.com/Nizky) for useful fixes and remarks.
 
-## Лицензия
+## License
 
 CC BY 4.0
 
-Поэтому можно модифицировать и использовать шаблон любым образом, при
-условии сохранения авторства на шаблон оформления диссертации в
-формате LaTeX (в виде списка авторов в настоящем файле).  При этом не
-накладывается никаких ограничений на текст диссертации, все права на
-содержательную часть диссертации остаются за её автором.  В том числе,
-если в тексте возникает раздел благодарностей (например, научному
-руководителю за умелое руководство, коллегам за помощь в работе и
-т.д.), то надо ли выносить авторам шаблона
-*Russian-Phd-LaTeX-Dissertation-Template* благодарность за помощь в
-оформлении диссертации или нет - решает сам диссертант. Использование
-шаблона не накладывает никаких ограничений на использование итоговых
-файлов (например, PDF с готовой диссертацией или авторефератом),
-т.е. никак не регулирует то, как они распространяются, копируются,
-модифицируются и т.д.
+This means you may modify and use the template in any way, as long as attribution
+for the dissertation formatting template is preserved (as a list of authors in this
+file). There are no restrictions on dissertation text content: all rights for the
+substantive dissertation content remain with the dissertation author.
+
+In particular, if your dissertation includes an acknowledgements section (for
+example, thanking your advisor for guidance, colleagues for help, etc.), it is up
+to the author whether to thank the
+*Russian-Phd-LaTeX-Dissertation-Template* authors for assistance with formatting.
+Using the template imposes no restrictions on the use of generated files (for
+example, final dissertation or synopsis PDFs), i.e., it does not regulate how those
+files are distributed, copied, modified, and so on.

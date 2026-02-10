@@ -75,88 +75,88 @@ export TIMERON
 export TIKZFILE
 export USEDEV
 
-##! компиляция всех файлов
+##! compile all documents
 all: synopsis dissertation presentation
 
 define compile
 	latexmk -norc -r $(MKRC) $(LATEXMKFLAGS) $(BACKEND) -jobname=$(TARGET) $(SOURCE)
 endef
 
-##! компиляция диссертации
+##! compile dissertation
 dissertation: TARGET=dissertation
 dissertation: SOURCE=dissertation
 dissertation:
 	$(compile)
 
-##! компиляция автореферата
+##! compile synopsis
 synopsis: TARGET=synopsis
 synopsis: SOURCE=synopsis
 synopsis:
 	$(compile)
 
-##! компиляция презентации
+##! compile presentation
 presentation: TARGET=presentation
 presentation: SOURCE=presentation
 presentation:
 	$(compile)
 
-##! компиляция черновика диссертации
+##! compile dissertation draft
 dissertation-draft: DRAFTON=1
 dissertation-draft: dissertation
 
-##! компиляция черновика автореферата
+##! compile synopsis draft
 synopsis-draft: DRAFTON=1
 synopsis-draft: synopsis
 
-##! компиляция диссертации, автореферата, и презентации при помощи pdflatex
+##! compile dissertation, synopsis, and presentation using pdflatex
 pdflatex: BACKEND=-pdf
 pdflatex: dissertation synopsis presentation
 
-##! компиляция черновиков всех файлов
+##! compile all draft documents
 draft: dissertation-draft synopsis-draft
 
-##! компиляция автореферата в формате А4 для печати
+##! compile A4 printable synopsis
 synopsis-booklet: synopsis
 synopsis-booklet: SOURCE=synopsis_booklet
 synopsis-booklet: TARGET=synopsis_booklet
 synopsis-booklet:
 	$(compile)
 
-##! компиляция презентации в формате А4 для печати
+##! compile A4 printable presentation
 presentation-booklet: presentation
 presentation-booklet: SOURCE=presentation_booklet
 presentation-booklet: TARGET=presentation_booklet
 presentation-booklet:
 	$(compile)
 
-##! компиляция презентации в формате А4 с комментариями для совета (раздаточный материал)
+##! compile A4 presentation handout with committee notes
 presentation-handout: presentation
 presentation-handout: SOURCE=presentation_handout
 presentation-handout: TARGET=presentation_handout
 presentation-handout:
 	$(compile)
 
-##! компиляция tikz графики
+##! compile tikz graphics
 tikz: SOURCE=tikz
-tikz: BACKEND=-pdflua # некоторые библиотеки работают только с lualatex
+tikz: BACKEND=-pdflua # some libraries only work with lualatex
 tikz: TARGET=$(basename $(notdir $(TIKZFILE)))
 tikz:
 	$(compile)
 
-##! добавление .pdf автореферата и диссертации в систему контроля версий
+##! add synopsis and dissertation PDFs to version control
 release: all
 	git add dissertation.pdf
 	git add synopsis.pdf
 
-##! очистка от временных файлов цели TARGET
+##! clean temporary files for TARGET
 clean-target:
 	latexmk -norc -r $(MKRC) -f $(LATEXMKFLAGS) $(BACKEND) -jobname=$(TARGET) -c $(SOURCE)
 
-##! полная очистка от временных файлов цели TARGET
+##! fully clean temporary files for TARGET
 distclean-target:
 	latexmk -norc -r $(MKRC) -f $(LATEXMKFLAGS) $(BACKEND) -jobname=$(TARGET) -C $(SOURCE)
 
-##! очистка проекта от временных файлов
+##! clean temporary files in the project
 clean:
 	"$(MAKE)" SOURCE=dissertation TARGET=dissertation clean-target
 	"$(MAKE)" SOURCE=synopsis TARGET=synopsis clean-target
@@ -164,7 +164,7 @@ clean:
 	"$(MAKE)" SOURCE=presentation_booklet TARGET=presentation_booklet clean-target
 	"$(MAKE)" SOURCE=presentation_handout TARGET=presentation_handout clean-target
 
-##! полная очистка проекта от временных файлов
+##! fully clean temporary files in the project
 distclean:
 	"$(MAKE)" SOURCE=dissertation TARGET=dissertation distclean-target
 	"$(MAKE)" SOURCE=synopsis TARGET=synopsis distclean-target

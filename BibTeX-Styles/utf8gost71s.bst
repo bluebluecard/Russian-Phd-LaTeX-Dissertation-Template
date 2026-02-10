@@ -303,9 +303,9 @@ FUNCTION {bbl.edby}    %  { "\bbledby{}" }
 {  curlanguage "english" =
     {"Ed. by "}
     { curlanguage "ukrainian" =
-        {"{Під ред. }"}
+        {"{Pid red. }"}
         { curlanguage "russian" =
-           {"{Под ред. }"}
+           {"{Pod red. }"}
            {"language is not defined: " language  "edited by" * * warning$ "edited by"}
          if$}
       if$}
@@ -316,9 +316,9 @@ FUNCTION {bbl.cmplr}
 {  curlanguage "english" =
     {"Compiler "}
     { curlanguage "ukrainian" =
-        {"{Укл. }"}
+        {"{Ukl. }"}
         { curlanguage "russian" =
-           {"{Сост. }"}
+           {"{Sost. }"}
            {"language is not defined: " language  "compiler" * * warning$ "compiler"}
          if$}
       if$}
@@ -329,9 +329,9 @@ FUNCTION {bbl.edition} %  { "\bbledition{}" }
 {  curlanguage "english" =
     {"edition"}
     { curlanguage "ukrainian" =
-        {"{вид.}"}
+        {"{vid.}"}
         { curlanguage "russian" =
-           {"{изд.}"}
+           {"{izd.}"}
            {"language is not defined: " language  "edition" * * warning$ "edition"}
          if$}
       if$}
@@ -342,7 +342,7 @@ FUNCTION {bbl.vvolume} %  { "\bblVolume{}" }
 {  curlanguage "english" =
     {"Volume"}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-        {"Том"}
+        {"Tom"}
         {"language is not defined: " language  "Volume" * * warning$ "Volume"}
       if$}
   if$
@@ -352,7 +352,7 @@ FUNCTION {bbl.vvol}    %  { "\bblVol{}" }
 {  curlanguage "english" =
     {"Vol."}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"Т."}
+           {"T."}
            {"language is not defined: " language  "Vol." * * warning$ "Vol."}
       if$}
   if$
@@ -362,9 +362,9 @@ FUNCTION {bbl.iissue}  %  { "\bblIssue{}" }
 {  curlanguage "english" =
     {"Issue"}
     { curlanguage "ukrainian" =
-        {"Випуск"}
+        {"Vipusk"}
         { curlanguage "russian" =
-           {"Выпуск"}
+           {"Vypusk"}
            {"language is not defined: " language * warning$ "Issue"}
          if$}
       if$}
@@ -375,9 +375,9 @@ FUNCTION {bbl.iiss}  %  { "\bblIss{}" }
 {  curlanguage "english" =
     {"Iss."}
     { curlanguage "ukrainian" =
-        {"Вип."}
+        {"Vip."}
         { curlanguage "russian" =
-           {"Вып."}
+           {"Vyp."}
            {"language is not defined: " language * warning$ "Issue"}
          if$}
       if$}
@@ -388,9 +388,9 @@ FUNCTION {bbl.of}      %  { "\bblof{}" }
 {  curlanguage "english" =
     {"of"}
     { curlanguage "ukrainian" =
-        {"{із}"}
+        {"{iz}"}
         { curlanguage "russian" =
-           {"{из}"}
+           {"{iz}"}
            {"language is not defined: " language "of" *  * warning$ "of"}
          if$}
       if$}
@@ -401,9 +401,9 @@ FUNCTION {bbl.etal}      %  { "\bblof{}" }
 {  curlanguage "english" =
     {"et~al."}
     { curlanguage "ukrainian" =
-        {"{та~ін.}"}
+        {"{ta~in.}"}
         { curlanguage "russian" =
-           {"{и~др.}"}
+           {"{i~dr.}"}
            {"language is not defined: " language  "at al" * * warning$ "at al."}
          if$}
       if$}
@@ -414,7 +414,7 @@ FUNCTION {bbl.nnumber} %  { "\bblNumber{}" }
 {  curlanguage "english" =
     {"Number"}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"Номер"}
+           {"Nomer"}
            {"language is not defined: " language  "Number" * * warning$ "Number"}
       if$}
   if$
@@ -424,7 +424,7 @@ FUNCTION {bbl.number}  %  { "\bblnumber{}" }
 {  curlanguage "english" =
     {"number"}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"{номер}"}
+           {"{nomer}"}
            {"language is not defined: " language  "number" * * warning$ "number"}
       if$}
   if$
@@ -454,7 +454,7 @@ FUNCTION {bbl.in}    %    { "\bblin{}" }
 {  curlanguage "english" =
     {"in"}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"{в}"}
+           {"{v}"}
            {"language is not defined: " language  "in" * * warning$ "in"}
       if$}
   if$
@@ -464,7 +464,7 @@ FUNCTION {bbl.iin}  %     { "\bblIn{}" }
 {  curlanguage "english" =
     {"In"}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"В"}
+           {"V"}
            {"language is not defined: " language  "In" * * warning$ "In"}
       if$}
   if$
@@ -474,7 +474,7 @@ FUNCTION {bbl.pages}    % { "\bblpp." }
 {  curlanguage "english" =
     {"pp."}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"{с.}"}
+           {"{s.}"}
            {"language is not defined: " language  "pp." * * warning$ "pp."}
       if$}
   if$
@@ -484,7 +484,7 @@ FUNCTION {bbl.page}   %   { "\bblp."
 {  curlanguage "english" =
     {"p."}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"{с.}"}
+           {"{s.}"}
            {"language is not defined: " language  "p." * * warning$ "p."}
       if$}
   if$
@@ -494,7 +494,7 @@ FUNCTION {bbl.ppages}%    { "\bblPp." }
 {  curlanguage "english" =
     {"Pp."}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"{С.}"}
+           {"{S.}"}
            {"language is not defined: " language  "Pp." * * warning$ "Pp."}
       if$}
   if$
@@ -504,7 +504,7 @@ FUNCTION {bbl.ppage}  %   { "\bblP." }
 {  curlanguage "english" =
     {"P."}
     { curlanguage "ukrainian" = curlanguage "russian" = or
-           {"{С.}"}
+           {"{S.}"}
            {"language is not defined: " language  "P." * * warning$ "P."}
       if$}
   if$

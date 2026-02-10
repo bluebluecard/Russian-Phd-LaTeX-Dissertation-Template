@@ -1,17 +1,17 @@
-\chapter{Примеры вставки листингов программного кода}\label{app:A}
+\chapter{Primery vstavki listingov programmnogo koda}\label{app:A}
 
-Для крупных листингов есть два способа. Первый красивый, но в нём могут быть
-проблемы с поддержкой кириллицы (у вас может встречаться в~комментариях
-и~печатаемых сообщениях), он представлен на листинге~\cref{lst:hwbeauty}.
-\begin{ListingEnv}[!h]% настройки floating аналогичны окружению figure
-    \captiondelim{ } % разделитель идентификатора с номером от наименования
-    \caption{Программа ,,Hello, world`` на \protect\cpp}\label{lst:hwbeauty}
-    % окружение учитывает пробелы и табуляции и применяет их в сответсвии с настройками
+Dlya krupnykh listingov est dva sposoba. Pervyy krasivyy, no v nem mogut byt
+problemy s podderzhkoy kirillitsy (u vas mozhet vstrechatsya v~kommentariyakh
+i~pechataemykh soobshcheniyakh), on predstavlen na listinge~\cref{lst:hwbeauty}.
+\begin{ListingEnv}[!h]% nastroyki floating analogichny okruzheniyu figure
+    \captiondelim{ } % razdelitel identifikatora s nomerom ot naimenovaniya
+    \caption{Programma ,,Hello, world`` na \protect\cpp}\label{lst:hwbeauty}
+    % okruzhenie uchityvaet probely i tabulyatsii i primenyaet ikh v sotvetsvii s nastroykami
     \begin{lstlisting}[language={[ISO]C++}]
 	#include <iostream>
 	using namespace std;
 
-	int main() //кириллица в комментариях при xelatex и lualatex имеет проблемы с пробелами
+	int main() //kirillitsa v kommentariyakh pri xelatex i lualatex imeet problemy s probelami
 	{
 		cout << "Hello, world" << endl; //latin letters in commentaries
 		system("pause");
@@ -19,51 +19,51 @@
 	}
     \end{lstlisting}
 \end{ListingEnv}%
-Второй не~такой красивый, но без ограничений (см.~листинг~\cref{lst:hwplain}).
+Vtoroy ne~takoy krasivyy, no bez ogranicheniy (sm.~listing~\cref{lst:hwplain}).
 \begin{ListingEnv}[!h]
-    \captiondelim{ } % разделитель идентификатора с номером от наименования
-    \caption{Программа ,,Hello, world`` без подсветки}\label{lst:hwplain}
+    \captiondelim{ } % razdelitel identifikatora s nomerom ot naimenovaniya
+    \caption{Programma ,,Hello, world`` bez podsvetki}\label{lst:hwplain}
     \begin{Verb}
 
         #include <iostream>
         using namespace std;
 
-        int main() //кириллица в комментариях
+        int main() //kirillitsa v kommentariyakh
         {
-            cout << "Привет, мир" << endl;
+            cout << "Privet, mir" << endl;
         }
     \end{Verb}
 \end{ListingEnv}
 
-Можно использовать первый для вставки небольших фрагментов
-внутри текста, а второй для вставки полного
-кода в приложении, если таковое имеется.
+Mozhno ispolzovat pervyy dlya vstavki nebolshikh fragmentov
+vnutri teksta, a vtoroy dlya vstavki polnogo
+koda v prilozhenii, esli takovoe imeetsya.
 
-Если нужно вставить совсем короткий пример кода (одна или две строки),
-то~выделение  линейками и нумерация может смотреться чересчур громоздко.
-В таких случаях можно использовать окружения \texttt{lstlisting} или
-\texttt{Verb} без \texttt{ListingEnv}. Приведём такой пример
-с указанием языка программирования, отличного от~заданного по умолчанию:
+Esli nuzhno vstavit sovsem korotkiy primer koda (odna ili dve stroki),
+to~vydelenie  lineykami i numeratsiya mozhet smotretsya chereschur gromozdko.
+V takikh sluchayakh mozhno ispolzovat okruzheniya \texttt{lstlisting} ili
+\texttt{Verb} bez \texttt{ListingEnv}. Privedem takoy primer
+s ukazaniem yazyka programmirovaniya, otlichnogo ot~zadannogo po umolchaniyu:
 \begin{lstlisting}[language=Haskell]
 fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
 \end{lstlisting}
-Такое решение "--- со вставкой нумерованных листингов покрупнее
-и~вставок без выделения для маленьких фрагментов "--- выбрано,
-например, в~книге Эндрю Таненбаума и Тодда Остина по архитектуре
-компьютера.
+Takoe reshenie "--- so vstavkoy numerovannykh listingov pokrupnee
+i~vstavok bez vydeleniya dlya malenkikh fragmentov "--- vybrano,
+naprimer, v~knige Endryu Tanenbauma i Todda Ostina po arkhitekture
+kompyutera.
 
-Наконец, для оформления идентификаторов внутри строк
-(функция \lstinline{main} и~тому подобное) используется
-\texttt{lstinline} или, самое простое, моноширинный текст
+Nakonets, dlya oformleniya identifikatorov vnutri strok
+(funktsiya \lstinline{main} i~tomu podobnoe) ispolzuetsya
+\texttt{lstinline} ili, samoe prostoe, monoshirinnyy tekst
 (\texttt{\textbackslash texttt}).
 
-Пример~\cref{lst:internal3}, иллюстрирующий подключение переопределённого
-языка. Может быть полезным, если подсветка кода работает криво. Без
-дополнительного окружения, с подписью и ссылкой, реализованной встроенным
-средством.
+Primer~\cref{lst:internal3}, illyustriruyushchiy podklyuchenie pereopredelennogo
+yazyka. Mozhet byt poleznym, esli podsvetka koda rabotaet krivo. Bez
+dopolnitelnogo okruzheniya, s podpisyu i ssylkoy, realizovannoy vstroennym
+sredstvom.
 \begingroup
-\captiondelim{ } % разделитель идентификатора с номером от наименования
-\begin{lstlisting}[language={Renhanced},caption={Пример листинга c подписью собственными средствами},label={lst:internal3}]
+\captiondelim{ } % razdelitel identifikatora s nomerom ot naimenovaniya
+\begin{lstlisting}[language={Renhanced},caption={Primer listinga c podpisyu sobstvennymi sredstvami},label={lst:internal3}]
 ## Caching the Inverse of a Matrix
 
 ## Matrix inversion is usually a costly computation and there may be some
@@ -72,7 +72,7 @@ fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
 
 ## makeCacheMatrix creates a special "matrix" object that can cache its inverse
 
-makeCacheMatrix <- function(x = matrix()) {#кириллица в комментариях при xelatex и lualatex имеет проблемы с пробелами
+makeCacheMatrix <- function(x = matrix()) {#kirillitsa v kommentariyakh pri xelatex i lualatex imeet problemy s probelami
     i <- NULL
     set <- function(y) {
         x <<- y
@@ -105,24 +105,24 @@ cacheSolve <- function(x, ...) {
     x$setSolved(i)
     i
 }
-\end{lstlisting} %$ %Комментарий для корректной подсветки синтаксиса
-%вне листинга
+\end{lstlisting} %$ %Kommentariy dlya korrektnoy podsvetki sintaksisa
+%vne listinga
 \endgroup
 
-Листинг~\cref{lst:external1} подгружается из внешнего файла. Приходится
-загружать без окружения дополнительного. Иначе по страницам не переносится.
+Listing~\cref{lst:external1} podgruzhaetsya iz vneshnego fayla. Prikhoditsya
+zagruzhat bez okruzheniya dopolnitelnogo. Inache po stranitsam ne perenositsya.
 \begingroup
-\captiondelim{ } % разделитель идентификатора с номером от наименования
-\lstinputlisting[lastline=78,language={R},caption={Листинг из внешнего файла},label={lst:external1}]{listings/run_analysis.R}
+\captiondelim{ } % razdelitel identifikatora s nomerom ot naimenovaniya
+\lstinputlisting[lastline=78,language={R},caption={Listing iz vneshnego fayla},label={lst:external1}]{listings/run_analysis.R}
 \endgroup
 
-\chapter{Очень длинное название второго приложения, в~котором продемонстрирована работа с~длинными таблицами}\label{app:B}
+\chapter{Ochen dlinnoe nazvanie vtorogo prilozheniya, v~kotorom prodemonstrirovana rabota s~dlinnymi tablitsami}\label{app:B}
 
-\section{Подраздел приложения}\label{app:B1}
-Вот размещается длинная таблица:
+\section{Podrazdel prilozheniya}\label{app:B1}
+Vot razmeshchaetsya dlinnaya tablitsa:
 \makeatletter
 \@ifpackagelater{longtable}{2024/07/04} % hotfix of bug fixed in https://github.com/latex3/latex2e/commit/7c96b6b90a730278903e71a482d88479789a89a3
-{% Если много longtable* используется и новый latex, то три строки ниже правильней в главную преамбулу унести
+{% Esli mnogo longtable* ispolzuetsya i novyy latex, to tri stroki nizhe pravilney v glavnuyu preambulu unesti
 \renewenvironment{longtable*}
   {\renewcommand\LTcaptype{}\longtable}
   {\endlongtable}
@@ -133,353 +133,353 @@ cacheSolve <- function(x, ...) {
 }
 \makeatother
 \fontsize{10pt}{10pt}\selectfont
-\begin{longtable*}[c]{|l|c|l|l|} %longtable* появляется из пакета ltcaption и даёт ненумерованную таблицу
+\begin{longtable*}[c]{|l|c|l|l|} %longtable* poyavlyaetsya iz paketa ltcaption i daet nenumerovannuyu tablitsu
     \hline
-    Параметр & Умолч. & Тип & Описание               \\ \hline
+    Parametr & Umolch. & Tip & Opisanie               \\ \hline
     \endfirsthead   \hline
-    \multicolumn{4}{|c|}{\small\slshape (продолжение)}        \\ \hline
-    Параметр & Умолч. & Тип & Описание               \\ \hline
+    \multicolumn{4}{|c|}{\small\slshape (prodolzhenie)}        \\ \hline
+    Parametr & Umolch. & Tip & Opisanie               \\ \hline
     \endhead        \hline
-    \multicolumn{4}{|r|}{\small\slshape продолжение следует}  \\ \hline
+    \multicolumn{4}{|r|}{\small\slshape prodolzhenie sleduet}  \\ \hline
     \endfoot        \hline
     \endlastfoot
     \multicolumn{4}{|l|}{\&INP}        \\ \hline
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
     \hline
     \multicolumn{4}{|l|}{\&SURFPAR}        \\ \hline
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
-    kick & 1 & int & 0: инициализация без шума (\(p_s = const\)) \\
-    &   &     & 1: генерация белого шума                  \\
-    &   &     & 2: генерация белого шума симметрично относительно \\
-    & & & экватора    \\
-    mars & 0 & int & 1: инициализация модели для планеты Марс     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
+    kick & 1 & int & 0: initsializatsiya bez shuma (\(p_s = const\)) \\
+    &   &     & 1: generatsiya belogo shuma                  \\
+    &   &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+    & & & ekvatora    \\
+    mars & 0 & int & 1: initsializatsiya modeli dlya planety Mars     \\
     \hline
 \end{longtable*}
 
-\normalsize% возвращаем шрифт к нормальному
-\section{Ещё один подраздел приложения}\label{app:B2}
+\normalsize% vozvrashchaem shrift k normalnomu
+\section{Eshche odin podrazdel prilozheniya}\label{app:B2}
 
-Нужно больше подразделов приложения!
-Конвынёры витюпырата но нам, тебиквюэ мэнтётюм позтюлант ед про. Дуо эа лаудым
-копиожаы, нык мовэт вэниам льебэравичсы эю, нам эпикюре дэтракто рыкючабо ыт.
+Nuzhno bolshe podrazdelov prilozheniya!
+Konvynery vityupyrata no nam, tebikvyue mentetyum poztyulant ed pro. Duo ea laudym
+kopiozhay, nyk movet veniam leberavichsy eyu, nam epikyure detrakto rykyuchabo yt.
 
-Пример длинной таблицы с записью продолжения по ГОСТ 2.105:
+Primer dlinnoy tablitsy s zapisyu prodolzheniya po GOST 2.105:
 
 \begingroup
 \centering
 \small
-\captionsetup[table]{skip=7pt} % смещение положения подписи
+\captionsetup[table]{skip=7pt} % smeshchenie polozheniya podpisi
 \begin{longtable}[c]{|l|c|l|l|}
-    \caption{Наименование таблицы средней длины}\label{tab:test5}% label всегда желательно идти после caption
+    \caption{Naimenovanie tablitsy sredney dliny}\label{tab:test5}% label vsegda zhelatelno idti posle caption
     \\[-0.45\onelineskip]
     \hline
-    Параметр & Умолч. & Тип & Описание                                          \\ \hline
+    Parametr & Umolch. & Tip & Opisanie                                          \\ \hline
     \endfirsthead%
-    \caption*{Продолжение таблицы~\thetable}                                    \\[-0.45\onelineskip]
+    \caption*{Prodolzhenie tablitsy~\thetable}                                    \\[-0.45\onelineskip]
     \hline
-    Параметр & Умолч. & Тип & Описание                                          \\ \hline
+    Parametr & Umolch. & Tip & Opisanie                                          \\ \hline
     \endhead
     \hline
     \endfoot
     \hline
     \endlastfoot
     \multicolumn{4}{|l|}{\&INP}                                                 \\ \hline
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
     \hline
     \multicolumn{4}{|l|}{\&SURFPAR}                                             \\ \hline
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
-    kick     & 1      & int & 0: инициализация без шума (\(p_s = const\))       \\
-             &        &     & 1: генерация белого шума                          \\
-             &        &     & 2: генерация белого шума симметрично относительно \\
-             &        &     & экватора                                          \\
-    mars     & 0      & int & 1: инициализация модели для планеты Марс          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
+    kick     & 1      & int & 0: initsializatsiya bez shuma (\(p_s = const\))       \\
+             &        &     & 1: generatsiya belogo shuma                          \\
+             &        &     & 2: generatsiya belogo shuma simmetrichno otnositelno \\
+             &        &     & ekvatora                                          \\
+    mars     & 0      & int & 1: initsializatsiya modeli dlya planety Mars          \\
 \end{longtable}
-\normalsize% возвращаем шрифт к нормальному
+\normalsize% vozvrashchaem shrift k normalnomu
 \endgroup
-\section{Использование длинных таблиц с окружением \textit{longtblr} из~пакета \texttt{tabularray}}\label{app:B2a}
+\section{Ispolzovanie dlinnykh tablits s okruzheniem \textit{longtblr} iz~paketa \texttt{tabularray}}\label{app:B2a}
 
-В таблице \cref{tab:test-functions} более книжный вариант длинной таблицы,
-используя окружение \verb!longtblr! из~пакета \verb!tabularray! и разнообразные
-разделители (\verb!toprule!, \verb!midrule!, \verb!bottomrule!) из~пакета
+V tablitse \cref{tab:test-functions} bolee knizhnyy variant dlinnoy tablitsy,
+ispolzuya okruzhenie \verb!longtblr! iz~paketa \verb!tabularray! i raznoobraznye
+razdeliteli (\verb!toprule!, \verb!midrule!, \verb!bottomrule!) iz~paketa
 \verb!booktabs!.
 
-Чтобы визуально таблица смотрелась лучше, можно использовать следующие
-параметры.
-Таблица задаётся на всю ширину, \verb!longtblr! позволяет делить ширину колонок
-пропорционально "--- тут три колонки в~пропорции 1.1:1.1:4 "--- для каждой
-колонки первый параметр в~описании \verb!X[]!.
-Кроме того, в~таблице убраны отступы слева и справа с~помощью \verb!@{}!
-в~преамбуле таблицы.
-К~первому и~второму столбцу применяется модификатор
+Chtoby vizualno tablitsa smotrelas luchshe, mozhno ispolzovat sleduyushchie
+parametry.
+Tablitsa zadaetsya na vsyu shirinu, \verb!longtblr! pozvolyaet delit shirinu kolonok
+proportsionalno "--- tut tri kolonki v~proportsii 1.1:1.1:4 "--- dlya kazhdoy
+kolonki pervyy parametr v~opisanii \verb!X[]!.
+Krome togo, v~tablitse ubrany otstupy sleva i sprava s~pomoshchyu \verb!@{}!
+v~preambule tablitsy.
+K~pervomu i~vtoromu stolbtsu primenyaetsya modifikator
 
 \verb!>{\setlength{\baselineskip}{0.7\baselineskip}}!,
 
-\noindent который уменьшает межстрочный интервал для текста таблиц (иначе
-заголовок второго столбца значительно шире, а двухстрочное имя
-сливается с~окружающими). Для первой и второй колонки текст в ячейках
-выравниваются по~центру как по~вертикали, так и по горизонтали "---
-задаётся буквами \verb!m!~и~\verb!c!~в~описании столбца \verb!X[]!.
+\noindent kotoryy umenshaet mezhstrochnyy interval dlya teksta tablits (inache
+zagolovok vtorogo stolbtsa znachitelno shire, a dvukhstrochnoe imya
+slivaetsya s~okruzhayushchimi). Dlya pervoy i vtoroy kolonki tekst v yacheykakh
+vyravnivayutsya po~tsentru kak po~vertikali, tak i po gorizontali "---
+zadaetsya bukvami \verb!m!~i~\verb!c!~v~opisanii stolbtsa \verb!X[]!.
 
-Так как формулы большие "--- используется окружение \verb!alignedat!,
-чтобы отступ был одинаковый у всех формул "--- он сделан для всех, хотя
-для большей части можно было и не использовать.  Чтобы формулы
-занимали поменьше места в~каждом столбце формулы (где надо)
-используется \verb!\textstyle! "--- он~делает дроби меньше, у~знаков
-суммы и произведения "--- индексы сбоку. Иногда формула слишком большая,
-сливается со следующей, поэтому после неё ставится небольшой
-дополнительный отступ \verb!\vspace*{2ex}!. Для штрафных функций "---
-размер фигурных скобок задан вручную \verb!\Big\{!, т.\:к. не~умеет
-\verb!alignedat! работать с~\verb!\left! и~\verb!\right! через
-несколько строк/колонок.
+Tak kak formuly bolshie "--- ispolzuetsya okruzhenie \verb!alignedat!,
+chtoby otstup byl odinakovyy u vsekh formul "--- on sdelan dlya vsekh, khotya
+dlya bolshey chasti mozhno bylo i ne ispolzovat.  Chtoby formuly
+zanimali pomenshe mesta v~kazhdom stolbtse formuly (gde nado)
+ispolzuetsya \verb!\textstyle! "--- on~delaet drobi menshe, u~znakov
+summy i proizvedeniya "--- indeksy sboku. Inogda formula slishkom bolshaya,
+slivaetsya so sleduyushchey, poetomu posle nee stavitsya nebolshoy
+dopolnitelnyy otstup \verb!\vspace*{2ex}!. Dlya shtrafnykh funktsiy "---
+razmer figurnykh skobok zadan vruchnuyu \verb!\Big\{!, t.\:k. ne~umeet
+\verb!alignedat! rabotat s~\verb!\left! i~\verb!\right! cherez
+neskolko strok/kolonok.
 
-В примечании к таблице наоборот, окружение \verb!cases! даёт слишком
-большие промежутки между вариантами, чтобы их уменьшить, в конце
-каждой строчки окружения использовался отрицательный дополнительный
-отступ \verb!\\[-0.5em]!.
+V primechanii k tablitse naoborot, okruzhenie \verb!cases! daet slishkom
+bolshie promezhutki mezhdu variantami, chtoby ikh umenshit, v kontse
+kazhdoy strochki okruzheniya ispolzovalsya otritsatelnyy dopolnitelnyy
+otstup \verb!\\[-0.5em]!.
 
-\DefTblrTemplate{contfoot-text}{default}{\small\slshape продолжение следует} % переделали default шаблон, используемый по-умолчанию
-\DefTblrTemplate{conthead-text}{default}{\small\slshape (продолжение)} % переделали normal default, используемый по-умолчанию
-\DefTblrTemplate{capcont}{default}{\centering\UseTblrTemplate{conthead-text}{default}\par} % для работы центрирования обязательно \par
-\DefTblrTemplate{caplast}{default}{\small\slshape (окончание)}
-\DefTblrTemplate{lasthead}{default}{\centering\UseTblrTemplate{caplast}{default}\par} % для работы центрирования обязательно \par
-\DefTblrTemplate{firsthead}{default}{% правим шаблон у первого заголовка, чтобы считывал настройки из пакета caption
+\DefTblrTemplate{contfoot-text}{default}{\small\slshape prodolzhenie sleduet} % peredelali default shablon, ispolzuemyy po-umolchaniyu
+\DefTblrTemplate{conthead-text}{default}{\small\slshape (prodolzhenie)} % peredelali normal default, ispolzuemyy po-umolchaniyu
+\DefTblrTemplate{capcont}{default}{\centering\UseTblrTemplate{conthead-text}{default}\par} % dlya raboty tsentrirovaniya obyazatelno \par
+\DefTblrTemplate{caplast}{default}{\small\slshape (okonchanie)}
+\DefTblrTemplate{lasthead}{default}{\centering\UseTblrTemplate{caplast}{default}\par} % dlya raboty tsentrirovaniya obyazatelno \par
+\DefTblrTemplate{firsthead}{default}{% pravim shablon u pervogo zagolovka, chtoby schityval nastroyki iz paketa caption
     % https://tex.stackexchange.com/a/628973
     \addtocounter{table}{-1}%
-    \IfTokenListEmpty{\InsertTblrText{entry}}{% важно, чтобы не дублировались записи в списке таблиц
+    \IfTokenListEmpty{\InsertTblrText{entry}}{% vazhno, chtoby ne dublirovalis zapisi v spiske tablits
         \captionof{table}{\InsertTblrText{caption}}%
     }{%
         \captionof{table}[\InsertTblrText{entry}]{\InsertTblrText{caption}}%
-    }% если будет запись в entry, то она пойдет в список таблиц, см. документацию tabularray
+    }% esli budet zapis v entry, to ona poydet v spisok tablits, sm. dokumentatsiyu tabularray
 }
-\SetTblrTemplate{caption-lot}{empty} % важно, чтобы не дублировались записи в списке таблиц
+\SetTblrTemplate{caption-lot}{empty} % vazhno, chtoby ne dublirovalis zapisi v spiske tablits
 \begin{longtblr}[
-    caption = {Тестовые функции для оптимизации, \(D\) "---  размерность. Для всех функций значение в точке глобального минимума равно нулю.},
+    caption = {Testovye funktsii dlya optimizatsii, \(D\) "---  razmernost. Dlya vsekh funktsiy znachenie v tochke globalnogo minimuma ravno nulyu.},
     label = {tab:test-functions},
     ]{
     colspec = {%
@@ -492,10 +492,10 @@ cacheSolve <- function(x, ...) {
     rows={rowsep=3pt},
     row{1}={rowsep=2pt},
     }
-    \toprule     %%% верхняя линейка
-    Имя                      & Стартовый диапазон параметров   & Функция                                 \\
-    \midrule %%% тонкий разделитель. Отделяет названия столбцов. Обязателен по ГОСТ 2.105 пункт 4.4.5
-    сфера                    & \(\left[-100,\,100\right]^D\)   &
+    \toprule     %%% verkhnyaya lineyka
+    Imya                      & Startovyy diapazon parametrov   & Funktsiya                                 \\
+    \midrule %%% tonkiy razdelitel. Otdelyaet nazvaniya stolbtsov. Obyazatelen po GOST 2.105 punkt 4.4.5
+    sfera                    & \(\left[-100,\,100\right]^D\)   &
     \(\begin{aligned}
           \textstyle f_1(x)=\sum_{i=1}^Dx_i^2
       \end{aligned}\)                                                                 \\
@@ -517,11 +517,11 @@ cacheSolve <- function(x, ...) {
           \sum_{i=1}^{D-1}
           \left[100\!\left(x_{i+1}-x_i^2\right)^2+(x_i-1)^2\right]
       \end{aligned}\)                      \\
-    ступенчатая              & \(\left[-100,\,100\right]^D\)   &
+    stupenchataya              & \(\left[-100,\,100\right]^D\)   &
     \(\begin{aligned}
           \textstyle f_6(x)=\sum_{i=1}^D\big\lfloor x_i+0.5\big\rfloor^2
       \end{aligned}\)                                      \\
-    зашумлённая квартическая & \(\left[-1.28,\,1.28\right]^D\) &
+    zashumlennaya kvarticheskaya & \(\left[-1.28,\,1.28\right]^D\) &
     \(\begin{aligned}
           \textstyle f_7(x)=\sum_{i=1}^Dix_i^4+rand[0,1)
       \end{aligned}\)\vspace*{2ex}                                                      \\
@@ -548,14 +548,14 @@ cacheSolve <- function(x, ...) {
           f_{11}(x)= & \textstyle \frac{1}{4000}\sum_{i=1}^{D}x_i^2 -
           \prod_{i=1}^D\cos\left(x_i/\sqrt{i}\right) +1
       \end{aligned}\) \vspace*{3ex}                                        \\
-    штрафная 1               & \(\left[-50,\,50\right]^D\)     &
+    shtrafnaya 1               & \(\left[-50,\,50\right]^D\)     &
     \(\begin{aligned}
           f_{12}(x)= & \textstyle \frac{\pi}{D}\Big\{ 10\,\sin^2(\pi y_1) +            \\
                      & +\textstyle \sum_{i=1}^{D-1}(y_i-1)^2
           \left[1+10\,\sin^2(\pi y_{i+1})\right] +                                     \\
                      & +(y_D-1)^2 \Big\} +\textstyle\sum_{i=1}^D u(x_i,\,10,\,100,\,4)
       \end{aligned}\) \vspace*{2ex} \\
-    штрафная 2               & \(\left[-50,\,50\right]^D\)     &
+    shtrafnaya 2               & \(\left[-50,\,50\right]^D\)     &
     \(\begin{aligned}
           f_{13}(x)= & \textstyle 0.1 \Big\{\sin^2(3\pi x_1) +            \\
                      & +\textstyle \sum_{i=1}^{D-1}(x_i-1)^2
@@ -563,7 +563,7 @@ cacheSolve <- function(x, ...) {
                      & +(x_D-1)^2\left[1+\sin^2(2\pi x_D)\right] \Big\} + \\
                      & +\textstyle\sum_{i=1}^D u(x_i,\,5,\,100,\,4)
       \end{aligned}\)              \\
-    сфера                    & \(\left[-100,\,100\right]^D\)   &
+    sfera                    & \(\left[-100,\,100\right]^D\)   &
     \(\begin{aligned}
           \textstyle f_1(x)=\sum_{i=1}^Dx_i^2
       \end{aligned}\)                                                                 \\
@@ -585,11 +585,11 @@ cacheSolve <- function(x, ...) {
           \sum_{i=1}^{D-1}
           \left[100\!\left(x_{i+1}-x_i^2\right)^2+(x_i-1)^2\right]
       \end{aligned}\)                      \\
-    ступенчатая              & \(\left[-100,\,100\right]^D\)   &
+    stupenchataya              & \(\left[-100,\,100\right]^D\)   &
     \(\begin{aligned}
           \textstyle f_6(x)=\sum_{i=1}^D\big\lfloor x_i+0.5\big\rfloor^2
       \end{aligned}\)                                      \\
-    зашумлённая квартическая & \(\left[-1.28,\,1.28\right]^D\) &
+    zashumlennaya kvarticheskaya & \(\left[-1.28,\,1.28\right]^D\) &
     \(\begin{aligned}
           \textstyle f_7(x)=\sum_{i=1}^Dix_i^4+rand[0,1)
       \end{aligned}\)\vspace*{2ex}                                                      \\
@@ -616,14 +616,14 @@ cacheSolve <- function(x, ...) {
           f_{11}(x)= & \textstyle \frac{1}{4000}\sum_{i=1}^{D}x_i^2 -
           \prod_{i=1}^D\cos\left(x_i/\sqrt{i}\right) +1
       \end{aligned}\) \vspace*{3ex}                                        \\
-    штрафная 1               & \(\left[-50,\,50\right]^D\)     &
+    shtrafnaya 1               & \(\left[-50,\,50\right]^D\)     &
     \(\begin{aligned}
           f_{12}(x)= & \textstyle \frac{\pi}{D}\Big\{ 10\,\sin^2(\pi y_1) +            \\
                      & +\textstyle \sum_{i=1}^{D-1}(y_i-1)^2
           \left[1+10\,\sin^2(\pi y_{i+1})\right] +                                     \\
                      & +(y_D-1)^2 \Big\} +\textstyle\sum_{i=1}^D u(x_i,\,10,\,100,\,4)
       \end{aligned}\) \vspace*{2ex} \\
-    штрафная 2               & \(\left[-50,\,50\right]^D\)     &
+    shtrafnaya 2               & \(\left[-50,\,50\right]^D\)     &
     \(\begin{aligned}
           f_{13}(x)= & \textstyle 0.1 \Big\{\sin^2(3\pi x_1) +            \\
                      & +\textstyle \sum_{i=1}^{D-1}(x_i-1)^2
@@ -631,39 +631,39 @@ cacheSolve <- function(x, ...) {
                      & +(x_D-1)^2\left[1+\sin^2(2\pi x_D)\right] \Big\} + \\
                      & +\textstyle\sum_{i=1}^D u(x_i,\,5,\,100,\,4)
       \end{aligned}\)              \\
-    \midrule%%% тонкий разделитель
+    \midrule%%% tonkiy razdelitel
     \SetCell[c=3]{l,\linewidth}%
-    \hspace*{2.5em}% абзацный отступ - требование ГОСТ 2.105
-    Примечание "---  Для функций \(f_{12}\) и \(f_{13}\)
-    используется \(y_i = 1 + \frac{1}{4}(x_i+1)\)
-    и~\(u(x_i,\,a,\,k,\,m)=
+    \hspace*{2.5em}% abzatsnyy otstup - trebovanie GOST 2.105
+    Primechanie "---  Dlya funktsiy \(f_{12}\) i \(f_{13}\)
+    ispolzuetsya \(y_i = 1 + \frac{1}{4}(x_i+1)\)
+    i~\(u(x_i,\,a,\,k,\,m)=
     \begin{cases*}
         k(x_i-a)^m,  & \( x_i >a \)            \\[-0.5em]
         0,           & \( -a\leq x_i \leq a \) \\[-0.5em]
         k(-x_i-a)^m, & \( x_i <-a \)
     \end{cases*}
     \)                                                                                                   \\
-    \bottomrule %%% нижняя линейка
+    \bottomrule %%% nizhnyaya lineyka
 \end{longtblr}
 
-\section{Форматирование внутри таблиц}\label{app:B3}
+\section{Formatirovanie vnutri tablits}\label{app:B3}
 
-В таблице \cref{tab:other-row} пример с чересстрочным форматированием.
-Это реализовано средствами, доступными в таблицах пакета \verb+tabularray+.
+V tablitse \cref{tab:other-row} primer s cheresstrochnym formatirovaniem.
+Eto realizovano sredstvami, dostupnymi v tablitsakh paketa \verb+tabularray+.
 
-В таблице \cref{tab:other-row} каждая чётная строчка (заголовок таблицы тоже
-считается за~строчку) "--- синяя, нечётная "--- с наклоном и~слегка поднята
-вверх.
-Визуально это приводит к тому, что среднее значение и~среднеквадратичное
-изменение группируются и хорошо выделяются взглядом в~таблице.
-Сохраняется возможность отдельные значения в таблице выделить цветом или
-шрифтом.
-К~первому и~второму столбцу форматирование не применяется по~сути таблицы,
-к~шестому общее форматирование не~применяется для наглядности.
+V tablitse \cref{tab:other-row} kazhdaya chetnaya strochka (zagolovok tablitsy tozhe
+schitaetsya za~strochku) "--- sinyaya, nechetnaya "--- s naklonom i~slegka podnyata
+vverkh.
+Vizualno eto privodit k tomu, chto srednee znachenie i~srednekvadratichnoe
+izmenenie gruppiruyutsya i khorosho vydelyayutsya vzglyadom v~tablitse.
+Sokhranyaetsya vozmozhnost otdelnye znacheniya v tablitse vydelit tsvetom ili
+shriftom.
+K~pervomu i~vtoromu stolbtsu formatirovanie ne primenyaetsya po~suti tablitsy,
+k~shestomu obshchee formatirovanie ne~primenyaetsya dlya naglyadnosti.
 
 \needspace{2\baselineskip}
 \begin{longtblr}[
-    caption = {Длинная таблица с примером чересстрочного форматирования},
+    caption = {Dlinnaya tablitsa s primerom cheresstrochnogo formatirovaniya},
     label = {tab:other-row},
     ]{
     vspan=minimal,
@@ -685,9 +685,9 @@ cacheSolve <- function(x, ...) {
     cell{even}{3-5,7-8} = {font=\color{blue}},
     cell{odd[3]}{3-5,7-8} = {cmd={\vspace{0.3ex}},font=\itshape},
         }
-    \toprule %%% верхняя линейка
-        & Итера\-ции & JADE\texttt{++}  & JADE      & jDE                    & SaDE                   & DE/rand /1/bin & PSO       \\
-    \midrule %%% тонкий разделитель. Отделяет названия столбцов. Обязателен по ГОСТ 2.105 пункт 4.4.5
+    \toprule %%% verkhnyaya lineyka
+        & Itera\-tsii & JADE\texttt{++}  & JADE      & jDE                    & SaDE                   & DE/rand /1/bin & PSO       \\
+    \midrule %%% tonkiy razdelitel. Otdelyaet nazvaniya stolbtsov. Obyazatelen po GOST 2.105 punkt 4.4.5
     f1  & 1500       & \textbf{1.8E-60} & 1.3E-54   & 2.5E-28                & 4.5E-20                & 9.8E-14        & 9.6E-42   \\\nopagebreak
         &            & (8.4E-60)        & (9.2E-54) & {\color{red}(3.5E-28)} & (6.9E-20)              & (8.4E-14)      & (2.7E-41) \\
     f2  & 2000       & 1.8E-25          & 3.9E-22   & 1.5E-23                & 1.9E-14                & 1.6E-09        & 9.3E-21   \\\nopagebreak
@@ -740,53 +740,53 @@ cacheSolve <- function(x, ...) {
         &            & (1.9E-16)        & (8.3E-16) & (1.5E-07)              & (9.2E-06)              & (1.0E-02)      & (3.9E-01) \\
     f13 & 500        & 2.0E-16          & 1.2E-15   & 1.5E-06                & 6.1E-05                & 7.5E-02        & 2.9E-03   \\\nopagebreak
         &            & (6.5E-16)        & (2.8E-15) & (9.8E-07)              & (2.0E-05)              & (3.8E-02)      & (4.8E-03) \\
-    \bottomrule %%% нижняя линейка
+    \bottomrule %%% nizhnyaya lineyka
 \end{longtblr}
 
-\section{Стандартные префиксы ссылок}\label{app:B4}
+\section{Standartnye prefiksy ssylok}\label{app:B4}
 
-Общепринятым является следующий формат ссылок: \texttt{<prefix>:<label>}.
-Например, \verb+\label{fig:knuth}+; \verb+\ref{tab:test1}+; \verb+label={lst:external1}+.
-В~таблице \cref{tab:tab_pref} приведены стандартные префиксы для различных
-типов ссылок.
+Obshcheprinyatym yavlyaetsya sleduyushchiy format ssylok: \texttt{<prefix>:<label>}.
+Naprimer, \verb+\label{fig:knuth}+; \verb+\ref{tab:test1}+; \verb+label={lst:external1}+.
+V~tablitse \cref{tab:tab_pref} privedeny standartnye prefiksy dlya razlichnykh
+tipov ssylok.
 
 \begin{table}[htbp]
     \captionsetup{justification=centering}
     \centering{
-        \caption{\label{tab:tab_pref}Стандартные префиксы ссылок}
+        \caption{\label{tab:tab_pref}Standartnye prefiksy ssylok}
         \begin{tabular}{ll}
             \toprule
-            \textbf{Префикс} & \textbf{Описание} \\
+            \textbf{Prefiks} & \textbf{Opisanie} \\
             \midrule
-            ch:              & Глава             \\
-            sec:             & Секция            \\
-            subsec:          & Подсекция         \\
-            fig:             & Рисунок           \\
-            tab:             & Таблица           \\
-            eq:              & Уравнение         \\
-            lst:             & Листинг программы \\
-            itm:             & Элемент списка    \\
-            alg:             & Алгоритм          \\
-            app:             & Секция приложения \\
+            ch:              & Glava             \\
+            sec:             & Sektsiya            \\
+            subsec:          & Podsektsiya         \\
+            fig:             & Risunok           \\
+            tab:             & Tablitsa           \\
+            eq:              & Uravnenie         \\
+            lst:             & Listing programmy \\
+            itm:             & Element spiska    \\
+            alg:             & Algoritm          \\
+            app:             & Sektsiya prilozheniya \\
             \bottomrule
         \end{tabular}
     }
 \end{table}
 
 
-Для упорядочивания ссылок можно использовать разделительные символы.
-Например, \verb+\label{fig:scheemes/my_scheeme}+ или \\ \verb+\label{lst:dts/linked_list}+.
+Dlya uporyadochivaniya ssylok mozhno ispolzovat razdelitelnye simvoly.
+Naprimer, \verb+\label{fig:scheemes/my_scheeme}+ ili \\ \verb+\label{lst:dts/linked_list}+.
 
-\section{Очередной подраздел приложения}\label{app:B5}
+\section{Ocherednoy podrazdel prilozheniya}\label{app:B5}
 
-Нужно больше подразделов приложения!
+Nuzhno bolshe podrazdelov prilozheniya!
 
-\section{И ещё один подраздел приложения}\label{app:B6}
+\section{I eshche odin podrazdel prilozheniya}\label{app:B6}
 
-Нужно больше подразделов приложения!
+Nuzhno bolshe podrazdelov prilozheniya!
 
 \clearpage
 \refstepcounter{chapter}
-\addcontentsline{toc}{appendix}{\protect\chapternumberline{\thechapter}Чертёж детали}
+\addcontentsline{toc}{appendix}{\protect\chapternumberline{\thechapter}Chertezh detali}
 
 \includepdf[pages=-]{Dissertation/images/drawing.pdf}

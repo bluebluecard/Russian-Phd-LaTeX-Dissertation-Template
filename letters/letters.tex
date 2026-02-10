@@ -32,36 +32,36 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Данные отправителя
-\setfallback{fromwhom}{Учёного секретаря}
-\setfallback{frominstitution}{диссертационного совета МГУ}
-\setfallback{fromcity}{г.~Москва}
-\setfallback{fromaddress}{Ленинские горы, д.~1}
+% Dannye otpravitelya
+\setfallback{fromwhom}{Uchenogo sekretarya}
+\setfallback{frominstitution}{dissertatsionnogo soveta MGU}
+\setfallback{fromcity}{g.~Moskva}
+\setfallback{fromaddress}{Leninskie gory, d.~1}
 \setfallback{fromindex}{119991}
 
-% Данные получателя по-умолчанию
+% Dannye poluchatelya po-umolchaniyu
 \setfallback{toindex}{119019}
-\setfallback{toinstitution}{ИТАР-ТАСС}
-\setfallback{towhom}{Учёному секретарю}
-\setfallback{tocity}{г.~Москва}
-\setfallback{toaddress}{Кремлёвская~наб., д.~1/9, стр.~8}
+\setfallback{toinstitution}{ITAR-TASS}
+\setfallback{towhom}{Uchenomu sekretaryu}
+\setfallback{tocity}{g.~Moskva}
+\setfallback{toaddress}{Kremlevskaya~nab., d.~1/9, str.~8}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \raggedright
 
-% Откомментируйте, чтобы нарисовать рамку вокруг на границе страницы
+% Otkommentiruyte, chtoby narisovat ramku vokrug na granitse stranitsy
 % \input tikz.tex
 % \tikz[remember picture,overlay]{\draw (0,0) -- ++(\hsize,0) -- ++(0,-\vsize)-- ++(-\hsize,0) -- ++(0,\vsize);}
 
 
 \hsize=\dimexpr (\pagewidth / 2 - \leftOffset - \rightOffset) \relax
 
-{\myfontit От кого:}
+{\myfontit Ot kogo:}
 \ifx\fromwhom\empty\else\fromwhom\break\fi
 \frominstitution\par
-{\myfontit Откуда:}
+{\myfontit Otkuda:}
 \fromaddress\break
 \fromcity\break
 \fromindex
@@ -71,10 +71,10 @@
 {
         \leftskip \dimexpr (\pagewidth / 2 - \leftOffset) \relax
         \hsize=\dimexpr (\pagewidth - \leftOffset - \rightOffset) \relax
-        {\myfontit Кому:}
+        {\myfontit Komu:}
         \ifx\towhom\empty\else\towhom\break\fi
         \toinstitution \par
-        {\myfontit Куда:}
+        {\myfontit Kuda:}
         \toaddress \break
         \tocity \break
         \toindex \par

@@ -1,10 +1,10 @@
-### Пережатие pdf с помощью Ghostscript.
+### PDF compression with Ghostscript.
 #
-# Описание команд gs: https://www.ghostscript.com/doc/current/VectorDevices.htm
-# (!) Ghostscript молча игнорирует неизвестные параметры.
+# gs command reference: https://www.ghostscript.com/doc/current/VectorDevices.htm
+# (!) Ghostscript silently ignores unknown parameters.
 
 
-# Фикс для make из MSYS2, отключающий Automatic path mangling. См:
+# Fix for MSYS2 make to disable automatic path mangling. See:
 #  * https://stackoverflow.com/a/34386471/1032586
 #  * https://github.com/msys2/msys2/wiki/Porting#user-content-filesystem-namespaces
 FULL_MAKE_VERSION_INFO := $(shell $(MAKE) --version)   # e.g. "GNU Make 4.2.1 Built for x86_64-pc-msys ... "
@@ -12,36 +12,36 @@ ISMSYS_MAKE := $(findstring msys,$(FULL_MAKE_VERSION_INFO))
 MSYS_FIX := MSYS_NO_PATHCONV=1 MSYS2_ARG_CONV_EXCL="*"
 MSYS_FIX := $(if $(ISMSYS_MAKE),$(MSYS_FIX),)
 
-# Пересобираемый файл
+# File to be recompressed
 COMPRESS_FILE ?= $(TARGET)
 
-# Не останавливаться после каждой страницы
+# Do not stop after each page
 COMPRESSION_FLAGS_COMMON += -P- -dSAFER -dBATCH -dNOPAUSE
 
-# Устройство
+# Output device
 COMPRESSION_FLAGS_COMMON += -sDEVICE=pdfwrite
 
-# Вложить шрифты внутрь pdf
+# Embed fonts into PDF
 COMPRESSION_FLAGS_COMMON += -dEmbedAllFonts=true -dSubsetFonts=true
 
-# Разработчики gs не рекомендуют использовать пресеты `-dPDFSETTINGS` если нет чёткого понимания всех
-# нюансов ( https://stackoverflow.com/a/30860751/1032586 ) - безопаснее явно задавать необходимые значения.
+# gs developers do not recommend `-dPDFSETTINGS` presets unless you clearly understand all
+# details ( https://stackoverflow.com/a/30860751/1032586 ); explicitly setting required values is safer.
 # COMPRESSION_FLAGS_COMMON += -dPDFSETTINGS=/default
 
-# Не показывать счётчик страниц
+# Do not show page counter
 COMPRESSION_QUIET ?= no
 ifneq ($(COMPRESSION_QUIET),no)
 COMPRESSION_FLAGS_COMMON += -q
 endif
 
-### (1) Пересборка pdf для уменьшения размера, за счёт снижения качества картинок --------------------------
-# (крутить `COMPRESSION_IMAGE_DPI` до достижения приемлемого размера)
+### (1) Rebuild PDF to reduce size by lowering image quality --------------------------
+# (tune `COMPRESSION_IMAGE_DPI` until acceptable output size is reached)
 COMPRESSION_IMAGE_DPI ?= 144
 COMPRESSION_FLAGS_1 = $(COMPRESSION_FLAGS_COMMON)
 
 COMPRESSION_FLAGS_1 += -dDownsampleColorImages=true
 COMPRESSION_FLAGS_1 += -dColorImageDownsampleThreshold=1.5
-COMPRESSION_FLAGS_1 += -dColorImageDownsampleType=/Average  # Bicubic может давать цветные артефакты
+COMPRESSION_FLAGS_1 += -dColorImageDownsampleType=/Average  # Bicubic may produce color artifacts
 COMPRESSION_FLAGS_1 += -dColorImageFilter=/DCTEncode        # /DCTEncode = jpg, lossy
 COMPRESSION_FLAGS_1 += -dColorImageResolution=$(COMPRESSION_IMAGE_DPI)
 
@@ -58,7 +58,7 @@ COMPRESSION_FLAGS_1 += -dMonoImageFilter=/CCITTFaxEncode
 COMPRESSION_FLAGS_1 += -dMonoImageResolution=$(COMPRESSION_IMAGE_DPI)
 
 
-##! сжатие файла с потерей данных
+##! lossy file compression
 compress-lowdpi:
 	$(MSYS_FIX) gs $(COMPRESSION_FLAGS_1) \
 		-sOutputFile=$(basename $(COMPRESS_FILE))_lowdpi.pdf \
@@ -66,40 +66,40 @@ compress-lowdpi:
 
 
 
-### (2) Пересборка pdf для передачи в типографию -----------------------------------------------------------
+### (2) PDF rebuild for print-shop delivery -----------------------------------------------------------
 COMPRESSION_FLAGS_2 = $(COMPRESSION_FLAGS_COMMON)
 
-# Прозрачность
-# Типография может требовать файл "без прозрачности" или пугать, что она напечатается непредсказуемым
-# образом. Требование файла в формате "PDF 1.3" или "PDF/X-1a" тоже означает отсутствие прозрачности.
-# Для исключения прозрачности gs растеризует всю страницу.
-# Пример растеризуемой страницы - титульный лист шаблона. Хотя фактически логотип прозрачности не содержит,
-# формально она есть и соответствующая проверка проваливается.
+# Transparency
+# A print shop may require a file "without transparency" or warn that transparency may print unpredictably
+# in output. A requirement for "PDF 1.3" or "PDF/X-1a" also implies no transparency.
+# To remove transparency, gs rasterizes the whole page.
+# Example of a rasterized page: the template title page. Although the logo has no visible transparency,
+# it is formally present and related validation checks fail.
 COMPRESSION_FLAGS_2 += -dHaveTransparency=false
 COMPRESSION_FLAGS_2 += -dCompatibilityLevel=1.3
 
-# Разрешение растеризации
-# Рекомендуемое разрешение чёрно-белых изображений обычно состовляет 1000..1200dpi. Чтобы обычный текст
-# (вероятно, также присутствующий на странице) пострадал минимально - используем аналогичное разрешение,
-# несмотря на то, что изображение, получится цветным (раз уж на странице есть иллюстрация).
-# Потенциальная проблема: некоторые типографии пугают, что все цветные изображения с разрешением выше
-# некоторого будут ресемплированы к более низкому разрешению.
+# Rasterization resolution
+# Recommended black-and-white image resolution is usually 1000..1200 dpi. To minimize impact on
+# normal text (which may also be present on the page), use a similar resolution,
+# even though the image may become color (if the page contains an illustration).
+# Potential issue: some print shops warn that all color images above a certain resolution
+# will be resampled to a lower resolution.
 COMPRESSION_FLAGS_2 += -r1200
 
-# Замена всех шрифтов на кривые
-# Если установлено true - весь текст перестанет выделяться, размер файла увеличивается. Может быть решением,
-# если какой-либо шрифт невозможно вложить из-за ограничений лицензии. Но и без этого может быть
-# рекомендованным вариантом для некоторых типографий. Не то же самое, что растеризация.
+# Convert all fonts to outlines
+# If true, text will no longer be selectable and file size increases. This can help
+# when some fonts cannot be embedded due to licensing limits, and may still be
+# recommended by some print shops. This is not the same as rasterization.
 COMPRESSION_FLAGS_2 += -dNoOutputFonts=false
 
 # RGB -> CMYK
-# Типография может требовать файл "в CMYK", или пугать что RGB напечатается непредсказуемым образом.
-# Кроме палитры DeviceCMYK в выходном pdf остаётся также палитра DeviceGRAY.
+# A print shop may require a file "in CMYK" or warn that RGB may print unpredictably.
+# Besides DeviceCMYK, the output PDF also contains DeviceGRAY.
 COMPRESSION_FLAGS_2 += -dProcessColorModel=/DeviceCMYK
 COMPRESSION_FLAGS_2 += -sColorConversionStrategy=CMYK
 
-# Из-за преобразования цвета к CMYK, изображения требуется пережать. Для типографии представляется логичным
-# cжимать изображения без потерь и снижения разрешения, если файл получается не слишком большой.
+# Because of RGB->CMYK conversion, images should be recompressed. For print delivery it is reasonable
+# to keep compression lossless and resolution unchanged if file size remains acceptable.
 COMPRESSION_FLAGS_2 += -dDownsampleColorImages=false
 # COMPRESSION_FLAGS_2 += -dColorImageResolution=300
 # COMPRESSION_FLAGS_2 += -dColorImageDownsampleThreshold=1.5
@@ -121,29 +121,29 @@ COMPRESSION_FLAGS_2 += -dDownsampleMonoImages=false
 COMPRESSION_FLAGS_2 += -dAutoFilterMonoImages=false
 COMPRESSION_FLAGS_2 += -dMonoImageFilter=/FlateEncode
 
-# Для pdf вывода Ghostscript поддерживает лишь достаточно ограниченный функционал управления цветом.
-#  * Из всего, что описано в https://www.ghostscript.com/doc/9.26/GS9_Color_Management.pdf ,
-#    фактически на преобразование значений цветов влияет только sDefaultRGBProfile. Плюс, при сборке
-#    PDF/X-3 есть возможность вложить Output Intent ICC профиль (но это уже следующее преобразование).
-#  * DefaultGrayProfile, sDefaultCMYKProfile не влияют, т.к. соответствующие цвета не преобразуются.
-#    sOutputICCProfile, dRenderIntent, dUseFastColor и т.п. тоже не работают.
+# For PDF output, Ghostscript supports only limited color-management controls.
+#  * Of everything described in https://www.ghostscript.com/doc/9.26/GS9_Color_Management.pdf ,
+#    in practice only sDefaultRGBProfile affects color conversion values. Also, when building
+#    PDF/X-3 you can embed an Output Intent ICC profile (a later conversion stage).
+#  * DefaultGrayProfile and sDefaultCMYKProfile do not affect output because those colors are not converted.
+#    sOutputICCProfile, dRenderIntent, dUseFastColor, etc., also do not work here.
 #
-# Печатное пространство цвета почти всегда уже sRGB (в котором, вероятно, хранятся ваши изображения).
-# Используемое gs "по умолчанию" преобразование к CMYK приводит к "обрезанию" наиболее насыщенных цветов.
-# Например, как RGB(255,0,0), так и RGB(240,0,0) переходят в CMYK(0,1,1,0). Различимость цветов может
-# ухудшаться/теряться - имеет смысл перепроверить сложные места после конвертации. В среднем случае ничего
-# критичного происходить не должно.
+# Print input color space is almost always already sRGB (where your images are likely stored).
+# Ghostscript default CMYK conversion can clip the most saturated colors.
+# For example, both RGB(255,0,0) and RGB(240,0,0) map to CMYK(0,1,1,0), reducing color distinguishability.
+# Distinctions may degrade/disappear, so review sensitive spots after conversion. In average cases,
+# nothing critical should happen.
 #
-# Если необходимо аккуратное управление цветом - остаётся вариант растеризации в tiff `-sDEVICE=tiff32nc`,
-# или использования ICCBased цветов `-sColorConversionStrategy=UseDeviceIndependentColor`. И тот и другой
-# вариант следует заранее согласовать с типографией (если Вы понимаете зачем оно Вам - наверное Вы знаете
-# что делаете).
+# For precise color management, options include rasterizing to TIFF (`-sDEVICE=tiff32nc`),
+# or using ICCBased colors (`-sColorConversionStrategy=UseDeviceIndependentColor`). Both options
+# should be agreed with your print shop in advance (if you know why you need this, you likely know
+# what you are doing).
 #
-# COMPRESSION_FLAGS_2 += -I.  # разрешает подгружать файлы профилей из текущей папки
+# COMPRESSION_FLAGS_2 += -I.  # allows loading profile files from the current directory
 # COMPRESSION_FLAGS_2 += -sDefaultRGBProfile="default_rgb.icc"
 
 
-##! сжатие файла с конвертацией в CMYK
+##! compress file with CMYK conversion
 compress-cmyk:
 	$(MSYS_FIX) gs $(COMPRESSION_FLAGS_2) \
 		-sOutputFile=$(basename $(COMPRESS_FILE))_cmyk.pdf \

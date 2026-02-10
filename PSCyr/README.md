@@ -1,28 +1,28 @@
-**PSCyr** — это набор красивых русских шрифтов для LaTeX.
+**PSCyr** — eto nabor krasivykh russkikh shriftov dlya LaTeX.
 
-Установка PSCyr для различных конфигураций:
+Ustanovka PSCyr dlya razlichnykh konfiguratsiy:
 * [Windows + MiKTeX](Windows.md)
-* [Gentoo-пакет](http://packages.gentoo.org/package/dev-tex/pscyr)
-* [Скрипт для установки под texlive@ubuntu13.10](https://gist.github.com/tonkonogov/28b19d9e1d18285b9750)
-* [Обсуждение поддержки PSCyr](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues/7)
+* [Gentoo-paket](http://packages.gentoo.org/package/dev-tex/pscyr)
+* [Skript dlya ustanovki pod texlive@ubuntu13.10](https://gist.github.com/tonkonogov/28b19d9e1d18285b9750)
+* [Obsuzhdenie podderzhki PSCyr](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues/7)
 
-**PSCyr** включает следующие шрифты:
+**PSCyr** vklyuchaet sleduyushchie shrifty:
 
-* Шрифты с засечками:
-  * AcademyPSCyr в начертаниях Regular, Bold, Italic.
-  * AntiquaPSCyr в начертаниях Regular, Bold, Italic, Bold Italic.
-  * HandbookPSCyr в начертаниях Regular, Bold, Italic.
-  * CollegePSCyr в начертаниях Regular, Bold, Italic.
-  * JournalPSCyr в начертаниях Regular, Bold, Italic.
-  * Lazurski в начертании Regular.
-  * TimesNewRomanPSMT в начертаниях Regular, Bold, Italic, Bold Italic.
-* Рубленые шрифты:
-  * ArialMT в начертаниях Regular, Bold, Italic, Bold Italic и Black (сверхжирный).
-  * TextbookPSCyr в начертаниях Regular, Bold, Italic.
-  * MagazinePSCyr в начертаниях Regular, Bold, Italic.
-* Моноширинные шрифты:
-  * CourierNewPSMT в начертаниях Regular, Bold, Italic, Bold Italic.
-  * ERKurierPSCyr в начертаниях Regular, Bold, Italic, Bold Italic.
-* Декоративные шрифты:
+* Shrifty s zasechkami:
+  * AcademyPSCyr v nachertaniyakh Regular, Bold, Italic.
+  * AntiquaPSCyr v nachertaniyakh Regular, Bold, Italic, Bold Italic.
+  * HandbookPSCyr v nachertaniyakh Regular, Bold, Italic.
+  * CollegePSCyr v nachertaniyakh Regular, Bold, Italic.
+  * JournalPSCyr v nachertaniyakh Regular, Bold, Italic.
+  * Lazurski v nachertanii Regular.
+  * TimesNewRomanPSMT v nachertaniyakh Regular, Bold, Italic, Bold Italic.
+* Rublenye shrifty:
+  * ArialMT v nachertaniyakh Regular, Bold, Italic, Bold Italic i Black (sverkhzhirnyy).
+  * TextbookPSCyr v nachertaniyakh Regular, Bold, Italic.
+  * MagazinePSCyr v nachertaniyakh Regular, Bold, Italic.
+* Monoshirinnye shrifty:
+  * CourierNewPSMT v nachertaniyakh Regular, Bold, Italic, Bold Italic.
+  * ERKurierPSCyr v nachertaniyakh Regular, Bold, Italic, Bold Italic.
+* Dekorativnye shrifty:
   * CooperPSCyr.
   * AdvertisementPSCyr.
