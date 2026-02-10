@@ -1,5 +1,5 @@
-%%% Проверка используемого TeX-движка %%%
-\newif\ifxetexorluatex   % определяем новый условный оператор (http://tex.stackexchange.com/a/47579)
+%%% Proverka ispolzuemogo TeX-dvizhka %%%
+\newif\ifxetexorluatex   % opredelyaem novyy uslovnyy operator (http://tex.stackexchange.com/a/47579)
 \ifxetex
     \xetexorluatextrue
 \else
@@ -10,23 +10,23 @@
     \fi
 \fi
 
-\newif\ifsynopsis           % Условие, проверяющее, что документ --- автореферат
+\newif\ifsynopsis           % Uslovie, proveryayushchee, chto dokument --- avtoreferat
 
-\usepackage{etoolbox}[2015/08/02]   % Для продвинутой проверки разных условий
+\usepackage{etoolbox}[2015/08/02]   % Dlya prodvinutoy proverki raznykh usloviy
 \providebool{presentation}
 
-\usepackage{comment}    % Позволяет убирать блоки текста (добавляет
-                        % окружение comment и команду \excludecomment)
+\usepackage{comment}    % Pozvolyaet ubirat bloki teksta (dobavlyaet
+                        % okruzhenie comment i komandu \excludecomment)
 
-%%% Поля и разметка страницы %%%
-\usepackage{pdflscape}  % Для включения альбомных страниц
-\usepackage{geometry}   % Для последующего задания полей
+%%% Polya i razmetka stranitsy %%%
+\usepackage{pdflscape}  % Dlya vklyucheniya albomnykh stranits
+\usepackage{geometry}   % Dlya posleduyushchego zadaniya poley
 
-%%% Математические пакеты %%%
-\usepackage{amsthm,amsmath,amscd}   % Математические дополнения от AMS
-\usepackage{amsfonts,amssymb}       % Математические дополнения от AMS
-\usepackage{mathtools}              % Добавляет окружение multlined
-\usepackage{xfrac}                  % Красивые дроби
+%%% Matematicheskie pakety %%%
+\usepackage{amsthm,amsmath,amscd}   % Matematicheskie dopolneniya ot AMS
+\usepackage{amsfonts,amssymb}       % Matematicheskie dopolneniya ot AMS
+\usepackage{mathtools}              % Dobavlyaet okruzhenie multlined
+\usepackage{xfrac}                  % Krasivye drobi
 \usepackage[
     locale = DE,
     list-separator       = {;\,},
@@ -35,63 +35,63 @@
     list-units           = single,
     range-units          = single,
     range-phrase={\text{\ensuremath{-}}},
-    % quotient-mode        = fraction, % красивые дроби могут не соответствовать ГОСТ
+    % quotient-mode        = fraction, % krasivye drobi mogut ne sootvetstvovat GOST
     fraction-function    = \sfrac,
     separate-uncertainty,
-    ]{siunitx}[=v2]                 % Размерности SI
+    ]{siunitx}[=v2]                 % Razmernosti SI
 \sisetup{inter-unit-product = \ensuremath{{}\cdot{}}}
 
-% Кириллица в нумерации subequations
-% Для правильной работы требуется выполнение сразу после загрузки пакетов
+% Kirillitsa v numeratsii subequations
+% Dlya pravilnoy raboty trebuetsya vypolnenie srazu posle zagruzki paketov
 \patchcmd{\subequations}{\def\theequation{\theparentequation\alph{equation}}}
 {\def\theequation{\theparentequation\asbuk{equation}}}
 {\typeout{subequations patched}}{\typeout{subequations not patched}}
 
-%%%% Установки для размера шрифта 14 pt %%%%
-%% Формирование переменных и констант для сравнения (один раз для всех подключаемых файлов)%%
-%% должно располагаться до вызова пакета fontspec или polyglossia, потому что они сбивают его работу
+%%%% Ustanovki dlya razmera shrifta 14 pt %%%%
+%% Formirovanie peremennykh i konstant dlya sravneniya (odin raz dlya vsekh podklyuchaemykh faylov)%%
+%% dolzhno raspolagatsya do vyzova paketa fontspec ili polyglossia, potomu chto oni sbivayut ego rabotu
 \newlength{\curtextsize}
 \newlength{\bigtextsize}
 \setlength{\bigtextsize}{13.9pt}
 
 \makeatletter
-%\show\f@size    % неплохо для отслеживания, но вызывает стопорение процесса,
-                 % если документ компилируется без команды  -interaction=nonstopmode
+%\show\f@size    % neplokho dlya otslezhivaniya, no vyzyvaet stoporenie protsessa,
+                 % esli dokument kompiliruetsya bez komandy  -interaction=nonstopmode
 \setlength{\curtextsize}{\f@size pt}
 \makeatother
 
-%%% Кодировки и шрифты %%%
+%%% Kodirovki i shrifty %%%
 \ifxetexorluatex
     \ifpresentation
         \providecommand*\autodot{} % quick fix for polyglossia 1.50
     \fi
     \PassOptionsToPackage{no-math}{fontspec}    % https://tex.stackexchange.com/a/26295/104425
-    \usepackage{polyglossia}[2014/05/21]        % Поддержка многоязычности
-                                        % (fontspec подгружается автоматически)
+    \usepackage{polyglossia}[2014/05/21]        % Podderzhka mnogoyazychnosti
+                                        % (fontspec podgruzhaetsya avtomaticheski)
 \else
-   %%% Решение проблемы копирования текста в буфер кракозябрами
+   %%% Reshenie problemy kopirovaniya teksta v bufer krakozyabrami
     \ifnumequal{\value{usealtfont}}{0}{}{
         \input glyphtounicode.tex
         \input glyphtounicode-cmr.tex %from pdfx package
         \pdfgentounicode=1
     }
-    \usepackage{cmap}   % Улучшенный поиск русских слов в полученном pdf-файле
+    \usepackage{cmap}   % Uluchshennyy poisk russkikh slov v poluchennom pdf-fayle
     \ifnumequal{\value{usealtfont}}{2}{}{
-        \defaulthyphenchar=127  % Если стоит до fontenc, то переносы
-                                % не впишутся в выделяемый текст при
-                                % копировании его в буфер обмена
+        \defaulthyphenchar=127  % Esli stoit do fontenc, to perenosy
+                                % ne vpishutsya v vydelyaemyy tekst pri
+                                % kopirovanii ego v bufer obmena
     }
     \usepackage{textcomp}
-    \usepackage[T1,T2A]{fontenc}                    % Поддержка русских букв
-    \ifnumequal{\value{usealtfont}}{1}{% Используется pscyr, при наличии
-        \IfFileExists{pscyr.sty}{\usepackage{pscyr}}{}  % Подключение pscyr
+    \usepackage[T1,T2A]{fontenc}                    % Podderzhka russkikh bukv
+    \ifnumequal{\value{usealtfont}}{1}{% Ispolzuetsya pscyr, pri nalichii
+        \IfFileExists{pscyr.sty}{\usepackage{pscyr}}{}  % Podklyuchenie pscyr
     }{}
-    \usepackage[utf8]{inputenc}[2014/04/30]         % Кодировка utf8
-    \usepackage[english, russian]{babel}[2014/03/24]% Языки: русский, английский
+    \usepackage[utf8]{inputenc}[2014/04/30]         % Kodirovka utf8
+    \usepackage[english, russian]{babel}[2014/03/24]% Yazyki: russkiy, angliyskiy
     \makeatletter\AtBeginDocument{\let\@elt\relax}\makeatother % babel 3.40 fix
     \ifnumequal{\value{usealtfont}}{2}{
         % http://dxdy.ru/post1238763.html#p1238763
-        \usepackage[scaled=0.914]{XCharter}[2017/12/19] % Подключение русифицированных шрифтов XCharter
+        \usepackage[scaled=0.914]{XCharter}[2017/12/19] % Podklyuchenie rusifitsirovannykh shriftov XCharter
         \usepackage[charter, vvarbb, scaled=1.048]{newtxmath}[2017/12/14]
         \ifpresentation
         \else
@@ -100,43 +100,43 @@
     }{}
 \fi
 
-%%% Оформление абзацев %%%
+%%% Oformlenie abzatsev %%%
 \ifpresentation
 \else
-    \indentafterchapter     % Красная строка после заголовков типа chapter
+    \indentafterchapter     % Krasnaya stroka posle zagolovkov tipa chapter
     \usepackage{indentfirst}
 \fi
 
-%%% Цвета %%%
+%%% Tsveta %%%
 \ifpresentation
 \else
-    \usepackage[dvipsnames, table, hyperref]{xcolor} % Совместимо с tikz
+    \usepackage[dvipsnames, table, hyperref]{xcolor} % Sovmestimo s tikz
 \fi
 
-%%% Таблицы %%%
-\usepackage{longtable} % Длинные таблицы
-\usepackage{multirow,makecell}   % Улучшенное форматирование таблиц
-\usepackage{tabulary,tabularray} % Таблицы с автоматически подбирающейся
-                                 % шириной столбцов
+%%% Tablitsy %%%
+\usepackage{longtable} % Dlinnye tablitsy
+\usepackage{multirow,makecell}   % Uluchshennoe formatirovanie tablits
+\usepackage{tabulary,tabularray} % Tablitsy s avtomaticheski podbirayushcheysya
+                                 % shirinoy stolbtsov
 \UseTblrLibrary{booktabs}
 \ExplSyntaxOn% define \IfTokenListEmpty to use \captionof with tabularray
 \prg_generate_conditional_variant:Nnn \tl_if_empty:n { e } { TF }
 \let \IfTokenListEmpty = \tl_if_empty:eTF
 \ExplSyntaxOff
 
-\usepackage{threeparttable}      % автоматический подгон ширины подписи таблицы
+\usepackage{threeparttable}      % avtomaticheskiy podgon shiriny podpisi tablitsy
 
-%%% Общее форматирование
-%\usepackage{soul}% Поддержка переносоустойчивых подчёркиваний и зачёркиваний
-\usepackage{icomma}  % Запятая в десятичных дробях
+%%% Obshchee formatirovanie
+%\usepackage{soul}% Podderzhka perenosoustoychivykh podcherkivaniy i zacherkivaniy
+\usepackage{icomma}  % Zapyataya v desyatichnykh drobyakh
 
-%%% Оптимизация расстановки переносов и длины последней строки абзаца
-\IfFileExists{impnattypo.sty}{% проверка установленности пакета impnattypo
+%%% Optimizatsiya rasstanovki perenosov i dliny posledney stroki abzatsa
+\IfFileExists{impnattypo.sty}{% proverka ustanovlennosti paketa impnattypo
     \ifluatex
-        \ifnumequal{\value{draft}}{1}{% Черновик
+        \ifnumequal{\value{draft}}{1}{% Chernovik
             \usepackage[hyphenation, lastparline, nosingleletter, homeoarchy,
             rivers, draft]{impnattypo}
-        }{% Чистовик
+        }{% Chistovik
             \usepackage[hyphenation, lastparline, nosingleletter]{impnattypo}
         }
     \else
@@ -144,51 +144,51 @@
     \fi
 }{}
 
-%% Векторная графика
+%% Vektornaya grafika
 
-\usepackage{tikz}                   % Продвинутый пакет векторной графики
-\usetikzlibrary{chains}             % Для примера tikz рисунка
-\usetikzlibrary{shapes.geometric}   % Для примера tikz рисунка
-\usetikzlibrary{shapes.symbols}     % Для примера tikz рисунка
-\usetikzlibrary{arrows}             % Для примера tikz рисунка
+\usepackage{tikz}                   % Prodvinutyy paket vektornoy grafiki
+\usetikzlibrary{chains}             % Dlya primera tikz risunka
+\usetikzlibrary{shapes.geometric}   % Dlya primera tikz risunka
+\usetikzlibrary{shapes.symbols}     % Dlya primera tikz risunka
+\usetikzlibrary{arrows}             % Dlya primera tikz risunka
 
-\usepackage[european,cuteinductors]{circuitikz} % Электрические схемы
-\usepackage{pgfplots}                           % Графики
+\usepackage[european,cuteinductors]{circuitikz} % Elektricheskie skhemy
+\usepackage{pgfplots}                           % Grafiki
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{groupplots,units}
-\pgfkeys{/pgf/number format/.cd,use comma,1000 sep={}} % форматирование чисел в графиках
+\pgfkeys{/pgf/number format/.cd,use comma,1000 sep={}} % formatirovanie chisel v grafikakh
 
-%%% Гиперссылки %%%
+%%% Giperssylki %%%
 \ifxetexorluatex
     \let\CYRDZE\relax
 \fi
 \usepackage{hyperref}[2012/11/06]
 
-%%% Изображения %%%
-\usepackage{graphicx}[2014/04/25]   % Подключаем пакет работы с графикой
-\usepackage{caption}                % Подписи рисунков и таблиц
-\usepackage{subcaption}             % Подписи подрисунков и подтаблиц
-\usepackage{pdfpages}               % Добавление внешних pdf файлов
+%%% Izobrazheniya %%%
+\usepackage{graphicx}[2014/04/25]   % Podklyuchaem paket raboty s grafikoy
+\usepackage{caption}                % Podpisi risunkov i tablits
+\usepackage{subcaption}             % Podpisi podrisunkov i podtablits
+\usepackage{pdfpages}               % Dobavlenie vneshnikh pdf faylov
 
-%%% Счётчики %%%
+%%% Schetchiki %%%
 \usepackage{aliascnt}
-\usepackage[figure,table]{totalcount}   % Счётчик рисунков и таблиц
-\usepackage{totcount}   % Пакет создания счётчиков на основе последнего номера
-                        % подсчитываемого элемента (может требовать дважды
-                        % компилировать документ)
-\usepackage{totpages}   % Счётчик страниц, совместимый с hyperref (ссылается
-                        % на номер последней страницы). Желательно ставить
-                        % последним пакетом в преамбуле
+\usepackage[figure,table]{totalcount}   % Schetchik risunkov i tablits
+\usepackage{totcount}   % Paket sozdaniya schetchikov na osnove poslednego nomera
+                        % podschityvaemogo elementa (mozhet trebovat dvazhdy
+                        % kompilirovat dokument)
+\usepackage{totpages}   % Schetchik stranits, sovmestimyy s hyperref (ssylaetsya
+                        % na nomer posledney stranitsy). Zhelatelno stavit
+                        % poslednim paketom v preambule
 
-%%% Продвинутое управление групповыми ссылками (пока только формулами) %%%
+%%% Prodvinutoe upravlenie gruppovymi ssylkami (poka tolko formulami) %%%
 \ifpresentation
 \else
-    \usepackage[russian]{cleveref} % cleveref имеет сложности со считыванием
-    % языка из babel. Такое решение русификации вывода выбрано вместо
-    % определения в documentclass из опасности что-то лишнее передать во все
-    % остальные пакеты, включая библиографию.
+    \usepackage[russian]{cleveref} % cleveref imeet slozhnosti so schityvaniem
+    % yazyka iz babel. Takoe reshenie rusifikatsii vyvoda vybrano vmesto
+    % opredeleniya v documentclass iz opasnosti chto-to lishnee peredat vo vse
+    % ostalnye pakety, vklyuchaya bibliografiyu.
 
-    % Добавление возможности использования пробелов в \labelcref
+    % Dobavlenie vozmozhnosti ispolzovaniya probelov v \labelcref
     % https://tex.stackexchange.com/a/340502/104425
     \usepackage{kvsetkeys}
     \makeatletter
@@ -201,9 +201,9 @@
     \makeatother
 \fi
 
-\usepackage{placeins} % для \FloatBarrier
+\usepackage{placeins} % dlya \FloatBarrier
 
-\ifnumequal{\value{draft}}{1}{% Черновик
+\ifnumequal{\value{draft}}{1}{% Chernovik
     \usepackage[firstpage]{draftwatermark}
     \SetWatermarkText{DRAFT}
     \SetWatermarkFontSize{14pt}
@@ -211,18 +211,18 @@
     \SetWatermarkAngle{45}
 }{}
 
-%%% Цитата, не приводимая в автореферате:
-% возможно, актуальна только для biblatex
+%%% Tsitata, ne privodimaya v avtoreferate:
+% vozmozhno, aktualna tolko dlya biblatex
 %\newcommand{\citeinsynopsis}[1]{\ifsynopsis\else ~\cite{#1} \fi}
 
-% если текущий процесс запущен библиотекой tikz-external, то прекомпиляция должна быть включена
+% esli tekushchiy protsess zapushchen bibliotekoy tikz-external, to prekompilyatsiya dolzhna byt vklyuchena
 \ifdefined\tikzexternalrealjob
     \setcounter{imgprecompile}{1}
 \fi
 
-\ifnumequal{\value{imgprecompile}}{1}{% Только если у нас включена предкомпиляция
-    \usetikzlibrary{external}   % подключение возможности предкомпиляции
-    \tikzexternalize[prefix=images/cache/,optimize command away=\includepdf] % activate! % здесь можно указать отдельную папку для скомпилированных файлов
+\ifnumequal{\value{imgprecompile}}{1}{% Tolko esli u nas vklyuchena predkompilyatsiya
+    \usetikzlibrary{external}   % podklyuchenie vozmozhnosti predkompilyatsii
+    \tikzexternalize[prefix=images/cache/,optimize command away=\includepdf] % activate! % zdes mozhno ukazat otdelnuyu papku dlya skompilirovannykh faylov
     \ifxetex
         \tikzset{external/up to date check={diff}}
     \fi

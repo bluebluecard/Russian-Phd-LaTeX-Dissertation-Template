@@ -176,20 +176,20 @@
     start chain=going below,    % General flow is top-to-bottom
     node distance=6mm and 60mm, % Global setup of box spacing
         ]
-        \node [cloud] (start) {Начало};
-        \node [block, join] (phase1) {Этап 1};
-        \node [cyclebegin, join=by red] (phase2) {Этап 2};
-        \node [block, join=by green] (phase3) {Этап 3};
-        \node [cycleend, join] (phase4) {Этап 4};
-        \node [subroutine, join, subrtshape w = 3mm, fxd] (phase5) {Этап 5 1 2 3 4 5 6 7 8 9 0};
-        \node [io, join, fxd] (input) {Этап 6 "--- ввод данных};
-        \node [block, join] (phase7) {Этап 7};
-        \node [decision, join] (condition) {Условие};
-        \node [connector] (finish) {Конец};
-        \node [block, left of = phase4, node distance = 4cm] (correction) {Коррекция};
+        \node [cloud] (start) {Nachalo};
+        \node [block, join] (phase1) {Etap 1};
+        \node [cyclebegin, join=by red] (phase2) {Etap 2};
+        \node [block, join=by green] (phase3) {Etap 3};
+        \node [cycleend, join] (phase4) {Etap 4};
+        \node [subroutine, join, subrtshape w = 3mm, fxd] (phase5) {Etap 5 1 2 3 4 5 6 7 8 9 0};
+        \node [io, join, fxd] (input) {Etap 6 "--- vvod dannykh};
+        \node [block, join] (phase7) {Etap 7};
+        \node [decision, join] (condition) {Uslovie};
+        \node [connector] (finish) {Konets};
+        \node [block, left of = phase4, node distance = 4cm] (correction) {Korrektsiya};
         \node [print_block, right of = phase4, node distance = 4cm] (print) {Print};
-        \path [line, red] (condition) -| node [u,near start] {Нет} (correction);
+        \path [line, red] (condition) -| node [u,near start] {Net} (correction);
         \path [line] (correction) |- (phase1);
-        \path [line] (phase2) -| node [r,near end] {Печать} (print);
-        \path [line, green] (condition) to node [r] {Да}(finish);
+        \path [line] (phase2) -| node [r,near end] {Pechat} (print);
+        \path [line, green] (condition) to node [r] {Da}(finish);
 \end{tikzpicture}

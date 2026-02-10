@@ -1,48 +1,48 @@
-<!-- Подробнее об оформлении PR можно прочитать в документе https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/blob/master/CONTRIBUTING.md -->
+<!-- Podrobnee ob oformlenii PR mozhno prochitat v dokumente https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/blob/master/CONTRIBUTING.md -->
 
 ## PR checklist
 
-Пожалуйста, убедитесь, что Ваш PR удовлетворяет требованиям:
+Pozhaluysta, ubedites, chto Vash PR udovletvoryaet trebovaniyam:
 
-- [ ] Изменения были протестированы (`make examples`)
-- [ ] Изменения отражены в документации к шаблону
-- [ ] Код соответствует правилам индентации шаблона (`make indent`)
+- [ ] Izmeneniya byli protestirovany (`make examples`)
+- [ ] Izmeneniya otrazheny v dokumentatsii k shablonu
+- [ ] Kod sootvetstvuet pravilam indentatsii shablona (`make indent`)
 
 
-## Тип PR
+## Tip PR
 
-Отметьте графы, которые относятся к данному PR:
+Otmette grafy, kotorye otnosyatsya k dannomu PR:
 
 - [ ] Bugfix
 - [ ] Feature
-- [ ] Форматирование стиля кода
-- [ ] Изменение текста шаблона
-- [ ] Изменение документации
-- [ ] Другое:
+- [ ] Formatirovanie stilya koda
+- [ ] Izmenenie teksta shablona
+- [ ] Izmenenie dokumentatsii
+- [ ] Drugoe:
 
 
-## Описание PR
-<!-- Описание изменений. -->
+## Opisanie PR
+<!-- Opisanie izmeneniy. -->
 
 -
 -
 -
 
-## Смежные обсуждения
-<!-- Ссылки на PR и issue, к которым относится данный PR. -->
+## Smezhnye obsuzhdeniya
+<!-- Ssylki na PR i issue, k kotorym otnositsya dannyy PR. -->
 
-Данный PR закрывает issue:
+Dannyy PR zakryvaet issue:
 
-## Тестирование шаблона
-<!-- Эта часть в будущем должна быть автоматизирована -->
+## Testirovanie shablona
+<!-- Eta chast v budushchem dolzhna byt avtomatizirovana -->
 
-Тестирование производилось в среде
+Testirovanie proizvodilos v srede
 
 - [ ] Windows
 - [ ] Windows Cygwin
-- [ ] GNU/Linux (на основе Debian)
-- [ ] GNU/Linux (на основе RedHat)
+- [ ] GNU/Linux (na osnove Debian)
+- [ ] GNU/Linux (na osnove RedHat)
 - [ ] Arch Linux
-- [ ] Docker (ссылка на контейнер):
+- [ ] Docker (ssylka na konteyner):
 
-## Другая информация
+## Drugaya informatsiya

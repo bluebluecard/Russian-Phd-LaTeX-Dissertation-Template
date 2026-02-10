@@ -1,116 +1,116 @@
-\chapter{Оформление различных элементов}\label{ch:ch1}
+\chapter{Oformlenie razlichnykh elementov}\label{ch:ch1}
 
-\section{Форматирование текста}\label{sec:ch1/sec1}
+\section{Formatirovanie teksta}\label{sec:ch1/sec1}
 
-Мы можем сделать \textbf{жирный текст} и \textit{курсив}.
+My mozhem sdelat \textbf{zhirnyy tekst} i \textit{kursiv}.
 
-\section{Ссылки}\label{sec:ch1/sec2}
+\section{Ssylki}\label{sec:ch1/sec2}
 
-Сошлёмся на библиографию.
-Одна ссылка: \cite[с.~54]{Sokolov}\cite[с.~36]{Gaidaenko}.
-Две ссылки: \cite{Sokolov,Gaidaenko}.
-Ссылка на собственные работы: \cite{vakbib1, confbib2}.
-Много ссылок: %\cite[с.~54]{Lermontov,Management,Borozda} % такой «фокус»
-%вызывает biblatex warning относительно опции sortcites, потому что неясно, к
-%какому источнику относится уточнение о страницах, а bibtex об этой проблеме
-%даже не предупреждает
+Soshlemsya na bibliografiyu.
+Odna ssylka: \cite[s.~54]{Sokolov}\cite[s.~36]{Gaidaenko}.
+Dve ssylki: \cite{Sokolov,Gaidaenko}.
+Ssylka na sobstvennye raboty: \cite{vakbib1, confbib2}.
+Mnogo ssylok: %\cite[s.~54]{Lermontov,Management,Borozda} % takoy «fokus»
+%vyzyvaet biblatex warning otnositelno optsii sortcites, potomu chto neyasno, k
+%kakomu istochniku otnositsya utochnenie o stranitsakh, a bibtex ob etoy probleme
+%dazhe ne preduprezhdaet
 \cite{Lermontov, Management, Borozda, Marketing, Constitution, FamilyCode,
     Gost.7.0.53, Razumovski, Lagkueva, Pokrovski, Methodology, Berestova,
     Kriger}%
-\ifnumequal{\value{bibliosel}}{0}{% Примеры для bibtex8
+\ifnumequal{\value{bibliosel}}{0}{% Primery dlya bibtex8
     \cite{Sirotko, Lukina, Encyclopedia, Nasirova}%
-}{% Примеры для biblatex через движок biber
+}{% Primery dlya biblatex cherez dvizhok biber
     \cite{Sirotko2, Lukina2, Encyclopedia2, Nasirova2}%
 }%
 .
-И~ещё немного ссылок:~\cite{Article,Book,Booklet,Conference,Inbook,Incollection,Manual,Mastersthesis,
+I~eshche nemnogo ssylok:~\cite{Article,Book,Booklet,Conference,Inbook,Incollection,Manual,Mastersthesis,
     Misc,Phdthesis,Proceedings,Techreport,Unpublished}
-% Следует обратить внимание, что пробел после запятой внутри \cite{}
-% обрабатывается ожидаемо, а пробел перед запятой, может вызывать проблемы при
-% обработке ссылок.
+% Sleduet obratit vnimanie, chto probel posle zapyatoy vnutri \cite{}
+% obrabatyvaetsya ozhidaemo, a probel pered zapyatoy, mozhet vyzyvat problemy pri
+% obrabotke ssylok.
 \cite{medvedev2006jelektronnye, CEAT:CEAT581, doi:10.1080/01932691.2010.513279,
     Gosele1999161,Li2007StressAnalysis, Shoji199895, test:eisner-sample,
     test:eisner-sample-shorted, AB_patent_Pomerantz_1968, iofis_patent1960}%
-\ifnumequal{\value{bibliosel}}{0}{% Примеры для bibtex8
-}{% Примеры для biblatex через движок biber
+\ifnumequal{\value{bibliosel}}{0}{% Primery dlya bibtex8
+}{% Primery dlya biblatex cherez dvizhok biber
     \cite{patent2h, patent3h, patent2}%
 }%
 .
 
-\ifnumequal{\value{bibliosel}}{0}{% Примеры для bibtex8
-Попытка реализовать несколько ссылок на конкретные страницы
-для \texttt{bibtex} реализации библиографии:
-[\citenum{Sokolov}, с.~54; \citenum{Gaidaenko}, с.~36].
-}{% Примеры для biblatex через движок biber
-Несколько источников (мультицитата):
-% Тут специально написано по-разному тире, для демонстрации, что
-% применение специальных тире в настоящий момент в biblatex приводит к непоказу
-% "с.".
+\ifnumequal{\value{bibliosel}}{0}{% Primery dlya bibtex8
+Popytka realizovat neskolko ssylok na konkretnye stranitsy
+dlya \texttt{bibtex} realizatsii bibliografii:
+[\citenum{Sokolov}, s.~54; \citenum{Gaidaenko}, s.~36].
+}{% Primery dlya biblatex cherez dvizhok biber
+Neskolko istochnikov (multitsitata):
+% Tut spetsialno napisano po-raznomu tire, dlya demonstratsii, chto
+% primenenie spetsialnykh tire v nastoyashchiy moment v biblatex privodit k nepokazu
+% "s.".
 \cites[vii--x, 5, 7]{Sokolov}[v"--~x, 25, 526]{Gaidaenko}[vii--x, 5, 7]{Techreport},
-работает только в \texttt{biblatex} реализации библиографии.
+rabotaet tolko v \texttt{biblatex} realizatsii bibliografii.
 }%
 
-Ссылки на собственные работы:~\cite{vakbib1, confbib1}.
+Ssylki na sobstvennye raboty:~\cite{vakbib1, confbib1}.
 
-Сошлёмся на приложения: Приложение~\cref{app:A}, Приложение~\cref{app:B2}.
+Soshlemsya na prilozheniya: Prilozhenie~\cref{app:A}, Prilozhenie~\cref{app:B2}.
 
-Сошлёмся на формулу: формула~\cref{eq:equation1}.
+Soshlemsya na formulu: formula~\cref{eq:equation1}.
 
-Сошлёмся на изображение: рисунок~\cref{fig:knuth}.
+Soshlemsya na izobrazhenie: risunok~\cref{fig:knuth}.
 
-Стандартной практикой является добавление к ссылкам префикса, характеризующего тип элемента.
-Это не является строгим требованием, но~позволяет лучше ориентироваться в документах большого размера.
-Например, для ссылок на~рисунки используется префикс \textit{fig},
-для ссылки на~таблицу "--- \textit{tab}.
+Standartnoy praktikoy yavlyaetsya dobavlenie k ssylkam prefiksa, kharakterizuyushchego tip elementa.
+Eto ne yavlyaetsya strogim trebovaniem, no~pozvolyaet luchshe orientirovatsya v dokumentakh bolshogo razmera.
+Naprimer, dlya ssylok na~risunki ispolzuetsya prefiks \textit{fig},
+dlya ssylki na~tablitsu "--- \textit{tab}.
 
-В таблице \cref{tab:tab_pref} приложения~\cref{app:B4} приведён список рекомендуемых
-к использованию стандартных префиксов.
+V tablitse \cref{tab:tab_pref} prilozheniya~\cref{app:B4} priveden spisok rekomenduemykh
+k ispolzovaniyu standartnykh prefiksov.
 
-В некоторых ситуациях возникает необходимость отойти от требований ГОСТ по оформлению ссылок на
-литературу.
-В таком случае можно воспользоваться дополнительными опциями пакета \verb+biblatex+.
+V nekotorykh situatsiyakh voznikaet neobkhodimost otoyti ot trebovaniy GOST po oformleniyu ssylok na
+literaturu.
+V takom sluchae mozhno vospolzovatsya dopolnitelnymi optsiyami paketa \verb+biblatex+.
 
-Например, в ссылке на книгу~\cite{sobenin_kdv} использование опции \verb+maxnames=4+ позволяет
-вывести имена всех четырёх авторов.
-По ГОСТ имена последних трёх авторов опускаются.
+Naprimer, v ssylke na knigu~\cite{sobenin_kdv} ispolzovanie optsii \verb+maxnames=4+ pozvolyaet
+vyvesti imena vsekh chetyrekh avtorov.
+Po GOST imena poslednikh trekh avtorov opuskayutsya.
 
-Кроме того, часто возникают проблемы с транслитерованными инициалами. Некоторые буквы русского
-алфавита по правилам транслитерации записываются двумя буквами латинского алфавита (ю-yu, ё-yo и
-т.д.).
-Такие инициалы \verb+biblatex+ будет сокращать до одной буквы, что неверно.
-Поправить его работу можно использовав опцию \verb+giveninits=false+.
-Пример использования этой опции можно видеть в ссылке~\cite{initials}.
+Krome togo, chasto voznikayut problemy s transliterovannymi initsialami. Nekotorye bukvy russkogo
+alfavita po pravilam transliteratsii zapisyvayutsya dvumya bukvami latinskogo alfavita (yu-yu, e-yo i
+t.d.).
+Takie initsialy \verb+biblatex+ budet sokrashchat do odnoy bukvy, chto neverno.
+Popravit ego rabotu mozhno ispolzovav optsiyu \verb+giveninits=false+.
+Primer ispolzovaniya etoy optsii mozhno videt v ssylke~\cite{initials}.
 
-\section{Формулы}\label{sec:ch1/sec3}
+\section{Formuly}\label{sec:ch1/sec3}
 
-Благодаря пакету \textit{icomma}, \LaTeX~одинаково хорошо воспринимает
-в~качестве десятичного разделителя и запятую (\(3,1415\)), и точку (\(3.1415\)).
+Blagodarya paketu \textit{icomma}, \LaTeX~odinakovo khorosho vosprinimaet
+v~kachestve desyatichnogo razdelitelya i zapyatuyu (\(3,1415\)), i tochku (\(3.1415\)).
 
-\subsection{Ненумерованные одиночные формулы}\label{subsec:ch1/sec3/sub1}
+\subsection{Nenumerovannye odinochnye formuly}\label{subsec:ch1/sec3/sub1}
 
-Вот так может выглядеть формула, которую необходимо вставить в~строку
-по~тексту: \(x \approx \sin x\) при \(x \to 0\).
+Vot tak mozhet vyglyadet formula, kotoruyu neobkhodimo vstavit v~stroku
+po~tekstu: \(x \approx \sin x\) pri \(x \to 0\).
 
-А вот так выглядит ненумерованная отдельностоящая формула c подстрочными
-и надстрочными индексами:
+A vot tak vyglyadit nenumerovannaya otdelnostoyashchaya formula c podstrochnymi
+i nadstrochnymi indeksami:
 \[
     (x_1+x_2)^2 = x_1^2 + 2 x_1 x_2 + x_2^2
 \]
 
-Формула с неопределенным интегралом:
+Formula s neopredelennym integralom:
 \[
     \int f(\alpha+x)=\sum\beta
 \]
 
-При использовании дробей формулы могут получаться очень высокие:
+Pri ispolzovanii drobey formuly mogut poluchatsya ochen vysokie:
 \[
     \frac{1}{\sqrt{2}+
         \displaystyle\frac{1}{\sqrt{2}+
             \displaystyle\frac{1}{\sqrt{2}+\cdots}}}
 \]
 
-В формулах можно использовать греческие буквы:
-%Все \original... команды заранее, ради этого примера, определены в Dissertation\userstyles.tex
+V formulakh mozhno ispolzovat grecheskie bukvy:
+%Vse \original... komandy zaranee, radi etogo primera, opredeleny v Dissertation\userstyles.tex
 \[
     \alpha\beta\gamma\delta\originalepsilon\epsilon\zeta\eta\theta%
     \vartheta\iota\kappa\varkappa\lambda\mu\nu\xi\pi\varpi\rho\varrho%
@@ -124,45 +124,45 @@
         \Delta\Theta\Lambda\Xi\Pi\Sigma\Upsilon\Phi\Psi\Omega}
 \]
 
-Для добавления формул можно использовать пары \verb+$+\dots\verb+$+ и \verb+$$+\dots\verb+$$+,
-но~они считаются устаревшими.
-Лучше использовать их функциональные аналоги \verb+\(+\dots\verb+\)+ и \verb+\[+\dots\verb+\]+.
+Dlya dobavleniya formul mozhno ispolzovat pary \verb+$+\dots\verb+$+ i \verb+$$+\dots\verb+$$+,
+no~oni schitayutsya ustarevshimi.
+Luchshe ispolzovat ikh funktsionalnye analogi \verb+\(+\dots\verb+\)+ i \verb+\[+\dots\verb+\]+.
 
-\subsection{Ненумерованные многострочные формулы}\label{subsec:ch1/sec3/sub2}
+\subsection{Nenumerovannye mnogostrochnye formuly}\label{subsec:ch1/sec3/sub2}
 
-Вот так можно написать две формулы, не нумеруя их, чтобы знаки <<равно>> были
-строго друг под другом:
+Vot tak mozhno napisat dve formuly, ne numeruya ikh, chtoby znaki <<ravno>> byli
+strogo drug pod drugom:
 \begin{align}
     f_W & =  \min \left( 1, \max \left( 0, \frac{W_{soil} / W_{max}}{W_{crit}} \right)  \right), \nonumber \\
     f_T & =  \min \left( 1, \max \left( 0, \frac{T_s / T_{melt}}{T_{crit}} \right)  \right), \nonumber
 \end{align}
 
-Выровнять систему ещё и по переменной \( x \) можно, используя окружение
-\verb|alignedat| из пакета \verb|amsmath|. Вот так:
+Vyrovnyat sistemu eshche i po peremennoy \( x \) mozhno, ispolzuya okruzhenie
+\verb|alignedat| iz paketa \verb|amsmath|. Vot tak:
 \[
 |x| = \left\{
 \begin{alignedat}{2}
-     &   & x, \quad & \text{eсли } x\geqslant 0 \\
-     & - & x, \quad & \text{eсли } x<0
+     &   & x, \quad & \text{esli } x\geqslant 0 \\
+     & - & x, \quad & \text{esli } x<0
 \end{alignedat}
 \right.
 \]
-Здесь первый амперсанд (в исходном \LaTeX\ описании формулы) означает
-выравнивание по~левому краю, второй "--- по~\( x \), а~третий "--- по~слову
-<<если>>. Команда \verb|\quad| делает большой горизонтальный пробел.
+Zdes pervyy ampersand (v iskhodnom \LaTeX\ opisanii formuly) oznachaet
+vyravnivanie po~levomu krayu, vtoroy "--- po~\( x \), a~tretiy "--- po~slovu
+<<esli>>. Komanda \verb|\quad| delaet bolshoy gorizontalnyy probel.
 
-Ещё вариант:
+Eshche variant:
 \[
     |x|=
     \begin{cases}
-        \phantom{-}x, \text{если } x \geqslant 0 \\
-        -x, \text{если } x<0
+        \phantom{-}x, \text{esli } x \geqslant 0 \\
+        -x, \text{esli } x<0
     \end{cases}
 \]
 
-Кроме того, для  нумерованных формул \verb|alignedat| делает вертикальное
-выравнивание номера формулы по центру формулы. Например, выравнивание
-компонент вектора:
+Krome togo, dlya  numerovannykh formul \verb|alignedat| delaet vertikalnoe
+vyravnivanie nomera formuly po tsentru formuly. Naprimer, vyravnivanie
+komponent vektora:
 \begin{equation}
     \label{eq:2p3}
     \begin{alignedat}{2}
@@ -190,14 +190,14 @@
     \end{alignedat}
 \end{equation}
 
-Ещё об отступах. Иногда для лучшей <<читаемости>> формул полезно
-немного исправить стандартные интервалы \LaTeX\ с учётом логической
-структуры самой формулы. Например в формуле~\cref{eq:2p3} добавлен
-небольшой отступ \verb+\,+ между основными сомножителями, ниже
-результат применения всех вариантов отступа:
+Eshche ob otstupakh. Inogda dlya luchshey <<chitaemosti>> formul polezno
+nemnogo ispravit standartnye intervaly \LaTeX\ s uchetom logicheskoy
+struktury samoy formuly. Naprimer v formule~\cref{eq:2p3} dobavlen
+nebolshoy otstup \verb+\,+ mezhdu osnovnymi somnozhitelyami, nizhe
+rezultat primeneniya vsekh variantov otstupa:
 \begin{align*}
     \backslash!             & \quad f(x) = x^2\! +3x\! +2         \\
-    \mbox{по-умолчанию}     & \quad f(x) = x^2+3x+2               \\
+    \mbox{po-umolchaniyu}     & \quad f(x) = x^2+3x+2               \\
     \backslash,             & \quad f(x) = x^2\, +3x\, +2         \\
     \backslash{:}           & \quad f(x) = x^2\: +3x\: +2         \\
     \backslash;             & \quad f(x) = x^2\; +3x\; +2         \\
@@ -206,14 +206,14 @@
     \backslash \mbox{qquad} & \quad f(x) = x^2\qquad +3x\qquad +2
 \end{align*}
 
-Можно использовать разные математические алфавиты:
+Mozhno ispolzovat raznye matematicheskie alfavity:
 \begin{align}
     \mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ} \nonumber  \\
     \mathfrak{ABCDEFGHIJKLMNOPQRSTUVWXYZ} \nonumber \\
     \mathbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ} \nonumber
 \end{align}
 
-Посмотрим на систему уравнений на примере аттрактора Лоренца:
+Posmotrim na sistemu uravneniy na primere attraktora Lorentsa:
 
 \[
 \left\{
@@ -225,7 +225,7 @@
 \right.
 \]
 
-А для вёрстки матриц удобно использовать многоточия:
+A dlya verstki matrits udobno ispolzovat mnogotochiya:
 \[
     \left(
         \begin{array}{ccc}
@@ -236,26 +236,26 @@
     \right)
 \]
 
-\subsection{Нумерованные формулы}\label{subsec:ch1/sec3/sub3}
+\subsection{Numerovannye formuly}\label{subsec:ch1/sec3/sub3}
 
-А вот так пишется нумерованная формула:
+A vot tak pishetsya numerovannaya formula:
 \begin{equation}
     \label{eq:equation1}
     e = \lim_{n \to \infty} \left( 1+\frac{1}{n} \right) ^n
 \end{equation}
 
-Нумерованных формул может быть несколько:
+Numerovannykh formul mozhet byt neskolko:
 \begin{equation}
     \label{eq:equation2}
     \lim_{n \to \infty} \sum_{k=1}^n \frac{1}{k^2} = \frac{\pi^2}{6}
 \end{equation}
 
-Впоследствии на формулы~\cref{eq:equation1, eq:equation2} можно ссылаться.
+Vposledstvii na formuly~\cref{eq:equation1, eq:equation2} mozhno ssylatsya.
 
-Сделать так, чтобы номер формулы стоял напротив средней строки, можно,
-используя окружение \verb|multlined| (пакет \verb|mathtools|) вместо
-\verb|multline| внутри окружения \verb|equation|. Вот так:
-\begin{equation} % \tag{S} % tag - вписывает свой текст
+Sdelat tak, chtoby nomer formuly stoyal naprotiv sredney stroki, mozhno,
+ispolzuya okruzhenie \verb|multlined| (paket \verb|mathtools|) vmesto
+\verb|multline| vnutri okruzheniya \verb|equation|. Vot tak:
+\begin{equation} % \tag{S} % tag - vpisyvaet svoy tekst
     \label{eq:equation3}
     \begin{multlined}
         1+ 2+3+4+5+6+7+\dots + \\
@@ -264,8 +264,8 @@
     \end{multlined}
 \end{equation}
 
-Уравнения~\cref{eq:subeq_1,eq:subeq_2} демонстрируют возможности
-окружения \verb|subequations| (пакет \verb|amsmath|).
+Uravneniya~\cref{eq:subeq_1,eq:subeq_2} demonstriruyut vozmozhnosti
+okruzheniya \verb|subequations| (paket \verb|amsmath|).
 \begin{subequations}
     \label{eq:subeq_1}
     \begin{gather}
@@ -273,7 +273,7 @@
         y = 2 x^2 - x + 1 \label{eq:subeq_1-2}
     \end{gather}
 \end{subequations}
-Ссылки на отдельные уравнения~\cref{eq:subeq_1-1,eq:subeq_1-2,eq:subeq_2-1}.
+Ssylki na otdelnye uravneniya~\cref{eq:subeq_1-1,eq:subeq_1-2,eq:subeq_2-1}.
 \begin{subequations}
     \label{eq:subeq_2}
     \begin{align}
@@ -282,9 +282,9 @@
     \end{align}
 \end{subequations}
 
-\subsection{Форматирование чисел и размерностей величин}\label{sec:units}
+\subsection{Formatirovanie chisel i razmernostey velichin}\label{sec:units}
 
-Числа форматируются при помощи команды \verb|\num|:
+Chisla formatiruyutsya pri pomoshchi komandy \verb|\num|:
 \num{5,3};
 \num{2,3e8};
 \num{12345,67890};
@@ -295,9 +295,9 @@
 \num[exponent-base=2,exponent-to-prefix]{5 e64};
 \num{1.654 x 2.34 x 3.430}
 \num{1 2 x 3 / 4}.
-Для написания последовательности чисел можно использовать команды \verb|\numlist| и \verb|\numrange|:
+Dlya napisaniya posledovatelnosti chisel mozhno ispolzovat komandy \verb|\numlist| i \verb|\numrange|:
 \numlist{10;30;50;70}; \numrange{10}{30}.
-Значения углов можно форматировать при помощи команды \verb|\ang|:
+Znacheniya uglov mozhno formatirovat pri pomoshchi komandy \verb|\ang|:
 \ang{2.67};
 \ang{30,3};
 \ang{-1;;};
@@ -305,11 +305,11 @@
 \ang{;;-3};
 \ang{300;10;1}.
 
-Обратите внимание, что ГОСТ запрещает использование знака <<->> для обозначения отрицательных чисел
-за исключением формул, таблиц и~рисунков.
-Вместо него следует использовать слово <<минус>>.
+Obratite vnimanie, chto GOST zapreshchaet ispolzovanie znaka <<->> dlya oboznacheniya otritsatelnykh chisel
+za isklyucheniem formul, tablits i~risunkov.
+Vmesto nego sleduet ispolzovat slovo <<minus>>.
 
-Размерности можно записывать при помощи команд \verb|\si| и \verb|\SI|:
+Razmernosti mozhno zapisyvat pri pomoshchi komand \verb|\si| i \verb|\SI|:
 \si{\farad\squared\lumen\candela};
 \si{\joule\per\mole\per\kelvin};
 \si[per-mode = symbol-or-fraction]{\joule\per\mole\per\kelvin};
@@ -318,28 +318,28 @@
 \SI{1.2-3i e5}{\joule\per\mole\per\kelvin};
 \SIlist{1;2;3;4}{\tesla};
 \SIrange{50}{100}{\volt}.
-Список единиц измерений приведён в таблицах~\cref{tab:unit:base,
+Spisok edinits izmereniy priveden v tablitsakh~\cref{tab:unit:base,
     tab:unit:derived,tab:unit:accepted,tab:unit:physical,tab:unit:other}.
-Приставки единиц приведены в~таблице~\cref{tab:unit:prefix}.
+Pristavki edinits privedeny v~tablitse~\cref{tab:unit:prefix}.
 
-С дополнительными опциями форматирования можно ознакомиться в~описании пакета \texttt{siunitx};
-изменить или добавить единицы измерений можно в~файле \texttt{siunitx.cfg}.
+S dopolnitelnymi optsiyami formatirovaniya mozhno oznakomitsya v~opisanii paketa \texttt{siunitx};
+izmenit ili dobavit edinitsy izmereniy mozhno v~fayle \texttt{siunitx.cfg}.
 
 \begin{table}
     \centering
-    \captionsetup{justification=centering} % выравнивание подписи по-центру
-    \caption{Основные величины СИ}\label{tab:unit:base}
+    \captionsetup{justification=centering} % vyravnivanie podpisi po-tsentru
+    \caption{Osnovnye velichiny SI}\label{tab:unit:base}
     \begin{tabular}{llc}
         \toprule
-        Название  & Команда          & Символ         \\
+        Nazvanie  & Komanda          & Simvol         \\
         \midrule
-        Ампер     & \verb|\ampere|   & \si{\ampere}   \\
-        Кандела   & \verb|\candela|  & \si{\candela}  \\
-        Кельвин   & \verb|\kelvin|   & \si{\kelvin}   \\
-        Килограмм & \verb|\kilogram| & \si{\kilogram} \\
-        Метр      & \verb|\metre|    & \si{\metre}    \\
-        Моль      & \verb|\mole|     & \si{\mole}     \\
-        Секунда   & \verb|\second|   & \si{\second}   \\
+        Amper     & \verb|\ampere|   & \si{\ampere}   \\
+        Kandela   & \verb|\candela|  & \si{\candela}  \\
+        Kelvin   & \verb|\kelvin|   & \si{\kelvin}   \\
+        Kilogramm & \verb|\kilogram| & \si{\kilogram} \\
+        Metr      & \verb|\metre|    & \si{\metre}    \\
+        Mol      & \verb|\mole|     & \si{\mole}     \\
+        Sekunda   & \verb|\second|   & \si{\second}   \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -347,34 +347,34 @@
 \begin{table}
     \small
     \centering
-    \begin{threeparttable}% выравнивание подписи по границам таблицы
-        \caption{Производные единицы СИ}\label{tab:unit:derived}
+    \begin{threeparttable}% vyravnivanie podpisi po granitsam tablitsy
+        \caption{Proizvodnye edinitsy SI}\label{tab:unit:derived}
         \begin{tabular}{llc|llc}
             \toprule
-            Название       & Команда               & Символ              & Название & Команда & Символ \\
+            Nazvanie       & Komanda               & Simvol              & Nazvanie & Komanda & Simvol \\
             \midrule
-            Беккерель      & \verb|\becquerel|     & \si{\becquerel}     &
-            Ньютон         & \verb|\newton|        & \si{\newton}                                      \\
-            Градус Цельсия & \verb|\degreeCelsius| & \si{\degreeCelsius} &
-            Ом             & \verb|\ohm|           & \si{\ohm}                                         \\
-            Кулон          & \verb|\coulomb|       & \si{\coulomb}       &
-            Паскаль        & \verb|\pascal|        & \si{\pascal}                                      \\
-            Фарад          & \verb|\farad|         & \si{\farad}         &
-            Радиан         & \verb|\radian|        & \si{\radian}                                      \\
-            Грей           & \verb|\gray|          & \si{\gray}          &
-            Сименс         & \verb|\siemens|       & \si{\siemens}                                     \\
-            Герц           & \verb|\hertz|         & \si{\hertz}         &
-            Зиверт         & \verb|\sievert|       & \si{\sievert}                                     \\
-            Генри          & \verb|\henry|         & \si{\henry}         &
-            Стерадиан      & \verb|\steradian|     & \si{\steradian}                                   \\
-            Джоуль         & \verb|\joule|         & \si{\joule}         &
-            Тесла          & \verb|\tesla|         & \si{\tesla}                                       \\
-            Катал          & \verb|\katal|         & \si{\katal}         &
-            Вольт          & \verb|\volt|          & \si{\volt}                                        \\
-            Люмен          & \verb|\lumen|         & \si{\lumen}         &
-            Ватт           & \verb|\watt|          & \si{\watt}                                        \\
-            Люкс           & \verb|\lux|           & \si{\lux}           &
-            Вебер          & \verb|\weber|         & \si{\weber}                                       \\
+            Bekkerel      & \verb|\becquerel|     & \si{\becquerel}     &
+            Nyuton         & \verb|\newton|        & \si{\newton}                                      \\
+            Gradus Tselsiya & \verb|\degreeCelsius| & \si{\degreeCelsius} &
+            Om             & \verb|\ohm|           & \si{\ohm}                                         \\
+            Kulon          & \verb|\coulomb|       & \si{\coulomb}       &
+            Paskal        & \verb|\pascal|        & \si{\pascal}                                      \\
+            Farad          & \verb|\farad|         & \si{\farad}         &
+            Radian         & \verb|\radian|        & \si{\radian}                                      \\
+            Grey           & \verb|\gray|          & \si{\gray}          &
+            Simens         & \verb|\siemens|       & \si{\siemens}                                     \\
+            Gerts           & \verb|\hertz|         & \si{\hertz}         &
+            Zivert         & \verb|\sievert|       & \si{\sievert}                                     \\
+            Genri          & \verb|\henry|         & \si{\henry}         &
+            Steradian      & \verb|\steradian|     & \si{\steradian}                                   \\
+            Dzhoul         & \verb|\joule|         & \si{\joule}         &
+            Tesla          & \verb|\tesla|         & \si{\tesla}                                       \\
+            Katal          & \verb|\katal|         & \si{\katal}         &
+            Volt          & \verb|\volt|          & \si{\volt}                                        \\
+            Lyumen          & \verb|\lumen|         & \si{\lumen}         &
+            Vatt           & \verb|\watt|          & \si{\watt}                                        \\
+            Lyuks           & \verb|\lux|           & \si{\lux}           &
+            Veber          & \verb|\weber|         & \si{\weber}                                       \\
             \bottomrule
         \end{tabular}
     \end{threeparttable}
@@ -382,22 +382,22 @@
 
 \begin{table}
     \centering
-    \begin{threeparttable}% выравнивание подписи по границам таблицы
-        \caption{Внесистемные единицы}\label{tab:unit:accepted}
+    \begin{threeparttable}% vyravnivanie podpisi po granitsam tablitsy
+        \caption{Vnesistemnye edinitsy}\label{tab:unit:accepted}
 
         \begin{tabular}{llc}
             \toprule
-            Название        & Команда           & Символ          \\
+            Nazvanie        & Komanda           & Simvol          \\
             \midrule
-            День            & \verb|\day|       & \si{\day}       \\
-            Градус          & \verb|\degree|    & \si{\degree}    \\
-            Гектар          & \verb|\hectare|   & \si{\hectare}   \\
-            Час             & \verb|\hour|      & \si{\hour}      \\
-            Литр            & \verb|\litre|     & \si{\litre}     \\
-            Угловая минута  & \verb|\arcminute| & \si{\arcminute} \\
-            Угловая секунда & \verb|\arcsecond| & \si{\arcsecond} \\ %
-            Минута          & \verb|\minute|    & \si{\minute}    \\
-            Тонна           & \verb|\tonne|     & \si{\tonne}     \\
+            Den            & \verb|\day|       & \si{\day}       \\
+            Gradus          & \verb|\degree|    & \si{\degree}    \\
+            Gektar          & \verb|\hectare|   & \si{\hectare}   \\
+            Chas             & \verb|\hour|      & \si{\hour}      \\
+            Litr            & \verb|\litre|     & \si{\litre}     \\
+            Uglovaya minuta  & \verb|\arcminute| & \si{\arcminute} \\
+            Uglovaya sekunda & \verb|\arcsecond| & \si{\arcsecond} \\ %
+            Minuta          & \verb|\minute|    & \si{\minute}    \\
+            Tonna           & \verb|\tonne|     & \si{\tonne}     \\
             \bottomrule
         \end{tabular}
     \end{threeparttable}
@@ -406,42 +406,42 @@
 \begin{table}
     \centering
     \captionsetup{justification=centering}
-    \caption{Внесистемные единицы, получаемые из эксперимента}\label{tab:unit:physical}
+    \caption{Vnesistemnye edinitsy, poluchaemye iz eksperimenta}\label{tab:unit:physical}
     \begin{tabular}{llc}
         \toprule
-        Название                & Команда                  & Символ                 \\
+        Nazvanie                & Komanda                  & Simvol                 \\
         \midrule
-        Астрономическая единица & \verb|\astronomicalunit| & \si{\astronomicalunit} \\
-        Атомная единица массы   & \verb|\atomicmassunit|   & \si{\atomicmassunit}   \\
-        Боровский радиус        & \verb|\bohr|             & \si{\bohr}             \\
-        Скорость света          & \verb|\clight|           & \si{\clight}           \\
-        Дальтон                 & \verb|\dalton|           & \si{\dalton}           \\
-        Масса электрона         & \verb|\electronmass|     & \si{\electronmass}     \\
-        Электрон Вольт          & \verb|\electronvolt|     & \si{\electronvolt}     \\
-        Элементарный заряд      & \verb|\elementarycharge| & \si{\elementarycharge} \\
-        Энергия Хартри          & \verb|\hartree|          & \si{\hartree}          \\
-        Постоянная Планка       & \verb|\planckbar|        & \si{\planckbar}        \\
+        Astronomicheskaya edinitsa & \verb|\astronomicalunit| & \si{\astronomicalunit} \\
+        Atomnaya edinitsa massy   & \verb|\atomicmassunit|   & \si{\atomicmassunit}   \\
+        Borovskiy radius        & \verb|\bohr|             & \si{\bohr}             \\
+        Skorost sveta          & \verb|\clight|           & \si{\clight}           \\
+        Dalton                 & \verb|\dalton|           & \si{\dalton}           \\
+        Massa elektrona         & \verb|\electronmass|     & \si{\electronmass}     \\
+        Elektron Volt          & \verb|\electronvolt|     & \si{\electronvolt}     \\
+        Elementarnyy zaryad      & \verb|\elementarycharge| & \si{\elementarycharge} \\
+        Energiya Khartri          & \verb|\hartree|          & \si{\hartree}          \\
+        Postoyannaya Planka       & \verb|\planckbar|        & \si{\planckbar}        \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \begin{table}
     \centering
-    \begin{threeparttable}% выравнивание подписи по границам таблицы
-        \caption{Другие внесистемные единицы}\label{tab:unit:other}
+    \begin{threeparttable}% vyravnivanie podpisi po granitsam tablitsy
+        \caption{Drugie vnesistemnye edinitsy}\label{tab:unit:other}
         \begin{tabular}{llc}
             \toprule
-            Название                  & Команда              & Символ             \\
+            Nazvanie                  & Komanda              & Simvol             \\
             \midrule
-            Ангстрем                  & \verb|\angstrom|     & \si{\angstrom}     \\
-            Бар                       & \verb|\bar|          & \si{\bar}          \\
-            Барн                      & \verb|\barn|         & \si{\barn}         \\
-            Бел                       & \verb|\bel|          & \si{\bel}          \\
-            Децибел                   & \verb|\decibel|      & \si{\decibel}      \\
-            Узел                      & \verb|\knot|         & \si{\knot}         \\
-            Миллиметр ртутного столба & \verb|\mmHg|         & \si{\mmHg}         \\
-            Морская миля              & \verb|\nauticalmile| & \si{\nauticalmile} \\
-            Непер                     & \verb|\neper|        & \si{\neper}        \\
+            Angstrem                  & \verb|\angstrom|     & \si{\angstrom}     \\
+            Bar                       & \verb|\bar|          & \si{\bar}          \\
+            Barn                      & \verb|\barn|         & \si{\barn}         \\
+            Bel                       & \verb|\bel|          & \si{\bel}          \\
+            Detsibel                   & \verb|\decibel|      & \si{\decibel}      \\
+            Uzel                      & \verb|\knot|         & \si{\knot}         \\
+            Millimetr rtutnogo stolba & \verb|\mmHg|         & \si{\mmHg}         \\
+            Morskaya milya              & \verb|\nauticalmile| & \si{\nauticalmile} \\
+            Neper                     & \verb|\neper|        & \si{\neper}        \\
             \bottomrule
         \end{tabular}
     \end{threeparttable}
@@ -450,194 +450,194 @@
 \begin{table}
     \small
     \centering
-    \begin{threeparttable}% выравнивание подписи по границам таблицы
-        \caption{Приставки СИ}\label{tab:unit:prefix}
+    \begin{threeparttable}% vyravnivanie podpisi po granitsam tablitsy
+        \caption{Pristavki SI}\label{tab:unit:prefix}
         \begin{tabular}{llcc|llcc}
             \toprule
-            Приставка & Команда       & Символ      & Степень      &
-            Приставка & Команда       & Символ      & Степень        \\
+            Pristavka & Komanda       & Simvol      & Stepen      &
+            Pristavka & Komanda       & Simvol      & Stepen        \\
             \midrule
-            Иокто     & \verb|\yocto| & \si{\yocto} & \textminus24 &
-            Дека      & \verb|\deca|  & \si{\deca}  & 1              \\
-            Зепто     & \verb|\zepto| & \si{\zepto} & \textminus21 &
-            Гекто     & \verb|\hecto| & \si{\hecto} & 2              \\
-            Атто      & \verb|\atto|  & \si{\atto}  & \textminus18 &
-            Кило      & \verb|\kilo|  & \si{\kilo}  & 3              \\
-            Фемто     & \verb|\femto| & \si{\femto} & \textminus15 &
-            Мега      & \verb|\mega|  & \si{\mega}  & 6              \\
-            Пико      & \verb|\pico|  & \si{\pico}  & \textminus12 &
-            Гига      & \verb|\giga|  & \si{\giga}  & 9              \\
-            Нано      & \verb|\nano|  & \si{\nano}  & \textminus9  &
-            Терра     & \verb|\tera|  & \si{\tera}  & 12             \\
-            Микро     & \verb|\micro| & \si{\micro} & \textminus6  &
-            Пета      & \verb|\peta|  & \si{\peta}  & 15             \\
-            Милли     & \verb|\milli| & \si{\milli} & \textminus3  &
-            Екса      & \verb|\exa|   & \si{\exa}   & 18             \\
-            Санти     & \verb|\centi| & \si{\centi} & \textminus2  &
-            Зетта     & \verb|\zetta| & \si{\zetta} & 21             \\
-            Деци      & \verb|\deci|  & \si{\deci}  & \textminus1  &
-            Иотта     & \verb|\yotta| & \si{\yotta} & 24             \\
+            Iokto     & \verb|\yocto| & \si{\yocto} & \textminus24 &
+            Deka      & \verb|\deca|  & \si{\deca}  & 1              \\
+            Zepto     & \verb|\zepto| & \si{\zepto} & \textminus21 &
+            Gekto     & \verb|\hecto| & \si{\hecto} & 2              \\
+            Atto      & \verb|\atto|  & \si{\atto}  & \textminus18 &
+            Kilo      & \verb|\kilo|  & \si{\kilo}  & 3              \\
+            Femto     & \verb|\femto| & \si{\femto} & \textminus15 &
+            Mega      & \verb|\mega|  & \si{\mega}  & 6              \\
+            Piko      & \verb|\pico|  & \si{\pico}  & \textminus12 &
+            Giga      & \verb|\giga|  & \si{\giga}  & 9              \\
+            Nano      & \verb|\nano|  & \si{\nano}  & \textminus9  &
+            Terra     & \verb|\tera|  & \si{\tera}  & 12             \\
+            Mikro     & \verb|\micro| & \si{\micro} & \textminus6  &
+            Peta      & \verb|\peta|  & \si{\peta}  & 15             \\
+            Milli     & \verb|\milli| & \si{\milli} & \textminus3  &
+            Eksa      & \verb|\exa|   & \si{\exa}   & 18             \\
+            Santi     & \verb|\centi| & \si{\centi} & \textminus2  &
+            Zetta     & \verb|\zetta| & \si{\zetta} & 21             \\
+            Detsi      & \verb|\deci|  & \si{\deci}  & \textminus1  &
+            Iotta     & \verb|\yotta| & \si{\yotta} & 24             \\
             \bottomrule
         \end{tabular}
     \end{threeparttable}
 \end{table}
 
-\subsection{Заголовки с формулами: \texorpdfstring{\(a^2 + b^2 = c^2\)}{%
+\subsection{Zagolovki s formulami: \texorpdfstring{\(a^2 + b^2 = c^2\)}{%
         a\texttwosuperior\ + b\texttwosuperior\ = c\texttwosuperior},
     \texorpdfstring{\(\left\vert\textrm{{Im}}\Sigma\left(
             \protect\varepsilon\right)\right\vert\approx const\)}{|ImΣ (ε)| ≈ const},
     \texorpdfstring{\(\sigma_{xx}^{(1)}\)}{σ\_\{xx\}\textasciicircum\{(1)\}}
 }\label{subsec:with_math}
 
-Пакет \texttt{hyperref} берёт текст для закладок в pdf-файле из~аргументов
-команд типа \verb|\section|, которые могут содержать математические формулы,
-а~также изменения цвета текста или шрифта, которые не отображаются в~закладках.
-Чтобы использование формул в заголовках не вызывало в~логе компиляции появление
-предупреждений типа <<\texttt{Token not allowed in~a~PDF string
-    (Unicode):(hyperref) removing...}>>, следует использовать конструкцию
-\verb|\texorpdfstring{}{}|, где в~первых фигурных скобках указывается
-формула, а~во~вторых "--- запись формулы для закладок.
+Paket \texttt{hyperref} beret tekst dlya zakladok v pdf-fayle iz~argumentov
+komand tipa \verb|\section|, kotorye mogut soderzhat matematicheskie formuly,
+a~takzhe izmeneniya tsveta teksta ili shrifta, kotorye ne otobrazhayutsya v~zakladkakh.
+Chtoby ispolzovanie formul v zagolovkakh ne vyzyvalo v~loge kompilyatsii poyavlenie
+preduprezhdeniy tipa <<\texttt{Token not allowed in~a~PDF string
+    (Unicode):(hyperref) removing...}>>, sleduet ispolzovat konstruktsiyu
+\verb|\texorpdfstring{}{}|, gde v~pervykh figurnykh skobkakh ukazyvaetsya
+formula, a~vo~vtorykh "--- zapis formuly dlya zakladok.
 
-\section{Рецензирование текста}\label{sec:markup}
+\section{Retsenzirovanie teksta}\label{sec:markup}
 
-В шаблоне для диссертации и автореферата заданы команды рецензирования.
-Они видны при компиляции шаблона в режиме черновика или при установке
-соответствующей настройки (\verb+showmarkup+) в~файле \verb+common/setup.tex+.
+V shablone dlya dissertatsii i avtoreferata zadany komandy retsenzirovaniya.
+Oni vidny pri kompilyatsii shablona v rezhime chernovika ili pri ustanovke
+sootvetstvuyushchey nastroyki (\verb+showmarkup+) v~fayle \verb+common/setup.tex+.
 
-Команда \verb+\todo+ отмечает текст красным цветом.
-\todo{Например, так.}
+Komanda \verb+\todo+ otmechaet tekst krasnym tsvetom.
+\todo{Naprimer, tak.}
 
-Команда \verb+\note+ позволяет выбрать цвет текста.
-\note{Чёрный, } \note[red]{красный, } \note[green]{зелёный, }
-\note[blue]{синий.} \note[orange]{Обратите внимание на ширину и расстановку
-    формирующихся пробелов, в~результате приведённой записи (зависит также
-    от~применяемого компилятора).}
+Komanda \verb+\note+ pozvolyaet vybrat tsvet teksta.
+\note{Chernyy, } \note[red]{krasnyy, } \note[green]{zelenyy, }
+\note[blue]{siniy.} \note[orange]{Obratite vnimanie na shirinu i rasstanovku
+    formiruyushchikhsya probelov, v~rezultate privedennoy zapisi (zavisit takzhe
+    ot~primenyaemogo kompilyatora).}
 
-Окружение \verb+commentbox+ также позволяет выбрать цвет.
+Okruzhenie \verb+commentbox+ takzhe pozvolyaet vybrat tsvet.
 
 \begin{commentbox}[red]
-    Красный текст.
+    Krasnyy tekst.
 
-    Несколько параграфов красного текста.
+    Neskolko paragrafov krasnogo teksta.
 \end{commentbox}
 
 \begin{commentbox}[blue]
-    Синяя формула.
+    Sinyaya formula.
 
     \begin{equation}
         \alpha + \beta = \gamma
     \end{equation}
 \end{commentbox}
 
-\verb+commentbox+ позволяет закомментировать участок кода в~режиме чистовика.
-Чтобы убрать кусок кода для всех режимов, можно использовать окружение
+\verb+commentbox+ pozvolyaet zakommentirovat uchastok koda v~rezhime chistovika.
+Chtoby ubrat kusok koda dlya vsekh rezhimov, mozhno ispolzovat okruzhenie
 \verb+comment+.
 
 \begin{comment}
-Этот текст всегда скрыт.
+Etot tekst vsegda skryt.
 \end{comment}
 
-\section{Работа со списком сокращений и~условных обозначений}\label{sec:acronyms}
+\section{Rabota so spiskom sokrashcheniy i~uslovnykh oboznacheniy}\label{sec:acronyms}
 
-С помощью пакета \texttt{nomencl} можно создавать удобный сортированный список
-сокращений и условных обозначений во время написания текста. Вызов
-\verb+\nomenclature+ добавляет нужный символ или сокращение с~описанием
-в~список, который затем печатается вызовом \verb+\printnomenclature+
-в~соответствующем разделе.
-Для того, чтобы эти операции прошли, потребуется дополнительный вызов
-\verb+makeindex -s nomencl.ist -o %.nls %.nlo+ в~командной строке, где вместо
-\verb+%+ следует подставить имя главного файла проекта (\verb+dissertation+
-для этого шаблона).
-Затем потребуется один или два дополнительных вызова компилятора проекта.
+S pomoshchyu paketa \texttt{nomencl} mozhno sozdavat udobnyy sortirovannyy spisok
+sokrashcheniy i uslovnykh oboznacheniy vo vremya napisaniya teksta. Vyzov
+\verb+\nomenclature+ dobavlyaet nuzhnyy simvol ili sokrashchenie s~opisaniem
+v~spisok, kotoryy zatem pechataetsya vyzovom \verb+\printnomenclature+
+v~sootvetstvuyushchem razdele.
+Dlya togo, chtoby eti operatsii proshli, potrebuetsya dopolnitelnyy vyzov
+\verb+makeindex -s nomencl.ist -o %.nls %.nlo+ v~komandnoy stroke, gde vmesto
+\verb+%+ sleduet podstavit imya glavnogo fayla proekta (\verb+dissertation+
+dlya etogo shablona).
+Zatem potrebuetsya odin ili dva dopolnitelnykh vyzova kompilyatora proekta.
 \begin{equation}
     \omega = c k,
 \end{equation}
-где \( \omega \) "--- частота света, \( c \) "--- скорость света, \( k \) "---
-модуль волнового вектора.
-\nomenclature{\(\omega\)}{частота света\nomrefeq}
-\nomenclature{\(c\)}{скорость света\nomrefpage}
-\nomenclature{\(k\)}{модуль волнового вектора\nomrefeqpage}
-Использование
+gde \( \omega \) "--- chastota sveta, \( c \) "--- skorost sveta, \( k \) "---
+modul volnovogo vektora.
+\nomenclature{\(\omega\)}{chastota sveta\nomrefeq}
+\nomenclature{\(c\)}{skorost sveta\nomrefpage}
+\nomenclature{\(k\)}{modul volnovogo vektora\nomrefeqpage}
+Ispolzovanie
 \begin{verbatim}
-\nomenclature{\(\omega\)}{частота света\nomrefeq}
-\nomenclature{\(c\)}{скорость света\nomrefpage}
-\nomenclature{\(k\)}{модуль волнового вектора\nomrefeqpage}
+\nomenclature{\(\omega\)}{chastota sveta\nomrefeq}
+\nomenclature{\(c\)}{skorost sveta\nomrefpage}
+\nomenclature{\(k\)}{modul volnovogo vektora\nomrefeqpage}
 \end{verbatim}
-после уравнения добавит в список условных обозначений три записи.
-Ссылки \verb+\nomrefeq+ на последнее уравнение, \verb+\nomrefpage+ "--- на
-страницу, \verb+\nomrefeqpage+ "--- сразу на~последнее уравнение и~на~страницу,
-можно опускать и~не~использовать.
+posle uravneniya dobavit v spisok uslovnykh oboznacheniy tri zapisi.
+Ssylki \verb+\nomrefeq+ na poslednee uravnenie, \verb+\nomrefpage+ "--- na
+stranitsu, \verb+\nomrefeqpage+ "--- srazu na~poslednee uravnenie i~na~stranitsu,
+mozhno opuskat i~ne~ispolzovat.
 
-Группировкой и сортировкой пунктов в списке можно управлять с~помощью указания
-дополнительных аргументов к команде \verb+nomenclature+.
-Например, при вызове
+Gruppirovkoy i sortirovkoy punktov v spiske mozhno upravlyat s~pomoshchyu ukazaniya
+dopolnitelnykh argumentov k komande \verb+nomenclature+.
+Naprimer, pri vyzove
 \begin{verbatim}
-\nomenclature[03]{\( \hbar \)}{постоянная Планка}
-\nomenclature[01]{\( G \)}{гравитационная постоянная}
+\nomenclature[03]{\( \hbar \)}{postoyannaya Planka}
+\nomenclature[01]{\( G \)}{gravitatsionnaya postoyannaya}
 \end{verbatim}
-\( G \) будет стоять в списке выше, чем \( \hbar \).
-Для корректных вертикальных отступов между строками в описании лучше
-не~использовать многострочные формулы в~списке обозначений.
+\( G \) budet stoyat v spiske vyshe, chem \( \hbar \).
+Dlya korrektnykh vertikalnykh otstupov mezhdu strokami v opisanii luchshe
+ne~ispolzovat mnogostrochnye formuly v~spiske oboznacheniy.
 
 \nomenclature{%
     \( \begin{rcases}
         a_n \\
         b_n
     \end{rcases} \)%
-}{коэффициенты разложения Ми в дальнем поле соответствующие электрическим и
-    магнитным мультиполям}
-\nomenclature[a\( e \)]{\( {\boldsymbol{\hat{\mathrm e}}} \)}{единичный вектор}
-\nomenclature{\( E_0 \)}{амплитуда падающего поля}
-\nomenclature{\( j \)}{тип функции Бесселя}
-\nomenclature{\( k \)}{волновой вектор падающей волны}
+}{koeffitsienty razlozheniya Mi v dalnem pole sootvetstvuyushchie elektricheskim i
+    magnitnym multipolyam}
+\nomenclature[a\( e \)]{\( {\boldsymbol{\hat{\mathrm e}}} \)}{edinichnyy vektor}
+\nomenclature{\( E_0 \)}{amplituda padayushchego polya}
+\nomenclature{\( j \)}{tip funktsii Besselya}
+\nomenclature{\( k \)}{volnovoy vektor padayushchey volny}
 \nomenclature{%
     \( \begin{rcases}
         a_n \\
         b_n
     \end{rcases} \)%
-}{и снова коэффициенты разложения Ми в дальнем поле соответствующие
-    электрическим и магнитным мультиполям. Добавлено много текста, так что
-    описание группы условных обозначений значительно превысило высоту этой
-    группы...}
-\nomenclature{\( L \)}{общее число слоёв}
-\nomenclature{\( l \)}{номер слоя внутри стратифицированной сферы}
-\nomenclature{\( \lambda \)}{длина волны электромагнитного излучения в вакууме}
-\nomenclature{\( n \)}{порядок мультиполя}
+}{i snova koeffitsienty razlozheniya Mi v dalnem pole sootvetstvuyushchie
+    elektricheskim i magnitnym multipolyam. Dobavleno mnogo teksta, tak chto
+    opisanie gruppy uslovnykh oboznacheniy znachitelno prevysilo vysotu etoy
+    gruppy...}
+\nomenclature{\( L \)}{obshchee chislo sloev}
+\nomenclature{\( l \)}{nomer sloya vnutri stratifitsirovannoy sfery}
+\nomenclature{\( \lambda \)}{dlina volny elektromagnitnogo izlucheniya v vakuume}
+\nomenclature{\( n \)}{poryadok multipolya}
 \nomenclature{%
     \( \begin{rcases}
         {\mathbf{N}}_{e1n}^{(j)} & {\mathbf{N}}_{o1n}^{(j)} \\
         {\mathbf{M}_{o1n}^{(j)}} & {\mathbf{M}_{e1n}^{(j)}}
     \end{rcases} \)%
-}{сферические векторные гармоники}
-\nomenclature{\( \mu \)}{магнитная проницаемость в вакууме}
-\nomenclature{\( r, \theta, \phi \)}{полярные координаты}
-\nomenclature{\( \omega \)}{частота падающей волны}
+}{sfericheskie vektornye garmoniki}
+\nomenclature{\( \mu \)}{magnitnaya pronitsaemost v vakuume}
+\nomenclature{\( r, \theta, \phi \)}{polyarnye koordinaty}
+\nomenclature{\( \omega \)}{chastota padayushchey volny}
 
-С помощью \verb+nomenclature+ можно включать в~список сокращения,
-не~используя их~в~тексте.
-% запись сокращения в список происходит командой \nomenclature,
-% а не употреблением самого сокращения
-\nomenclature{FEM}{finite element method, метод конечных элементов}
-\nomenclature{FIT}{finite integration technique, метод конечных интегралов}
-\nomenclature{FMM}{fast multipole method, быстрый метод многополюсника}
-\nomenclature{FVTD}{finite volume time-domain, метод конечных объёмов
-    во~временной области}
-\nomenclature{MLFMA}{multilevel fast multipole algorithm, многоуровневый
-    быстрый алгоритм многополюсника}
-\nomenclature{BEM}{boundary element method, метод граничных элементов}
+S pomoshchyu \verb+nomenclature+ mozhno vklyuchat v~spisok sokrashcheniya,
+ne~ispolzuya ikh~v~tekste.
+% zapis sokrashcheniya v spisok proiskhodit komandoy \nomenclature,
+% a ne upotrebleniem samogo sokrashcheniya
+\nomenclature{FEM}{finite element method, metod konechnykh elementov}
+\nomenclature{FIT}{finite integration technique, metod konechnykh integralov}
+\nomenclature{FMM}{fast multipole method, bystryy metod mnogopolyusnika}
+\nomenclature{FVTD}{finite volume time-domain, metod konechnykh obemov
+    vo~vremennoy oblasti}
+\nomenclature{MLFMA}{multilevel fast multipole algorithm, mnogourovnevyy
+    bystryy algoritm mnogopolyusnika}
+\nomenclature{BEM}{boundary element method, metod granichnykh elementov}
 \nomenclature{CST MWS}{Computer Simulation Technology Microwave Studio
-    программа для компьютерного моделирования уравнен Максвелла}
-\nomenclature{DDA}{discrete dipole approximation, приближение дискретиных
-    диполей}
-\nomenclature{FDFD}{finite difference frequency domain, метод конечных
-    разностей в~частотной области}
-\nomenclature{FDTD}{finite difference time domain, метод конечных разностей
-    во~временной области}
-\nomenclature{MoM}{method of moments, метод моментов}
-\nomenclature{MSTM}{multiple sphere T-Matrix, метод Т-матриц для множества
-    сфер}
-\nomenclature{PSTD}{pseudospectral time domain method, псевдоспектральный метод
-    во~временной области}
-\nomenclature{TLM}{transmission line matrix method, метод матриц линий передач}
+    programma dlya kompyuternogo modelirovaniya uravnen Maksvella}
+\nomenclature{DDA}{discrete dipole approximation, priblizhenie diskretinykh
+    dipoley}
+\nomenclature{FDFD}{finite difference frequency domain, metod konechnykh
+    raznostey v~chastotnoy oblasti}
+\nomenclature{FDTD}{finite difference time domain, metod konechnykh raznostey
+    vo~vremennoy oblasti}
+\nomenclature{MoM}{method of moments, metod momentov}
+\nomenclature{MSTM}{multiple sphere T-Matrix, metod T-matrits dlya mnozhestva
+    sfer}
+\nomenclature{PSTD}{pseudospectral time domain method, psevdospektralnyy metod
+    vo~vremennoy oblasti}
+\nomenclature{TLM}{transmission line matrix method, metod matrits liniy peredach}
 
 \FloatBarrier

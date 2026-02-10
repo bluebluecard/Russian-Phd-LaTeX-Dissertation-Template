@@ -1,19 +1,19 @@
-% Общие стили оформления.
-% Возможные варианты значений ищите в описании библиотеки beamer
+% Obshchie stili oformleniya.
+% Vozmozhnye varianty znacheniy ishchite v opisanii biblioteki beamer
 \usetheme{Pittsburgh}
 \usecolortheme{whale}
 
 % \usetheme[secheader]{Boadilla}
 % \usecolortheme{seahorse}
 
-% Размер полей слайдов
+% Razmer poley slaydov
 \setbeamersize{text margin left=1cm,%
                text margin right=1cm}
 
-% выключение кнопок навигации
+% vyklyuchenie knopok navigatsii
 \beamertemplatenavigationsymbolsempty
 
-% Размеры шрифтов
+% Razmery shriftov
 \setbeamerfont{title}{size=\large}
 \setbeamerfont{subtitle}{size=\small}
 \setbeamerfont{author}{size=\normalsize}
@@ -24,28 +24,28 @@
 \setbeamerfont{bibliography entry title}{size=\small}
 \setbeamerfont{bibliography entry location}{size=\small}
 \setbeamerfont{bibliography entry note}{size=\small}
-% Аналогично можно настроить и другие размеры.
-% Названия классов элементов можно найти здесь
+% Analogichno mozhno nastroit i drugie razmery.
+% Nazvaniya klassov elementov mozhno nayti zdes
 % http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf
 
-% Цвет элементов
+% Tsvet elementov
 \setbeamercolor{footline}{fg=blue}
 \setbeamercolor{bibliography item}{fg=black}
 \setbeamercolor{bibliography entry author}{fg=black}
 \setbeamercolor{bibliography entry title}{fg=black}
 \setbeamercolor{bibliography entry location}{fg=black}
 \setbeamercolor{bibliography entry note}{fg=black}
-% Аналогично можно настроить и другие цвета.
-% Названия классов элементов можно найти здесь
+% Analogichno mozhno nastroit i drugie tsveta.
+% Nazvaniya klassov elementov mozhno nayti zdes
 % http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf
 
-% Нумеровать список статей
+% Numerovat spisok statey
 % https://tex.stackexchange.com/a/419506/104425
 \setbeamertemplate{bibliography item}{\insertbiblabel}
-% или убрать номера
+% ili ubrat nomera
 % \setbeamertemplate{bibliography item}{}
 
-% Использовать шрифт с засечками для формул
+% Ispolzovat shrift s zasechkami dlya formul
 % https://tex.stackexchange.com/a/34267/104425
 \usefonttheme[onlymath]{serif}
 
@@ -58,25 +58,25 @@
 }
 \makeatother
 
-% footer презентации
+% footer prezentatsii
 \setbeamertemplate{footline}{
     \leavevmode%
     \hbox{%
         \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{}%
-            % И. О. Фамилия, Организация кратко
+            % I. O. Familiya, Organizatsiya kratko
             \thesisAuthorShort, \thesisOrganizationShort
         \end{beamercolorbox}%
         \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{}%
-            % Город, 20XX
+            % Gorod, 20XX
             \thesisCity, \thesisYear
         \end{beamercolorbox}%
         \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{}%
-            Стр. \insertframenumber{} из \inserttotalframenumber \hspace*{2ex}
+            Str. \insertframenumber{} iz \inserttotalframenumber \hspace*{2ex}
         \end{beamercolorbox}}%
     \vskip0pt%
 }
 
-% вывод на экран заметок к презентации
+% vyvod na ekran zametok k prezentatsii
 \ifnumequal{\value{presnotes}}{0}{}{
     \setbeameroption{show notes}
     \ifnumequal{\value{presnotes}}{2}{

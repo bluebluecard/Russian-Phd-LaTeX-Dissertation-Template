@@ -1,186 +1,186 @@
-# Библиография
+# Bibliografiya
 
-* [Общие замечания](#Общие-замечания)
-* [Назначение и размещение файлов с библиографией](#Назначение-и-размещение-файлов-с-библиографией)
-* [Настройка библиографии](#Настройка-библиографии)
-  * [Группированные подсписки литературы (ВАК, Web of Science и т.п.)](#Группированные-подсписки-литературы-ВАК-web-of-science-и-тп)
-    * [В автореферате](#В-автореферате)
-    * [В тексте диссертации](#В-тексте-диссертации)
-    * [Выбор групп для отображения](#Выбор-групп-для-отображения)
-    * [Наименование списков и подсписков литературы](#Наименование-списков-и-подсписков-литературы)
-  * [Строгость соответствия ГОСТ](#Строгость-соответствия-ГОСТ)
-* [Замечания по реализациям библиографии](#Замечания-по-реализациям-библиографии)
+* [Obshchie zamechaniya](#Obshchie-zamechaniya)
+* [Naznachenie i razmeshchenie faylov s bibliografiey](#Naznachenie-i-razmeshchenie-faylov-s-bibliografiey)
+* [Nastroyka bibliografii](#Nastroyka-bibliografii)
+  * [Gruppirovannye podspiski literatury (VAK, Web of Science i t.p.)](#Gruppirovannye-podspiski-literatury-VAK-web-of-science-i-tp)
+    * [V avtoreferate](#V-avtoreferate)
+    * [V tekste dissertatsii](#V-tekste-dissertatsii)
+    * [Vybor grupp dlya otobrazheniya](#Vybor-grupp-dlya-otobrazheniya)
+    * [Naimenovanie spiskov i podspiskov literatury](#Naimenovanie-spiskov-i-podspiskov-literatury)
+  * [Strogost sootvetstviya GOST](#Strogost-sootvetstviya-GOST)
+* [Zamechaniya po realizatsiyam bibliografii](#Zamechaniya-po-realizatsiyam-bibliografii)
   * [`biblatex` + `biblatex-gost` + biber](#biblatex--biblatex-gost--biber)
-  * [Встроенная + `gost` + bibtex](#Встроенная--gost--bibtex)
+  * [Vstroennaya + `gost` + bibtex](#Vstroennaya--gost--bibtex)
     * [ugost2008mod.bst](#ugost2008modbst)
-* [Список статей в презентации](#Список-статей-в-презентации)
-* [Дополнительная информация](#Дополнительная-информация)
-* [В случае проблем](#В-случае-проблем)
-* [Режим черновика](#Режим-черновика)
+* [Spisok statey v prezentatsii](#Spisok-statey-v-prezentatsii)
+* [Dopolnitelnaya informatsiya](#Dopolnitelnaya-informatsiya)
+* [V sluchae problem](#V-sluchae-problem)
+* [Rezhim chernovika](#Rezhim-chernovika)
 
-## Общие замечания
-* Данный шаблон рассчитан на поддержку работы двух реализаций
-автоматизированного формирования списка литературы и управления библиографией:
-  * встроенная реализация с загрузкой файла через движок `bibtex` при
-поддержке шаблонов пакета
+## Obshchie zamechaniya
+* Dannyy shablon rasschitan na podderzhku raboty dvukh realizatsiy
+avtomatizirovannogo formirovaniya spiska literatury i upravleniya bibliografiey:
+  * vstroennaya realizatsiya s zagruzkoy fayla cherez dvizhok `bibtex` pri
+podderzhke shablonov paketa
 [`gost`](http://mirrors.ctan.org/biblio/bibtex/contrib/gost/doc/gost.pdf);
-  * реализация пакетом `biblatex` через движок `biber` (рекомендуемая)
-при поддержке шаблонов пакета
+  * realizatsiya paketom `biblatex` cherez dvizhok `biber` (rekomenduemaya)
+pri podderzhke shablonov paketa
 [`biblatex-gost`](http://mirrors.ctan.org/macros/latex/contrib/biblatex-contrib/biblatex-gost/doc/biblatex-gost.pdf).
-* Лучше всего всегда обрамлять значение BibTeX-атрибутов в фигурные скобки или
-кавычки (то есть вместо *month = jul* писать *month = {jul}*).
-* Также лучше всегда указывать язык BibTeX-записи (например, *language =
-{russian}* или *language = {english}*). Запись языков всегда должна вестись
-строчными (маленькими) буквами.
-* Параметр *langid* заполнять не нужно -- он копируется из параметра *language*.
-* Для пометки базы своей статьи (ВАК, Scopus, Web of Science), можно использовать *addendum = {(ВАК, Scopus, Web of Science)}*.
-* Для автоматического подсчёта публикаций требуется добавить поля в публикациях в файле `biblio/author.bib`:
-  * *authorvak = {true}* если публикация индексирована ВАК,
-  * *authorscopus = {true}* если публикация индексирована Scopus,
-  * *authorwos = {true}* если публикация индексирована Web of Science,
-  * *authorconf = {true}* для докладов конференций,
-  * *authorother = {true}* для других публикаций.
-* Автоматический подсчёт патентов и зарегистрированных программ для ЭВМ осуществляется путём
-  добавления в файл `biblio/registered.bib` полей:
-  * *authorpatent = {true}* для патентов,
-  * *authorprogram = {true}* для зарегистрированных программ.
-* Для оптимального оформления списка литературы стоит убедиться, что исходный
-*.bib файл заполнен правильным образом.
-Примеры заполнения записей и результаты применения к ним основных стилей
-приведены в [описании стилей пакета
-`gost`](http://ctan.org/tex-archive/biblio/bibtex/contrib/gost) и в
-[примерах применения пакета
+* Luchshe vsego vsegda obramlyat znachenie BibTeX-atributov v figurnye skobki ili
+kavychki (to est vmesto *month = jul* pisat *month = {jul}*).
+* Takzhe luchshe vsegda ukazyvat yazyk BibTeX-zapisi (naprimer, *language =
+{russian}* ili *language = {english}*). Zapis yazykov vsegda dolzhna vestis
+strochnymi (malenkimi) bukvami.
+* Parametr *langid* zapolnyat ne nuzhno -- on kopiruetsya iz parametra *language*.
+* Dlya pometki bazy svoey stati (VAK, Scopus, Web of Science), mozhno ispolzovat *addendum = {(VAK, Scopus, Web of Science)}*.
+* Dlya avtomaticheskogo podscheta publikatsiy trebuetsya dobavit polya v publikatsiyakh v fayle `biblio/author.bib`:
+  * *authorvak = {true}* esli publikatsiya indeksirovana VAK,
+  * *authorscopus = {true}* esli publikatsiya indeksirovana Scopus,
+  * *authorwos = {true}* esli publikatsiya indeksirovana Web of Science,
+  * *authorconf = {true}* dlya dokladov konferentsiy,
+  * *authorother = {true}* dlya drugikh publikatsiy.
+* Avtomaticheskiy podschet patentov i zaregistrirovannykh programm dlya EVM osushchestvlyaetsya putem
+  dobavleniya v fayl `biblio/registered.bib` poley:
+  * *authorpatent = {true}* dlya patentov,
+  * *authorprogram = {true}* dlya zaregistrirovannykh programm.
+* Dlya optimalnogo oformleniya spiska literatury stoit ubeditsya, chto iskhodnyy
+*.bib fayl zapolnen pravilnym obrazom.
+Primery zapolneniya zapisey i rezultaty primeneniya k nim osnovnykh stiley
+privedeny v [opisanii stiley paketa
+`gost`](http://ctan.org/tex-archive/biblio/bibtex/contrib/gost) i v
+[primerakh primeneniya paketa
 `biblatex-gost`](http://mirrors.ctan.org/macros/latex/contrib/biblatex-contrib/biblatex-gost/doc/biblatex-gost-examples.pdf).
 
-## Назначение и размещение файлов с библиографией
-Файлы с библиографией расположены в папке [biblio/](../biblio/):
-* работы автора — [author.bib](../biblio/author.bib);
-* зарегистрированные патенты и программы для ЭВМ — [registered.bib](../biblio/reigstered.bib);
-* чужие работы, на которые автор ссылается — [external.bib](../biblio/external.bib).
+## Naznachenie i razmeshchenie faylov s bibliografiey
+Fayly s bibliografiey raspolozheny v papke [biblio/](../biblio/):
+* raboty avtora — [author.bib](../biblio/author.bib);
+* zaregistrirovannye patenty i programmy dlya EVM — [registered.bib](../biblio/reigstered.bib);
+* chuzhie raboty, na kotorye avtor ssylaetsya — [external.bib](../biblio/external.bib).
 
-Кроме того, в этой же папке находится файл для автоматической проверки
-библиографической информации на возможные дубликаты —
+Krome togo, v etoy zhe papke nakhoditsya fayl dlya avtomaticheskoy proverki
+bibliograficheskoy informatsii na vozmozhnye dublikaty —
 [check-bib-dupes-and-usage.py](../biblio/check-bib-dupes-and-usage.py)
-Скрипт пытается найти повторяющиеся библиографические записи, которые внесены в
-файлы с разными тегами (такое может произойти, если у вас уже есть несколько
-публикаций, подготовленных в LaTeX. Их списки литературы могут пересекаться
-если разные соавторы вносили их в разные исходные публикации под разными
-тегами). Т.к. обычно список литературы достаточно небольшой (около 200
-позиций), то скрипт считает маловероятным обнаружить публикации одного и того
-же автора в разных работах на одной странице. Если такое происходит — выводится
-уведомление. Вторая часть скрипта проверяет, все ли ссылки, внесённые в файл
-библиографии, были использованы в тексте диссертации.
+Skript pytaetsya nayti povtoryayushchiesya bibliograficheskie zapisi, kotorye vneseny v
+fayly s raznymi tegami (takoe mozhet proizoyti, esli u vas uzhe est neskolko
+publikatsiy, podgotovlennykh v LaTeX. Ikh spiski literatury mogut peresekatsya
+esli raznye soavtory vnosili ikh v raznye iskhodnye publikatsii pod raznymi
+tegami). T.k. obychno spisok literatury dostatochno nebolshoy (okolo 200
+pozitsiy), to skript schitaet maloveroyatnym obnaruzhit publikatsii odnogo i togo
+zhe avtora v raznykh rabotakh na odnoy stranitse. Esli takoe proiskhodit — vyvoditsya
+uvedomlenie. Vtoraya chast skripta proveryaet, vse li ssylki, vnesennye v fayl
+bibliografii, byli ispolzovany v tekste dissertatsii.
 
-## Настройка библиографии
+## Nastroyka bibliografii
 
-### Группированные подсписки литературы (ВАК, Web of Science и т.п.)
+### Gruppirovannye podspiski literatury (VAK, Web of Science i t.p.)
 
-В некоторых советах принято литературу разбивать на подсписки: ВАК (или, например, рекомендованные для защиты в диссертационном совете МГУ по специальности), не из списка ВАК (другие) и прочее (тезисы докладов и т.п.).
+V nekotorykh sovetakh prinyato literaturu razbivat na podspiski: VAK (ili, naprimer, rekomendovannye dlya zashchity v dissertatsionnom sovete MGU po spetsialnosti), ne iz spiska VAK (drugie) i prochee (tezisy dokladov i t.p.).
 
-В любом случае разбиение подразумевает в т.ч. подзаголовки в списке литературы. Пример:
+V lyubom sluchae razbienie podrazumevaet v t.ch. podzagolovki v spiske literatury. Primer:
 
-![Пример подписка в МГУ](https://user-images.githubusercontent.com/146893/66545185-d5de5f00-eb42-11e9-8dd0-b93b681e57ab.png)
+![Primer podpiska v MGU](https://user-images.githubusercontent.com/146893/66545185-d5de5f00-eb42-11e9-8dd0-b93b681e57ab.png)
 
-См. подробные обсуждения [#361](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues/361) и [#362](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues/362).
+Sm. podrobnye obsuzhdeniya [#361](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues/361) i [#362](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues/362).
 
-#### В автореферате
-Настройка возможна в режиме biblatex (biber), но не bibtex. Для настройки подобного поведения в автореферате достаточно установить значение `bibgrouped` в `1` в файле [Synopsis/setup.tex](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/blob/master/Synopsis/setup.tex) следующим образом:
+#### V avtoreferate
+Nastroyka vozmozhna v rezhime biblatex (biber), no ne bibtex. Dlya nastroyki podobnogo povedeniya v avtoreferate dostatochno ustanovit znachenie `bibgrouped` v `1` v fayle [Synopsis/setup.tex](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/blob/master/Synopsis/setup.tex) sleduyushchim obrazom:
 
 ```tex
 \@ifundefined{c@bibgrouped}{
   \newcounter{bibgrouped}
-  \setcounter{bibgrouped}{1}  % 0 --- единый список работ автора;
-                              % 1 --- сгруппированные работы автора
+  \setcounter{bibgrouped}{1}  % 0 --- edinyy spisok rabot avtora;
+                              % 1 --- sgruppirovannye raboty avtora
 }{}
 ```
 
-#### В тексте диссертации
+#### V tekste dissertatsii
 
-По умолчанию вся цитируемая литература выводится единым списком. Вывод литературы в тексте диссертации регулируется следующими строками в файле [Dissertation/references.tex](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/blob/master/Dissertation/references.tex):
-
-```tex
-\insertbibliofull                           % Подключаем Bib-базы: все статьи единым списком
-% Режим с подсписками
-%\insertbiblioexternal                      % Подключаем Bib-базы: статьи, не являющиеся статьями автора по теме диссертации
-% Для вывода выберите и расскомментируйте одно из двух
-%\insertbiblioauthor                        % Подключаем Bib-базы: работы автора единым списком
-%\insertbiblioauthorgrouped                 % Подключаем Bib-базы: работы автора сгруппированные (ВАК, WoS, Scopus и т.д.)
-```
-
-Чтобы настроить вывод работ автора, необходимо закомментировать команду `\insertbibliofull`, раскомментировать `\insertbiblioexternal` и одну из двух команд, подключающих работы автора. Например, для вывода группированных работ автора настройка выглядит так:
+Po umolchaniyu vsya tsitiruemaya literatura vyvoditsya edinym spiskom. Vyvod literatury v tekste dissertatsii reguliruetsya sleduyushchimi strokami v fayle [Dissertation/references.tex](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/blob/master/Dissertation/references.tex):
 
 ```tex
-% \insertbibliofull                           % Подключаем Bib-базы: все статьи единым списком
-% Режим с подсписками
-\insertbiblioexternal                      % Подключаем Bib-базы: статьи, не являющиеся статьями автора по теме диссертации
-% Для вывода выберите и расскомментируйте одно из двух
-%\insertbiblioauthor                        % Подключаем Bib-базы: работы автора единым списком
-\insertbiblioauthorgrouped                 % Подключаем Bib-базы: работы автора сгруппированные (ВАК, WoS, Scopus и т.д.)
+\insertbibliofull                           % Podklyuchaem Bib-bazy: vse stati edinym spiskom
+% Rezhim s podspiskami
+%\insertbiblioexternal                      % Podklyuchaem Bib-bazy: stati, ne yavlyayushchiesya statyami avtora po teme dissertatsii
+% Dlya vyvoda vyberite i rasskommentiruyte odno iz dvukh
+%\insertbiblioauthor                        % Podklyuchaem Bib-bazy: raboty avtora edinym spiskom
+%\insertbiblioauthorgrouped                 % Podklyuchaem Bib-bazy: raboty avtora sgruppirovannye (VAK, WoS, Scopus i t.d.)
 ```
 
-#### Выбор групп для отображения
+Chtoby nastroit vyvod rabot avtora, neobkhodimo zakommentirovat komandu `\insertbibliofull`, raskommentirovat `\insertbiblioexternal` i odnu iz dvukh komand, podklyuchayushchikh raboty avtora. Naprimer, dlya vyvoda gruppirovannykh rabot avtora nastroyka vyglyadit tak:
 
-По умолчанию выводятся группы: ВАК, Web of Science, Scopus, тезисы конференций и прочие работы автора. Чтобы не выводить какую-то из указанных групп, достаточно закомментировать одну из следующих команд `\printbibliography` в файле [biblio/biblatex.tex](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/blob/master/biblio/biblatex.tex):
+```tex
+% \insertbibliofull                           % Podklyuchaem Bib-bazy: vse stati edinym spiskom
+% Rezhim s podspiskami
+\insertbiblioexternal                      % Podklyuchaem Bib-bazy: stati, ne yavlyayushchiesya statyami avtora po teme dissertatsii
+% Dlya vyvoda vyberite i rasskommentiruyte odno iz dvukh
+%\insertbiblioauthor                        % Podklyuchaem Bib-bazy: raboty avtora edinym spiskom
+\insertbiblioauthorgrouped                 % Podklyuchaem Bib-bazy: raboty avtora sgruppirovannye (VAK, WoS, Scopus i t.d.)
+```
+
+#### Vybor grupp dlya otobrazheniya
+
+Po umolchaniyu vyvodyatsya gruppy: VAK, Web of Science, Scopus, tezisy konferentsiy i prochie raboty avtora. Chtoby ne vyvodit kakuyu-to iz ukazannykh grupp, dostatochno zakommentirovat odnu iz sleduyushchikh komand `\printbibliography` v fayle [biblio/biblatex.tex](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/blob/master/biblio/biblatex.tex):
 
 ```tex
     \section*{\bibtitleauthor}
     \ifsynopsis
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=true] % Работы автора из списка ВАК (сброс нумерации)
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=true] % Raboty avtora iz spiska VAK (sbros numeratsii)
     \else
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=false] % Работы автора из списка ВАК (сквозная нумерация)
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=false] % Raboty avtora iz spiska VAK (skvoznaya numeratsiya)
     \fi
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorwos,    title=\bibtitleauthorwos,resetnumbers=false]% Работы автора, индексируемые Web of Science
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorscopus, title=\bibtitleauthorscopus,resetnumbers=false]% Работы автора, индексируемые Scopus
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorconf,   title=\bibtitleauthorconf,resetnumbers=false]% Тезисы конференций
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorother,  title=\bibtitleauthorother,resetnumbers=false]% Прочие работы автора
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorwos,    title=\bibtitleauthorwos,resetnumbers=false]% Raboty avtora, indeksiruemye Web of Science
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorscopus, title=\bibtitleauthorscopus,resetnumbers=false]% Raboty avtora, indeksiruemye Scopus
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorconf,   title=\bibtitleauthorconf,resetnumbers=false]% Tezisy konferentsiy
+    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorother,  title=\bibtitleauthorother,resetnumbers=false]% Prochie raboty avtora
 ```
 
-#### Наименование списков и подсписков литературы
+#### Naimenovanie spiskov i podspiskov literatury
 
-Может потребоваться изменить наименование списка\подсписка литературы. Например, с наименования по-умолчанию "В изданиях из списка ВАК РФ" на "Статьи в рецензируемых научных изданиях, рекомендованных для защиты в диссертационном совете МГУ по специальности". Для этого достаточно отредоактировать следующие строки в файле [common/newnames.tex](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/blob/master/common/newnames.tex):
+Mozhet potrebovatsya izmenit naimenovanie spiska\podspiska literatury. Naprimer, s naimenovaniya po-umolchaniyu "V izdaniyakh iz spiska VAK RF" na "Stati v retsenziruemykh nauchnykh izdaniyakh, rekomendovannykh dlya zashchity v dissertatsionnom sovete MGU po spetsialnosti". Dlya etogo dostatochno otredoaktirovat sleduyushchie stroki v fayle [common/newnames.tex](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/blob/master/common/newnames.tex):
 
 ```tex
-%%% Заголовки библиографии:
+%%% Zagolovki bibliografii:
 
-% для автореферата:
-\newcommand{\bibtitleauthor}{Публикации автора по теме диссертации}
+% dlya avtoreferata:
+\newcommand{\bibtitleauthor}{Publikatsii avtora po teme dissertatsii}
 
-% для стиля библиографии `\insertbiblioauthorgrouped`
-\newcommand{\bibtitleauthorvak}{В изданиях из списка ВАК РФ}
-\newcommand{\bibtitleauthorscopus}{В изданиях, входящих в международную базу цитирования Scopus}
-\newcommand{\bibtitleauthorwos}{В изданиях, входящих в международную базу цитирования Web of Science}
-\newcommand{\bibtitleauthorother}{В прочих изданиях}
-\newcommand{\bibtitleauthorconf}{В сборниках трудов конференций}
+% dlya stilya bibliografii `\insertbiblioauthorgrouped`
+\newcommand{\bibtitleauthorvak}{V izdaniyakh iz spiska VAK RF}
+\newcommand{\bibtitleauthorscopus}{V izdaniyakh, vkhodyashchikh v mezhdunarodnuyu bazu tsitirovaniya Scopus}
+\newcommand{\bibtitleauthorwos}{V izdaniyakh, vkhodyashchikh v mezhdunarodnuyu bazu tsitirovaniya Web of Science}
+\newcommand{\bibtitleauthorother}{V prochikh izdaniyakh}
+\newcommand{\bibtitleauthorconf}{V sbornikakh trudov konferentsiy}
 
-% для стиля библиографии `\insertbiblioauthorimportant`:
-\newcommand{\bibtitleauthorimportant}{Наиболее значимые \protect\MakeLowercase\bibtitleauthor}
+% dlya stilya bibliografii `\insertbiblioauthorimportant`:
+\newcommand{\bibtitleauthorimportant}{Naibolee znachimye \protect\MakeLowercase\bibtitleauthor}
 
-% для списка литературы в диссертации и списка чужих работ в автореферате:
-\newcommand{\bibtitlefull}{Список литературы} % (ГОСТ Р 7.0.11-2011, 4)
+% dlya spiska literatury v dissertatsii i spiska chuzhikh rabot v avtoreferate:
+\newcommand{\bibtitlefull}{Spisok literatury} % (GOST R 7.0.11-2011, 4)
 ```
 
-### Строгость соответствия ГОСТ
+### Strogost sootvetstviya GOST
 
-  В соответствии с пунктом 5.6.7 [ГОСТ Р 7.0.11-2011 СИБИД. Диссертация
-  и автореферат диссертации. Структура и правила
-  оформления](http://docs.cntd.ru/document/1200093432) библиографические
-  записи в списке литературы оформляют согласно [ГОСТ
-  7.1](http://docs.cntd.ru/document/1200034383). Последний предписывает
-  оформление записей в списке литературы примерно таким образом:
+  V sootvetstvii s punktom 5.6.7 [GOST R 7.0.11-2011 SIBID. Dissertatsiya
+  i avtoreferat dissertatsii. Struktura i pravila
+  oformleniya](http://docs.cntd.ru/document/1200093432) bibliograficheskie
+  zapisi v spiske literatury oformlyayut soglasno [GOST
+  7.1](http://docs.cntd.ru/document/1200034383). Posledniy predpisyvaet
+  oformlenie zapisey v spiske literatury primerno takim obrazom:
 
-  > Лермонтов, М. Ю. Собрание сочинений: в 4 т. / М. Ю. Лермонтов. –– М. : Терра-Кн. клуб, 2009. –– 4 т.
+  > Lermontov, M. Yu. Sobranie sochineniy: v 4 t. / M. Yu. Lermontov. –– M. : Terra-Kn. klub, 2009. –– 4 t.
 
-  > Фамилия, И. О. Название статьи / И. О. Фамилия, И. О. Фамилия2, И. О. Фамилия3 // Журнал. –– 2013. –– Т. 1, № 5. –– С. 100––120.
+  > Familiya, I. O. Nazvanie stati / I. O. Familiya, I. O. Familiya2, I. O. Familiya3 // Zhurnal. –– 2013. –– T. 1, № 5. –– S. 100––120.
 
-  Подобное дублирование ФИО первого автора многих неподготовленных
-  к строгости ГОСТ 7.1 читателей может сильно смутить. Кроме того, в вашем
-  диссертационном совете может быть не принято строго соответствовать ГОСТ
-  в этой части, и такой вид списка литературы может быть воспринят как
-  следствие ошибки.
+  Podobnoe dublirovanie FIO pervogo avtora mnogikh nepodgotovlennykh
+  k strogosti GOST 7.1 chitateley mozhet silno smutit. Krome togo, v vashem
+  dissertatsionnom sovete mozhet byt ne prinyato strogo sootvetstvovat GOST
+  v etoy chasti, i takoy vid spiska literatury mozhet byt vosprinyat kak
+  sledstvie oshibki.
 
-  В этом случае на свой страх и риск можно понизить строгость ГОСТ, закомментировать [следующие
-  строки](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/blob/master/biblio/biblatex.tex#L20-L22)
-  файла `biblio/biblatex.tex`:
+  V etom sluchae na svoy strakh i risk mozhno ponizit strogost GOST, zakommentirovat [sleduyushchie
+  stroki](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/blob/master/biblio/biblatex.tex#L20-L22)
+  fayla `biblio/biblatex.tex`:
 
   ```tex
   \ltx@iffilelater{biblatex-gost.def}{2017/05/03}%
@@ -188,147 +188,147 @@
   \renewcommand*{\revsdnamepunct}{\addcomma}}{}
   ```
 
-  Список литературы теперь будет выглядеть так:
+  Spisok literatury teper budet vyglyadet tak:
 
-  > Лермонтов М. Ю. Собрание сочинений: в 4 т. –– М. : Терра-Кн. клуб, 2009. –– 4 т.
+  > Lermontov M. Yu. Sobranie sochineniy: v 4 t. –– M. : Terra-Kn. klub, 2009. –– 4 t.
 
-  > Фамилия И. О., Фамилия2 И. О., Фамилия3 И. О. Название статьи // Журнал. –– 2013. –– Т. 1, № 5. –– С. 100––120.
+  > Familiya I. O., Familiya2 I. O., Familiya3 I. O. Nazvanie stati // Zhurnal. –– 2013. –– T. 1, № 5. –– S. 100––120.
 
-  Подробнее, смотрите обсуждения в [#341](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues/341), [#215](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues/215).
+  Podrobnee, smotrite obsuzhdeniya v [#341](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues/341), [#215](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues/215).
 
-## Замечания по реализациям библиографии
+## Zamechaniya po realizatsiyam bibliografii
 ### `biblatex` + `biblatex-gost` + biber
-* В версии `biblatex` 3.1 существует [баг](https://github.com/plk/biblatex/issues/355),
-поэтому её не стоит использовать.
-* Предупреждение в логе
+* V versii `biblatex` 3.1 sushchestvuet [bag](https://github.com/plk/biblatex/issues/355),
+poetomu ee ne stoit ispolzovat.
+* Preduprezhdenie v loge
 ```bash
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex) Loading 'csquotes' recommended.
 ```
-является рекомендацией автора `biblatex` и `csquotes`.
-`\usepackage{csquotes}` уберёт этот warning-recommendation,
-только смысла в этом пакете для русскоязычной диссертации нет — он для
-западноевропейских языков. Для русского языка `babel` и `polyglossia`
-(с параметром `babelshorthands`) что могут — то решают.
-* Посредством этой связки решается вопрос [подсчета авторских литературных
-источников](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues/33#issuecomment-150912772).
+yavlyaetsya rekomendatsiey avtora `biblatex` i `csquotes`.
+`\usepackage{csquotes}` uberet etot warning-recommendation,
+tolko smysla v etom pakete dlya russkoyazychnoy dissertatsii net — on dlya
+zapadnoevropeyskikh yazykov. Dlya russkogo yazyka `babel` i `polyglossia`
+(s parametrom `babelshorthands`) chto mogut — to reshayut.
+* Posredstvom etoy svyazki reshaetsya vopros [podscheta avtorskikh literaturnykh
+istochnikov](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues/33#issuecomment-150912772).
 
-### Встроенная + `gost` + bibtex
-* В bibtex отсутствует встроенная возможность создавать несколько списков
-литературы для одного документа, поэтому для автореферата придётся обходиться
-без ссылок на работы других авторов, оставляя нужный по ГОСТ список работ
-автора по теме диссертации.
-* Отечественный ГОСТ очень суров, в настоящее время ещё не создали такой
-BibTeX-стиль, который бы ему полностью соответствовал. В данном шаблоне
-используется стиль *utf8gost71u.bst*, он более или менее вменяемый и достаточно
-близок к стандарту. Впрочем, при написании диссертации редко кто требует
-точного соответствия ГОСТ-у, лишь всё было оформлено красиво и однообразно.
-Если utf8gost71u.bst вас не устраивает, то вы можете выбрать любой другой стиль
-(из папки [BibTeX-Styles](../BibTeX-Styles/) или найденный в интернете). В файле
-biblio.bib аккуратно приведена вся библиография из ГОСТ Р 7.0.11–2011 и примеры
-всех типов документов на английском, так что вы можете попробовать все
-интересующие вас стили и увидеть, как каждый из них форматирует библиографию.
-* В стилевых файлов русских ГОСТ-ов многие типы документов (например,
-*PHDTHESIS* или *TECHREPORT*) сделаны очень плохо. В большинстве случаев лучше
-их вполне можно заменить на *ARTICLE* или *BOOK*.
-* `bibtex`(`bibtex8`) некорректно работает с преобразованиями юникодных
-символов, потому сокращения до инициалов или возможности по изменению регистра
-с utf8 работать не будут. Соответствующим образом надо заполнять `*.bib`
-файл.
-* Подборка русских стилевых пакетов BibTeX под UTF-8 размещена в папке
+### Vstroennaya + `gost` + bibtex
+* V bibtex otsutstvuet vstroennaya vozmozhnost sozdavat neskolko spiskov
+literatury dlya odnogo dokumenta, poetomu dlya avtoreferata pridetsya obkhoditsya
+bez ssylok na raboty drugikh avtorov, ostavlyaya nuzhnyy po GOST spisok rabot
+avtora po teme dissertatsii.
+* Otechestvennyy GOST ochen surov, v nastoyashchee vremya eshche ne sozdali takoy
+BibTeX-stil, kotoryy by emu polnostyu sootvetstvoval. V dannom shablone
+ispolzuetsya stil *utf8gost71u.bst*, on bolee ili menee vmenyaemyy i dostatochno
+blizok k standartu. Vprochem, pri napisanii dissertatsii redko kto trebuet
+tochnogo sootvetstviya GOST-u, lish vse bylo oformleno krasivo i odnoobrazno.
+Esli utf8gost71u.bst vas ne ustraivaet, to vy mozhete vybrat lyuboy drugoy stil
+(iz papki [BibTeX-Styles](../BibTeX-Styles/) ili naydennyy v internete). V fayle
+biblio.bib akkuratno privedena vsya bibliografiya iz GOST R 7.0.11–2011 i primery
+vsekh tipov dokumentov na angliyskom, tak chto vy mozhete poprobovat vse
+interesuyushchie vas stili i uvidet, kak kazhdyy iz nikh formatiruet bibliografiyu.
+* V stilevykh faylov russkikh GOST-ov mnogie tipy dokumentov (naprimer,
+*PHDTHESIS* ili *TECHREPORT*) sdelany ochen plokho. V bolshinstve sluchaev luchshe
+ikh vpolne mozhno zamenit na *ARTICLE* ili *BOOK*.
+* `bibtex`(`bibtex8`) nekorrektno rabotaet s preobrazovaniyami yunikodnykh
+simvolov, potomu sokrashcheniya do initsialov ili vozmozhnosti po izmeneniyu registra
+s utf8 rabotat ne budut. Sootvetstvuyushchim obrazom nado zapolnyat `*.bib`
+fayl.
+* Podborka russkikh stilevykh paketov BibTeX pod UTF-8 razmeshchena v papke
 [BibTeX-Styles/](../BibTeX-Styles/).
 
 #### ugost2008mod.bst
-Доработанный шаблон `ugost2008.bst`:
-* Теперь не ругается на тип `@Mastersthesis`.
-* Теперь есть три функции (вместо одной) для выделения текста:
-авторы, журнал, том издания, которыми можно управлять. По умолчанию выделения нет.
-Пример задания выделения перед вызовом библиографии
-(авторы — курсив, журнал — жирный, том — подчеркнутый):
+Dorabotannyy shablon `ugost2008.bst`:
+* Teper ne rugaetsya na tip `@Mastersthesis`.
+* Teper est tri funktsii (vmesto odnoy) dlya vydeleniya teksta:
+avtory, zhurnal, tom izdaniya, kotorymi mozhno upravlyat. Po umolchaniyu vydeleniya net.
+Primer zadaniya vydeleniya pered vyzovom bibliografii
+(avtory — kursiv, zhurnal — zhirnyy, tom — podcherknutyy):
 ```tex
 \providecommand*{\BibEmph}[1]{\emph{#1}}
 \providecommand*{\BibEmphi}[1]{\textbf{#1}}
 \providecommand*{\BibEmphii}[1]{\underline{#1}}
 ```
-* Ссылка DOI, при наличии у любого типа записей теперь проставлена
-у первых пунктов после номера в списке литературы, а не только у названия журнала или книги.
+* Ssylka DOI, pri nalichii u lyubogo tipa zapisey teper prostavlena
+u pervykh punktov posle nomera v spiske literatury, a ne tolko u nazvaniya zhurnala ili knigi.
 
-* Если у записи есть DOI, но нет URL или eprint, то в конец записи в списке литературы пишется DOI: …
+* Esli u zapisi est DOI, no net URL ili eprint, to v konets zapisi v spiske literatury pishetsya DOI: …
 
-* Для того, чтобы убрать DOI из отображения, перед запуском библиографии пишется:
+* Dlya togo, chtoby ubrat DOI iz otobrazheniya, pered zapuskom bibliografii pishetsya:
 ```tex
 \makeatletter %http://tex.stackexchange.com/questions/40590/is-there-a-command-to-ignore-the-following-character
-\def\?#1{}        % средство удаления последующего знака
+\def\?#1{}        % sredstvo udaleniya posleduyushchego znaka
 \makeatother
-\providecommand*{\BibDOI}[1]{\?}   % Пустой DOI, съедающий следующую за собой точку
+\providecommand*{\BibDOI}[1]{\?}   % Pustoy DOI, sedayushchiy sleduyushchuyu za soboy tochku
 ```
-* Как и у базового `ugost2008.bst` можно отключить разделительное
-тире между элементами записи, записав перед вызовов библиографии:
+* Kak i u bazovogo `ugost2008.bst` mozhno otklyuchit razdelitelnoe
+tire mezhdu elementami zapisi, zapisav pered vyzovov bibliografii:
 ```tex
 \providecommand*{\BibDash}{}
 ```
-* Теперь, если авторов больше трёх, то они перемещаются правее заглавия, в область
-указания ответственности, и там сокращаются до первого «[и др.]» (согласно
-распространённой практике применения библиографических ГОСТов).
+* Teper, esli avtorov bolshe trekh, to oni peremeshchayutsya pravee zaglaviya, v oblast
+ukazaniya otvetstvennosti, i tam sokrashchayutsya do pervogo «[i dr.]» (soglasno
+rasprostranennoy praktike primeneniya bibliograficheskikh GOSTov).
 
-## Список статей в презентации
-В списке статей презентации не требуется соблюдение ГОСТ.
-Для экономии места на слайде можно убрать лишнюю информацию о статьях автора, оставив лишь самое
-необходимое.
-Для этого в файле [biblatex.tex/](../biblio/biblatex.tex)
-находится *Список лишних полей в презентации*.
-В нём можно выбрать поля, которые требуется убрать из списка статей презентации.
+## Spisok statey v prezentatsii
+V spiske statey prezentatsii ne trebuetsya soblyudenie GOST.
+Dlya ekonomii mesta na slayde mozhno ubrat lishnyuyu informatsiyu o statyakh avtora, ostaviv lish samoe
+neobkhodimoe.
+Dlya etogo v fayle [biblatex.tex/](../biblio/biblatex.tex)
+nakhoditsya *Spisok lishnikh poley v prezentatsii*.
+V nem mozhno vybrat polya, kotorye trebuetsya ubrat iz spiska statey prezentatsii.
 
-## Дополнительная информация
-Справка к пакету `biblatex-gost` рассказывает [о взаимосвязи ГОСТов на библиографию](http://mirrors.ctan.org/macros/latex/contrib/biblatex-contrib/biblatex-gost/doc/biblatex-gost.pdf).
+## Dopolnitelnaya informatsiya
+Spravka k paketu `biblatex-gost` rasskazyvaet [o vzaimosvyazi GOSTov na bibliografiyu](http://mirrors.ctan.org/macros/latex/contrib/biblatex-contrib/biblatex-gost/doc/biblatex-gost.pdf).
 
-[Цитирование в диссертации: рекомендации по оформлению](http://www.dissernet.org/instructions/instruction/citation-in-the-thesis-recommendations-on-the-formulation.htm).
+[Tsitirovanie v dissertatsii: rekomendatsii po oformleniyu](http://www.dissernet.org/instructions/instruction/citation-in-the-thesis-recommendations-on-the-formulation.htm).
 
-## В случае проблем
-Многие проблемы связаны с несоответствием выбранного движка данного шаблона
-и движка настроенного в пользовательской системе для компиляции по умолчанию.
-Движок настраивается в файлах `setup.tex` в строчке кода:
+## V sluchae problem
+Mnogie problemy svyazany s nesootvetstviem vybrannogo dvizhka dannogo shablona
+i dvizhka nastroennogo v polzovatelskoy sisteme dlya kompilyatsii po umolchaniyu.
+Dvizhok nastraivaetsya v faylakh `setup.tex` v strochke koda:
 ```tex
-\setcounter{bibliosel}{1}           % 0 --- встроенная реализация с загрузкой файла через движок bibtex8; 1 --- реализация пакетом biblatex через движок biber
+\setcounter{bibliosel}{1}           % 0 --- vstroennaya realizatsiya s zagruzkoy fayla cherez dvizhok bibtex8; 1 --- realizatsiya paketom biblatex cherez dvizhok biber
 ```
 
-В случае проблем компиляции встроенной библиографии на движке
-`bibtex`, попробуйте настроить в среде компиляции запуск `bibtex8`:
+V sluchae problem kompilyatsii vstroennoy bibliografii na dvizhke
+`bibtex`, poprobuyte nastroit v srede kompilyatsii zapusk `bibtex8`:
 ```bat
 bibtex8.exe -B -c utf8cyrillic.csf %
 ```
-где `%` — имя файла без расширения, или
+gde `%` — imya fayla bez rasshireniya, ili
 
 ```bat
 bibtex8.exe -B -c utf8cyrillic.csf dissertation.aux
 ```
 
-Если выводится в ошибка
+Esli vyvoditsya v oshibka
 ```bash
 I found no \citation commands---while reading file dissertation.aux
 ```
-то, например под windows/texlive 2015/texstudio «лечится» изменением в
-`Параметры`-`Конфигурация TeXStudio`-`Построение` настройки `Библиография по умолчанию`
-на `Biber` (стоит часто `BibTeX`, и не работает, если в файлах `setup.tex`
-настроено `\setcounter{bibliosel}{1}`). Если используется WinEdt и MikTEX: `Options`-`Execution Modes`- вкладка `Console Applications`- в списке слева пункт `BibTEX`. Параметр Executable меняем с `bibtex.exe` на `biber.exe`.
+to, naprimer pod windows/texlive 2015/texstudio «lechitsya» izmeneniem v
+`Parametry`-`Konfiguratsiya TeXStudio`-`Postroenie` nastroyki `Bibliografiya po umolchaniyu`
+na `Biber` (stoit chasto `BibTeX`, i ne rabotaet, esli v faylakh `setup.tex`
+nastroeno `\setcounter{bibliosel}{1}`). Esli ispolzuetsya WinEdt i MikTEX: `Options`-`Execution Modes`- vkladka `Console Applications`- v spiske sleva punkt `BibTEX`. Parametr Executable menyaem s `bibtex.exe` na `biber.exe`.
 
-Если нумерация списка литературы начинается с неправильного номера, то
-возможной причиной является старые версии используемых пакетов `biblatex` и
-`biber`. Решается обновлением пакетов, обновлением всей установки TeX, или
-можно в файле [biblatex.tex](../biblio/biblatex.tex) выставить в `false` или
-закомментировать опцию пакета `biblatex`:
+Esli numeratsiya spiska literatury nachinaetsya s nepravilnogo nomera, to
+vozmozhnoy prichinoy yavlyaetsya starye versii ispolzuemykh paketov `biblatex` i
+`biber`. Reshaetsya obnovleniem paketov, obnovleniem vsey ustanovki TeX, ili
+mozhno v fayle [biblatex.tex](../biblio/biblatex.tex) vystavit v `false` ili
+zakommentirovat optsiyu paketa `biblatex`:
 ```tex
 defernumbers=true,
 ```
-рискуя при этом получить иные проблемы с нумерацией списка литературы.
+riskuya pri etom poluchit inye problemy s numeratsiey spiska literatury.
 
-## Режим черновика
+## Rezhim chernovika
 
-При сборке в режиме черновика нумерация работ может быть неверной (для ускорения сборки).
-Для правильной сортировки работ требуется:
+Pri sborke v rezhime chernovika numeratsiya rabot mozhet byt nevernoy (dlya uskoreniya sborki).
+Dlya pravilnoy sortirovki rabot trebuetsya:
 
-* откомментировать строку `defernumbers=true,` в файле
+* otkommentirovat stroku `defernumbers=true,` v fayle
 [biblio/biblatex.tex](../biblio/biblatex.tex),
-* в файле [common/characteristic.tex](../common/characteristic.tex) вынести строку
+* v fayle [common/characteristic.tex](../common/characteristic.tex) vynesti stroku
   `\printbibliography[heading=nobibheading,section=0,env=countexternal,keyword=biblioexternal]`
-  за пределы условного оператора.
+  za predely uslovnogo operatora.

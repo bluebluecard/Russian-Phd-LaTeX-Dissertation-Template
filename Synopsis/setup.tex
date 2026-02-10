@@ -1,96 +1,96 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Файл упрощённых настроек шаблона автореферата %%%%
+%%%% Fayl uproshchennykh nastroek shablona avtoreferata %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% Инициализирование переменных, не трогать!  %%%
+%%% Initsializirovanie peremennykh, ne trogat!  %%%
 \newcounter{showperssign}
 \newcounter{showsecrsign}
 \newcounter{showopplead}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% Список публикаций %%%
+%%% Spisok publikatsiy %%%
 \makeatletter
 \@ifundefined{c@usefootcite}{
   \newcounter{usefootcite}
-  \setcounter{usefootcite}{0} % 0 --- два (или более) списка литературы;
-                              % 1 --- список публикаций автора + цитирование
-                              %       других работ в сносках
+  \setcounter{usefootcite}{0} % 0 --- dva (ili bolee) spiska literatury;
+                              % 1 --- spisok publikatsiy avtora + tsitirovanie
+                              %       drugikh rabot v snoskakh
 }{}
 \makeatother
 
 \makeatletter
 \@ifundefined{c@bibgrouped}{
   \newcounter{bibgrouped}
-  \setcounter{bibgrouped}{0}  % 0 --- единый список работ автора;
-                              % 1 --- сгруппированные работы автора
+  \setcounter{bibgrouped}{0}  % 0 --- edinyy spisok rabot avtora;
+                              % 1 --- sgruppirovannye raboty avtora
 }{}
 \makeatother
 
-%%% Область упрощённого управления оформлением %%%
+%%% Oblast uproshchennogo upravleniya oformleniem %%%
 
-%% Управление зазором между подрисуночной подписью и основным текстом %%
+%% Upravlenie zazorom mezhdu podrisunochnoy podpisyu i osnovnym tekstom %%
 \setlength{\belowcaptionskip}{10pt plus 20pt minus 2pt}
 
 
-%% Подпись таблиц %%
+%% Podpis tablits %%
 
-% смещение строк подписи после первой
+% smeshchenie strok podpisi posle pervoy
 \newcommand{\tabindent}{0cm}
 
-% тип форматирования таблицы
-% plain --- название и текст в одной строке
-% split --- название и текст в разных строках
+% tip formatirovaniya tablitsy
+% plain --- nazvanie i tekst v odnoy stroke
+% split --- nazvanie i tekst v raznykh strokakh
 \newcommand{\tabformat}{plain}
 
-%%% настройки форматирования таблицы `plain'
+%%% nastroyki formatirovaniya tablitsy `plain'
 
-% выравнивание по центру подписи, состоящей из одной строки
-% true  --- выравнивать
-% false --- не выравнивать
+% vyravnivanie po tsentru podpisi, sostoyashchey iz odnoy stroki
+% true  --- vyravnivat
+% false --- ne vyravnivat
 \newcommand{\tabsinglecenter}{false}
 
-% выравнивание подписи таблиц
-% justified   --- выравнивать как обычный текст
-% centering   --- выравнивать по центру
-% centerlast  --- выравнивать по центру только последнюю строку
-% centerfirst --- выравнивать по центру только первую строку
-% raggedleft  --- выравнивать по правому краю
-% raggedright --- выравнивать по левому краю
+% vyravnivanie podpisi tablits
+% justified   --- vyravnivat kak obychnyy tekst
+% centering   --- vyravnivat po tsentru
+% centerlast  --- vyravnivat po tsentru tolko poslednyuyu stroku
+% centerfirst --- vyravnivat po tsentru tolko pervuyu stroku
+% raggedleft  --- vyravnivat po pravomu krayu
+% raggedright --- vyravnivat po levomu krayu
 \newcommand{\tabjust}{justified}
 
-% Разделитель записи «Таблица #» и названия таблицы
+% Razdelitel zapisi «Tablitsa #» i nazvaniya tablitsy
 \newcommand{\tablabelsep}{~\cyrdash\ }
 
-%%% настройки форматирования таблицы `split'
+%%% nastroyki formatirovaniya tablitsy `split'
 
-% положение названия таблицы
-% \centering   --- выравнивать по центру
-% \raggedleft  --- выравнивать по правому краю
-% \raggedright --- выравнивать по левому краю
+% polozhenie nazvaniya tablitsy
+% \centering   --- vyravnivat po tsentru
+% \raggedleft  --- vyravnivat po pravomu krayu
+% \raggedright --- vyravnivat po levomu krayu
 \newcommand{\splitformatlabel}{\raggedleft}
 
-% положение текста подписи
-% \centering   --- выравнивать по центру
-% \raggedleft  --- выравнивать по правому краю
-% \raggedright --- выравнивать по левому краю
+% polozhenie teksta podpisi
+% \centering   --- vyravnivat po tsentru
+% \raggedleft  --- vyravnivat po pravomu krayu
+% \raggedright --- vyravnivat po levomu krayu
 \newcommand{\splitformattext}{\raggedright}
 
-%% Подпись рисунков %%
-%Разделитель записи «Рисунок #» и названия рисунка
-\newcommand{\figlabelsep}{~\cyrdash\ }  % (ГОСТ 2.105, 4.3.1)
-                                        % "--- здесь не работает
+%% Podpis risunkov %%
+%Razdelitel zapisi «Risunok #» i nazvaniya risunka
+\newcommand{\figlabelsep}{~\cyrdash\ }  % (GOST 2.105, 4.3.1)
+                                        % "--- zdes ne rabotaet
 
-%Демонстрация подписи диссертанта на автореферате
-\setcounter{showperssign}{1}  % 0 --- не показывать;
-                              % 1 --- показывать
-%Демонстрация подписи учёного секретаря на автореферате
-\setcounter{showsecrsign}{1}  % 0 --- не показывать;
-                              % 1 --- показывать
-%Демонстрация информации об оппонентах и ведущей организации на автореферате
-\setcounter{showopplead}{1}   % 0 --- не показывать;
-                              % 1 --- показывать
+%Demonstratsiya podpisi dissertanta na avtoreferate
+\setcounter{showperssign}{1}  % 0 --- ne pokazyvat;
+                              % 1 --- pokazyvat
+%Demonstratsiya podpisi uchenogo sekretarya na avtoreferate
+\setcounter{showsecrsign}{1}  % 0 --- ne pokazyvat;
+                              % 1 --- pokazyvat
+%Demonstratsiya informatsii ob opponentakh i vedushchey organizatsii na avtoreferate
+\setcounter{showopplead}{1}   % 0 --- ne pokazyvat;
+                              % 1 --- pokazyvat
 
-%%% Цвета гиперссылок %%%
+%%% Tsveta giperssylok %%%
 % Latex color definitions: http://latexcolor.com/
 \definecolor{linkcolor}{rgb}{0.9,0,0}
 \definecolor{citecolor}{rgb}{0,0.6,0}

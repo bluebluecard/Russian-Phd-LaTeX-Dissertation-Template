@@ -1,11 +1,11 @@
-# Данный файл будет добавлен к рабочему Makefile,
-# если операционная система определится как Windows
+# This file is appended to the main Makefile,
+# if the operating system is detected as Windows
 
-### Пользовательские настройки
+### User settings
 
-FONTFAMILY ?= 1 # Используются шрифты семейства MS
+FONTFAMILY ?= 1 # MS font family is used
 
-### Пользовательские правила
+### User rules
 
 INDENT_SETTINGS ?= indent.yaml
 ifeq ($(INDENT_FILES),)
@@ -13,13 +13,13 @@ INDENT_FILES += $(wildcard Dissertation/part*.tex)
 INDENT_FILES += Synopsis/content.tex
 INDENT_FILES += Presentation/content.tex
 endif
-##! форматирование файлов *.tex
+##! format *.tex files
 indent:
 	@$(foreach file, $(INDENT_FILES),\
 	latexindent -l=$(INDENT_SETTINGS) -s -w $(file) &&)\
 	echo "done"
 
-##! форматирование файлов *.tex с разбиением длинных строк
+##! format *.tex files with wrapped long lines
 indent-wrap: INDENT_SETTINGS+=-m
 indent-wrap: indent
 

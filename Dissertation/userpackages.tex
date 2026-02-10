@@ -1,19 +1,19 @@
-% Листинги с исходным кодом программ
+% Listingi s iskhodnym kodom programm
 \usepackage{fancyvrb}
 \usepackage{listings}
-\lccode`\~=0\relax %Без этого хака из-за особенностей пакета listings перестают работать конструкции с \MakeLowercase и т. п. в (xe|lua)latex
+\lccode`\~=0\relax %Bez etogo khaka iz-za osobennostey paketa listings perestayut rabotat konstruktsii s \MakeLowercase i t. p. v (xe|lua)latex
 
-% Русская традиция начертания греческих букв
-\usepackage{upgreek} % прямые греческие ради русской традиции
+% Russkaya traditsiya nachertaniya grecheskikh bukv
+\usepackage{upgreek} % pryamye grecheskie radi russkoy traditsii
 
-%%% Микротипографика
-%\ifnumequal{\value{draft}}{0}{% Только если у нас режим чистовика
-%    \usepackage[final, babel, shrink=45]{microtype}[2016/05/14] % улучшает представление букв и слов в строках, может помочь при наличии отдельно висящих слов
+%%% Mikrotipografika
+%\ifnumequal{\value{draft}}{0}{% Tolko esli u nas rezhim chistovika
+%    \usepackage[final, babel, shrink=45]{microtype}[2016/05/14] % uluchshaet predstavlenie bukv i slov v strokakh, mozhet pomoch pri nalichii otdelno visyashchikh slov
 %}{}
 
-% Отметка о версии черновика на каждой странице
-% Чтобы работало надо в своей локальной копии по инструкции
-% https://www.ctan.org/pkg/gitinfo2 создать небходимые файлы в папке
+% Otmetka o versii chernovika na kazhdoy stranitse
+% Chtoby rabotalo nado v svoey lokalnoy kopii po instruktsii
+% https://www.ctan.org/pkg/gitinfo2 sozdat nebkhodimye fayly v papke
 % ./git/hooks
 % If you’re familiar with tweaking git, you can probably work it out for
 % yourself. If not, I suggest you follow these steps:
@@ -34,7 +34,7 @@
 % calling them post-commit and post-merge, and you’re done. As before,
 % users of unix-like systems should ensure these files are marked as
 % executable.
-\ifnumequal{\value{draft}}{1}{% Черновик
+\ifnumequal{\value{draft}}{1}{% Chernovik
    \IfFileExists{.git/gitHeadInfo.gin}{
       \usepackage[mark,pcount]{gitinfo2}
       \renewcommand{\gitMark}{rev.\gitAbbrevHash\quad\gitCommitterEmail\quad\gitAuthorIsoDate}

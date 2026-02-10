@@ -1,5 +1,5 @@
-### Пользовательские настройки
-# Откомментируйте настройки, чтобы использовать их по умолчанию
+### Polzovatelskie nastroyki
+# Otkommentiruyte nastroyki, chtoby ispolzovat ikh po umolchaniyu
 
 # MKRC ?= latexmkrc # config file
 # SOURCE ?= dissertation # source .tex file
@@ -28,9 +28,9 @@
 # TIMERON ?= # show CPU usage
 # TIKZFILE ?= # .tikz file for tikz rule
 
-### Пользовательские правила
+### Polzovatelskie pravila
 
-### Откоментируйте и измените эти строки, чтобы задать файлы для форматирования
+### Otkomentiruyte i izmenite eti stroki, chtoby zadat fayly dlya formatirovaniya
 # INDENT_FILES += $(wildcard Dissertation/part1/*.tex)
 # INDENT_FILES += $(wildcard Dissertation/part2/*.tex)
 # INDENT_FILES += $(wildcard Dissertation/part3/*.tex)

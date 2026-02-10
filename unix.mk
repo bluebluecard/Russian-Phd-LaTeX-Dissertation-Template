@@ -1,11 +1,11 @@
-# Данный файл будет добавлен к рабочему Makefile,
-# если операционная система определится как система семейства UNIX
+# This file is appended to the main Makefile,
+# if the operating system is detected as UNIX-like
 
-### Пользовательские настройки
+### User settings
 
-FONTFAMILY ?= 2 # Используются шрифты семейства Liberation
+FONTFAMILY ?= 2 # Liberation font family is used
 
-### Пользовательские правила
+### User rules
 
 INDENT_SETTINGS ?= indent.yaml
 ifeq ($(INDENT_FILES),)
@@ -13,16 +13,16 @@ INDENT_FILES += $(wildcard Dissertation/part*.tex)
 INDENT_FILES += Synopsis/content.tex
 INDENT_FILES += Presentation/content.tex
 endif
-##! форматирование файлов *.tex
+##! format *.tex files
 indent:
 	@$(foreach file, $(INDENT_FILES),\
 	latexindent -l=$(INDENT_SETTINGS) -s -w $(file);)
 
-##! форматирование файлов *.tex с разбиением длинных строк
+##! format *.tex files with wrapped long lines
 indent-wrap: INDENT_SETTINGS+=-m
 indent-wrap: indent
 
-##! предкомпиляция диссертации и автореферата
+##! precompile dissertation, synopsis, and presentation
 preformat: synopsis-preformat dissertation-preformat \
 presentation-preformat
 
@@ -31,20 +31,20 @@ presentation-preformat
 	-shell-escape -jobname=$(TARGET) \
 	"&latex" mylatexformat.ltx """$^"""
 
-##! предкомпиляция диссертации
+##! precompile dissertation
 dissertation-preformat: TARGET=dissertation
 dissertation-preformat: dissertation.fmt dissertation
 
-##! предкомпиляция автореферата
+##! precompile synopsis
 synopsis-preformat: TARGET=synopsis
 synopsis-preformat: synopsis.fmt synopsis
 
-##! предкомпиляция презентации
+##! precompile presentation
 presentation-preformat: TARGET=presentation
 presentation-preformat: presentation.fmt presentation
 
 # https://gist.github.com/klmr/575726c7e05d8780505a
-##! это сообщение
+##! show this message
 help:
 	@echo "$$(tput bold)Available rules:$$(tput sgr0)"
 	@echo

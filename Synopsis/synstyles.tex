@@ -1,47 +1,47 @@
-%%% Изображения %%%
-\graphicspath{{images/}{Synopsis/images/}}         % Пути к изображениям
+%%% Izobrazheniya %%%
+\graphicspath{{images/}{Synopsis/images/}}         % Puti k izobrazheniyam
 
-%%% Макет страницы %%%
+%%% Maket stranitsy %%%
 \geometry{a5paper, top=14mm, bottom=14mm, inner=18mm, outer=10mm, footskip=5mm, nomarginpar}%, showframe
-\setlength{\topskip}{0pt}   %размер дополнительного верхнего поля
+\setlength{\topskip}{0pt}   %razmer dopolnitelnogo verkhnego polya
 
-%%% Интервалы %%%
-%% Реализация средствами класса (на основе setspace) ближе к типографской классике.
-%% И правит сразу и в таблицах (если со звёздочкой)
-%\DoubleSpacing*     % Двойной интервал
-%\OnehalfSpacing*    % Полуторный интервал
-\SingleSpacing      % Одинарный интервал
-%\setSpacing{1.42}   % Полуторный интервал, подобный Ворду (возможно, стоит включать вместе с предыдущей строкой)
+%%% Intervaly %%%
+%% Realizatsiya sredstvami klassa (na osnove setspace) blizhe k tipografskoy klassike.
+%% I pravit srazu i v tablitsakh (esli so zvezdochkoy)
+%\DoubleSpacing*     % Dvoynoy interval
+%\OnehalfSpacing*    % Polutornyy interval
+\SingleSpacing      % Odinarnyy interval
+%\setSpacing{1.42}   % Polutornyy interval, podobnyy Vordu (vozmozhno, stoit vklyuchat vmeste s predydushchey strokoy)
 
-%%% Выравнивание и переносы %%%
+%%% Vyravnivanie i perenosy %%%
 %% http://tex.stackexchange.com/questions/241343/what-is-the-meaning-of-fussy-sloppy-emergencystretch-tolerance-hbadness
 %% http://www.latex-community.org/forum/viewtopic.php?p=70342#p70342
 \tolerance 1414
 \hbadness 1414
-\emergencystretch 1.5em % В случае проблем регулировать в первую очередь
+\emergencystretch 1.5em % V sluchae problem regulirovat v pervuyu ochered
 \hfuzz 0.3pt
 \vfuzz \hfuzz
 %\raggedbottom
-%\sloppy                 % Избавляемся от переполнений
-\clubpenalty=10000      % Запрещаем разрыв страницы после первой строки абзаца
-\widowpenalty=10000     % Запрещаем разрыв страницы после последней строки абзаца
+%\sloppy                 % Izbavlyaemsya ot perepolneniy
+\clubpenalty=10000      % Zapreshchaem razryv stranitsy posle pervoy stroki abzatsa
+\widowpenalty=10000     % Zapreshchaem razryv stranitsy posle posledney stroki abzatsa
 
-%%% Колонтитулы %%%
+%%% Kolontituly %%%
 \makeevenhead{plain}{}{}{}
 \makeoddhead{plain}{}{}{}
 \makeevenfoot{plain}{}{\thepage}{}
 \makeoddfoot{plain}{}{\thepage}{}
 \pagestyle{plain}
 
-%%% Размеры заголовков %%%
+%%% Razmery zagolovkov %%%
 \setsecheadstyle{\normalfont\large\bfseries}
 \renewcommand*{\chaptitlefont}{\normalfont\large\bfseries}
 
-%%% Подписи %%%
+%%% Podpisi %%%
 \setfloatadjustment{table}{%
-    \setlength{\abovecaptionskip}{0pt}   % Отбивка над подписью
-    \setlength{\belowcaptionskip}{0pt}   % Отбивка под подписью
+    \setlength{\abovecaptionskip}{0pt}   % Otbivka nad podpisyu
+    \setlength{\belowcaptionskip}{0pt}   % Otbivka pod podpisyu
 }
 
-%%% Отступы у плавающих блоков %%%
+%%% Otstupy u plavayushchikh blokov %%%
 \setlength\textfloatsep{1ex}

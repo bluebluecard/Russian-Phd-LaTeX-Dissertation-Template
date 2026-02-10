@@ -1,173 +1,173 @@
-# Установка и сборка
+# Ustanovka i sborka
 
-* [Быстрый старт](#Быстрый-старт)
-* [Компиляция черновика](#Компиляция-черновика)
-* [Простые ошибки](#Простые-ошибки)
-* Установка
-  * [В Ubuntu с TexLive внутри контейнера DockerTex](#В-ubuntu-с-texlive-внутри-контейнера-dockertex)
-  * [В Ubuntu](#В-ubuntu)
-  * [В Debian](#В-debian)
-  * [В Fedora](#В-fedora)
-  * [В Gentoo](#В-gentoo)
-  * [TeXLive на Linux в обход привязанных к конкретному линуксу пакетам](#texlive-на-linux-в-обход-привязанных-к-конкретному-линуксу-пакетам)
-  * [В MacOS 10.10 и выше](#В-MacOS-1010-и-выше)
-  * [Установка шрифтов PSCyr](#Установка-шрифтов-pscyr)
-    * [Рабочий способ установки в Ubuntu 15.10](#Рабочий-способ-установки-в-ubuntu-1510)
-    * [Установка в MacOS 10.x](#Установка-в-macos-10x)
-    * [Рабочий способ установки в Debian 9](#Рабочий-способ-установки-в-debian-9)
-* [Сборка PDF из командной строки](#Сборка-pdf-из-командной-строки)
-* Разное
-  * [Пакеты и версии LaTeX](#Пакеты-и-версии-latex)
-  * [Редактирование текста](#Редактирование-текста)
-  * [Форматирование исходного кода](#Форматирование-исходного-кода)
-  * [Сжатие файлов](#Сжатие-файлов)
-  * [Пересборка pdf для типографии](#Пересборка-pdf-для-типографии)
-  * [Отчёт о времени сборки](#Отчёт-о-времени-сборки)
-  * [Сборка графики `.tikz`](#Сборка-графики-tikz)
+* [Bystryy start](#Bystryy-start)
+* [Kompilyatsiya chernovika](#Kompilyatsiya-chernovika)
+* [Prostye oshibki](#Prostye-oshibki)
+* Ustanovka
+  * [V Ubuntu s TexLive vnutri konteynera DockerTex](#V-ubuntu-s-texlive-vnutri-konteynera-dockertex)
+  * [V Ubuntu](#V-ubuntu)
+  * [V Debian](#V-debian)
+  * [V Fedora](#V-fedora)
+  * [V Gentoo](#V-gentoo)
+  * [TeXLive na Linux v obkhod privyazannykh k konkretnomu linuksu paketam](#texlive-na-linux-v-obkhod-privyazannykh-k-konkretnomu-linuksu-paketam)
+  * [V MacOS 10.10 i vyshe](#V-MacOS-1010-i-vyshe)
+  * [Ustanovka shriftov PSCyr](#Ustanovka-shriftov-pscyr)
+    * [Rabochiy sposob ustanovki v Ubuntu 15.10](#Rabochiy-sposob-ustanovki-v-ubuntu-1510)
+    * [Ustanovka v MacOS 10.x](#Ustanovka-v-macos-10x)
+    * [Rabochiy sposob ustanovki v Debian 9](#Rabochiy-sposob-ustanovki-v-debian-9)
+* [Sborka PDF iz komandnoy stroki](#Sborka-pdf-iz-komandnoy-stroki)
+* Raznoe
+  * [Pakety i versii LaTeX](#Pakety-i-versii-latex)
+  * [Redaktirovanie teksta](#Redaktirovanie-teksta)
+  * [Formatirovanie iskhodnogo koda](#Formatirovanie-iskhodnogo-koda)
+  * [Szhatie faylov](#Szhatie-faylov)
+  * [Peresborka pdf dlya tipografii](#Peresborka-pdf-dlya-tipografii)
+  * [Otchet o vremeni sborki](#Otchet-o-vremeni-sborki)
+  * [Sborka grafiki `.tikz`](#Sborka-grafiki-tikz)
 
-## Быстрый старт
-1. Скачать шаблон в архиве или клонировать этот репозиторий.
-2. Установить в вашей среде компиляции (например, в редакторе TeXStudio) движок
-библиографии `Biber`.
-3. Скомпилировать `dissertation.tex` для получения диссертации и `synopsis.tex`
-для получения автореферата.
-4. Убедиться, что всё успешно компилируется на вашем компьютере (`Warning` в
-`*.log` файле компиляции допустимы).
-5. Если что-то не устраивает в оформлении — проверьте закомментированые
-возможности в файлах шаблона, много тонкостей в ГОСТ не определены. Например, в
-файле `biblatex.tex` можно отключить отображение в списке литературы полей DOI
-и ISBN, а в `styles.tex` строчкой `\linespread{1.42}` можно сделать полуторный
-интервал между строчками «как в Ворде» (несколько шире, чем общепринятый
-«типографский», поэтому на страницу влезет меньше текста).
+## Bystryy start
+1. Skachat shablon v arkhive ili klonirovat etot repozitoriy.
+2. Ustanovit v vashey srede kompilyatsii (naprimer, v redaktore TeXStudio) dvizhok
+bibliografii `Biber`.
+3. Skompilirovat `dissertation.tex` dlya polucheniya dissertatsii i `synopsis.tex`
+dlya polucheniya avtoreferata.
+4. Ubeditsya, chto vse uspeshno kompiliruetsya na vashem kompyutere (`Warning` v
+`*.log` fayle kompilyatsii dopustimy).
+5. Esli chto-to ne ustraivaet v oformlenii — proverte zakommentirovanye
+vozmozhnosti v faylakh shablona, mnogo tonkostey v GOST ne opredeleny. Naprimer, v
+fayle `biblatex.tex` mozhno otklyuchit otobrazhenie v spiske literatury poley DOI
+i ISBN, a v `styles.tex` strochkoy `\linespread{1.42}` mozhno sdelat polutornyy
+interval mezhdu strochkami «kak v Vorde» (neskolko shire, chem obshcheprinyatyy
+«tipografskiy», poetomu na stranitsu vlezet menshe teksta).
 
-## Компиляция черновика
+## Kompilyatsiya chernovika
 
-Для включения режима черновика можно выполнить любое из следующих действий:
+Dlya vklyucheniya rezhima chernovika mozhno vypolnit lyuboe iz sleduyushchikh deystviy:
 
-- в файле `usercfg.mk` добавить строчку `DRAFTON ?= 1`
-- в файле `setup.tex` поменять значение параметра `draft` на 1
-- запустить команду `make draft` или `make DRAFTON=1`
+- v fayle `usercfg.mk` dobavit strochku `DRAFTON ?= 1`
+- v fayle `setup.tex` pomenyat znachenie parametra `draft` na 1
+- zapustit komandu `make draft` ili `make DRAFTON=1`
 
-При этом шаблон будет собираться с некими
-отклонениями от ГОСТ, но в несколько раз быстрее (в основном отличия касаются
-оформления списка литературы). Этот режим удобен при промежуточных сборках,
-например, во время набора формул. **Обратите внимание**: нумерация работ в списке
-литературы при использовании режима черновика может быть неверной.
-Кроме того, при использовании `biblatex` в режиме черновика не ведётся подсчёт количества пунктов в списке литературы.
+Pri etom shablon budet sobiratsya s nekimi
+otkloneniyami ot GOST, no v neskolko raz bystree (v osnovnom otlichiya kasayutsya
+oformleniya spiska literatury). Etot rezhim udoben pri promezhutochnykh sborkakh,
+naprimer, vo vremya nabora formul. **Obratite vnimanie**: numeratsiya rabot v spiske
+literatury pri ispolzovanii rezhima chernovika mozhet byt nevernoy.
+Krome togo, pri ispolzovanii `biblatex` v rezhime chernovika ne vedetsya podschet kolichestva punktov v spiske literatury.
 
-Пользователи Linux могут применять команды
-`make dissertation-preformat` и `make synopsis-preformat`, чтобы использовать предварительное
-форматирование преамбулы диссертации и автореферата (может потребоваться установка пакета
+Polzovateli Linux mogut primenyat komandy
+`make dissertation-preformat` i `make synopsis-preformat`, chtoby ispolzovat predvaritelnoe
+formatirovanie preambuly dissertatsii i avtoreferata (mozhet potrebovatsya ustanovka paketa
 [`texlive-mylatexformat`](https://ctan.org/pkg/mylatexformat)).
-Это позволяет ускорить сборку ещё приблизительно в 1.5 раза (на повторную сборку
-черновика диссертации на компьютере с процессором Intel i5 требуется около двух
-секунд).
+Eto pozvolyaet uskorit sborku eshche priblizitelno v 1.5 raza (na povtornuyu sborku
+chernovika dissertatsii na kompyutere s protsessorom Intel i5 trebuetsya okolo dvukh
+sekund).
 
-## Простые ошибки
+## Prostye oshibki
 
-Если не собирается библиография, ссылки на литературу отображаются вопросами
-или жирными названиями:
+Esli ne sobiraetsya bibliografiya, ssylki na literaturu otobrazhayutsya voprosami
+ili zhirnymi nazvaniyami:
 
-1. Попробовать поменять параметр `bibliosel` в соответствующем файле
-`setup.tex`, подробнее читать [«в случае проблем с
-библиографией»](Bibliography.md#В-случае-проблем).
-2. Очистить папки проекта от прошлых временных файлов (`*.aux`, `*.toc`,
-`*.bbl`, `*.bcf`, `*.synctex.gz` и прочие подобные).
-3. Убедиться, что в вашей среде компиляции (например, в редакторе TeXStudio)
-правильно выбран движок библиографии (в соответствии с параметром `bibliosel` в
-каждом из файлов `setup.tex`).
-4. Провести несколько компиляций проекта.
-5. Если ничего из предыдущих пунктов не помогло, запустить `latexmk` на главном
-файле автореферата или диссертации, или выполнить [соответствующий
-`make`](#Сборка-pdf-из-командной-строки).
+1. Poprobovat pomenyat parametr `bibliosel` v sootvetstvuyushchem fayle
+`setup.tex`, podrobnee chitat [«v sluchae problem s
+bibliografiey»](Bibliography.md#V-sluchae-problem).
+2. Ochistit papki proekta ot proshlykh vremennykh faylov (`*.aux`, `*.toc`,
+`*.bbl`, `*.bcf`, `*.synctex.gz` i prochie podobnye).
+3. Ubeditsya, chto v vashey srede kompilyatsii (naprimer, v redaktore TeXStudio)
+pravilno vybran dvizhok bibliografii (v sootvetstvii s parametrom `bibliosel` v
+kazhdom iz faylov `setup.tex`).
+4. Provesti neskolko kompilyatsiy proekta.
+5. Esli nichego iz predydushchikh punktov ne pomoglo, zapustit `latexmk` na glavnom
+fayle avtoreferata ili dissertatsii, ili vypolnit [sootvetstvuyushchiy
+`make`](#Sborka-pdf-iz-komandnoy-stroki).
 
-Если компилируется с ошибками, то изучение соответствующего `*.log` файла может
-помочь определить причину (как правило, ошибки вызваны отсутствием необходимых
-пакетов или их версий). Часто первая ошибка в `*.log` файле является
-первопричиной остальных.
+Esli kompiliruetsya s oshibkami, to izuchenie sootvetstvuyushchego `*.log` fayla mozhet
+pomoch opredelit prichinu (kak pravilo, oshibki vyzvany otsutstviem neobkhodimykh
+paketov ili ikh versiy). Chasto pervaya oshibka v `*.log` fayle yavlyaetsya
+pervoprichinoy ostalnykh.
 
-## Установка
+## Ustanovka
 
-### В Ubuntu с TexLive внутри контейнера DockerTex
+### V Ubuntu s TexLive vnutri konteynera DockerTex
 
-> Протестировано в Ubuntu 16.04 LTS и Ubuntu 18.04 LTS
+> Protestirovano v Ubuntu 16.04 LTS i Ubuntu 18.04 LTS
 
-Для обеспечения максимальной воспроизводимости сборки проекта рекомендуется использовать специализиарованный Docker-контейнер от проекта [dockertex](https://gitlab.com/raabf/dockertex), базирующийся на Debian Buster 10 и TexLive 2018, с минимальной модификацией (добавлением пакета шрифтов от Microsoft - `ttf-mscorefonts-installer` и набора шрифтов Liberation в виде пакета `fonts-liberation`). Образ контейнера объемом около 2.5 Гб будет загружен из сети, при этом с учетом этапа распаковки в системе потребуется около 8 Гб свободного места в каталоге `/var`.
+Dlya obespecheniya maksimalnoy vosproizvodimosti sborki proekta rekomenduetsya ispolzovat spetsializiarovannyy Docker-konteyner ot proekta [dockertex](https://gitlab.com/raabf/dockertex), baziruyushchiysya na Debian Buster 10 i TexLive 2018, s minimalnoy modifikatsiey (dobavleniem paketa shriftov ot Microsoft - `ttf-mscorefonts-installer` i nabora shriftov Liberation v vide paketa `fonts-liberation`). Obraz konteynera obemom okolo 2.5 Gb budet zagruzhen iz seti, pri etom s uchetom etapa raspakovki v sisteme potrebuetsya okolo 8 Gb svobodnogo mesta v kataloge `/var`.
 
-Установка контейнера в вашу систему выполняется путем запуска соответствующего скрипта, находящегося в корне этого шаблона:
+Ustanovka konteynera v vashu sistemu vypolnyaetsya putem zapuska sootvetstvuyushchego skripta, nakhodyashchegosya v korne etogo shablona:
 
 ```bash
 sh install-dockertex.sh
 ```
 
-Далее необходимо выйти из системы и зайти снова (либо перезагрузиться).
+Dalee neobkhodimo vyyti iz sistemy i zayti snova (libo perezagruzitsya).
 
-После этого станут доступны две новых команды - `dockertex` и `dockertexstudio`.
-Для TexStudio будет создан ярлык с названием *Docker TexStudio (texlive2018)* в категории *Office*.
+Posle etogo stanut dostupny dve novykh komandy - `dockertex` i `dockertexstudio`.
+Dlya TexStudio budet sozdan yarlyk s nazvaniem *Docker TexStudio (texlive2018)* v kategorii *Office*.
 
-**Команда `dockertex`** используется для сборки проекта - диссертации, автореферата и презентации (по сути это `make` без аргументов):
+**Komanda `dockertex`** ispolzuetsya dlya sborki proekta - dissertatsii, avtoreferata i prezentatsii (po suti eto `make` bez argumentov):
 
 ```bash
 dockertex make
 ```
 
-После выполнения команды будут созданы три PDF-файла: `dissertation.pdf`, `presentation.pdf` и `synopsis.pdf`.
+Posle vypolneniya komandy budut sozdany tri PDF-fayla: `dissertation.pdf`, `presentation.pdf` i `synopsis.pdf`.
 
-При необходимости можно запустить `make clean`:
+Pri neobkhodimosti mozhno zapustit `make clean`:
 
 ```bash
 dockertex make clean
 ```
 
-Остальные аргументы `make` могут быть вызваны аналогично.
+Ostalnye argumenty `make` mogut byt vyzvany analogichno.
 
-**Команда `dockertexstudio`** используется для запуска TexStudio из контейнера:
+**Komanda `dockertexstudio`** ispolzuetsya dlya zapuska TexStudio iz konteynera:
 
 ```bash
 dockertexstudio
 ```
 
-После открытия файла `dissertation.tex` и нажатия <F5> будет создан PDF диссертации.
+Posle otkrytiya fayla `dissertation.tex` i nazhatiya <F5> budet sozdan PDF dissertatsii.
 
-### В Ubuntu
+### V Ubuntu
 
-> Протестировано на Ubuntu 19.04.
-> Для LTS-версий рекомендуется использование [DockerTex](#В-ubuntu-с-texlive-внутри-контейнера-dockertex)
+> Protestirovano na Ubuntu 19.04.
+> Dlya LTS-versiy rekomenduetsya ispolzovanie [DockerTex](#V-ubuntu-s-texlive-vnutri-konteynera-dockertex)
 
-Для установки XeTeX в Ubuntu и необходимых дополнительных пакетов можно
-использовать команду:
+Dlya ustanovki XeTeX v Ubuntu i neobkhodimykh dopolnitelnykh paketov mozhno
+ispolzovat komandu:
 
 ```bash
 sudo apt-get install make texlive-xetex texlive-generic-extra texlive-lang-cyrillic texlive-lang-french texlive-science fonts-liberation latexmk biber
 ```
 
-или для установки полного комплекта программ:
+ili dlya ustanovki polnogo komplekta programm:
 
 ```bash
 sudo apt-get install texlive-full
 ```
 
-Для использования шрифтов Microsoft требуется их установка.
-Например, для Ubuntu это можно сделать так:
+Dlya ispolzovaniya shriftov Microsoft trebuetsya ikh ustanovka.
+Naprimer, dlya Ubuntu eto mozhno sdelat tak:
 
 ```bash
 sudo apt-get install ttf-mscorefonts-installer
 sudo fc-cache -fv
 ```
 
-### В Debian
+### V Debian
 
-> Протестировано на Debian 10.
+> Protestirovano na Debian 10.
 
-Установка аналогична Ubuntu.
+Ustanovka analogichna Ubuntu.
 
-Для установки шрифтов Microsoft должен быть подключен репозиторий `contrib`.
+Dlya ustanovki shriftov Microsoft dolzhen byt podklyuchen repozitoriy `contrib`.
 
-### В Fedora
+### V Fedora
 
-> Протестировано на Fedora 27.
+> Protestirovano na Fedora 27.
 
-Для установки XeTeX необходимо установить следующие пакеты:
+Dlya ustanovki XeTeX neobkhodimo ustanovit sleduyushchie pakety:
 
 ```bash
 sudo dnf install texlive-xetex latexmk texlive-hyphen-russian biber \
@@ -181,104 +181,104 @@ sudo dnf install texlive-xetex latexmk texlive-hyphen-russian biber \
                     texlive-tabu texlive-mwe
 ```
 
-Далее можно установить шрифты из набора
-[Microsoft's Core Fonts](http://mscorefonts2.sourceforge.net/). Например, так:
+Dalee mozhno ustanovit shrifty iz nabora
+[Microsoft's Core Fonts](http://mscorefonts2.sourceforge.net/). Naprimer, tak:
 
 ```bash
 sudo dnf install http://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 sudo fc-cache -fv
 ```
 
-> В Fedora 23 есть проблема
+> V Fedora 23 est problema
 > ([#84](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/issues/84))
-> с компиляцией библиографии с помощью `biblatex` и `biber`, поэтому необходимо
-> переключиться на использование `bibtex`. Для этого в файле
-> `Dissertation/setup.tex` переключите `\setcounter{bibliosel}{1}` в `0`, чтобы
-> получилось `\setcounter{bibliosel}{0}`. Ту же самую операцию повторите в файле
+> s kompilyatsiey bibliografii s pomoshchyu `biblatex` i `biber`, poetomu neobkhodimo
+> pereklyuchitsya na ispolzovanie `bibtex`. Dlya etogo v fayle
+> `Dissertation/setup.tex` pereklyuchite `\setcounter{bibliosel}{1}` v `0`, chtoby
+> poluchilos `\setcounter{bibliosel}{0}`. Tu zhe samuyu operatsiyu povtorite v fayle
 > `Synopsis/setup.tex`.
 
-### В Gentoo
+### V Gentoo
 
-В репозиториях Gentoo лежит относительно старая версия TeXLive и сопутствующих пакетов,
-однако особых проблем с ними возникнуть не должно. Следует учитывать лишь два момента:
+V repozitoriyakh Gentoo lezhit otnositelno staraya versiya TeXLive i soputstvuyushchikh paketov,
+odnako osobykh problem s nimi vozniknut ne dolzhno. Sleduet uchityvat lish dva momenta:
 
-- Устаревший `dev-tex/latexmk` (на 31.05.2019). В репозитории лежит версия 456,
-которая не позволит собрать проект. Необходимо
-[создать собственный репозиторий](https://wiki.gentoo.org/wiki/Custom_repository)
-и скопировать в него ебилд от 456 версии, переименовав в соответствии с актуальной
-(на данный момент это 464a). (Если просто скопировать ебилд под новым именем
-в тот же самый главный репозиторий, то при очередном `emerge --sync` он будет перезатерт.)
-- Стилевой файл `impnattypo.sty`, необходимый для сборки проекта, отправлен мейнтейнерами
-в пакет `dev-texlive/texlive-langfrench`, поэтому кроме основных пакетов необходимо
-установить и его.
+- Ustarevshiy `dev-tex/latexmk` (na 31.05.2019). V repozitorii lezhit versiya 456,
+kotoraya ne pozvolit sobrat proekt. Neobkhodimo
+[sozdat sobstvennyy repozitoriy](https://wiki.gentoo.org/wiki/Custom_repository)
+i skopirovat v nego ebild ot 456 versii, pereimenovav v sootvetstvii s aktualnoy
+(na dannyy moment eto 464a). (Esli prosto skopirovat ebild pod novym imenem
+v tot zhe samyy glavnyy repozitoriy, to pri ocherednom `emerge --sync` on budet perezatert.)
+- Stilevoy fayl `impnattypo.sty`, neobkhodimyy dlya sborki proekta, otpravlen meynteynerami
+v paket `dev-texlive/texlive-langfrench`, poetomu krome osnovnykh paketov neobkhodimo
+ustanovit i ego.
 
-### TeXLive на Linux в обход привязанных к конкретному линуксу пакетам
+### TeXLive na Linux v obkhod privyazannykh k konkretnomu linuksu paketam
 [How to install «vanilla» TeXLive on Debian or Ubuntu?](http://tex.stackexchange.com/a/95373) —
-инструкция на английском языке, как ставить TeXLive на Linux в обход привязанных
-к конкретному линуксу пакетам (на примере Debian и Ubuntu).
+instruktsiya na angliyskom yazyke, kak stavit TeXLive na Linux v obkhod privyazannykh
+k konkretnomu linuksu paketam (na primere Debian i Ubuntu).
 
-### В MacOS 10.10 и выше
-Для установки в среде MacOS достаточно установить пакет MacTeX
-[отсюда](https://tug.org/mactex/mactex-download.html). После установки
-необходимо добавить пути к установленным файлам в переменную окружения `PATH`,
-например, так:
+### V MacOS 10.10 i vyshe
+Dlya ustanovki v srede MacOS dostatochno ustanovit paket MacTeX
+[otsyuda](https://tug.org/mactex/mactex-download.html). Posle ustanovki
+neobkhodimo dobavit puti k ustanovlennym faylam v peremennuyu okruzheniya `PATH`,
+naprimer, tak:
 
 ```bash
 export PATH=$PATH:export PATH=$PATH:/Library/TeX/texbin
 ```
 
-Чтобы сделать эффект постоянным можно добавить эту строку в `.bash_profile`:
+Chtoby sdelat effekt postoyannym mozhno dobavit etu stroku v `.bash_profile`:
 
 ```bash
 echo "export PATH=$PATH:export PATH=$PATH:/Library/TeX/texbin" >>~/.bash_profile
 ```
 
-Теперь при следующем логине, вам будут доступны утилиты из пакета,
-необходимые для работы `make`-скриптов.
+Teper pri sleduyushchem logine, vam budut dostupny utility iz paketa,
+neobkhodimye dlya raboty `make`-skriptov.
 
-### Установка шрифтов PSCyr
-PSCyr — это пакет красивых русских шрифтов для LaTeX. К сожалению, его нужно
-устанавливать отдельно. Если он у вас не установлен, то ничего страшного —
-шаблон заработает и без него. Ну лучше бы его всё-таки поставить. Инструкции по
-установке PSCyr для различных конфигураций приведены
-[в файле `PSCyr/README.md` внутри
-репозитория](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/blob/master/PSCyr/README.md).
-Если вы не нашли подходящую вам инструкцию, но смогли выполнить установку
-самостоятельно, то большая просьба
-[поделиться](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/pulls)
-вашими наработками.
+### Ustanovka shriftov PSCyr
+PSCyr — eto paket krasivykh russkikh shriftov dlya LaTeX. K sozhaleniyu, ego nuzhno
+ustanavlivat otdelno. Esli on u vas ne ustanovlen, to nichego strashnogo —
+shablon zarabotaet i bez nego. Nu luchshe by ego vse-taki postavit. Instruktsii po
+ustanovke PSCyr dlya razlichnykh konfiguratsiy privedeny
+[v fayle `PSCyr/README.md` vnutri
+repozitoriya](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/blob/master/PSCyr/README.md).
+Esli vy ne nashli podkhodyashchuyu vam instruktsiyu, no smogli vypolnit ustanovku
+samostoyatelno, to bolshaya prosba
+[podelitsya](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template/pulls)
+vashimi narabotkami.
 
-#### Рабочий способ установки в Ubuntu 15.10
-(компиляция из [инструкции на welinux](https://web.archive.org/web/20190609183954/http://welinux.ru/post/3200/)
-и файлов, которые есть в шаблоне)
+#### Rabochiy sposob ustanovki v Ubuntu 15.10
+(kompilyatsiya iz [instruktsii na welinux](https://web.archive.org/web/20190609183954/http://welinux.ru/post/3200/)
+i faylov, kotorye est v shablone)
 
-Нужно скачать шаблон, найти в папке PSCyr файл pscyr0.4d.zip и распаковать его
-содержимое куда угодно. Чтобы не переписывать пути, папка с содержимым должна
-называться PSCyr, а не pscyr. Затем надо зайти в
-терминал, перейти к тому каталогу, где лежит папка PSCyr с содержимым, и
-выполнить команды из вышеупомянутого руководства:
+Nuzhno skachat shablon, nayti v papke PSCyr fayl pscyr0.4d.zip i raspakovat ego
+soderzhimoe kuda ugodno. Chtoby ne perepisyvat puti, papka s soderzhimym dolzhna
+nazyvatsya PSCyr, a ne pscyr. Zatem nado zayti v
+terminal, pereyti k tomu katalogu, gde lezhit papka PSCyr s soderzhimym, i
+vypolnit komandy iz vysheupomyanutogo rukovodstva:
 ```bash
 echo "fadr6t AdvertisementPSCyr \"T2AEncoding ReEncodeFont\"" > ./PSCyr/fonts/map/pscyr.map
 ```
-Дальше надо узнать, где у вас локальный каталог texmf. Для этого выполняем
+Dalshe nado uznat, gde u vas lokalnyy katalog texmf. Dlya etogo vypolnyaem
 ```bash
 kpsewhich -expand-var='$TEXMFLOCAL'
 ```
-С вероятностью около единицы результат будет `/usr/local/share/texmf/`.
-Копируем всё туда:
+S veroyatnostyu okolo edinitsy rezultat budet `/usr/local/share/texmf/`.
+Kopiruem vse tuda:
 ```bash
 sudo cp -R ./PSCyr/* /usr/local/share/texmf/
 ```
-Ну и подключаем:
+Nu i podklyuchaem:
 ```bash
 sudo texhash
 updmap --enable Map=pscyr.map
 sudo mktexlsr
 ```
 
-#### Установка в MacOS 10.x
-1. Скачать файлы со шрифтами и распаковать их в одну папку.
-2. Создать/отредактировать файл `install.sh`, чтобы он содержал следующее:
+#### Ustanovka v MacOS 10.x
+1. Skachat fayly so shriftami i raspakovat ikh v odnu papku.
+2. Sozdat/otredaktirovat fayl `install.sh`, chtoby on soderzhal sleduyushchee:
 
 ```bash
 #!/bin/sh
@@ -304,171 +304,171 @@ echo "Map pscyr.map\n" >> $INSTALLDIR/web2c/updmap.cfg
 updmap-sys
 ```
 
-3. Запустить полученный скрипт с помощью `sudo`:
+3. Zapustit poluchennyy skript s pomoshchyu `sudo`:
 
 ```bash
 sudo bash ./install.sh
 ```
-#### Рабочий способ установки в Debian 9
+#### Rabochiy sposob ustanovki v Debian 9
 
-Аналогично тому как в Ubuntu не проходит, возникают сложности с правами доступа
-к некоторым файлам. Разбираюсь в чем дело. Выводит в лог следующее сообщение:
+Analogichno tomu kak v Ubuntu ne prokhodit, voznikayut slozhnosti s pravami dostupa
+k nekotorym faylam. Razbirayus v chem delo. Vyvodit v log sleduyushchee soobshchenie:
 ```bash
 /usr/local/share/texmf/tex/latex/pscyr/pscyr.sty: Permission denied /usr/share/texmf/tex/latex/pscyr/pscyr.sty: Permission denied
 ```
 
-## Сборка PDF из командной строки
+## Sborka PDF iz komandnoy stroki
 
-Сборку можно производить следующими командами:
+Sborku mozhno proizvodit sleduyushchimi komandami:
 
-* диссертация: `latexmk -pdf -pdflatex="xelatex %O %S" dissertation`
-* автореферат: `latexmk -pdf -pdflatex="xelatex %O %S" synopsis`
+* dissertatsiya: `latexmk -pdf -pdflatex="xelatex %O %S" dissertation`
+* avtoreferat: `latexmk -pdf -pdflatex="xelatex %O %S" synopsis`
 
-Либо можно использовать make-файлы (движок `xelatex`): из корневого
-каталога выполнять
+Libo mozhno ispolzovat make-fayly (dvizhok `xelatex`): iz kornevogo
+kataloga vypolnyat
 
-* `make` для сборки всего
-* `make dissertation` для сборки диссертации,
-* `make synopsis` для сборки автореферата,
-* `make presentation` для сборки презентации для доклада,
-* `make dissertation-draft` для сборки диссертации в режиме черновика,
-* `make synopsis-draft` для сборки автореферата в режиме черновика,
-* `make synopsis-booklet` для сборки автореферата для печати,
-* `make presentation-booklet` для сборки презентации для печати,
-* `make presentation-handout` для сборки раздаточных материалов,
-* `make draft` для быстрой сборки диссертации и автореферата в режиме черновика,
-* `make release` для сборки всего и внесения финальных *.pdf файлов в
-  систему контроля версий git
-* `make clean` очистка от временных файлов
-* `make distclean` очистка всех генерируемых файлов (включая *.pdf*)
-* `make pdflatex` сборка полной версии с движком `pdflatex` (несколько
-  быстрее для автореферата, чем `xelatex`, движок для библиографии в
-  соответствии с настройками
+* `make` dlya sborki vsego
+* `make dissertation` dlya sborki dissertatsii,
+* `make synopsis` dlya sborki avtoreferata,
+* `make presentation` dlya sborki prezentatsii dlya doklada,
+* `make dissertation-draft` dlya sborki dissertatsii v rezhime chernovika,
+* `make synopsis-draft` dlya sborki avtoreferata v rezhime chernovika,
+* `make synopsis-booklet` dlya sborki avtoreferata dlya pechati,
+* `make presentation-booklet` dlya sborki prezentatsii dlya pechati,
+* `make presentation-handout` dlya sborki razdatochnykh materialov,
+* `make draft` dlya bystroy sborki dissertatsii i avtoreferata v rezhime chernovika,
+* `make release` dlya sborki vsego i vneseniya finalnykh *.pdf faylov v
+  sistemu kontrolya versiy git
+* `make clean` ochistka ot vremennykh faylov
+* `make distclean` ochistka vsekh generiruemykh faylov (vklyuchaya *.pdf*)
+* `make pdflatex` sborka polnoy versii s dvizhkom `pdflatex` (neskolko
+  bystree dlya avtoreferata, chem `xelatex`, dvizhok dlya bibliografii v
+  sootvetstvii s nastroykami
   [`setup.tex`](../common/setup.tex)).
 
-Презентация может собираться собираться любым из трёх движков:
+Prezentatsiya mozhet sobiratsya sobiratsya lyubym iz trekh dvizhkov:
 `pdflatex`, `xelatex`, `lualatex`.
 
-## Разное
+## Raznoe
 
-### Пакеты и версии LaTeX
-* Шаблон по умолчанию включает ряд распространённых пакетов, чтобы вы могли
-сразу ими пользоваться. Однако, на вашей машине какие-то пакеты могут быть не
-установлены. Если вам они не нужны, то вы можете их просто удалить (команда
-`\usepackage{<имя пакета>}`).
-* Лучше всего использовать актуальные и полные версии LaTeX-дистрибутивов, это
-поможет избежать многих проблем. Например, [MikTeX](http://miktex.org/download)
-2.9.6361+ для Windows или [TeXLive](http://www.tug.org/texlive/acquire.html)
-2017+ для множества ОС.
+### Pakety i versii LaTeX
+* Shablon po umolchaniyu vklyuchaet ryad rasprostranennykh paketov, chtoby vy mogli
+srazu imi polzovatsya. Odnako, na vashey mashine kakie-to pakety mogut byt ne
+ustanovleny. Esli vam oni ne nuzhny, to vy mozhete ikh prosto udalit (komanda
+`\usepackage{<imya paketa>}`).
+* Luchshe vsego ispolzovat aktualnye i polnye versii LaTeX-distributivov, eto
+pomozhet izbezhat mnogikh problem. Naprimer, [MikTeX](http://miktex.org/download)
+2.9.6361+ dlya Windows ili [TeXLive](http://www.tug.org/texlive/acquire.html)
+2017+ dlya mnozhestva OS.
 
-### Редактирование текста
-* Если у вас ещё не сформировались предпочтения по LaTeX-редактору, то обратите
-внимание на [TeXStudio](https://texstudio.org/#download),
-существующий для всех основных платформ.
-* Некоторые редакторы (в том числе TeXStudio) позволяют подключить проверку
-грамматики с помощью [Language
-Tool](http://wiki.languagetool.org/checking-la-tex-with-languagetool) (есть
-поддержка русского языка). Полностью от ошибок он не спасёт, но поиск простых
-случаев облегчает. Например, в предложении «Как правило слон больше черепахи.»
-он попросит поставить запятую, если одно и то же слово используется подряд (или
-с интервалом в несколько слов) — LT второе слово подчёркнет и при необходимости
-не сложно понять, есть смысл использовать синоним, может быть написать «этот,
-который» или так и оставить. Подобных простых проверок —
-[сотни](https://github.com/languagetool-org/languagetool/blob/master/languagetool-language-modules/ru/src/main/resources/org/languagetool/rules/ru/grammar.xml).
+### Redaktirovanie teksta
+* Esli u vas eshche ne sformirovalis predpochteniya po LaTeX-redaktoru, to obratite
+vnimanie na [TeXStudio](https://texstudio.org/#download),
+sushchestvuyushchiy dlya vsekh osnovnykh platform.
+* Nekotorye redaktory (v tom chisle TeXStudio) pozvolyayut podklyuchit proverku
+grammatiki s pomoshchyu [Language
+Tool](http://wiki.languagetool.org/checking-la-tex-with-languagetool) (est
+podderzhka russkogo yazyka). Polnostyu ot oshibok on ne spaset, no poisk prostykh
+sluchaev oblegchaet. Naprimer, v predlozhenii «Kak pravilo slon bolshe cherepakhi.»
+on poprosit postavit zapyatuyu, esli odno i to zhe slovo ispolzuetsya podryad (ili
+s intervalom v neskolko slov) — LT vtoroe slovo podcherknet i pri neobkhodimosti
+ne slozhno ponyat, est smysl ispolzovat sinonim, mozhet byt napisat «etot,
+kotoryy» ili tak i ostavit. Podobnykh prostykh proverok —
+[sotni](https://github.com/languagetool-org/languagetool/blob/master/languagetool-language-modules/ru/src/main/resources/org/languagetool/rules/ru/grammar.xml).
 
-### Форматирование исходного кода
-Программа [`latexindent`](https://www.ctan.org/pkg/latexindent) позволяет
-форматировать исходный код `.tex` файлов.
-Это делает код более читаемым и единообразным.
+### Formatirovanie iskhodnogo koda
+Programma [`latexindent`](https://www.ctan.org/pkg/latexindent) pozvolyaet
+formatirovat iskhodnyy kod `.tex` faylov.
+Eto delaet kod bolee chitaemym i edinoobraznym.
 
-Для форматирования пользовательских документов можно использовать команду:
+Dlya formatirovaniya polzovatelskikh dokumentov mozhno ispolzovat komandu:
 
 ```bash
 make indent
 ```
-Можно указывать другой файл для форматирования.
-Например, для форматирования только файла `MyFILE.tex`:
+Mozhno ukazyvat drugoy fayl dlya formatirovaniya.
+Naprimer, dlya formatirovaniya tolko fayla `MyFILE.tex`:
 
 ```bash
 make indent INDENT_FILES=MyFILE.tex
 ```
-По умолчанию настройки форматирования считываются из файла `indent.yaml`.
-Для использования другого файла настроек, наберите в командной строке:
+Po umolchaniyu nastroyki formatirovaniya schityvayutsya iz fayla `indent.yaml`.
+Dlya ispolzovaniya drugogo fayla nastroek, naberite v komandnoy stroke:
 ```bash
 make indent INDENT_SETTINGS=mysettings.yaml
 ```
 
-### Сжатие файлов
-Размер выходных `.pdf` файлов может быть большим.
-Особенно, если в тексте присутствует много рисунков с большим разрешением.
-Программа [`gs`](https://ghostscript.com/) позволяет значительно уменьшить
-размер `.pdf` файлов за счёт снижения качества растровых изображений.
+### Szhatie faylov
+Razmer vykhodnykh `.pdf` faylov mozhet byt bolshim.
+Osobenno, esli v tekste prisutstvuet mnogo risunkov s bolshim razresheniem.
+Programma [`gs`](https://ghostscript.com/) pozvolyaet znachitelno umenshit
+razmer `.pdf` faylov za schet snizheniya kachestva rastrovykh izobrazheniy.
 
-Для сжатия файла диссертации можно использовать команду:
+Dlya szhatiya fayla dissertatsii mozhno ispolzovat komandu:
 ```bash
 make compress-lowdpi
 ```
-Сжатый файл будет создан с суффиксом `*_lowdpi.pdf`
+Szhatyy fayl budet sozdan s suffiksom `*_lowdpi.pdf`
 
-По умолчанию, разрешение изображений снижается до 144 DPI. Изменить разрешение
-и другие нюансы можно путём редактирования файла [`compress.mk`](../compress.mk#L36-L60)
+Po umolchaniyu, razreshenie izobrazheniy snizhaetsya do 144 DPI. Izmenit razreshenie
+i drugie nyuansy mozhno putem redaktirovaniya fayla [`compress.mk`](../compress.mk#L36-L60)
 
-Сжать произвольный pdf файл `somefile.pdf` можно командой:
+Szhat proizvolnyy pdf fayl `somefile.pdf` mozhno komandoy:
 
 ```bash
 make compress-lowdpi COMPRESS_FILE=somefile
 ```
 
-### Пересборка pdf для типографии
-Типографии могут выдвигать специальные требования к pdf файлам. Наиболее типичными являются:
- * отсутсвие прозрачности
- * задание всех цветов в CMYK
- * использование формата PDF версии 1.3
+### Peresborka pdf dlya tipografii
+Tipografii mogut vydvigat spetsialnye trebovaniya k pdf faylam. Naibolee tipichnymi yavlyayutsya:
+ * otsutsvie prozrachnosti
+ * zadanie vsekh tsvetov v CMYK
+ * ispolzovanie formata PDF versii 1.3
 
-Для приведения pdf в соотвествие с данными требованиями можно использовать команду:
+Dlya privedeniya pdf v sootvestvie s dannymi trebovaniyami mozhno ispolzovat komandu:
 ```bash
 make compress-cmyk
 ```
-Принцип работы и возможные побочные эффекты описаны в [`compress.mk`](../compress.mk#L64-L143).
+Printsip raboty i vozmozhnye pobochnye effekty opisany v [`compress.mk`](../compress.mk#L64-L143).
 
-### Отчёт о времени сборки
+### Otchet o vremeni sborki
 
-Для вывода на экран в конце сборки информации о затраченном времени можно
-использовать флаг `TIMERON=1`.
-К примеру, запуск команды
+Dlya vyvoda na ekran v kontse sborki informatsii o zatrachennom vremeni mozhno
+ispolzovat flag `TIMERON=1`.
+K primeru, zapusk komandy
 
 ```bash
 make synopsis TIMERON=1
 ```
 
-выведет на экран в конце сборки информацию о времени, затраченном на каждый
-вызов используемого движка latex, а также суммарно затраченное время.
+vyvedet na ekran v kontse sborki informatsiyu o vremeni, zatrachennom na kazhdyy
+vyzov ispolzuemogo dvizhka latex, a takzhe summarno zatrachennoe vremya.
 
-### Сборка графики `.tikz`
+### Sborka grafiki `.tikz`
 
-В процессе создания графики с использованием библиотеки [`tikz`](https://en.wikipedia.org/wiki/PGF/TikZ) требуется частая компиляция исходного файла.
-Производить её вместе с остальным текстом довольно затратно по времени.
+V protsesse sozdaniya grafiki s ispolzovaniem biblioteki [`tikz`](https://en.wikipedia.org/wiki/PGF/TikZ) trebuetsya chastaya kompilyatsiya iskhodnogo fayla.
+Proizvodit ee vmeste s ostalnym tekstom dovolno zatratno po vremeni.
 
-Для ускоренной компиляции файлов `.tikz` отдельно от остального шаблона предусмотрен рецепт `make tikz`.
-Для запуска компиляции рисунка требуется задать путь к файлу `.tikz` при помощи переменной `TIKZFILE`.
+Dlya uskorennoy kompilyatsii faylov `.tikz` otdelno ot ostalnogo shablona predusmotren retsept `make tikz`.
+Dlya zapuska kompilyatsii risunka trebuetsya zadat put k faylu `.tikz` pri pomoshchi peremennoy `TIKZFILE`.
 
-Например,
+Naprimer,
 
 ```bash
 make tikz TIKZFILE=Presentation/images/tikz_plot.tikz
 ```
 
-сгенерирует файл `tikz_plot.pdf` в корневой папке.
+sgeneriruet fayl `tikz_plot.pdf` v kornevoy papke.
 
-### Генерация раздаточного материала
-Для защиты может потребоваться печать раздаточного материала презентации.
-В этих материалах содержатся слайды презентации и, возможно, комментарии к ним.
+### Generatsiya razdatochnogo materiala
+Dlya zashchity mozhet potrebovatsya pechat razdatochnogo materiala prezentatsii.
+V etikh materialakh soderzhatsya slaydy prezentatsii i, vozmozhno, kommentarii k nim.
 
-Для генерации раздаточных материалов в шаблоне предусмотрен файл `presentation_handout.tex`.
-Первым делом требуется сгенерировать саму презентацию `presentation.pdf`.
-Далее, в файле `presentation_handout.tex` надо добавить слайды с соответствующими комментариями при
-помощи макро `\includeslide`.
-Выходной файл `presentation_handout.pdf` генерируется при помощи команды
+Dlya generatsii razdatochnykh materialov v shablone predusmotren fayl `presentation_handout.tex`.
+Pervym delom trebuetsya sgenerirovat samu prezentatsiyu `presentation.pdf`.
+Dalee, v fayle `presentation_handout.tex` nado dobavit slaydy s sootvetstvuyushchimi kommentariyami pri
+pomoshchi makro `\includeslide`.
+Vykhodnoy fayl `presentation_handout.pdf` generiruetsya pri pomoshchi komandy
 ```bash
 make presentation-handout
 ```

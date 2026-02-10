@@ -1,18 +1,18 @@
-Данный скрипт позволяет генерировать конверты формата С5 для рассылки автореферата.
+Dannyy skript pozvolyaet generirovat konverty formata S5 dlya rassylki avtoreferata.
 
-Данные для заполнения находятся в файле `source.tsv` в формате
+Dannye dlya zapolneniya nakhodyatsya v fayle `source.tsv` v formate
 ```
-Индекс	Город	Адрес	Предприятие	Адресат (если есть)
+Indeks	Gorod	Adres	Predpriyatie	Adresat (esli est)
 ```
-В файле **5 колонок**, они разделены **знаком табуляции (`\t`)**.
+V fayle **5 kolonok**, oni razdeleny **znakom tabulyatsii (`\t`)**.
 
-Информацию об отправителе `letters.tex`,
-в секции `Данные отправителя`
+Informatsiyu ob otpravitele `letters.tex`,
+v sektsii `Dannye otpravitelya`
 
-Запускать генерацию командой
+Zapuskat generatsiyu komandoy
 ```bash
 ./generate source.tsv
 ```
 
-Для работы скрипта также требуется программа `pdftk`.
-Необходимые для работы шрифты находятся в паке `fonts`.
+Dlya raboty skripta takzhe trebuetsya programma `pdftk`.
+Neobkhodimye dlya raboty shrifty nakhodyatsya v pake `fonts`.

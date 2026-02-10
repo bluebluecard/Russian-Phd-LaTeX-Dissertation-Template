@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Файл упрощённых настроек шаблона диссертации %%%%
+%%%% Fayl uproshchennykh nastroek shablona dissertatsii %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% Инициализирование переменных, не трогать!  %%%
+%%% Initsializirovanie peremennykh, ne trogat!  %%%
 \newcounter{intvl}
 \newcounter{otstup}
 \newcounter{contnumeq}
@@ -15,106 +15,106 @@
 \newcounter{headingsize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% Область упрощённого управления оформлением %%%
+%%% Oblast uproshchennogo upravleniya oformleniem %%%
 
-%% Интервал между заголовками и между заголовком и текстом %%
-% Заголовки отделяют от текста сверху и снизу
-% тремя интервалами (ГОСТ Р 7.0.11-2011, 5.3.5)
-\setcounter{intvl}{3}               % Коэффициент кратности к размеру шрифта
+%% Interval mezhdu zagolovkami i mezhdu zagolovkom i tekstom %%
+% Zagolovki otdelyayut ot teksta sverkhu i snizu
+% tremya intervalami (GOST R 7.0.11-2011, 5.3.5)
+\setcounter{intvl}{3}               % Koeffitsient kratnosti k razmeru shrifta
 
-%% Отступы у заголовков в тексте %%
-\setcounter{otstup}{0}              % 0 --- без отступа; 1 --- абзацный отступ
+%% Otstupy u zagolovkov v tekste %%
+\setcounter{otstup}{0}              % 0 --- bez otstupa; 1 --- abzatsnyy otstup
 
-%% Нумерация формул, таблиц и рисунков %%
-% Нумерация формул
-\setcounter{contnumeq}{0}   % 0 --- пораздельно (во введении подряд,
-                            %       без номера раздела);
-                            % 1 --- сквозная нумерация по всей диссертации
-% Нумерация рисунков
-\setcounter{contnumfig}{0}  % 0 --- пораздельно (во введении подряд,
-                            %       без номера раздела);
-                            % 1 --- сквозная нумерация по всей диссертации
-% Нумерация таблиц
-\setcounter{contnumtab}{1}  % 0 --- пораздельно (во введении подряд,
-                            %       без номера раздела);
-                            % 1 --- сквозная нумерация по всей диссертации
+%% Numeratsiya formul, tablits i risunkov %%
+% Numeratsiya formul
+\setcounter{contnumeq}{0}   % 0 --- porazdelno (vo vvedenii podryad,
+                            %       bez nomera razdela);
+                            % 1 --- skvoznaya numeratsiya po vsey dissertatsii
+% Numeratsiya risunkov
+\setcounter{contnumfig}{0}  % 0 --- porazdelno (vo vvedenii podryad,
+                            %       bez nomera razdela);
+                            % 1 --- skvoznaya numeratsiya po vsey dissertatsii
+% Numeratsiya tablits
+\setcounter{contnumtab}{1}  % 0 --- porazdelno (vo vvedenii podryad,
+                            %       bez nomera razdela);
+                            % 1 --- skvoznaya numeratsiya po vsey dissertatsii
 
-%% Оглавление %%
-\setcounter{pgnum}{1}       % 0 --- номера страниц никак не обозначены;
-                            % 1 --- Стр. над номерами страниц (дважды
-                            %       компилировать после изменения настройки)
-\settocdepth{subsection}    % до какого уровня подразделов выносить в оглавление
-\setsecnumdepth{subsection} % до какого уровня нумеровать подразделы
+%% Oglavlenie %%
+\setcounter{pgnum}{1}       % 0 --- nomera stranits nikak ne oboznacheny;
+                            % 1 --- Str. nad nomerami stranits (dvazhdy
+                            %       kompilirovat posle izmeneniya nastroyki)
+\settocdepth{subsection}    % do kakogo urovnya podrazdelov vynosit v oglavlenie
+\setsecnumdepth{subsection} % do kakogo urovnya numerovat podrazdely
 
 
-%% Текст и форматирование заголовков %%
-\setcounter{chapstyle}{1}     % 0 --- разделы только под номером;
-                              % 1 --- разделы с названием "Глава" перед номером
-\setcounter{headingdelim}{1}  % 0 --- номер отделен пропуском в 1em или \quad;
-                              % 1 --- номера разделов и приложений отделены
-                              %       точкой с пробелом, подразделы пропуском
-                              %       без точки;
-                              % 2 --- номера разделов, подразделов и приложений
-                              %       отделены точкой с пробелом.
+%% Tekst i formatirovanie zagolovkov %%
+\setcounter{chapstyle}{1}     % 0 --- razdely tolko pod nomerom;
+                              % 1 --- razdely s nazvaniem "Glava" pered nomerom
+\setcounter{headingdelim}{1}  % 0 --- nomer otdelen propuskom v 1em ili \quad;
+                              % 1 --- nomera razdelov i prilozheniy otdeleny
+                              %       tochkoy s probelom, podrazdely propuskom
+                              %       bez tochki;
+                              % 2 --- nomera razdelov, podrazdelov i prilozheniy
+                              %       otdeleny tochkoy s probelom.
 
-%% Выравнивание заголовков в тексте %%
-\setcounter{headingalign}{0}  % 0 --- по центру;
-                              % 1 --- по левому краю
+%% Vyravnivanie zagolovkov v tekste %%
+\setcounter{headingalign}{0}  % 0 --- po tsentru;
+                              % 1 --- po levomu krayu
 
-%% Размеры заголовков в тексте %%
-\setcounter{headingsize}{0}   % 0 --- по ГОСТ, все всегда 14 пт;
-                              % 1 --- пропорционально изменяющийся размер
-                              %       в зависимости от базового шрифта
+%% Razmery zagolovkov v tekste %%
+\setcounter{headingsize}{0}   % 0 --- po GOST, vse vsegda 14 pt;
+                              % 1 --- proportsionalno izmenyayushchiysya razmer
+                              %       v zavisimosti ot bazovogo shrifta
 
-%% Подпись таблиц %%
+%% Podpis tablits %%
 
-% Смещение строк подписи после первой строки
+% Smeshchenie strok podpisi posle pervoy stroki
 \newcommand{\tabindent}{0cm}
 
-% Тип форматирования заголовка таблицы:
-% plain --- название и текст в одной строке
-% split --- название и текст в разных строках
+% Tip formatirovaniya zagolovka tablitsy:
+% plain --- nazvanie i tekst v odnoy stroke
+% split --- nazvanie i tekst v raznykh strokakh
 \newcommand{\tabformat}{plain}
 
-%%% Настройки форматирования таблицы `plain`
+%%% Nastroyki formatirovaniya tablitsy `plain`
 
-% Выравнивание по центру подписи, состоящей из одной строки:
-% true  --- выравнивать
-% false --- не выравнивать
+% Vyravnivanie po tsentru podpisi, sostoyashchey iz odnoy stroki:
+% true  --- vyravnivat
+% false --- ne vyravnivat
 \newcommand{\tabsinglecenter}{false}
 
-% Выравнивание подписи таблиц:
-% justified   --- выравнивать как обычный текст («по ширине»)
-% centering   --- выравнивать по центру
-% centerlast  --- выравнивать по центру только последнюю строку
-% centerfirst --- выравнивать по центру только первую строку (не рекомендуется)
-% raggedleft  --- выравнивать по правому краю
-% raggedright --- выравнивать по левому краю
+% Vyravnivanie podpisi tablits:
+% justified   --- vyravnivat kak obychnyy tekst («po shirine»)
+% centering   --- vyravnivat po tsentru
+% centerlast  --- vyravnivat po tsentru tolko poslednyuyu stroku
+% centerfirst --- vyravnivat po tsentru tolko pervuyu stroku (ne rekomenduetsya)
+% raggedleft  --- vyravnivat po pravomu krayu
+% raggedright --- vyravnivat po levomu krayu
 \newcommand{\tabjust}{justified}
 
-% Разделитель записи «Таблица #» и названия таблицы
+% Razdelitel zapisi «Tablitsa #» i nazvaniya tablitsy
 \newcommand{\tablabelsep}{~\cyrdash\ }
 
-%%% Настройки форматирования таблицы `split`
+%%% Nastroyki formatirovaniya tablitsy `split`
 
-% Положение названия таблицы:
-% \centering   --- выравнивать по центру
-% \raggedleft  --- выравнивать по правому краю
-% \raggedright --- выравнивать по левому краю
+% Polozhenie nazvaniya tablitsy:
+% \centering   --- vyravnivat po tsentru
+% \raggedleft  --- vyravnivat po pravomu krayu
+% \raggedright --- vyravnivat po levomu krayu
 \newcommand{\splitformatlabel}{\raggedleft}
 
-% Положение текста подписи:
-% \centering   --- выравнивать по центру
-% \raggedleft  --- выравнивать по правому краю
-% \raggedright --- выравнивать по левому краю
+% Polozhenie teksta podpisi:
+% \centering   --- vyravnivat po tsentru
+% \raggedleft  --- vyravnivat po pravomu krayu
+% \raggedright --- vyravnivat po levomu krayu
 \newcommand{\splitformattext}{\raggedright}
 
-%% Подпись рисунков %%
-%Разделитель записи «Рисунок #» и названия рисунка
-\newcommand{\figlabelsep}{~\cyrdash\ }  % (ГОСТ 2.105, 4.3.1)
-                                        % "--- здесь не работает
+%% Podpis risunkov %%
+%Razdelitel zapisi «Risunok #» i nazvaniya risunka
+\newcommand{\figlabelsep}{~\cyrdash\ }  % (GOST 2.105, 4.3.1)
+                                        % "--- zdes ne rabotaet
 
-%%% Цвета гиперссылок %%%
+%%% Tsveta giperssylok %%%
 % Latex color definitions: http://latexcolor.com/
 \definecolor{linkcolor}{rgb}{0.9,0,0}
 \definecolor{citecolor}{rgb}{0,0.6,0}
